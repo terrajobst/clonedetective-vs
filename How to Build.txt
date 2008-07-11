@@ -1,0 +1,25 @@
+How to Build Visual Clone Detective
+===================================
+
+Prerequisites
+-------------
+
+1. Microsoft Visual Studio 2008 (Standard, Professional or any edition of the Team Suite).
+
+2. Microsoft Visual Studio 2008 SDK
+   http://www.microsoft.com/downloads/details.aspx?familyid=30402623-93ca-479a-867c-04dc45164f5b
+
+3. Windows Installer XML (WiX) toolset Version 3
+   http://wix.sourceforge.net/
+
+Building
+--------
+
+1. Run \Build\Build.bat (make sure the path to MSBuild is correct)
+
+2. In \Output\Bin you will find the binaries (compiled in "Release" configuration).
+
+3. In \Output\Setup you will find two setups.
+   - VisualCloneDetective.msi    : The final setup expected to be used by regular users.
+   - VisualCloneDetectiveExp.mis : Installs clone detective in the Visual Studio experimental 
+     hive of the current user. Expected to be used by developers only.

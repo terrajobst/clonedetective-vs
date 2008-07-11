@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="VisualCloneDetective.Package.CloneDetectiveManager">
+    <Position X="0.5" Y="0.5" Width="4" />
+    <Members>
+      <Field Name="_cloneDetectiveResult" Hidden="true" />
+      <Field Name="_cloneDetectiveRunner" Hidden="true" />
+      <Field Name="_textLinesToDocInfos" Hidden="true" />
+      <Method Name="AddMarker" Hidden="true" />
+      <Method Name="AddMarkersToDocument" Hidden="true" />
+      <Method Name="AddMarkersToOpenDocuments" Hidden="true" />
+      <Method Name="AskUserForNewRootPath" Hidden="true" />
+      <Method Name="FindFirstNonMappedFileName" Hidden="true" />
+      <Method Name="GetCommonRoot" Hidden="true" />
+      <Method Name="GetDocumentPath" Hidden="true" />
+      <Method Name="GetDocumentTextLines" Hidden="true" />
+      <Method Name="GetHash" Hidden="true" />
+      <Method Name="GetHashAsString" Hidden="true" />
+      <Method Name="GetHashFromFile" Hidden="true" />
+      <Method Name="OnCloneDetectiveResultChanged" Hidden="true" />
+      <Method Name="RemapPath" Hidden="true" />
+      <Method Name="RemapPaths" Hidden="true" />
+      <Method Name="RemoveAllMarkers" Hidden="true" />
+      <Method Name="ValidateHash" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Class Name="VisualCloneDetective.Package.CloneDetectiveManager.DocumentInfo" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>CloneDetectiveManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ASIAAAwJggYAAAAABAsCCQAAEgBAgEAKAAAAQCBEYSA=</HashCode>
+      <FileName>CloneDetectiveManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CloneDetectiveResult" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="VisualCloneDetective.CloneReporting.CloneDetectiveResult" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

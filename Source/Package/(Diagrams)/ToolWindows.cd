@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="VisualCloneDetective.Package.CloneExplorerControl">
+    <Position X="6" Y="3.5" Width="1.75" />
+    <Members>
+      <Method Name="AbortCloneDetective" Hidden="true" />
+      <Method Name="AddTreeNode" Hidden="true" />
+      <Field Name="borderPanel1" Hidden="true" />
+      <Field Name="borderPanel2" Hidden="true" />
+      <Field Name="borderPanel3" Hidden="true" />
+      <Method Name="CloneExplorerControl" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Property Name="CurrentUIState" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="FormatRollupValue" Hidden="true" />
+      <Method Name="GetRollupLabel" Hidden="true" />
+      <Field Name="imageList" Hidden="true" />
+      <Method Name="ImportCloneDetectiveResults" Hidden="true" />
+      <Field Name="importToolStripButton" Hidden="true" />
+      <Method Name="importToolStripButton_Click" Hidden="true" />
+      <Method Name="Initialize" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Method Name="LoadSettings" Hidden="true" />
+      <Field Name="memoryLabel" Hidden="true" />
+      <Field Name="openFileDialog" Hidden="true" />
+      <Method Name="OpenSelectedSourceNode" Hidden="true" />
+      <Field Name="pictureBox" Hidden="true" />
+      <Field Name="progressBar" Hidden="true" />
+      <Field Name="resultLinkLabel" Hidden="true" />
+      <Method Name="resultLinkLabel_LinkClicked" Hidden="true" />
+      <Field Name="resultTableLayoutPanel" Hidden="true" />
+      <Field Name="rollupTypeToolStripComboBox" Hidden="true" />
+      <Method Name="rollupTypeToolStripComboBox_SelectedIndexChanged" Hidden="true" />
+      <Method Name="RunCloneDetective" Hidden="true" />
+      <Field Name="runningLabel" Hidden="true" />
+      <Field Name="runToolStripButton" Hidden="true" />
+      <Method Name="runToolStripButton_Click" Hidden="true" />
+      <Method Name="SaveSettings" Hidden="true" />
+      <Property Name="SelectedRollupType" Hidden="true" />
+      <Property Name="SelectedSourceNode" Hidden="true" />
+      <Field Name="stopToolStripButton" Hidden="true" />
+      <Method Name="stopToolStripButton_Click" Hidden="true" />
+      <Field Name="timeLabel" Hidden="true" />
+      <Field Name="toolStrip" Hidden="true" />
+      <Field Name="toolStripLabel1" Hidden="true" />
+      <Field Name="toolStripSeparator1" Hidden="true" />
+      <Field Name="treeView" Hidden="true" />
+      <Method Name="treeView_AfterCollapse" Hidden="true" />
+      <Method Name="treeView_AfterExpand" Hidden="true" />
+      <Method Name="treeView_AfterSelect" Hidden="true" />
+      <Method Name="treeView_BeforeCollapse" Hidden="true" />
+      <Method Name="treeView_DrawNode" Hidden="true" />
+      <Method Name="treeView_KeyDown" Hidden="true" />
+      <Method Name="treeView_NodeMouseDoubleClick" Hidden="true" />
+      <Method Name="UpdatePropertyGrid" Hidden="true" />
+      <Method Name="UpdateTreeView" Hidden="true" />
+      <Method Name="UpdateUI" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Enum Name="VisualCloneDetective.Package.CloneExplorerControl.RollupType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Tool Windows\CloneExplorerControl.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="VisualCloneDetective.Package.CloneExplorerControl.UIState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Tool Windows\CloneExplorerControl.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>A4IQABFQAiAAg5AhAkCAQQALECFAk2AkEBAAUgAAEAA=</HashCode>
+      <FileName>Tool Windows\CloneExplorerControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VisualCloneDetective.Package.CloneExplorerToolWindow" Collapsed="true">
+    <Position X="3.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Tool Windows\CloneExplorerToolWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VisualCloneDetective.Package.CloneIntersectionsControl">
+    <Position X="3.5" Y="3.5" Width="2" />
+    <Members>
+      <Field Name="_cloneBrushes" Hidden="true" />
+      <Field Name="_cloneIntersectionResult" Hidden="true" />
+      <Field Name="_maximumLoc" Hidden="true" />
+      <Field Name="_referenceHitTestInfos" Hidden="true" />
+      <Field Name="_selectionTracker" Hidden="true" />
+      <Field Name="_sourceNode" Hidden="true" />
+      <Field Name="borderPanel1" Hidden="true" />
+      <Field Name="borderPanel3" Hidden="true" />
+      <Method Name="CloneIntersectionsControl" Hidden="true" />
+      <Field Name="columnHeader1" Hidden="true" />
+      <Field Name="columnHeader2" Hidden="true" />
+      <Field Name="columnHeader3" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="contextMenuStrip_Opening" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="DrawCloneVisualization" Hidden="true" />
+      <Field Name="fileNameLabel" Hidden="true" />
+      <Method Name="findAllOccurencesToolStripItem_Click" Hidden="true" />
+      <Method Name="FindRerefenceCloneIntersection" Hidden="true" />
+      <Method Name="FindSourceNode" Hidden="true" />
+      <Method Name="GetBoxHeight" Hidden="true" />
+      <Method Name="GetCloneBrushes" Hidden="true" />
+      <Method Name="GetCloneIntersectonBrush" Hidden="true" />
+      <Method Name="Initialize" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="listView" Hidden="true" />
+      <Method Name="listView_ColumnWidthChanged" Hidden="true" />
+      <Method Name="listView_DoubleClick" Hidden="true" />
+      <Method Name="listView_DrawColumnHeader" Hidden="true" />
+      <Method Name="listView_DrawItem" Hidden="true" />
+      <Method Name="listView_DrawSubItem" Hidden="true" />
+      <Method Name="listView_KeyDown" Hidden="true" />
+      <Method Name="listView_SelectedIndexChanged" Hidden="true" />
+      <Field Name="listViewContextMenuStrip" Hidden="true" />
+      <Method Name="listViewContextMenuStrip_Opening" Hidden="true" />
+      <Method Name="openInEditorToolStripItem_Click" Hidden="true" />
+      <Method Name="OpenSelectedIntersection" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="referenceContextMenuStrip" Hidden="true" />
+      <Field Name="referencePictureBox" Hidden="true" />
+      <Method Name="referencePictureBox_MouseDoubleClick" Hidden="true" />
+      <Method Name="SelectCloneInEditor" Hidden="true" />
+      <Property Name="SelectedCloneIntersectedItem" Hidden="true" />
+      <Method Name="UpdateContextMenu" Hidden="true" />
+      <Method Name="UpdateIntersection" Hidden="true" />
+      <Method Name="UpdatePropertyGrid" Hidden="true" />
+      <Method Name="UpdateReferenceCloneVisualization" Hidden="true" />
+      <Method Name="UpdateReferenceCloneVisualizationOffset" Hidden="true" />
+      <Method Name="UpdateReferenceHitTestInfos" Hidden="true" />
+      <Method Name="UpdateSelection" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Class Name="VisualCloneDetective.Package.CloneIntersectionsControl.SelectionTracker" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Tool Windows\CloneIntersectionsControl.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="VisualCloneDetective.Package.CloneIntersectionsControl.ReferenceHitTestInfo" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Tool Windows\CloneIntersectionsControl.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>OQAEAIoEYCAgUQCDEADhAEDKA4AFgQAAABRIA4gQAEA=</HashCode>
+      <FileName>Tool Windows\CloneIntersectionsControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VisualCloneDetective.Package.CloneIntersectionsToolWindow" Collapsed="true">
+    <Position X="6" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Tool Windows\CloneIntersectionsToolWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VisualCloneDetective.Package.CloneResultsControl">
+    <Position X="0.5" Y="3.5" Width="2.5" />
+    <Members>
+      <Method Name="CloneResultsControl" Hidden="true" />
+      <Method Name="CloseResults" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="documentContainer" Hidden="true" />
+      <Method Name="documentContainer_ActiveDocumentChanged" Hidden="true" />
+      <Method Name="documentContainer_MouseClick" Hidden="true" />
+      <Method Name="Initialize" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="noResultsBorderPanel" Hidden="true" />
+      <Method Name="UpdateResults" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAIEAAAAACAAgRAAAACIIAACAIAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Tool Windows\CloneResultsControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VisualCloneDetective.Package.CloneResultsToolWindow" Collapsed="true">
+    <Position X="1.5" Y="6.75" Width="1.5" />
+    <Members>
+      <Method Name="CloneResultsToolWindow" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Tool Windows\CloneResultsToolWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VisualCloneDetective.Package.ServicedToolWindowPane" Collapsed="true">
+    <Position X="3.5" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Tool Windows\ServicedToolWindowPane.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VisualCloneDetective.Package.ToolWindowUserControl">
+    <Position X="2.25" Y="0.5" Width="4.5" />
+    <Members>
+      <Field Name="_selectionContainer" Hidden="true" />
+      <Field Name="_serviceProvider" Hidden="true" />
+      <Property Name="CanEnableIme" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="Initialize" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Method Name="IServiceProviderHost.Initialize" Hidden="true" />
+      <Method Name="ProcessDialogChar" Hidden="true" />
+      <Method Name="ToolWindowUserControl" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAACAAAQAAAAGAAAIKAACAAAAAAAAAhAABAEA=</HashCode>
+      <FileName>Tool Windows\ToolWindowUserControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="VisualCloneDetective.Package.IServiceProviderHost">
+    <Position X="7.75" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tool Windows\IServiceProviderHost.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

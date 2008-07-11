@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{892850BA-6CB1-4C57-BE9E-1C1F30EBF407}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CloneDetective.CloneReporting</RootNamespace>
+    <AssemblyName>CloneDetective.CloneReporting</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clone Report\Clone.cs" />
+    <Compile Include="Clone Report\CloneClass.cs" />
+    <Compile Include="Clone Detective\CloneDetectiveResult.cs" />
+    <Compile Include="Clone Detective\CloneDetectiveResultEventArgs.cs" />
+    <Compile Include="Clone Detective\CloneDetectiveResultStatus.cs" />
+    <Compile Include="Clone Detective\CloneDetectiveRunner.cs" />
+    <Compile Include="Clone Intersection\CloneIntersectedItem.cs" />
+    <Compile Include="Clone Intersection\CloneIntersection.cs" />
+    <Compile Include="Clone Intersection\CloneIntersectionResult.cs" />
+    <Compile Include="Clone Report\CloneClassValue.cs" />
+    <Compile Include="Clone Report\CloneReport.cs" />
+    <Compile Include="Clone Report\CloneReportReader.cs" />
+    <Compile Include="Clone Report\CloneReportWriter.cs" />
+    <Compile Include="Clone Detective\ConqatFiles.cs" />
+    <Compile Include="ExceptionBuilder.cs" />
+    <Compile Include="Clone Detective\LogHelper.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Clone Report\Rating.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Clone Detective\SourceNode.cs" />
+    <Compile Include="Clone Report\SourceFile.cs" />
+    <Compile Include="Clone Detective\SourceTree.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="%28Diagrams%29\CloneDetective.cd" />
+    <None Include="%28Diagrams%29\CloneIntersection.cd" />
+    <None Include="%28Diagrams%29\CloneReport.cd" />
+    <None Include="%28Diagrams%29\SourceTree.cd" />
+    <None Include="Resources\CloneReport.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="CodeAnalysisDictionary.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
