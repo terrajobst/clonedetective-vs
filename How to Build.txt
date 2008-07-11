@@ -18,8 +18,9 @@ Prerequisites
 Building
 --------
 
-1. Run \Build\Build.bat (make sure the path to MSBuild is correct)
+1. Run Build.bat (make sure the path to MSBuild is correct)
 
-2. In \Output\Bin you will find the binaries (compiled in "Release" configuration).
-
-3. In \Output\Setup you will find the setup
+2. The folder Output will now contain the following subfolders:
+   - Bin. Contains the binaries (compiled in "Release" configuration).
+   - Setup. Contains the setup.
+   - Source. Contains the complete source code (without TFS bindings).
