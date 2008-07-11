@@ -3,26 +3,79 @@
 
 	<PropertyGroup>
 		<BuildDir>$(MSBuildProjectDirectory)\</BuildDir>
+		<CustomTasksDir>$(BuildDir)Custom Tasks\</CustomTasksDir>
 		<ProjectDir>$(BuildDir)..\</ProjectDir>
 		<SourceDir>$(ProjectDir)Source\</SourceDir>
 		<SetupDir>$(ProjectDir)Setup\</SetupDir>
+		<LibDir>$(ProjectDir)Lib\</LibDir>
 		<OutputDir>$(ProjectDir)Output\</OutputDir>
 		<GeneratedBinaries>$(OutputDir)Bin\</GeneratedBinaries>
 		<GeneratedSetup>$(OutputDir)Setup\</GeneratedSetup>
+		<GeneratedSourceCode>$(OutputDir)Source\</GeneratedSourceCode>
 		<Configuration>Release</Configuration>
 	</PropertyGroup>
 
+	<!-- External Tasks -->
+
+	<UsingTask AssemblyFile="$(CustomTasksDir)CloneDetective.Build.dll" TaskName="CloneDetective.Build.RemoveTfsBindings" />
+
+	<!-- Clean -->
+
+	<Target Name="Clean">
+		<ItemGroup>
+			<AllSolutionFiles Include="$(SourceDir)**\*.sln" />
+			<AllSolutionFiles Include="$(SetupDir)**\*.sln" />
+			<CompilationFiles Include="$(ProjectDir)**\bin\**\*.*" Exclude="$(LibDir)ConQAT\**\*.*" />
+			<CompilationFiles Include="$(ProjectDir)**\obj\**\*.*" Exclude="$(LibDir)ConQAT\**\*.*" />
+		</ItemGroup>
+		<MSBuild Projects="@(AllSolutionFiles)" Targets="Clean" />
+		<Delete Files="@(CompilationFiles)" />
+		<RemoveDir Directories="$(CustomTasksDir)" />
+		<RemoveDir Directories="$(OutputDir)" />
+	</Target>
+
+	<!-- Compile MSBuild tasks needed by the build process itself -->
+
+	<Target Name="CompileBuildTasks">
+		<ItemGroup>
+			<CustomBuildProjects Include="$(SourceDir)CloneDetective.Build\CloneDetective.Build.csproj" />
+		</ItemGroup>
+		<MSBuild Projects="@(CustomBuildProjects)" Targets="Build" Properties="Configuration=$(Configuration);OutDir=$(CustomTasksDir)" />
+	</Target>
+
+	<!-- Build -->
+
 	<Target Name="Build">
+		<CallTarget Targets="Clean" />
+		<CallTarget Targets="Compile" />
+		<CallTarget Targets="GenerateSetup" />
+		<CallTarget Targets="GenerateSourceCode" />
+	</Target>
+
+	<!-- Compile -->
+
+	<Target Name="Compile">
 		<MSBuild Projects="$(SourceDir)Clone Detective.sln" Targets ="Build"
 				 Properties="Configuration=$(Configuration);OutDir=$(GeneratedBinaries);RegisterOutputPackage=false" />
+	</Target>
 
+	<!-- Generate Setup -->
+
+	<Target Name="GenerateSetup" DependsOnTargets="Compile">
 		<MSBuild Projects="$(SetupDir)Setup.sln" Targets="Build"
 				 Properties="Configuration=$(Configuration);OutDir=$(GeneratedSetup);" />
 	</Target>
 
-	<Target Name="Clean">
-		<MSBuild Projects="$(SourceDir)Clone Detective.sln" Targets="Clean" />
-		<MSBuild Projects="$(SetupDir)Setup.sln" Targets="Clean" />
-		<RemoveDir Directories="$(OutputDir)" />
+	<!-- Generate Source Code -->
+
+	<Target Name="GenerateSourceCode" DependsOnTargets="CompileBuildTasks">
+		<ItemGroup>
+			<SourceCodeFiles Include="$(ProjectDir)**\*.*"
+							 Exclude="$(OutputDir)**\*.*;$(LibDir)**\*.*;$(TestResultsDir)**\*.*;$(CustomTasksDir)**\*.*;$(ProjectDir)**\bin\**\*.*;$(ProjectDir)**\obj\**\*.*;$(ProjectDir)**\*.scc;$(ProjectDir)**\*.vssscc;$(ProjectDir)**\*.vspscc;$(ProjectDir)**\*.suo;$(ProjectDir)**\*.user;$(ProjectDir)**\*.resharper" />
+		</ItemGroup>
+
+		<Copy SourceFiles="@(SourceCodeFiles)" DestinationFolder="$(GeneratedSourceCode)%(RecursiveDir)" />
+		<Exec Command="attrib -r -h /s" WorkingDirectory="$(GeneratedSourceCode)" />
+		<RemoveTfsBindings SolutionFiles="$(GeneratedSourceCode)Source\Clone Detective.sln" />
 	</Target>
 </Project>
