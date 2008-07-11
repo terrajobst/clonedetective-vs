@@ -55,7 +55,7 @@
 	<!-- Compile -->
 
 	<Target Name="Compile">
-		<MSBuild Projects="$(SourceDir)Clone Detective.sln" Targets ="Build"
+		<MSBuild Projects="$(SourceDir)Clone Detective.sln" Targets ="CloneDetective_Package"
 				 Properties="Configuration=$(Configuration);OutDir=$(GeneratedBinaries);RegisterOutputPackage=false" />
 	</Target>
 
