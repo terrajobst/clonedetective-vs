@@ -12,6 +12,9 @@ Prerequisites
 3. Windows Installer XML (WiX) toolset Version 3
    http://wix.sourceforge.net/
 
+4. ConQAT 1.3, download and copy to Lib\ConQAT
+   http://conqat.cs.tum.edu/index.php/Download
+
 Building
 --------
 
@@ -19,7 +22,4 @@ Building
 
 2. In \Output\Bin you will find the binaries (compiled in "Release" configuration).
 
-3. In \Output\Setup you will find two setups.
-   - VisualCloneDetective.msi    : The final setup expected to be used by regular users.
-   - VisualCloneDetectiveExp.mis : Installs clone detective in the Visual Studio experimental 
-     hive of the current user. Expected to be used by developers only.
+3. In \Output\Setup you will find the setup
