@@ -52,6 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Clone Report\Clone.cs" />
     <Compile Include="Clone Report\CloneClass.cs" />
     <Compile Include="Clone Detective\CloneDetectiveResult.cs" />

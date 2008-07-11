@@ -58,6 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Clone Markers\CloneBackgroundMarkerType.cs" />
     <Compile Include="Clone Markers\CloneMarginMarkerType.cs" />
     <Compile Include="ErrorHandler.cs" />
@@ -203,9 +206,9 @@
     <None Include="Resources\Stop 16x16.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CloneReporting\CloneReporting.csproj">
+    <ProjectReference Include="..\CloneDetective.CloneReporting\CloneDetective.CloneReporting.csproj">
       <Project>{892850BA-6CB1-4C57-BE9E-1C1F30EBF407}</Project>
-      <Name>CloneReporting</Name>
+      <Name>CloneDetective.CloneReporting</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
