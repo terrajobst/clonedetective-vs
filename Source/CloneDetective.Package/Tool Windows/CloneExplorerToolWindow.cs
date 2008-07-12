@@ -52,5 +52,10 @@ namespace CloneDetective.Package
 		{
 			get { return _control; }
 		}
+
+		protected override string HelpKeyword
+		{
+			get { return "CloneDetective.UI.CloneExplorer"; }
+		}
 	}
 }

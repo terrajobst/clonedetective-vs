@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+				xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+				xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
 
 	<xsl:output method="html" />
+	<xsl:namespace-alias stylesheet-prefix="MSHelp" result-prefix="MSHelp"/>
 
 	<xsl:variable name="iconPath">/icons/</xsl:variable>
 	<xsl:variable name="scriptPath">/scripts/</xsl:variable>
@@ -11,19 +13,19 @@
 
 	<xsl:template match="/topic">
 		<xsl:if test="not (head/toc/@exclude or head/toc/@exclude = true)">
-			<html xmlns:mshelp="http://msdn.microsoft.com/mshelp"
+			<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp"
 				  xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5"
 				  xmlns:xlink="http://www.w3.org/1999/xlink"
 				  xmlns:msxsl="urn:schemas-microsoft-com:xslt">
 				<head>
 					<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 					<meta name="save" content="history" />
-					
+
 					<title><xsl:value-of select="head/title"/></title>
 
 					<link rel="stylesheet" type="text/css" href="{$stylePath}presentation.css" />
 					<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
-					
+
 					<script type="text/javascript" src="{$scriptPath}EventUtilities.js"></script>
 					<script type="text/javascript" src="{$scriptPath}SplitScreen.js"></script>
 					<script type="text/javascript" src="{$scriptPath}Dropdown.js"></script>
@@ -31,7 +33,7 @@
 					<script type="text/javascript" src="{$scriptPath}script_feedBack.js"> </script>
 					<script type="text/javascript" src="{$scriptPath}CheckboxMenu.js"> </script>
 					<script type="text/javascript" src="{$scriptPath}CommonUtilities.js"> </script>
-					
+
 					<xsl:apply-templates select="head/keywords" />
 				</head>
 				<body>
@@ -124,14 +126,21 @@
 					<xsl:when test="contains($keyword,',')">
 						<xsl:variable name="parent" select="normalize-space(substring-before($keyword,','))" />
 						<xsl:variable name="child" select="concat($parent, ',', normalize-space(substring-after($keyword,',')))" />
-						<meta name="MS-HKWD" content="{$parent}" />
-						<meta name="MS-HKWD" content="{$child}" />
+						<MSHelp:Keyword Index="K" Term="{$parent}" />
+						<MSHelp:Keyword Index="K" Term="{$child}" />
 					</xsl:when>
 					<xsl:otherwise>
-						<meta name="MS-HKWD" content="{$keyword}" />
+						<MSHelp:Keyword Index="K" Term="{$keyword}" />
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:for-each>
+			<xsl:for-each select="f1keyword">
+				<xsl:variable name="keyword" select="@term" />
+				<MSHelp:Keyword Index="F" Term="{$keyword}" />
+			</xsl:for-each>
+			<MSHelp:Attr Name="DocSet" Value="Clone Detective" />
+			<MSHelp:Attr Name="TopicType" Value="kbRef" />
+			<MSHelp:Attr Name="Locale" Value="en-us" />
 		</xml>
 	</xsl:template>
 

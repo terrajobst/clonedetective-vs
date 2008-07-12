@@ -14,6 +14,8 @@ namespace CloneDetective.Package
 		{
 		}
 
+		protected abstract string HelpKeyword { get; }
+
 		private IServiceProvider GetServiceProvider()
 		{
 			object serviceProvider;
@@ -28,8 +30,21 @@ namespace CloneDetective.Package
 
 			IServiceProvider oleServiceProvider = GetServiceProvider();
 			System.IServiceProvider serviceProvider = new ServiceProvider(oleServiceProvider);
-			IServiceProviderHost serviceProviderHost = (IServiceProviderHost) Window;
+			IServiceProviderHost serviceProviderHost = (IServiceProviderHost)Window;
 			serviceProviderHost.Initialize(serviceProvider);
+
+			SetupF1Help();
+		}
+
+		private void SetupF1Help()
+		{
+			// Get the window frame's user context
+			object userContextObject;
+			ErrorHandler.ThrowOnFailure(((IVsWindowFrame)Frame).GetProperty((int)__VSFPROPID.VSFPROPID_UserContext, out userContextObject));
+
+			// Add an F1 keyword identifying the help topic for this toolwindow
+			var userContext = (IVsUserContext)userContextObject;
+			ErrorHandler.ThrowOnFailure(userContext.AddAttribute(VSUSERCONTEXTATTRIBUTEUSAGE.VSUC_Usage_LookupF1, "Keyword", HelpKeyword));
 		}
 	}
 }
