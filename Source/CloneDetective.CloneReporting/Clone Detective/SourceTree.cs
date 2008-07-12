@@ -34,7 +34,7 @@ namespace CloneDetective.CloneReporting
 		}
 
 		/// <summary>
-		/// Creates a <see cref="SourceTree"/> from the given <see cref="cloneReport"/> and solution path.
+		/// Creates a <see cref="SourceTree"/> from the given <paramref name="cloneReport"/> and solution path.
 		/// </summary>
 		/// <param name="cloneReport">The clone report to create a source tree from.</param>
 		/// <param name="solutionPath">The path to the solution of the clone report.</param>

@@ -13,7 +13,6 @@ namespace CloneDetective.CloneReporting
 		private int _id;
 		private int _normalizedLength;
 		private string _fingerprint;
-		private Rating _rating;
 		private List<CloneClassValue> _values = new List<CloneClassValue>();
 		private List<Clone> _clones = new List<Clone>();
 
@@ -52,16 +51,6 @@ namespace CloneDetective.CloneReporting
 		{
 			get { return _fingerprint; }
 			set { _fingerprint = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the <see cref="CloneReporting.Rating"/> of this
-		/// clone class.
-		/// </summary>
-		public Rating Rating
-		{
-			get { return _rating; }
-			set { _rating = value; }
 		}
 
 		/// <summary>

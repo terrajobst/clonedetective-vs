@@ -11,6 +11,13 @@ namespace CloneDetective.CloneReporting
 		private CloneDetectiveResult _result;
 		private Exception _exception;
 
+		/// <summary>
+		/// Creates a new instance of <see cref="CloneDetectiveResultEventArgs"/> by the given
+		/// <see cref="CloneDetectiveResult"/> and <see cref="Exception"/>.
+		/// </summary>
+		/// <param name="result">Contains the result returned by Clone Detective.</param>
+		/// <param name="exception">If an error occured running Clone Detective
+		/// <paramref name="exception"/> refers to the <see cref="System.Exception"/>.</param>
 		public CloneDetectiveResultEventArgs(CloneDetectiveResult result, Exception exception)
 		{
 			_result = result;
