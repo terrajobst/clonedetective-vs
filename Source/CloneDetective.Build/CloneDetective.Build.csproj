@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Build.Framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Build.Tasks" />
     <Reference Include="Microsoft.Build.Utilities" />
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -48,6 +49,7 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="ApplyXslTransform.cs" />
     <Compile Include="RemoveTfsBindings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
