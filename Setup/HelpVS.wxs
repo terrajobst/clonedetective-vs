@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?include Product.wxi ?>
+	<Fragment>
+		<DirectoryRef Id="Help">
+			<Merge Id="HTML_Help_Registration" DiskId="1" Language="1033" SourceFile="$(var.LibFolder)HTML_Help_Registration__RTL_X86_---.msm" />
+			<Merge Id="VSIPCC_Collection_Files_RTL" DiskId="1" Language="1033" SourceFile="$(var.LibFolder)VSIPCC_Collection_Files_RTL_---_---.msm" />
+			<Component Id="CloneDetectiveVS.hxs" Guid="{E5382D56-3D33-452B-9439-5595B39FAF45}">
+				<File Id="CloneDetectiveVS.hxs" Name="CloneDetectiveVS.hxs" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS.hxs" />
+			</Component>
+			<Component Id="CloneDetectiveVS.hxc" Guid="{FD584357-1C71-43A3-800F-DEF71E9B2DCC}">
+				<File Id="CloneDetectiveVS.hxc" Name="CloneDetectiveVS.hxc" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS.hxc" />
+			</Component>
+			<Component Id="CloneDetectiveVS.hxt" Guid="{DCA0211C-CFBF-44BB-BFDA-253F162C8046}">
+				<File Id="CloneDetectiveVS.hxt" Name="CloneDetectiveVS.hxt" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS.hxt" />
+			</Component>
+			<Component Id="CloneDetectiveVS_a.hxk" Guid="{60378CFB-D2FD-4E72-931E-10880265250A}">
+				<File Id="CloneDetectiveVS_a.hxk" Name="CloneDetectiveVS_a.hxk" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS_a.hxk" />
+			</Component>
+			<Component Id="CloneDetectiveVS_b.hxk" Guid="{C01F94FC-DC5D-4F03-967F-F9038F67A845}">
+				<File Id="CloneDetectiveVS_b.hxk" Name="CloneDetectiveVS_b.hxk" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS_b.hxk" />
+			</Component>
+			<Component Id="CloneDetectiveVS_f.hxk" Guid="{EC03B95C-791E-44F7-85DB-A4F5DDF80DE4}">
+				<File Id="CloneDetectiveVS_f.hxk" Name="CloneDetectiveVS_f.hxk" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS_f.hxk" />
+			</Component>
+			<Component Id="CloneDetectiveVS_k.hxk" Guid="{DDBCE1EE-FDB4-4457-B8FD-448FD054D79B}">
+				<File Id="CloneDetectiveVS_k.hxk" Name="CloneDetectiveVS_k.hxk" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS_k.hxk" />
+			</Component>
+			<Component Id="CloneDetectiveVS_NamedURLIndex.hxk" Guid="{987E924F-666C-4C50-ABC1-9828BBA37CCA}">
+				<File Id="CloneDetectiveVS_NamedURLIndex.hxk" Name="CloneDetectiveVS_NamedURLIndex.hxk" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS_NamedURLIndex.hxk" />
+			</Component>
+			<Component Id="CloneDetectiveVS_s.hxk" Guid="{365EC2D7-4DD6-48E4-8EFC-BB846211E27A}">
+				<File Id="CloneDetectiveVS_s.hxk" Name="CloneDetectiveVS_s.hxk" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS_s.hxk" />
+			</Component>
+		</DirectoryRef>
+
+		<Feature Id="F__HelpVS" Level="1" AllowAdvertise="no"
+				 Title="Help (VS2008)"
+				 Description="Integrates Clone Detective help into the Visual Studio 2008 help system.">
+			<MergeRef Id="HTML_Help_Registration"/>
+			<MergeRef Id="VSIPCC_Collection_Files_RTL"/>
+			<ComponentRef Id="CloneDetectiveVS.hxs"/>
+			<ComponentRef Id="CloneDetectiveVS.hxc"/>
+			<ComponentRef Id="CloneDetectiveVS.hxt"/>
+			<ComponentRef Id="CloneDetectiveVS_a.hxk"/>
+			<ComponentRef Id="CloneDetectiveVS_b.hxk"/>
+			<ComponentRef Id="CloneDetectiveVS_f.hxk"/>
+			<ComponentRef Id="CloneDetectiveVS_k.hxk"/>
+			<ComponentRef Id="CloneDetectiveVS_NamedURLIndex.hxk"/>
+			<ComponentRef Id="CloneDetectiveVS_s.hxk"/>
+		</Feature>
+
+		<CustomTable Id="HelpFilter">
+			<Column Id="FilterKey" PrimaryKey="yes" Type="string" Width="72" Category="Identifier" Description="Primary Key for HelpFilter (required)." Modularize="Column" />
+			<Column Id="Description" Type="string" Width="0" Localizable="yes" Category="Text" Description="Friendly name for Filter (required)." />
+			<Column Id="QueryString" Type="string" Width="0" Nullable="yes" Category="Text" Description="Query String for Help Filter (optional)." />
+		</CustomTable>
+
+		<CustomTable Id="HelpFilterToNamespace">
+			<Column Id="HelpFilter_" PrimaryKey="yes" Type="string" Width="72" KeyTable="HelpFilter" KeyColumn="1" Category="Identifier" Description="Foreign key into HelpFilter table (required)." Modularize="Column" />
+			<Column Id="HelpNamespace_" PrimaryKey="yes" Type="string" Width="72" KeyTable="HelpNamespace" KeyColumn="1" Category="Identifier" Description="Foreign key into HelpNamespace table (required)." Modularize="Column" />
+		</CustomTable>
+
+		<CustomTable Id="HelpFile">
+			<Column Id="HelpFileKey" PrimaryKey="yes" Type="string" Width="72" Category="Identifier" Description="Primary Key for HelpFile Table (required)." Modularize="Column" />
+			<Column Id="HelpFileName" Type="string" Width="72" Category="Text" Description="Internal Microsoft Help ID for this HelpFile (required)." />
+			<Column Id="LangID" Type="int" Width="2" Nullable="yes" Category="Language" Description="Language ID for content file (optional)." />
+			<Column Id="File_HxS" Type="string" Width="72" KeyTable="File" KeyColumn="1" Category="Identifier" Description="Key for HxS (Title) file (required)." Modularize="Column" />
+			<Column Id="File_HxI" Type="string" Width="72" Nullable="yes" KeyTable="File" KeyColumn="1" Category="Identifier" Description="Key for HxI (Index) file (optional)." Modularize="Column" />
+			<Column Id="File_HxQ" Type="string" Width="72" Nullable="yes" KeyTable="File" KeyColumn="1" Category="Identifier" Description="Key for HxQ (Query) file (optional)." Modularize="Column" />
+			<Column Id="File_HxR" Type="string" Width="72" Nullable="yes" KeyTable="File" KeyColumn="1" Category="Identifier" Description="Key for HxR (Attributes) file (optional)." Modularize="Column" />
+			<Column Id="File_Samples" Type="string" Width="72" Nullable="yes" KeyTable="File" KeyColumn="1" Category="Identifier" Description="Key for a file that is in the 'root' of the samples directory for this HelpFile (optional)." Modularize="Column" />
+			<Row>
+				<Data Column="HelpFileKey">CloneDetectiveVS</Data>
+				<Data Column="HelpFileName">CloneDetectiveVS</Data>
+				<Data Column="LangID">1033</Data>
+				<Data Column="File_HxS">CloneDetectiveVS.hxs</Data>
+				<Data Column="File_HxI" />
+				<Data Column="File_HxQ" />
+				<Data Column="File_HxR" />
+				<Data Column="File_Samples" />
+			</Row>
+			<!-- TODO: Add additional help files here. -->
+		</CustomTable>
+
+		<CustomTable Id="HelpNamespace">
+			<Column Id="NamespaceKey" PrimaryKey="yes" Type="string" Width="72" Category="Identifier" Description="Primary Key for HelpNamespace (required)." Modularize="Column" />
+			<Column Id="NamespaceName" Type="string" Width="0" Category="Text" Description="Internal Microsoft Help ID for this Namespace (required)." />
+			<Column Id="File_Collection" Type="string" Width="72" KeyTable="File" KeyColumn="1" Category="Text" Description="Key for HxC (Collection) file (required)." />
+			<Column Id="Description" Type="string" Width="0" Nullable="yes" Localizable="yes" Category="Text" Description="Friendly name for Namespace (optional)." />
+			<Row>
+				<Data Column="NamespaceKey">CloneDetectiveVS_en</Data>
+				<Data Column="NamespaceName">CloneDetectiveVS.en</Data>
+				<Data Column="File_Collection">CloneDetectiveVS.hxc</Data>
+				<Data Column="Description">CloneDetectiveVS</Data>
+			</Row>
+		</CustomTable>
+
+		<CustomTable Id="HelpFileToNamespace">
+			<Column Id="HelpFile_" PrimaryKey="yes" Type="string" Width="72" KeyTable="HelpFile" KeyColumn="1" Category="Identifier" Description="Foreign key into HelpFile table (required)." Modularize="Column" />
+			<Column Id="HelpNamespace_" PrimaryKey="yes" Type="string" Width="72" KeyTable="HelpNamespace" KeyColumn="1" Category="Identifier" Description="Foreign key into HelpNamespace table (required)." Modularize="Column" />
+			<Row>
+				<Data Column="HelpFile_">CloneDetectiveVS</Data>
+				<Data Column="HelpNamespace_">CloneDetectiveVS_en</Data>
+			</Row>
+			<!-- TODO: Add additional help files here. -->
+		</CustomTable>
+
+		<CustomTable Id="HelpPlugin">
+			<Column Id="HelpNamespace_" PrimaryKey="yes" Type="string" Width="72" KeyTable="HelpNamespace" KeyColumn="1" Category="Identifier" Description="Forein Key into HelpNamespace table for the child namespace that will be plugged into the parent namespace (required)." Modularize="Column" />
+			<Column Id="HelpNamespace_Parent" PrimaryKey="yes" Type="string" Width="72" Category="Identifier" Description="Forein Key into HelpNamespace table for the parent namespace into which the child will be inserted (required)." Modularize="Column" />
+			<Column Id="File_HxT" Type="string" Width="72" Nullable="yes" KeyTable="File" KeyColumn="1" Category="Identifier" Description="Key for HxT  file of child namespace (optional)." Modularize="Column" />
+			<Column Id="File_HxA" Type="string" Width="72" Nullable="yes" KeyTable="File" KeyColumn="1" Category="Identifier" Description="Key for HxA (Attributes) file of child namespace (optional)." Modularize="Column" />
+			<Column Id="File_ParentHxT" Type="string" Width="72" Nullable="yes" KeyTable="File" KeyColumn="1" Category="Identifier" Description="Key for HxT  file of parent namespace that now includes the new child namespace (optional)." Modularize="Column" />
+			<Row>
+				<Data Column="HelpNamespace_">CloneDetectiveVS_en</Data>
+				<Data Column="HelpNamespace_Parent">MS.VSIPCC.v90</Data>
+				<Data Column="File_HxT">CloneDetectiveVS.hxt</Data>
+				<Data Column="File_HxA" />
+				<Data Column="File_ParentHxT">FL_vsipcc_hxt_86880_86880_cn_ln.3643236F_FC70_11D3_A536_0090278A1BB8.48273237_1399_45CF_801C_338E1AB00E90</Data>
+			</Row>
+		</CustomTable>
+	</Fragment>
+</Wix>

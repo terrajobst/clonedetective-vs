@@ -7,29 +7,25 @@
 	<!-- Files and Directories -->
 	
 	<Fragment>
-		<Directory Id="TARGETDIR" Name="SourceDir">
-			<Directory Id="ProgramFilesFolder" Name="PFiles">
-				<Directory Id="INSTALLDIR" Name="$(var.ProductName)">
-					<Component Id="C__Package" Guid="D9FC1FB8-4C77-43b7-B376-CDCE59A06A33">
-						<File Id="F__Package" Name="CloneDetective.Package.dll" DiskId="1" Source="..\Output\Bin\CloneDetective.Package.dll" />
-					</Component>
-					<Component Id="C__CloneReportModel" Guid="B98D4BDA-D39C-4f4f-B1E3-FD33028D847B">
-						<File Id="F__CloneReportModel" Name="CloneDetective.CloneReporting.dll" DiskId="1" Source="..\Output\Bin\CloneDetective.CloneReporting.dll" />
-					</Component>
-					<Component Id="C__SandDock" Guid="0315C47A-347E-464f-AB03-45F365504D5A">
-						<File Id="F__SandDock" Name="SandDock.dll" DiskId="1" Source="..\Output\Bin\SandDock.dll" />
-					</Component>
-					<Component Id="C__DefaultCQA" Guid="9F610268-E2B2-4e3d-B404-54EC665DA4CE">
-						<File Id="F__DefaultCQA" Name="DefaultCloneDetection.cqa" DiskId="1" Source="..\Output\Bin\DefaultCloneDetection.cqa" />
-					</Component>
-					<Component Id="C__VsConQatPath" Guid="{79ED39C9-59A5-4a3f-9928-2017C3DE2EF6}">
-						<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\$(var.ProductName)">
-							<RegistryValue Name="ConqatFileName" Value="[CONQATDIR]bin\ConQAT.bat" Type="string" />
-						</RegistryKey>
-					</Component>
-				</Directory>
-			</Directory>
-		</Directory>
+		<DirectoryRef Id="INSTALLDIR">
+			<Component Id="C__Package" Guid="D9FC1FB8-4C77-43b7-B376-CDCE59A06A33">
+				<File Id="F__Package" Name="CloneDetective.Package.dll" DiskId="1" Source="..\Output\Bin\CloneDetective.Package.dll" />
+			</Component>
+			<Component Id="C__CloneReportModel" Guid="B98D4BDA-D39C-4f4f-B1E3-FD33028D847B">
+				<File Id="F__CloneReportModel" Name="CloneDetective.CloneReporting.dll" DiskId="1" Source="..\Output\Bin\CloneDetective.CloneReporting.dll" />
+			</Component>
+			<Component Id="C__SandDock" Guid="0315C47A-347E-464f-AB03-45F365504D5A">
+				<File Id="F__SandDock" Name="SandDock.dll" DiskId="1" Source="..\Output\Bin\SandDock.dll" />
+			</Component>
+			<Component Id="C__DefaultCQA" Guid="9F610268-E2B2-4e3d-B404-54EC665DA4CE">
+				<File Id="F__DefaultCQA" Name="DefaultCloneDetection.cqa" DiskId="1" Source="..\Output\Bin\DefaultCloneDetection.cqa" />
+			</Component>
+			<Component Id="C__VsConQatPath" Guid="{79ED39C9-59A5-4a3f-9928-2017C3DE2EF6}">
+				<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\$(var.ProductName)">
+					<RegistryValue Name="ConqatFileName" Value="[CONQATDIR]bin\ConQAT.bat" Type="string" />
+				</RegistryKey>
+			</Component>
+		</DirectoryRef>
 	</Fragment>
 	
 	<!-- Registry -->

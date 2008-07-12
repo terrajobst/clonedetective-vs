@@ -56,16 +56,30 @@
 
 		<Icon Id="ProductIcon" SourceFile="Resources\Product.ico" />
 
+		<!-- Files and Directories -->
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder" Name="PFiles">
+				<Directory Id="INSTALLDIR" Name="$(var.ProductName)">
+					<Directory Id="Help" Name="Help" />
+					<Directory Id="CONQATDIR" Name="ConQAT" />
+				</Directory>
+			</Directory>
+		</Directory>
+
 		<!-- Features -->
 		
 		<FeatureRef Id="F__VSPackage" />
 		<FeatureRef Id="F__ConQAT" />
+		<FeatureRef Id="F__HelpVS" />
+		<FeatureRef Id="F__HelpCHM" />
 
 		<!-- Install Sequences -->
 
 		<InstallExecuteSequence>
 			<FindRelatedProducts Before="LaunchConditions" />
 			<RemoveExistingProducts After="InstallValidate" />
+			<InstallFinalize Sequence="7800" />
 		</InstallExecuteSequence>
 
 		<InstallUISequence>

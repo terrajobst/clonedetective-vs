@@ -17,11 +17,13 @@
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
     <DefineConstants>Debug</DefineConstants>
+    <SuppressIces>ICE03;ICE82</SuppressIces>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
     <SuppressPdbOutput>True</SuppressPdbOutput>
+    <SuppressIces>ICE03;ICE82</SuppressIces>
   </PropertyGroup>
   <Import Project="$(WixTargetsPath)" />
   <!--
@@ -41,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConQAT.wxs" />
+    <Compile Include="HelpCHM.wxs" />
+    <Compile Include="HelpVS.wxs" />
     <Compile Include="Package.wxs" />
     <Compile Include="Product.wxs" />
   </ItemGroup>
