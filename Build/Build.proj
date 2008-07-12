@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
 
+	<!-- External Tools -->
+
+	<PropertyGroup>
+		<SandcastleHFBPath>C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\</SandcastleHFBPath>
+	</PropertyGroup>
+
+	<!-- Build Settings -->
+
 	<PropertyGroup>
 		<BuildDir>$(MSBuildProjectDirectory)\</BuildDir>
 		<CustomTasksDir>$(BuildDir)Custom Tasks\</CustomTasksDir>
@@ -8,15 +16,21 @@
 		<SourceDir>$(ProjectDir)Source\</SourceDir>
 		<SetupDir>$(ProjectDir)Setup\</SetupDir>
 		<LibDir>$(ProjectDir)Lib\</LibDir>
+		<HelpDir>$(ProjectDir)Help\</HelpDir>
 		<OutputDir>$(ProjectDir)Output\</OutputDir>
 		<GeneratedBinaries>$(OutputDir)Bin\</GeneratedBinaries>
 		<GeneratedSetup>$(OutputDir)Setup\</GeneratedSetup>
 		<GeneratedSourceCode>$(OutputDir)Source\</GeneratedSourceCode>
+		<GeneratedHelpTopics>$(OutputDir)Additional Content\</GeneratedHelpTopics>
+		<GeneratedHtmlHelp1>$(OutputDir)Help CHM\</GeneratedHtmlHelp1>
+		<GeneratedHtmlHelp2>$(OutputDir)Help VS\</GeneratedHtmlHelp2>
 		<Configuration>Release</Configuration>
+		<TopicTransformationFile>$(HelpDir)TopicTransform.xslt</TopicTransformationFile>
 	</PropertyGroup>
 
 	<!-- External Tasks -->
 
+	<UsingTask AssemblyFile="$(CustomTasksDir)CloneDetective.Build.dll" TaskName="CloneDetective.Build.ApplyXslTransform" />
 	<UsingTask AssemblyFile="$(CustomTasksDir)CloneDetective.Build.dll" TaskName="CloneDetective.Build.RemoveTfsBindings" />
 
 	<!-- Clean -->
@@ -48,6 +62,7 @@
 	<Target Name="Build">
 		<CallTarget Targets="Clean" />
 		<CallTarget Targets="Compile" />
+		<CallTarget Targets="GenerateHelp" />
 		<CallTarget Targets="GenerateSetup" />
 		<CallTarget Targets="GenerateSourceCode" />
 	</Target>
@@ -59,9 +74,64 @@
 				 Properties="Configuration=$(Configuration);OutDir=$(GeneratedBinaries);RegisterOutputPackage=false" />
 	</Target>
 
+	<!-- Generate Help -->
+
+	<Target Name="GenerateHelpContent" DependsOnTargets="CompileBuildTasks">
+
+		<ItemGroup>
+			<HelpTopicFiles Include="$(HelpDir)Additional Content\**\*.xml" />
+			<HelpContentFiles Include="$(HelpDir)Additional Content\**\*.*" Exclude="$(HelpDir)Additional Content\**\*.xml"/>
+		</ItemGroup>
+
+		<CreateItem
+			Include="$(GeneratedHelpTopics)%(HelpTopicFiles.RecursiveDir)%(HelpTopicFiles.Filename)%(HelpTopicFiles.Extension)">
+			<Output
+				TaskParameter="Include"
+				ItemName="IntermediateHelpTopicFiles"/>
+		</CreateItem>
+
+		<CreateItem
+			Include="%(IntermediateHelpTopicFiles.RootDir)%(IntermediateHelpTopicFiles.Directory)%(IntermediateHelpTopicFiles.Filename).html">
+			<Output
+				TaskParameter="Include"
+				ItemName="GeneratedHelpTopicFiles"/>
+		</CreateItem>
+
+		<Copy SourceFiles="@(HelpTopicFiles)" DestinationFiles="@(IntermediateHelpTopicFiles)" />
+		<Copy SourceFiles="@(HelpContentFiles)" DestinationFolder="$(GeneratedHelpTopics)\%(RecursiveDir)"></Copy>
+
+		<ApplyXslTransform XslFile="$(TopicTransformationFile)"
+						   SourceFiles="@(IntermediateHelpTopicFiles)"
+						   DestinationFiles="@(GeneratedHelpTopicFiles)" />
+
+		<Delete Files="@(IntermediateHelpTopicFiles)" />
+	</Target>
+
+	<Target Name="GenerateHelp" DependsOnTargets="Compile;GenerateHelpContent">
+		<Error Text="Documentation can only be generated for release builds." Condition="'$(Configuration)' != 'Release'" />
+
+		<ItemGroup>
+			<HtmlHelp2TemplateFiles Include="$(HelpDir)HtmlHelp2 Templates\*.*" />
+		</ItemGroup>
+
+		<!-- Build HTML Help 1 -->
+		<MakeDir Directories="$(GeneratedHtmlHelp1)" Condition="!Exists('$(GeneratedHtmlHelp1)')" />
+		<Exec Command="&quot;$(SandcastleHFBPath)SandcastleBuilderConsole.exe&quot; &quot;$(HelpDir)HtmlHelp1.shfb&quot;" />
+		<Delete Files="$(GeneratedHtmlHelp1)LastBuild.log" />
+
+		<!-- Build HTML Help 2 -->
+		<MakeDir Directories="$(GeneratedHtmlHelp2)" Condition="!Exists('$(GeneratedHtmlHelp2)')" />
+		<Exec Command="&quot;$(SandcastleHFBPath)SandcastleBuilderConsole.exe&quot; &quot;$(HelpDir)HtmlHelp2.shfb&quot;" />
+		<Delete Files="$(GeneratedHtmlHelp2)LastBuild.log" />
+		<Copy SourceFiles="@(HtmlHelp2TemplateFiles)" DestinationFolder="$(GeneratedHtmlHelp2)" />
+
+		<!-- Remove temporary additional content files -->
+		<RemoveDir Directories="$(GeneratedHelpTopics)" />
+	</Target>
+
 	<!-- Generate Setup -->
 
-	<Target Name="GenerateSetup" DependsOnTargets="Compile">
+	<Target Name="GenerateSetup" DependsOnTargets="Compile;GenerateHelp">
 		<MSBuild Projects="$(SetupDir)Setup.sln" Targets="Build"
 				 Properties="Configuration=$(Configuration);OutDir=$(GeneratedSetup);" />
 	</Target>

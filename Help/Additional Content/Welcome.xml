@@ -1,0 +1,20 @@
+<topic>
+	<head>
+		<title>Welcome to Clone Detective for Visual Studio!</title>
+		<toc index="1" default="true"/>
+	</head>
+	<body>
+		<summary>
+			<p>
+				Clone Detective is a Visual Studio integration that allows you to analyze C# projects
+				for source code that is duplicated somewhere else. Having duplicates can easily lead
+				to inconsistencies and often is an indicator for poorly factored code. Clone Detective
+				uses <a href="http://conqat.cs.tum.edu" target="_blank">ConQAT</a> to perform the clone
+				detection.
+			</p>
+			<p>
+				<img src="Welcome.png" />
+			</p>
+		</summary>
+	</body>
+</topic>

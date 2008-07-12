@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE HelpTOC>
+<HelpTOC DTDVersion="1.0" PluginStyle="Flat">
+	<HelpTOCNode NodeType="Regular" Title="Clone Detective" Url="/CloneDetectiveVS/Welcome.html">
+		<HelpTOCNode Id="CloneDetectiveVS" NodeType="TOC" Url="CloneDetectiveVS" />
+	</HelpTOCNode>
+</HelpTOC>
