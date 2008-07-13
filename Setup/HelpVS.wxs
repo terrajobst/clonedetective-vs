@@ -54,11 +54,20 @@
 			<Column Id="FilterKey" PrimaryKey="yes" Type="string" Width="72" Category="Identifier" Description="Primary Key for HelpFilter (required)." Modularize="Column" />
 			<Column Id="Description" Type="string" Width="0" Localizable="yes" Category="Text" Description="Friendly name for Filter (required)." />
 			<Column Id="QueryString" Type="string" Width="0" Nullable="yes" Category="Text" Description="Query String for Help Filter (optional)." />
+			<Row>
+				<Data Column="FilterKey">CloneDetectiveVS</Data>
+				<Data Column="Description">Clone Detective</Data>
+				<Data Column="QueryString">"DocSet" = "Clone Detective"</Data>
+			</Row>
 		</CustomTable>
 
 		<CustomTable Id="HelpFilterToNamespace">
 			<Column Id="HelpFilter_" PrimaryKey="yes" Type="string" Width="72" KeyTable="HelpFilter" KeyColumn="1" Category="Identifier" Description="Foreign key into HelpFilter table (required)." Modularize="Column" />
 			<Column Id="HelpNamespace_" PrimaryKey="yes" Type="string" Width="72" KeyTable="HelpNamespace" KeyColumn="1" Category="Identifier" Description="Foreign key into HelpNamespace table (required)." Modularize="Column" />
+			<Row>
+				<Data Column="HelpFilter_">CloneDetectiveVS</Data>
+				<Data Column="HelpNamespace_">CloneDetectiveVS_en</Data>
+			</Row>
 		</CustomTable>
 
 		<CustomTable Id="HelpFile">
