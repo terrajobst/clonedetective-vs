@@ -1,7 +1,7 @@
 <topic>
 	<head>
 		<title>Clone Detective Settings</title>
-		<toc index="4"/>
+		<toc index="5"/>
 		<keywords>
 			<f1keyword term="VS.ToolsOptionsPages.Clone_Detective.Settings" />
 		</keywords>
@@ -14,7 +14,7 @@
 			</p>
 			<p>
 				To access this dialog box, on the <b>Tools</b> menu, click <b>Options</b>,
-				and click <b>Clone Detective</b>.
+				and then click <b>Clone Detective</b>.
 			</p>
 		</summary>
 		<section title="Settings">
