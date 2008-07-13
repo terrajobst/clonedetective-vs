@@ -3,7 +3,7 @@
         <assembly assemblyPath="..\Output\Bin\CloneDetective.CloneReporting.dll" xmlCommentsPath="..\Output\Bin\CloneDetective.CloneReporting.xml" commentsOnly="False" />
     </assemblies>
     <namespaceSummaries>
-        <namespaceSummaryItem name="" isDocumented="True">Clone Detective for Visual Studio also includes a class library that allows you to access the visualized data programmatically. The reference to this API is given in this section.</namespaceSummaryItem>
+        <namespaceSummaryItem name="" isDocumented="False" />
         <namespaceSummaryItem name="CloneDetective.CloneReporting" isDocumented="True">Contains types to read and write clone reports.</namespaceSummaryItem>
     </namespaceSummaries>
     <additionalContent contentSiteMap="" topicFileTransform="">
