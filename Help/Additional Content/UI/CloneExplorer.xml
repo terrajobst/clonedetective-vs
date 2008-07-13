@@ -5,12 +5,224 @@
 		<keywords>
 			<f1keyword term="CloneDetective.UI.CloneExplorer" />
 		</keywords>
+		<links>
+			<link href="CloneIntersections.html">Clone Intersections</link>
+			<link href="CloneResults.html">Clone Results</link>
+		</links>
 	</head>
 	<body>
 		<summary>
 			<p>
-				The Clone Explorer tool window.
+				Clone Explorer provides you with an organized view of your files as well as rolled-up clone
+				metrics such as <b>Clone Percentage</b>. A toolbar associated with this window offers commands
+				to start and stop Clone Detective as well as importing a Clone Detective result file.
+			</p>
+			<p>
+				To access Clone Explorer, select <b>Clone Explorer</b> on the <b>View</b> - <b>Other Windows</b> menu.
 			</p>
 		</summary>
+		
+		<section title="Toolbar Icons">
+			<p>
+				Clone Explorer has a toolbar that offers several commands:
+			</p>
+			<img src="CloneExplorerToolbar.png" />
+			<table>
+				<tr>
+					<td>Icon</td>
+					<td>Name</td>
+					<td>Description</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="Run.png" />
+					</td>
+					<td>
+						Run Clone Detective
+					</td>
+					<td>
+						Starts clone detection.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="Stop.png" />
+					</td>
+					<td>
+						Stop Clone Detective
+					</td>
+					<td>
+						Stops clone detection.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="Import.png" />
+					</td>
+					<td>
+						Import Clone Detective Results
+					</td>
+					<td>
+						Imports a clone detection result file produced by another run, e.g.
+						a nightly build.
+					</td>
+				</tr>
+			</table>
+		</section>
+
+		<section title="Rollup Metrics">
+			<p>
+				Clone Explorer offers several different metrics that can be shown for files. They are automatically
+				recursively rolled up to their parent directories. The following table lists all metrics:
+			</p>
+			<table>
+				<tr>
+					<th>Metric</th>
+					<th>Description</th>
+					<th>Rollup Action</th>
+				</tr>
+				<tr>
+					<td>
+						<b>None</b>
+					</td>
+					<td>
+						This option disables the display of metrics.
+					</td>
+					<td>
+						None
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>Number of Clones</b>
+					</td>
+					<td>
+						This metric represents the absolute number of clones found in the given
+						file or directory.
+					</td>
+					<td>
+						This metric is rolled up by summing the number of clones.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>Number of Clone Classes</b>
+					</td>
+					<td>
+						This metric represents the absolute number of clone classes found in the
+						given file or directory.
+					</td>
+					<td>
+						This metric is rolled up by determining the number of elements contained
+						in the union of all clone classes.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>Number of Cloned Lines</b>
+					</td>
+					<td>
+						This metric represents the absolute number of lines that are contained in
+						at least one clone. In other words, the number of lines that are duplicated
+						somewhere else.
+					</td>
+					<td>
+						This metric is rolled up by summing the number of cloned lines.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>Number of Lines</b>
+					</td>
+					<td>
+						This metric represents the absolute number of lines contained in the given file
+						or directory. Also called Lines of Code (LoC).
+					</td>
+					<td>
+						This metric is rolled up by summing the number of lines.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>Clone Percentage</b>
+					</td>
+					<td>
+						This metric represents the percentage of code that is duplicated somewhere
+						else. It is calcuated by this formula:<br/>
+						<c xml:space="preserve">[Number of Cloned Lines] / [Number of Lines]</c>
+					</td>
+					<td>
+						This metric is rolled up by this formula:<br/>
+						<c xml:space="preserve">[Rolled-up Number of Cloned Lines] / [Rolled-up Number of Lines]</c>
+					</td>
+				</tr>
+			</table>
+			<note>
+				<p>
+					Files and directories for which no value is displayed have a value of zero.
+					This makes reading much easier as it highlights the hot spots and avoids the
+					impression that you cannot see the forest for the trees.
+				</p>
+			</note>
+		</section>
+
+		<section title="Statusbar">
+			<p>
+				Clone Explorer has a statusbar that indicates the execution status of Clone Detective.
+			</p>
+			<img src="CloneExplorerStatusbar.png" />
+			<table>
+				<tr>
+					<th>Icon</th>
+					<th>Name</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>
+						<img src="Running.png" />
+					</td>
+					<td>
+						Running
+					</td>
+					<td>
+						Indicates that the clone detection is executing.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="Succeeded.png" />
+					</td>
+					<td>
+						Succeeded
+					</td>
+					<td>
+						Indicates that the clone detection was successful and produced a result.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="Error.png" />
+					</td>
+					<td>
+						Error
+					</td>
+					<td>
+						Indicates that the clone detection could not be performed due to an error.
+						Click the link to review the log file.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="Stopped.png" />
+					</td>
+					<td>
+						Stopped
+					</td>
+					<td>
+						Indicates that the clone detection was cancelled by the user.
+					</td>
+				</tr>
+			</table>
+		</section>
 	</body>
 </topic>
