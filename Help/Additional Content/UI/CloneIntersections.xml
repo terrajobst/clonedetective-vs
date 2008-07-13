@@ -5,6 +5,10 @@
 		<keywords>
 			<f1keyword term="CloneDetective.UI.CloneIntersections" />
 		</keywords>
+		<links>
+			<link href="CloneExplorer.html">Clone Explorer</link>
+			<link href="CloneResults.html">Clone Results</link>
+		</links>
 	</head>
 	<body>
 		<summary>
@@ -12,5 +16,12 @@
 				The Clone Intersections tool window.
 			</p>
 		</summary>
+
+		<section title="Representation">
+			<p>
+				
+			</p>
+			<img src="CloneIntersections.png" />
+		</section>
 	</body>
 </topic>

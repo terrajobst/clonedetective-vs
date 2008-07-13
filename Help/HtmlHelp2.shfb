@@ -1,14 +1,19 @@
-﻿<project schemaVersion="1.6.0.2">
+﻿<project schemaVersion="1.6.0.7">
     <assemblies>
         <assembly assemblyPath="..\Output\Bin\CloneDetective.CloneReporting.dll" xmlCommentsPath="..\Output\Bin\CloneDetective.CloneReporting.xml" commentsOnly="False" />
     </assemblies>
     <namespaceSummaries>
+        <namespaceSummaryItem name="" isDocumented="True">Clone Detective for Visual Studio also includes a class library that allows you to access the visualized data programmatically. The reference to this API is given in this section.</namespaceSummaryItem>
+        <namespaceSummaryItem name="CloneDetective.CloneReporting" isDocumented="True">Contains types to read and write clone reports.</namespaceSummaryItem>
     </namespaceSummaries>
-    <additionalContent>
+    <additionalContent contentSiteMap="" topicFileTransform="">
         <contentItem sourcePath="..\Output\Additional Content\*.*" destPath="" excludeItems="False" />
     </additionalContent>
+    <componentConfigurations>
+        <component id="Meta Attribute Component" enabled="True" configuration="&lt;component id=&quot;Meta Attribute Component&quot; assembly=&quot;{@SHFBFolder}BuildComponents\SandcastleExtensions.Components.dll&quot; type=&quot;Darilek.SandcastleExtensions.Components.MetaAttributeComponent&quot;&gt;&lt;attributes&gt;&lt;attribute name=&quot;DocSet&quot; value=&quot;Clone Detective&quot; /&gt;&lt;/attributes&gt;&lt;/component&gt;" />
+    </componentConfigurations>
     <ProjectSummary />
-    <MissingTags>Summary, Parameter, AutoDocumentCtors, Namespace</MissingTags>
+    <MissingTags>Summary, Parameter, AutoDocumentCtors, Namespace, TypeParameter</MissingTags>
     <VisibleItems>Attributes, InheritedMembers, InheritedFrameworkMembers, Protected, SealedProtected</VisibleItems>
     <HtmlHelp1xCompilerPath path="" />
     <HtmlHelp2xCompilerPath path="" />
@@ -17,12 +22,11 @@
     <WorkingPath path="" />
     <CleanIntermediates>True</CleanIntermediates>
     <KeepLogFile>False</KeepLogFile>
+    <BuildLogFile path="" />
     <HelpFileFormat>HtmlHelp2x</HelpFileFormat>
-    <PurgeDuplicateTopics>True</PurgeDuplicateTopics>
     <CppCommentsFixup>False</CppCommentsFixup>
     <FrameworkVersion>2.0.50727</FrameworkVersion>
-    <BinaryTOC>True</BinaryTOC>
-    <IncludeFavorites>False</IncludeFavorites>
+    <IndentHtml>False</IndentHtml>
     <Preliminary>False</Preliminary>
     <RootNamespaceContainer>True</RootNamespaceContainer>
     <RootNamespaceTitle>Class Library Reference</RootNamespaceTitle>
@@ -32,6 +36,7 @@
     <CopyrightHref />
     <CopyrightText>Copyright © 2008 by Thomas Dallmair, Immo Landwerth</CopyrightText>
     <FeedbackEMailAddress />
+    <FeedbackEMailLinkText />
     <HeaderText />
     <FooterText />
     <ProjectLinkType>Local</ProjectLinkType>
@@ -41,7 +46,11 @@
     <NamingMethod>Guid</NamingMethod>
     <SyntaxFilters>CSharp</SyntaxFilters>
     <ShowFeedbackControl>False</ShowFeedbackControl>
+    <BinaryTOC>True</BinaryTOC>
+    <IncludeFavorites>False</IncludeFavorites>
+    <CollectionTocStyle>Hierarchical</CollectionTocStyle>
+    <IncludeStopWordList>True</IncludeStopWordList>
+    <PlugInNamespaces>ms.vsipcc+, ms.vsexpresscc+</PlugInNamespaces>
+    <HelpFileVersion>1.0.0.0</HelpFileVersion>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
-    <ContentSiteMap path="" />
-    <TopicFileTransform path="" />
 </project>

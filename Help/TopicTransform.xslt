@@ -98,15 +98,15 @@
 							<xsl:apply-templates select="body/section" />
 							<xsl:apply-templates select="body/remarks"/>
 							<xsl:apply-templates select="body/examples"/>
-						</div>
-
-						<div id="footer">
-							<div class="footerLine">
-								<img width="100%" height="3px" src="{$iconPath}footer.gif" title="Footer image" />
+							<div id="footer">
+								<div class="footerLine">
+									<img width="100%" height="3px" src="{$iconPath}footer.gif" title="Footer image" />
+								</div>
+								<a name="feedback"></a>
+								<span id="fb" class="feedbackcss" style="display: none;"></span>
+								<p />
+								<xsl:text disable-output-escaping="yes"><![CDATA[<@CopyrightInfo>]]></xsl:text>
 							</div>
-							<a name="feedback"></a><span id="fb" class="feedbackcss" style="display: none;"></span>
-							<p />
-							<xsl:text disable-output-escaping="yes"><![CDATA[<@CopyrightInfo>]]></xsl:text>
 						</div>
 					</div>
 				</body>

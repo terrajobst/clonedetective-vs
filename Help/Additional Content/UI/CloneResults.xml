@@ -5,6 +5,10 @@
 		<keywords>
 			<f1keyword term="CloneDetective.UI.CloneResults" />
 		</keywords>
+		<links>
+			<link href="CloneExplorer.html">Clone Explorer</link>
+			<link href="CloneIntersections.html">Clone Intersections</link>
+		</links>
 	</head>
 	<body>
 		<summary>
@@ -12,5 +16,11 @@
 				The Clone Results tool window.
 			</p>
 		</summary>
+		<section title="Representation">
+			<p>
+				
+			</p>
+			<img src="CloneResults.png" />
+		</section>
 	</body>
 </topic>
