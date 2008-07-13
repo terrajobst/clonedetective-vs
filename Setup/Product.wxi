@@ -6,7 +6,6 @@
 	<?define ProductName         = "Clone Detective for Visual Studio" ?>
 	<?define ProductHomePage     = "http://www.codeplex.com/CloneDetectiveVS" ?>
 	<?define ProductShortName    = "CloneDetectiveVS" ?>
-	<?define ProductVersion      = "1.0.0.0" ?>
 	<?define RegistryVsRoot      = "HKLM" ?>
 	<?define RegistryVsRootKey   = "SOFTWARE\Microsoft\VisualStudio\9.0" ?>
 	<?define UpgradeCode         = "61E93395-1F0E-4ba1-A3E1-9074C4D79DE6" ?>
