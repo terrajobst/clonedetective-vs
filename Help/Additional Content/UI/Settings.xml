@@ -1,0 +1,37 @@
+<topic>
+	<head>
+		<title>Clone Detective Settings</title>
+		<toc index="4"/>
+		<keywords>
+			<f1keyword term="VS.ToolsOptionsPages.Clone_Detective.Settings" />
+		</keywords>
+	</head>
+	<body>
+		<summary>
+			<p>
+				Sets the paths for ConQAT and Java, and determines the behavior of the clone
+				detection.
+			</p>
+			<p>
+				To access this dialog box, on the <b>Tools</b> menu, click <b>Options</b>,
+				and click <b>Clone Detective</b>.
+			</p>
+		</summary>
+		<section title="Settings">
+			<ul>
+				<li>
+					<b>ConQAT File Name</b>. Sets the fully qualified path of the <b>conqat.bat</b>
+					file that starts ConQAT and runs the clone detection.
+				</li>
+				<li>
+					<b>Java Home</b>. Sets the fully qualified path of the directory that is used
+					as the Java Home directory.
+				</li>
+				<li>
+					<b>Minimum Clone Length</b>. Sets the minimum length in lines of code that is
+					needed for a clone. Clones that have fewer lines are discarded.
+				</li>
+			</ul>
+		</section>
+	</body>
+</topic>
