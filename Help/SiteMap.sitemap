@@ -2,6 +2,7 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
 	<siteMapNode title="Welcome to Clone Detective for Visual Studio!" url="..\Output\Additional Content\Welcome.html" isDefault="true" />
 	<siteMapNode title="License" url="..\Output\Additional Content\License.html" />
+	<siteMapNode title="Clone Detection" url="..\Output\Additional Content\CloneDetection.html" />
 	<siteMapNode title="User Interface" url="..\Output\Additional Content\UI\UI.html">
 		<siteMapNode title="Clone Explorer" url="..\Output\Additional Content\UI\CloneExplorer.html" />
 		<siteMapNode title="Clone Intersections" url="..\Output\Additional Content\UI\CloneIntersections.html" />
