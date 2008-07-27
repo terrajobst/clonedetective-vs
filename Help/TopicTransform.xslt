@@ -33,7 +33,30 @@
 				<script type="text/javascript" src="{$scriptPath}CheckboxMenu.js"> </script>
 				<script type="text/javascript" src="{$scriptPath}CommonUtilities.js"> </script>
 
-				<xsl:apply-templates select="head/keywords" />
+				<xml>
+					<xsl:for-each select="head/keywords/keyword">
+						<xsl:variable name="keyword" select="@term" />
+						<xsl:choose>
+							<xsl:when test="contains($keyword,',')">
+								<xsl:variable name="parent" select="normalize-space(substring-before($keyword,','))" />
+								<xsl:variable name="child" select="concat($parent, ',', normalize-space(substring-after($keyword,',')))" />
+								<MSHelp:Keyword Index="K" Term="{$parent}" />
+								<MSHelp:Keyword Index="K" Term="{$child}" />
+							</xsl:when>
+							<xsl:otherwise>
+								<MSHelp:Keyword Index="K" Term="{$keyword}" />
+							</xsl:otherwise>
+						</xsl:choose>
+					</xsl:for-each>
+					<xsl:for-each select="head/keywords/f1keyword">
+						<xsl:variable name="keyword" select="@term" />
+						<MSHelp:Keyword Index="F" Term="{$keyword}" />
+					</xsl:for-each>
+					<MSHelp:Attr Name="DocSet" Value="Clone Detective" />
+					<MSHelp:Attr Name="TopicType" Value="kbRef" />
+					<MSHelp:Attr Name="Locale" Value="en-us" />
+				</xml>
+				
 			</head>
 			<body>
 
@@ -110,32 +133,6 @@
 				</div>
 			</body>
 		</html>
-	</xsl:template>
-
-	<xsl:template match="keywords">
-		<xml>
-			<xsl:for-each select="keyword">
-				<xsl:variable name="keyword" select="@term" />
-				<xsl:choose>
-					<xsl:when test="contains($keyword,',')">
-						<xsl:variable name="parent" select="normalize-space(substring-before($keyword,','))" />
-						<xsl:variable name="child" select="concat($parent, ',', normalize-space(substring-after($keyword,',')))" />
-						<MSHelp:Keyword Index="K" Term="{$parent}" />
-						<MSHelp:Keyword Index="K" Term="{$child}" />
-					</xsl:when>
-					<xsl:otherwise>
-						<MSHelp:Keyword Index="K" Term="{$keyword}" />
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:for-each>
-			<xsl:for-each select="f1keyword">
-				<xsl:variable name="keyword" select="@term" />
-				<MSHelp:Keyword Index="F" Term="{$keyword}" />
-			</xsl:for-each>
-			<MSHelp:Attr Name="DocSet" Value="Clone Detective" />
-			<MSHelp:Attr Name="TopicType" Value="kbRef" />
-			<MSHelp:Attr Name="Locale" Value="en-us" />
-		</xml>
 	</xsl:template>
 
 	<xsl:template match="summary">
