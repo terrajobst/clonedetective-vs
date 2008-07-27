@@ -1,7 +1,11 @@
 <topic>
 	<head>
 		<title>Clone Detection</title>
-		<toc index="3" />
+		<keywords>
+			<keyword term="clone detection" />
+			<keyword term="clones" />
+			<keyword term="clone classes" />
+		</keywords>
 	</head>
 	<body>
 		<summary>
