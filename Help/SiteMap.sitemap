@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+	<siteMapNode title="Welcome to Clone Detective for Visual Studio!" url="..\Output\Additional Content\Welcome.html" isDefault="true" />
+	<siteMapNode title="License" url="..\Output\Additional Content\License.html" />
+	<siteMapNode title="User Interface" url="..\Output\Additional Content\UI\UI.html">
+		<siteMapNode title="Clone Explorer" url="..\Output\Additional Content\UI\CloneExplorer.html" />
+		<siteMapNode title="Clone Intersections" url="..\Output\Additional Content\UI\CloneIntersections.html" />
+		<siteMapNode title="Clone Results" url="..\Output\Additional Content\UI\CloneResults.html" />
+		<siteMapNode title="Code Editor" url="..\Output\Additional Content\UI\CodeEditor.html" />
+		<siteMapNode title="Clone Detective Settings" url="..\Output\Additional Content\UI\Settings.html" />
+	</siteMapNode>
+</siteMap>

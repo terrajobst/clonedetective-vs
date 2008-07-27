@@ -6,7 +6,7 @@
         <namespaceSummaryItem name="" isDocumented="False" />
         <namespaceSummaryItem name="CloneDetective.CloneReporting" isDocumented="True">Contains types to read and write clone reports.</namespaceSummaryItem>
     </namespaceSummaries>
-    <additionalContent contentSiteMap="" topicFileTransform="">
+    <additionalContent contentSiteMap=".\SiteMap.sitemap" topicFileTransform="">
         <contentItem sourcePath="..\Output\Additional Content\*.*" destPath="" excludeItems="False" />
     </additionalContent>
     <componentConfigurations>

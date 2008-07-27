@@ -12,110 +12,104 @@
 	<xsl:variable name="stylePath">/styles/</xsl:variable>
 
 	<xsl:template match="/topic">
-		<xsl:if test="not (head/toc/@exclude or head/toc/@exclude = true)">
-			<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp"
-				  xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5"
-				  xmlns:xlink="http://www.w3.org/1999/xlink"
-				  xmlns:msxsl="urn:schemas-microsoft-com:xslt">
-				<head>
-					<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-					<meta name="save" content="history" />
+		<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp"
+			  xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5"
+			  xmlns:xlink="http://www.w3.org/1999/xlink"
+			  xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+			<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+				<meta name="save" content="history" />
 
-					<title><xsl:value-of select="head/title"/></title>
+				<title><xsl:value-of select="head/title"/></title>
 
-					<link rel="stylesheet" type="text/css" href="{$stylePath}presentation.css" />
-					<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+				<link rel="stylesheet" type="text/css" href="{$stylePath}presentation.css" />
+				<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
 
-					<script type="text/javascript" src="{$scriptPath}EventUtilities.js"></script>
-					<script type="text/javascript" src="{$scriptPath}SplitScreen.js"></script>
-					<script type="text/javascript" src="{$scriptPath}Dropdown.js"></script>
-					<script type="text/javascript" src="{$scriptPath}script_manifold.js"></script>
-					<script type="text/javascript" src="{$scriptPath}script_feedBack.js"> </script>
-					<script type="text/javascript" src="{$scriptPath}CheckboxMenu.js"> </script>
-					<script type="text/javascript" src="{$scriptPath}CommonUtilities.js"> </script>
+				<script type="text/javascript" src="{$scriptPath}EventUtilities.js"></script>
+				<script type="text/javascript" src="{$scriptPath}SplitScreen.js"></script>
+				<script type="text/javascript" src="{$scriptPath}Dropdown.js"></script>
+				<script type="text/javascript" src="{$scriptPath}script_manifold.js"></script>
+				<script type="text/javascript" src="{$scriptPath}script_feedBack.js"> </script>
+				<script type="text/javascript" src="{$scriptPath}CheckboxMenu.js"> </script>
+				<script type="text/javascript" src="{$scriptPath}CommonUtilities.js"> </script>
 
-					<xsl:apply-templates select="head/keywords" />
-				</head>
-				<body>
+				<xsl:apply-templates select="head/keywords" />
+			</head>
+			<body>
 
-					<input type="hidden" id="userDataCache" class="userDataStyle" />
-					<input type="hidden" id="hiddenScrollOffset" />
-					<img id="collapseImage" style="display: none; height: 0; width: 0;" src="{$iconPath}collapse_all.gif" title="Collapse image" />
-					<img id="expandImage" style="display: none; height: 0; width: 0;" src="{$iconPath}expand_all.gif" title="Expand Image" />
-					<img id="collapseAllImage" style="display: none; height: 0; width: 0;" src="{$iconPath}collapse_all.gif" />
-					<img id="expandAllImage" style="display: none; height: 0; width: 0;" src="{$iconPath}expand_all.gif" />
-					<img id="dropDownImage" style="display: none; height: 0; width: 0;" src="{$iconPath}dropdown.gif" />
-					<img id="dropDownHoverImage" style="display: none; height: 0; width: 0;" src="{$iconPath}dropdownHover.gif" />
-					<img id="copyImage" style="display: none; height: 0; width: 0;" src="{$iconPath}copycode.gif" title="Copy image" />
-					<img id="copyHoverImage" style="display: none; height: 0; width: 0;" src="{$iconPath}copycodeHighlight.gif" title="CopyHover image" />
-					<div id="header">
-						<table id="topTable" cellspacing="0" cellpadding="0">
-							<tr>
-								<td>
-									<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor: default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0" xml:space="preserve">
-										<img id="toggleAllImage" class="toggleAll" src="{$iconPath}collapse_all.gif" />
-										<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
-										<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label>
-									</span>
-								</td>
-							</tr>
-						</table>
-						<table id="bottomTable" cellpadding="0" cellspacing="0">
-							<tr id="headerTableRow1">
-								<td align="left">
-									<span id="runningHeaderText">Clone Detective Documentation</span>
-								</td>
-							</tr>
-							<tr id="headerTableRow2">
-								<td align="left">
-									<span id="nsrTitle"><xsl:value-of select="head/title"/></span>
-								</td>
-							</tr>
-							<tr id="headerTableRow3">
-								<td align="left">
-									<xsl:for-each select="head/links/link" xml:space="preserve">
-										<a href="{@href}"><xsl:value-of select="."/></a>
-									</xsl:for-each>
-								</td>
-							</tr>
-						</table>
-						<table id="gradientTable">
-							<tr>
-								<td class="nsrBottom" background="{$iconPath}gradient.gif" />
-							</tr>
-						</table>
-					</div>
-					<div id="mainSection">
-						<div id="mainBody">
-							<div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()">
-								<span style="color: DarkGray"></span>
+				<input type="hidden" id="userDataCache" class="userDataStyle" />
+				<input type="hidden" id="hiddenScrollOffset" />
+				<img id="collapseImage" style="display: none; height: 0; width: 0;" src="{$iconPath}collapse_all.gif" title="Collapse image" />
+				<img id="expandImage" style="display: none; height: 0; width: 0;" src="{$iconPath}expand_all.gif" title="Expand Image" />
+				<img id="collapseAllImage" style="display: none; height: 0; width: 0;" src="{$iconPath}collapse_all.gif" />
+				<img id="expandAllImage" style="display: none; height: 0; width: 0;" src="{$iconPath}expand_all.gif" />
+				<img id="dropDownImage" style="display: none; height: 0; width: 0;" src="{$iconPath}dropdown.gif" />
+				<img id="dropDownHoverImage" style="display: none; height: 0; width: 0;" src="{$iconPath}dropdownHover.gif" />
+				<img id="copyImage" style="display: none; height: 0; width: 0;" src="{$iconPath}copycode.gif" title="Copy image" />
+				<img id="copyHoverImage" style="display: none; height: 0; width: 0;" src="{$iconPath}copycodeHighlight.gif" title="CopyHover image" />
+				<div id="header">
+					<table id="topTable" cellspacing="0" cellpadding="0">
+						<tr>
+							<td>
+								<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor: default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0" xml:space="preserve">
+									<img id="toggleAllImage" class="toggleAll" src="{$iconPath}collapse_all.gif" />
+									<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+									<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label>
+								</span>
+							</td>
+						</tr>
+					</table>
+					<table id="bottomTable" cellpadding="0" cellspacing="0">
+						<tr id="headerTableRow1">
+							<td align="left">
+								<span id="runningHeaderText">Clone Detective Documentation</span>
+							</td>
+						</tr>
+						<tr id="headerTableRow2">
+							<td align="left">
+								<span id="nsrTitle"><xsl:value-of select="head/title"/></span>
+							</td>
+						</tr>
+						<tr id="headerTableRow3">
+							<td align="left">
+								<xsl:for-each select="head/links/link" xml:space="preserve">
+									<a href="{@href}"><xsl:value-of select="."/></a>
+								</xsl:for-each>
+							</td>
+						</tr>
+					</table>
+					<table id="gradientTable">
+						<tr>
+							<td class="nsrBottom" background="{$iconPath}gradient.gif" />
+						</tr>
+					</table>
+				</div>
+				<div id="mainSection">
+					<div id="mainBody">
+						<div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()">
+							<span style="color: DarkGray"></span>
+						</div>
+
+						<xsl:apply-templates select="body/summary"/>
+						<xsl:apply-templates select="body/syntax"/>
+						<xsl:apply-templates select="body/parameters"/>
+						<xsl:apply-templates select="body/returns"/>
+						<xsl:apply-templates select="body/section" />
+						<xsl:apply-templates select="body/remarks"/>
+						<xsl:apply-templates select="body/examples"/>
+						<div id="footer">
+							<div class="footerLine">
+								<img width="100%" height="3px" src="{$iconPath}footer.gif" title="Footer image" />
 							</div>
-
-							<xsl:apply-templates select="body/summary"/>
-							<xsl:apply-templates select="body/syntax"/>
-							<xsl:apply-templates select="body/parameters"/>
-							<xsl:apply-templates select="body/returns"/>
-							<xsl:apply-templates select="body/section" />
-							<xsl:apply-templates select="body/remarks"/>
-							<xsl:apply-templates select="body/examples"/>
-							<div id="footer">
-								<div class="footerLine">
-									<img width="100%" height="3px" src="{$iconPath}footer.gif" title="Footer image" />
-								</div>
-								<a name="feedback"></a>
-								<span id="fb" class="feedbackcss" style="display: none;"></span>
-								<p />
-								<xsl:text disable-output-escaping="yes"><![CDATA[<@CopyrightInfo>]]></xsl:text>
-							</div>
+							<a name="feedback"></a>
+							<span id="fb" class="feedbackcss" style="display: none;"></span>
+							<p />
+							<xsl:text disable-output-escaping="yes"><![CDATA[<@CopyrightInfo>]]></xsl:text>
 						</div>
 					</div>
-				</body>
-			</html>
-		</xsl:if>
-		<xsl:comment xml:space="preserve">@SortOrder <xsl:value-of select="head/toc/@index" /> </xsl:comment>
-		<xsl:if test="head/toc/@default">
-			<xsl:comment xml:space="preserve">@DefaultTopic </xsl:comment>
-		</xsl:if>
+				</div>
+			</body>
+		</html>
 	</xsl:template>
 
 	<xsl:template match="keywords">
