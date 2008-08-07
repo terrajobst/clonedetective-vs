@@ -254,6 +254,11 @@ namespace CloneDetective.CloneReporting
 						Exception exception = null;
 						try
 						{
+							// Make sure the directory exists
+							string cloneReportDirectory = Path.GetDirectoryName(_solutionSettings.CloneReportFileName);
+							if (!Directory.Exists(cloneReportDirectory))
+								Directory.CreateDirectory(cloneReportDirectory);
+
 							// First we delete the old clone report
 							File.Delete(_solutionSettings.CloneReportFileName);
 
