@@ -56,6 +56,17 @@
 				</tr>
 				<tr>
 					<td>
+						<img src="EditSolutionSettings.png" />
+					</td>
+					<td>
+						Edit Solution Settings
+					</td>
+					<td>
+						Allows customizing <a href="SolutionSettings.html">Solution Settings</a>.
+					</td>
+				</tr>
+				<tr>
+					<td>
 						<img src="Import.png" />
 					</td>
 					<td>
@@ -64,6 +75,28 @@
 					<td>
 						Imports a clone detection result file produced by another run, e.g.
 						a nightly build.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="Export.png" />
+					</td>
+					<td>
+						Export Clone Detective Results
+					</td>
+					<td>
+						Exports a clone detection result file to an XML file.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="CloseResults.png" />
+					</td>
+					<td>
+						Close Clone Detective Results
+					</td>
+					<td>
+						Unloads current clone detective results. To load the results again, please click "Run Clone Detective".
 					</td>
 				</tr>
 			</table>

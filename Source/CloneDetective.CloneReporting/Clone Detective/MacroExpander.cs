@@ -8,6 +8,9 @@ namespace CloneDetective.CloneReporting
 	/// <summary>
 	/// This class expands macros in the solution-specific settings.
 	/// </summary>
+	/// <remarks>
+	/// For more information about macros please see <a href="/UI/SolutionSettings.html">Solution Settings</a>.
+	/// </remarks>
 	public sealed class MacroExpander
 	{
 		private Dictionary<string, string> _macros = new Dictionary<string, string>();

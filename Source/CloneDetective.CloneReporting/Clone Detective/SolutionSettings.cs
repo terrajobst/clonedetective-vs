@@ -24,9 +24,11 @@ namespace CloneDetective.CloneReporting
 		/// <param name="solutionFileName">The fully qualified path of the Visual Studio for which the settings
 		/// should be loaded.</param>
 		/// <remarks>
-		/// The settings are loaded as entered by the user. In particular this means that all macros are
+		/// <para>The settings are loaded as entered by the user. In particular this means that all macros are
 		/// still inlcuded in the file names. If you want to have all macros being replaced please use
-		/// <see cref="LoadAndExpand"/> instead.
+		/// <see cref="LoadAndExpand"/> instead.</para>
+		/// <para>For more information about macros please see 
+		/// <a href="/UI/SolutionSettings.html">Solution Settings</a>.</para>
 		/// </remarks>
 		public void Load(string solutionFileName)
 		{
@@ -72,6 +74,8 @@ namespace CloneDetective.CloneReporting
 		/// the settings are not represented as entered by the user but instead represent the effective settings to be used
 		/// by Clone Detective.</para>
 		/// <para>If you want the settings to represent what the the user has actually entered please use <see cref="Load"/> instead.</para>
+		/// <para>For more information about macros please see 
+		/// <a href="/UI/SolutionSettings.html">Solution Settings</a>.</para>
 		/// </remarks>
 		public void LoadAndExpand(string solutionFileName)
 		{
@@ -200,6 +204,10 @@ namespace CloneDetective.CloneReporting
 		/// Gets a dictionary with all properties that should be passed to ConQAT when processing
 		/// the analysis file that is specified by <see cref="AnalysisFileName"/>.
 		/// </summary>
+		/// <remarks>
+		/// <para>For more information about macros please see 
+		/// <a href="/UI/SolutionSettings.html">Solution Settings</a>.</para>
+		/// </remarks>
 		public Dictionary<string, string> PropertyOverrides
 		{
 			get { return _propertyOverrides; }

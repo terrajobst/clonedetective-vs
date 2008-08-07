@@ -151,7 +151,7 @@ namespace CloneDetective.CloneReporting
 			sb.Append(solutionSettings.AnalysisFileName);
 			sb.Append("\"");
 
-			// TODO: Make path to properties file configurable.
+			// TODO: Make path to .properties file configurable.
 			string propertiesFilePath = PathHelper.GetPropertiesFilePath(solutionSettings.AnalysisFileName);
 			if (File.Exists(propertiesFilePath))
 			{

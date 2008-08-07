@@ -8,6 +8,7 @@
 		<siteMapNode title="Clone Intersections" url="..\Output\Additional Content\UI\CloneIntersections.html" />
 		<siteMapNode title="Clone Results" url="..\Output\Additional Content\UI\CloneResults.html" />
 		<siteMapNode title="Code Editor" url="..\Output\Additional Content\UI\CodeEditor.html" />
-		<siteMapNode title="Clone Detective Settings" url="..\Output\Additional Content\UI\Settings.html" />
+		<siteMapNode title="Global Settings" url="..\Output\Additional Content\UI\GlobalSettings.html" />
+		<siteMapNode title="Solution Settings" url="..\Output\Additional Content\UI\SolutionSettings.html" />
 	</siteMapNode>
 </siteMap>
