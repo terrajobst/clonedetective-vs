@@ -121,7 +121,7 @@
       <DependentUpon>Res.resx</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Tool Windows\BorderPanel.cs">
+    <Compile Include="Controls\BorderPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Property Summaries\PropertyGridSummary.cs" />
@@ -139,6 +139,12 @@
       <DependentUpon>CloneResultsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Tool Windows\CloneResultsToolWindow.cs" />
+    <Compile Include="Controls\GroupLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GroupLabel.Designer.cs">
+      <DependentUpon>GroupLabel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tool Windows\IServiceProviderHost.cs" />
     <Compile Include="Tool Windows\ServicedToolWindowPane.cs" />
     <Compile Include="Tool Windows\ToolWindowUserControl.cs">

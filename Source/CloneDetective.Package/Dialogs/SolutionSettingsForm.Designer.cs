@@ -52,6 +52,8 @@
 			this.downToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+			this.pathsGroupLabel = new CloneDetective.Package.GroupLabel();
+			this.propertyOverridesGroupLabel = new CloneDetective.Package.GroupLabel();
 			((System.ComponentModel.ISupportInitialize)(this.propertyOverridesDataGridView)).BeginInit();
 			this.propertyOverridesToolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -60,10 +62,10 @@
 			// 
 			this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.okButton.Location = new System.Drawing.Point(336, 246);
+			this.okButton.Location = new System.Drawing.Point(388, 313);
 			this.okButton.Name = "okButton";
 			this.okButton.Size = new System.Drawing.Size(75, 23);
-			this.okButton.TabIndex = 8;
+			this.okButton.TabIndex = 11;
 			this.okButton.Text = "OK";
 			this.okButton.UseVisualStyleBackColor = true;
 			// 
@@ -71,49 +73,49 @@
 			// 
 			this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.cancelButton.Location = new System.Drawing.Point(417, 246);
+			this.cancelButton.Location = new System.Drawing.Point(469, 313);
 			this.cancelButton.Name = "cancelButton";
 			this.cancelButton.Size = new System.Drawing.Size(75, 23);
-			this.cancelButton.TabIndex = 9;
+			this.cancelButton.TabIndex = 12;
 			this.cancelButton.Text = "Cancel";
 			this.cancelButton.UseVisualStyleBackColor = true;
 			// 
 			// analysisFileNameLabel
 			// 
 			this.analysisFileNameLabel.AutoSize = true;
-			this.analysisFileNameLabel.Location = new System.Drawing.Point(12, 47);
+			this.analysisFileNameLabel.Location = new System.Drawing.Point(29, 71);
 			this.analysisFileNameLabel.Name = "analysisFileNameLabel";
 			this.analysisFileNameLabel.Size = new System.Drawing.Size(93, 13);
-			this.analysisFileNameLabel.TabIndex = 1;
+			this.analysisFileNameLabel.TabIndex = 2;
 			this.analysisFileNameLabel.Text = "&Analysis file name:";
 			// 
 			// cloneReportFileNameLabel
 			// 
 			this.cloneReportFileNameLabel.AutoSize = true;
-			this.cloneReportFileNameLabel.Location = new System.Drawing.Point(12, 73);
+			this.cloneReportFileNameLabel.Location = new System.Drawing.Point(29, 97);
 			this.cloneReportFileNameLabel.Name = "cloneReportFileNameLabel";
 			this.cloneReportFileNameLabel.Size = new System.Drawing.Size(112, 13);
-			this.cloneReportFileNameLabel.TabIndex = 4;
+			this.cloneReportFileNameLabel.TabIndex = 5;
 			this.cloneReportFileNameLabel.Text = "&Clone report file name:";
 			// 
 			// analysisFileNameTextBox
 			// 
 			this.analysisFileNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
 						| System.Windows.Forms.AnchorStyles.Right)));
-			this.analysisFileNameTextBox.Location = new System.Drawing.Point(138, 44);
+			this.analysisFileNameTextBox.Location = new System.Drawing.Point(164, 68);
 			this.analysisFileNameTextBox.Name = "analysisFileNameTextBox";
-			this.analysisFileNameTextBox.Size = new System.Drawing.Size(273, 20);
-			this.analysisFileNameTextBox.TabIndex = 2;
+			this.analysisFileNameTextBox.Size = new System.Drawing.Size(299, 20);
+			this.analysisFileNameTextBox.TabIndex = 3;
 			this.analysisFileNameTextBox.Leave += new System.EventHandler(this.analysisFileNameTextBox_Leave);
 			// 
 			// cloneReportFileNameTextBox
 			// 
 			this.cloneReportFileNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
 						| System.Windows.Forms.AnchorStyles.Right)));
-			this.cloneReportFileNameTextBox.Location = new System.Drawing.Point(138, 70);
+			this.cloneReportFileNameTextBox.Location = new System.Drawing.Point(164, 94);
 			this.cloneReportFileNameTextBox.Name = "cloneReportFileNameTextBox";
-			this.cloneReportFileNameTextBox.Size = new System.Drawing.Size(273, 20);
-			this.cloneReportFileNameTextBox.TabIndex = 5;
+			this.cloneReportFileNameTextBox.Size = new System.Drawing.Size(299, 20);
+			this.cloneReportFileNameTextBox.TabIndex = 6;
 			// 
 			// useCustomCloneDetectionCheckBox
 			// 
@@ -129,10 +131,10 @@
 			// browseAnalysisFileNameButton
 			// 
 			this.browseAnalysisFileNameButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.browseAnalysisFileNameButton.Location = new System.Drawing.Point(417, 42);
+			this.browseAnalysisFileNameButton.Location = new System.Drawing.Point(469, 66);
 			this.browseAnalysisFileNameButton.Name = "browseAnalysisFileNameButton";
 			this.browseAnalysisFileNameButton.Size = new System.Drawing.Size(75, 23);
-			this.browseAnalysisFileNameButton.TabIndex = 3;
+			this.browseAnalysisFileNameButton.TabIndex = 4;
 			this.browseAnalysisFileNameButton.Text = "Browse...";
 			this.browseAnalysisFileNameButton.UseVisualStyleBackColor = true;
 			this.browseAnalysisFileNameButton.Click += new System.EventHandler(this.browseAnalysisFileNameButton_Click);
@@ -140,10 +142,10 @@
 			// browseCloneReportFileNameButton
 			// 
 			this.browseCloneReportFileNameButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.browseCloneReportFileNameButton.Location = new System.Drawing.Point(417, 68);
+			this.browseCloneReportFileNameButton.Location = new System.Drawing.Point(469, 92);
 			this.browseCloneReportFileNameButton.Name = "browseCloneReportFileNameButton";
 			this.browseCloneReportFileNameButton.Size = new System.Drawing.Size(75, 23);
-			this.browseCloneReportFileNameButton.TabIndex = 6;
+			this.browseCloneReportFileNameButton.TabIndex = 7;
 			this.browseCloneReportFileNameButton.Text = "Browse...";
 			this.browseCloneReportFileNameButton.UseVisualStyleBackColor = true;
 			this.browseCloneReportFileNameButton.Click += new System.EventHandler(this.browseCloneReportFileNameButton_Click);
@@ -182,7 +184,7 @@
 			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.propertyOverridesDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-			this.propertyOverridesDataGridView.Location = new System.Drawing.Point(15, 121);
+			this.propertyOverridesDataGridView.Location = new System.Drawing.Point(32, 178);
 			this.propertyOverridesDataGridView.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
 			this.propertyOverridesDataGridView.Name = "propertyOverridesDataGridView";
 			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -195,7 +197,7 @@
 			this.propertyOverridesDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this.propertyOverridesDataGridView.RowHeadersVisible = false;
 			this.propertyOverridesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.propertyOverridesDataGridView.Size = new System.Drawing.Size(477, 119);
+			this.propertyOverridesDataGridView.Size = new System.Drawing.Size(512, 129);
 			this.propertyOverridesDataGridView.TabIndex = 10;
 			this.propertyOverridesDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.propertyOverridesDataGridView_CellDoubleClick);
 			// 
@@ -229,11 +231,11 @@
             this.toolStripSeparator1,
             this.upToolStripButton,
             this.downToolStripButton});
-			this.propertyOverridesToolStrip.Location = new System.Drawing.Point(15, 96);
+			this.propertyOverridesToolStrip.Location = new System.Drawing.Point(32, 153);
 			this.propertyOverridesToolStrip.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
 			this.propertyOverridesToolStrip.Name = "propertyOverridesToolStrip";
-			this.propertyOverridesToolStrip.Size = new System.Drawing.Size(477, 25);
-			this.propertyOverridesToolStrip.TabIndex = 11;
+			this.propertyOverridesToolStrip.Size = new System.Drawing.Size(567, 25);
+			this.propertyOverridesToolStrip.TabIndex = 9;
 			this.propertyOverridesToolStrip.Text = "toolStrip1";
 			// 
 			// addToolStripButton
@@ -299,13 +301,37 @@
 			// 
 			this.saveFileDialog.Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*";
 			// 
+			// pathsGroupLabel
+			// 
+			this.pathsGroupLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
+			this.pathsGroupLabel.Location = new System.Drawing.Point(9, 42);
+			this.pathsGroupLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+			this.pathsGroupLabel.Name = "pathsGroupLabel";
+			this.pathsGroupLabel.Size = new System.Drawing.Size(535, 13);
+			this.pathsGroupLabel.TabIndex = 1;
+			this.pathsGroupLabel.Text = "&Paths";
+			// 
+			// propertyOverridesGroupLabel
+			// 
+			this.propertyOverridesGroupLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
+			this.propertyOverridesGroupLabel.Location = new System.Drawing.Point(9, 127);
+			this.propertyOverridesGroupLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+			this.propertyOverridesGroupLabel.Name = "propertyOverridesGroupLabel";
+			this.propertyOverridesGroupLabel.Size = new System.Drawing.Size(535, 13);
+			this.propertyOverridesGroupLabel.TabIndex = 8;
+			this.propertyOverridesGroupLabel.Text = "Property &overrides";
+			// 
 			// SolutionSettingsForm
 			// 
 			this.AcceptButton = this.okButton;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.cancelButton;
-			this.ClientSize = new System.Drawing.Size(504, 281);
+			this.ClientSize = new System.Drawing.Size(556, 348);
+			this.Controls.Add(this.pathsGroupLabel);
+			this.Controls.Add(this.propertyOverridesGroupLabel);
 			this.Controls.Add(this.propertyOverridesToolStrip);
 			this.Controls.Add(this.propertyOverridesDataGridView);
 			this.Controls.Add(this.browseCloneReportFileNameButton);
@@ -359,5 +385,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
 		private System.Windows.Forms.OpenFileDialog openFileDialog;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog;
+		private GroupLabel propertyOverridesGroupLabel;
+		private GroupLabel pathsGroupLabel;
 	}
 }

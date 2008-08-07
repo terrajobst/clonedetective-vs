@@ -102,6 +102,8 @@ namespace CloneDetective.Package
 
 		private void UpdateEnabledState()
 		{
+			pathsGroupLabel.Enabled = useCustomCloneDetectionCheckBox.Checked;
+
 			analysisFileNameLabel.Enabled = useCustomCloneDetectionCheckBox.Checked;
 			analysisFileNameTextBox.Enabled = useCustomCloneDetectionCheckBox.Checked;
 			browseAnalysisFileNameButton.Enabled = useCustomCloneDetectionCheckBox.Checked;
@@ -110,6 +112,7 @@ namespace CloneDetective.Package
 			cloneReportFileNameTextBox.Enabled = useCustomCloneDetectionCheckBox.Checked;
 			browseCloneReportFileNameButton.Enabled = useCustomCloneDetectionCheckBox.Checked;
 
+			propertyOverridesGroupLabel.Enabled =  useCustomCloneDetectionCheckBox.Checked;
 			propertyOverridesToolStrip.Enabled = useCustomCloneDetectionCheckBox.Checked;
 			propertyOverridesDataGridView.Enabled = useCustomCloneDetectionCheckBox.Checked;
 
