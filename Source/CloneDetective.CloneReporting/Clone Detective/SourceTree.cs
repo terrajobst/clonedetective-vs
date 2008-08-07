@@ -331,7 +331,9 @@ namespace CloneDetective.CloneReporting
 			int result = xHasNoChildren.CompareTo(yHasNoChildren);
 			if (result != 0)
 				return result;
-			// TODO: Why use CurrentCulture here? What about Ordinal/OrdinalIgnoreCase? A comment would be fine.
+
+			// The sorting is used to for display purposes. That is why we use
+			// CurrentCulture instead of Ordinal or OrdinalIgnoreCase.
 			return String.Compare(x.Name, y.Name, StringComparison.CurrentCulture);
 		}
 
