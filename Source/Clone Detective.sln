@@ -24,18 +24,25 @@ Global
 		SccLocalPath3 = CloneDetective.Package
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Code Analysis|Any CPU = Code Analysis|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF7B1952-DB78-42CB-BF74-ABF5BF32C151}.Code Analysis|Any CPU.ActiveCfg = Code Analysis|Any CPU
+		{EF7B1952-DB78-42CB-BF74-ABF5BF32C151}.Code Analysis|Any CPU.Build.0 = Code Analysis|Any CPU
 		{EF7B1952-DB78-42CB-BF74-ABF5BF32C151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EF7B1952-DB78-42CB-BF74-ABF5BF32C151}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF7B1952-DB78-42CB-BF74-ABF5BF32C151}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF7B1952-DB78-42CB-BF74-ABF5BF32C151}.Release|Any CPU.Build.0 = Release|Any CPU
+		{892850BA-6CB1-4C57-BE9E-1C1F30EBF407}.Code Analysis|Any CPU.ActiveCfg = Code Analysis|Any CPU
+		{892850BA-6CB1-4C57-BE9E-1C1F30EBF407}.Code Analysis|Any CPU.Build.0 = Code Analysis|Any CPU
 		{892850BA-6CB1-4C57-BE9E-1C1F30EBF407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{892850BA-6CB1-4C57-BE9E-1C1F30EBF407}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{892850BA-6CB1-4C57-BE9E-1C1F30EBF407}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{892850BA-6CB1-4C57-BE9E-1C1F30EBF407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A36E4BE-AF25-4AA8-B54E-DD781B2A3081}.Code Analysis|Any CPU.ActiveCfg = Code Analysis|Any CPU
+		{7A36E4BE-AF25-4AA8-B54E-DD781B2A3081}.Code Analysis|Any CPU.Build.0 = Code Analysis|Any CPU
 		{7A36E4BE-AF25-4AA8-B54E-DD781B2A3081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7A36E4BE-AF25-4AA8-B54E-DD781B2A3081}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A36E4BE-AF25-4AA8-B54E-DD781B2A3081}.Release|Any CPU.ActiveCfg = Release|Any CPU

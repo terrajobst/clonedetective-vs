@@ -250,6 +250,9 @@
     <RegisterOutputPackage>true</RegisterOutputPackage>
     <RegisterWithCodebase>true</RegisterWithCodebase>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Code Analysis|AnyCPU' ">
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\VSSDK\Microsoft.VsSDK.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
