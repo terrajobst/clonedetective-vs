@@ -32,17 +32,6 @@ namespace CloneDetective.CloneReporting
 		}
 
 		/// <summary>
-		/// This exception is thrown when a property has not been initialized but its value is
-		/// now required.
-		/// </summary>
-		/// <param name="propertyName">The name of the propery whose value has not been initialized.</param>
-		public static InvalidOperationException PropertyMustBeInitializedFirst(string propertyName)
-		{
-			string messages = String.Format(CultureInfo.CurrentCulture, Resources.PropertyMustBeInitializedFirst, propertyName);
-			return new InvalidOperationException(messages);
-		}
-
-		/// <summary>
 		/// This exception is thrown when a clone report cannot be loaded for the given reason.
 		/// </summary>
 		/// <param name="fileName">The file name of the clone report to load.</param>

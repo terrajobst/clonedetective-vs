@@ -271,4 +271,46 @@
   <data name="InvalidJavaExePath" xml:space="preserve">
     <value>The Java Home directory is either invalid or has not been configured yet. Please configure it under Tools -&gt; Options -&gt; Clone Detective -&gt; Settings.</value>
   </data>
+  <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Delete 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Down 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Edit 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Up 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Settings 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloseResults" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Close Results 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Export" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Export 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\new item 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloneDetective" xml:space="preserve">
+    <value>Clone Detective</value>
+  </data>
+  <data name="AllPropertiesAlreadyOverridden" xml:space="preserve">
+    <value>You have already overridden all available properties in the file {0}.</value>
+  </data>
+  <data name="OutputFooterFailed" xml:space="preserve">
+    <value>====== Clone detection failed ======</value>
+  </data>
+  <data name="OutputFooterStopped" xml:space="preserve">
+    <value>====== Clone detection stopped ======</value>
+  </data>
+  <data name="OutputFooterSucceeded" xml:space="preserve">
+    <value>====== Clone detection succeeded ======</value>
+  </data>
+  <data name="OutputHeaderStarted" xml:space="preserve">
+    <value>------ Clone detection started ------</value>
+  </data>
 </root>

@@ -31,14 +31,12 @@ namespace CloneDetective.Package
 		{
 			conqatFileNameTextBox.Text = _page.ConqatFileName;
 			javaHomeTextBox.Text = _page.JavaHome;
-			minimumCloneLengthNumericUpDown.Value = _page.MinimumCloneLength;
 		}
 
 		public void SaveSettings()
 		{
 			_page.ConqatFileName = conqatFileNameTextBox.Text;
 			_page.JavaHome = javaHomeTextBox.Text;
-			_page.MinimumCloneLength = (int)minimumCloneLengthNumericUpDown.Value;
 		}
 	}
 }

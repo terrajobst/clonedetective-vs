@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
@@ -20,7 +20,7 @@ namespace CloneDetective.Package
 	{
 		public static event EventHandler<EventArgs> CloneDetectiveResultChanged;
 
-		private static CloneDetectiveRunner _cloneDetectiveRunner;
+		private static CloneReporting.CloneDetective _cloneDetective;
 		private static CloneDetectiveResult _cloneDetectiveResult;
 		private static Dictionary<IVsTextLines, DocumentInfo> _textLinesToDocInfos = new Dictionary<IVsTextLines, DocumentInfo>();
 
@@ -98,13 +98,13 @@ namespace CloneDetective.Package
 
 		internal static void OnSolutionClosed()
 		{
-			if (_cloneDetectiveRunner != null)
+			if (_cloneDetective != null)
 			{
 				// Terminate clone detective if it is still running. We need to disable
 				// the events upfront to prevent any unwanted UI changes after we close
 				// the result.
-				_cloneDetectiveRunner.DisableEvents();
-				_cloneDetectiveRunner.Abort();
+				_cloneDetective.DisableEvents();
+				_cloneDetective.Abort();
 			}
 
 			// Since the clone report is solution specific now it's the right time to
@@ -220,7 +220,7 @@ namespace CloneDetective.Package
 
 			// Save the new clone report to disk.
 			string solutionPath = VSPackage.Instance.GetSolutionPath();
-			string cloneReportPath = ConqatFiles.GetCloneReportPath(solutionPath);
+			string cloneReportPath = PathHelper.GetCloneReportPath(solutionPath);
 			CloneReport.ToFile(cloneReportPath, cloneDetectiveResult.CloneReport);
 
 			// Rollup changes within the SourceTree.
@@ -263,7 +263,7 @@ namespace CloneDetective.Package
 
 		#region Clone Detective interaction
 
-		public static bool RunCloneDetective(EventHandler<CloneDetectiveResultEventArgs> completedHandler)
+		public static bool RunCloneDetective(EventHandler<CloneDetectiveCompletedEventArgs> completedHandler)
 		{
 			string solutionPath = VSPackage.Instance.GetSolutionPath();
 
@@ -274,16 +274,22 @@ namespace CloneDetective.Package
 			if (hr == VSConstants.E_ABORT)
 				return false;
 
-			_cloneDetectiveRunner = new CloneDetectiveRunner();
-			_cloneDetectiveRunner.Completed += delegate(object sender, CloneDetectiveResultEventArgs e)
-				{
-					_cloneDetectiveRunner = null;
+			VSPackage.Instance.ClearOutput();
 
-					if (e.Result != null)
-						CloneDetectiveResult = e.Result;
+			_cloneDetective = new CloneReporting.CloneDetective(solutionPath);
+			_cloneDetective.Started += (sender, e) => WriteStartedMessage(e);
+			_cloneDetective.Message += (sender, e) => WriteOutputMessage(e);
+			_cloneDetective.Completed += (sender, e) =>
+			                                   	{
+													WriteCompletedMessage(e);
 
-					completedHandler(sender, e);
-				};
+			                                   		_cloneDetective = null;
+
+			                                   		if (e.Result != null)
+			                                   			CloneDetectiveResult = e.Result;
+
+			                                   		completedHandler(sender, e);
+			                                   	};
 
 			// Get configuration options.
 			CloneDetectiveOptionPage optionPage = VSPackage.Instance.GetOptionPage();
@@ -303,24 +309,54 @@ namespace CloneDetective.Package
 			}
 
 			// Now run the clone detective.
-			_cloneDetectiveRunner.ConqatFileName = optionPage.ConqatFileName;
-			_cloneDetectiveRunner.JavaHome = optionPage.JavaHome;
-			_cloneDetectiveRunner.MinimumCloneLength = optionPage.MinimumCloneLength;
-			_cloneDetectiveRunner.SolutionFileName = solutionPath;
-			_cloneDetectiveRunner.RunAsync();
+			_cloneDetective.RunAsync();
 
 			return true;
 		}
 
+		private static void WriteStartedMessage(CloneDetectiveStartedEventArgs e)
+		{
+			VSPackage.Instance.WriteOutputLine(Res.OutputHeaderStarted);
+			VSPackage.Instance.WriteOutputLine(e.Program + " " + e.Arguments);
+			VSPackage.Instance.WriteOutputLine();
+		}
+
+		private static void WriteOutputMessage(CloneDetectiveMessageEventArgs e)
+		{
+			VSPackage.Instance.WriteOutputLine(e.Message);
+		}
+
+		private static void WriteCompletedMessage(CloneDetectiveCompletedEventArgs e)
+		{
+			string message;
+
+			switch (e.Result.Status)
+			{
+				case CloneDetectiveResultStatus.Succeeded:
+					message = Res.OutputFooterSucceeded;
+					break;
+				case CloneDetectiveResultStatus.Failed:
+					message = Res.OutputFooterFailed;
+					break;
+				case CloneDetectiveResultStatus.Stopped:
+					message = Res.OutputFooterStopped;
+					break;
+				default:
+					throw ExceptionBuilder.UnhandledCaseLabel(e.Result.Status);
+			}
+
+			VSPackage.Instance.WriteOutputLine(message);
+		}
+
 		public static void AbortCloneDetective()
 		{
-			if (_cloneDetectiveRunner != null)
-				_cloneDetectiveRunner.Abort();
+			if (_cloneDetective != null)
+				_cloneDetective.Abort();
 		}
 
 		public static bool IsCloneDetectiveRunning
 		{
-			get { return _cloneDetectiveRunner != null; }
+			get { return _cloneDetective != null; }
 		}
 
 		public static bool IsCloneReportAvailable
@@ -340,8 +376,18 @@ namespace CloneDetective.Package
 				if (solutionPath == null)
 					return null;
 
-				return ConqatFiles.GetLogPath(solutionPath);
+				return PathHelper.GetLogPath(solutionPath);
 			}
+		}
+
+		public static void ExportCloneDetectiveResults(string fileName)
+		{
+			string solutionPath = VSPackage.Instance.GetSolutionPath();
+			if (solutionPath == null)
+				return;
+
+			string cloneReportPath = PathHelper.GetCloneReportPath(solutionPath);
+			File.Copy(cloneReportPath, fileName, true);
 		}
 
 		[SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
@@ -351,8 +397,8 @@ namespace CloneDetective.Package
 			if (solutionPath == null)
 				return;
 
-			string cloneReportPath = ConqatFiles.GetCloneReportPath(solutionPath);
-			string logPath = ConqatFiles.GetLogPath(solutionPath);
+			string logPath = PathHelper.GetLogPath(solutionPath);
+			string cloneReportPath = PathHelper.GetCloneReportPath(solutionPath);
 
 			using (StreamWriter logWriter = new StreamWriter(logPath))
 			{
@@ -384,6 +430,20 @@ namespace CloneDetective.Package
 					LogHelper.WriteStatusInfo(logWriter, CloneDetectiveResultStatus.Failed, 0, TimeSpan.Zero);
 				}
 			}
+
+			CloneDetectiveResult = CloneDetectiveResult.FromSolutionPath(solutionPath);
+		}
+
+		public static void CloseCloneDetectiveResults()
+		{
+			string solutionPath = VSPackage.Instance.GetSolutionPath();
+			if (solutionPath == null)
+				return;
+
+			string logPath = PathHelper.GetLogPath(solutionPath);
+			string cloneReportPath = PathHelper.GetCloneReportPath(solutionPath);
+			File.Delete(logPath);
+			File.Delete(cloneReportPath);
 
 			CloneDetectiveResult = CloneDetectiveResult.FromSolutionPath(solutionPath);
 		}

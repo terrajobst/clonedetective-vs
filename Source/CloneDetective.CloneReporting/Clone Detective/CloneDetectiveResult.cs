@@ -7,7 +7,7 @@ namespace CloneDetective.CloneReporting
 {
 	/// <summary>
 	/// This class acts as container that groups all the artifacts returned
-	/// by <see cref="CloneDetectiveRunner"/>.
+	/// by <see cref="CloneDetective"/>.
 	/// </summary>
 	public sealed class CloneDetectiveResult
 	{
@@ -80,9 +80,9 @@ namespace CloneDetective.CloneReporting
 		[SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
 		public static CloneDetectiveResult FromSolutionPath(string solutionPath)
 		{
-			// Get path to log file and clone report.
-			string logPath = ConqatFiles.GetLogPath(solutionPath);
-			string cloneReportPath = ConqatFiles.GetCloneReportPath(solutionPath);
+			// Get path to log file.
+			string logPath = PathHelper.GetLogPath(solutionPath);
+			string cloneReportPath = PathHelper.GetCloneReportPath(solutionPath);
 
 			// If the log file does not exist no clone detective result can be
 			// constructed (if only the clone report is missing it can).

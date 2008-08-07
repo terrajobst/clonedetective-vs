@@ -134,7 +134,10 @@ namespace CloneDetective.Package
 				case UIState.NoSolution:
 					runToolStripButton.Enabled = false;
 					stopToolStripButton.Enabled = false;
+					settingsToolStripButton.Enabled = false;
 					importToolStripButton.Enabled = false;
+					exportToolStripButton.Enabled = false;
+					closeToolStripButton.Enabled = false;
 					rollupTypeToolStripComboBox.Enabled = false;
 					resultTableLayoutPanel.Visible = false;
 					pictureBox.Image = null;
@@ -144,8 +147,11 @@ namespace CloneDetective.Package
 				case UIState.SolutionAndRunning:
 					runToolStripButton.Enabled = false;
 					stopToolStripButton.Enabled = true;
+					settingsToolStripButton.Enabled = false;
 					importToolStripButton.Enabled = false;
-					rollupTypeToolStripComboBox.Enabled = true;
+					exportToolStripButton.Enabled = false;
+					closeToolStripButton.Enabled = false;
+					rollupTypeToolStripComboBox.Enabled = false;
 					resultTableLayoutPanel.Visible = false;
 					pictureBox.Image = Res.Running;
 					runningLabel.Visible = true;
@@ -154,21 +160,28 @@ namespace CloneDetective.Package
 				case UIState.Solution:
 					runToolStripButton.Enabled = true;
 					stopToolStripButton.Enabled = false;
+					settingsToolStripButton.Enabled = true;
 					importToolStripButton.Enabled = true;
 					rollupTypeToolStripComboBox.Enabled = true;
 					runningLabel.Visible = false;
 					progressBar.Visible = false;
 					if (result == null)
 					{
+						exportToolStripButton.Enabled = false;
+						closeToolStripButton.Enabled = false;
+						rollupTypeToolStripComboBox.Enabled = false;
 						resultTableLayoutPanel.Visible = false;
 						pictureBox.Image = null;
 					}
 					else
 					{
+						closeToolStripButton.Enabled = true;
 						resultTableLayoutPanel.Visible = true;
 						switch (result.Status)
 						{
 							case CloneDetectiveResultStatus.Succeeded:
+								exportToolStripButton.Enabled = true;
+								rollupTypeToolStripComboBox.Enabled = true;
 								pictureBox.Image = Res.Succeeded;
 								resultLinkLabel.Text = Res.CloneExplorerSucceeded;
 								timeLabel.Text = String.Format(CultureInfo.CurrentCulture, Res.CloneExplorerTimeStatistic, FormattingHelper.FormatTime(result.UsedTime));
@@ -177,12 +190,16 @@ namespace CloneDetective.Package
 								memoryLabel.Visible = true;
 								break;
 							case CloneDetectiveResultStatus.Failed:
+								exportToolStripButton.Enabled = false;
+								rollupTypeToolStripComboBox.Enabled = false;
 								pictureBox.Image = Res.Error;
 								resultLinkLabel.Text = Res.CloneExplorerFailed;
 								timeLabel.Visible = false;
 								memoryLabel.Visible = false;
 								break;
 							case CloneDetectiveResultStatus.Stopped:
+								exportToolStripButton.Enabled = false;
+								rollupTypeToolStripComboBox.Enabled = false;
 								pictureBox.Image = Res.Stopped;
 								resultLinkLabel.Text = Res.CloneExplorerStopped;
 								timeLabel.Visible = false;
@@ -224,7 +241,7 @@ namespace CloneDetective.Package
 		private void RunCloneDetective()
 		{
 			bool started = CloneDetectiveManager.RunCloneDetective(
-				delegate(object sender, CloneDetectiveResultEventArgs e)
+				delegate(object sender, CloneDetectiveCompletedEventArgs e)
 					{
 						if (e.Exception != null)
 							VSPackage.Instance.ShowError(e.Exception.Message);
@@ -240,10 +257,21 @@ namespace CloneDetective.Package
 			CloneDetectiveManager.AbortCloneDetective();
 		}
 
+		private void ExportCloneDetectiveResults()
+		{
+			if (saveFileDialog.ShowDialog() == DialogResult.OK)
+				CloneDetectiveManager.ExportCloneDetectiveResults(saveFileDialog.FileName);
+		}
+
 		private void ImportCloneDetectiveResults()
 		{
 			if (openFileDialog.ShowDialog() == DialogResult.OK)
 				CloneDetectiveManager.ImportCloneDetectiveResults(openFileDialog.FileName);
+		}
+
+		private static void CloseCloneDetectiveResults()
+		{
+			CloneDetectiveManager.CloseCloneDetectiveResults();
 		}
 
 		private void UpdateTreeView()
@@ -432,9 +460,25 @@ namespace CloneDetective.Package
 			AbortCloneDetective();
 		}
 
+		private void exportToolStripButton_Click(object sender, EventArgs e)
+		{
+			ExportCloneDetectiveResults();
+		}
+
 		private void importToolStripButton_Click(object sender, EventArgs e)
 		{
 			ImportCloneDetectiveResults();
+		}
+
+		private void closeToolStripButton_Click(object sender, EventArgs e)
+		{
+			CloseCloneDetectiveResults();
+		}
+
+		private void settingsToolStripButton_Click(object sender, EventArgs e)
+		{
+			using (SolutionSettingsForm dlg = new SolutionSettingsForm(VSPackage.Instance.GetSolutionPath()))
+				dlg.ShowDialog();
 		}
 
 		private void rollupTypeToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)

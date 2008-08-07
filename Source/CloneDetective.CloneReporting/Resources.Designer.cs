@@ -123,14 +123,5 @@ namespace CloneDetective.CloneReporting {
                 return ResourceManager.GetString("InvalidCloneReport", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You have to initialize the property &quot;{0}&quot; first..
-        /// </summary>
-        internal static string PropertyMustBeInitializedFirst {
-            get {
-                return ResourceManager.GetString("PropertyMustBeInitializedFirst", resourceCulture);
-            }
-        }
     }
 }

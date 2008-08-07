@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="VisualCloneDetective.Package.CloneDetectiveManager">
+  <Class Name="CloneDetective.Package.CloneDetectiveManager">
     <Position X="0.5" Y="0.5" Width="4" />
     <Members>
       <Field Name="_cloneDetectiveResult" Hidden="true" />
@@ -24,7 +24,7 @@
       <Method Name="ValidateHash" Hidden="true" />
     </Members>
     <NestedTypes>
-      <Class Name="VisualCloneDetective.Package.CloneDetectiveManager.DocumentInfo" Collapsed="true">
+      <Class Name="CloneDetective.Package.CloneDetectiveManager.DocumentInfo" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>CloneDetectiveManager.cs</NewMemberFileName>
         </TypeIdentifier>
@@ -34,12 +34,9 @@
       <HashCode>ASIAAAwJggYAAAAABAsCCQAAEgBAgEAKAAAAQCBEYSA=</HashCode>
       <FileName>CloneDetectiveManager.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="CloneDetectiveResult" />
-    </ShowAsAssociation>
   </Class>
-  <Class Name="VisualCloneDetective.CloneReporting.CloneDetectiveResult" Collapsed="true">
-    <Position X="7" Y="1.75" Width="1.75" />
+  <Class Name="CloneDetective.CloneReporting.CloneDetectiveResult">
+    <Position X="5" Y="0.5" Width="4" />
     <TypeIdentifier />
   </Class>
   <Font Name="Segoe UI" Size="9" />

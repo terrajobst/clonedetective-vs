@@ -34,18 +34,22 @@ namespace CloneDetective.Package
 		{
 			this.components = new System.ComponentModel.Container();
 			this.imageList = new System.Windows.Forms.ImageList(this.components);
-			this.borderPanel1 = new BorderPanel();
+			this.borderPanel1 = new CloneDetective.Package.BorderPanel();
 			this.treeView = new System.Windows.Forms.TreeView();
 			this.progressBar = new System.Windows.Forms.ProgressBar();
-			this.borderPanel2 = new BorderPanel();
+			this.borderPanel2 = new CloneDetective.Package.BorderPanel();
 			this.toolStrip = new System.Windows.Forms.ToolStrip();
 			this.runToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.stopToolStripButton = new System.Windows.Forms.ToolStripButton();
+			this.settingsToolStripButton = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.exportToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.importToolStripButton = new System.Windows.Forms.ToolStripButton();
+			this.closeToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
 			this.rollupTypeToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
-			this.borderPanel3 = new BorderPanel();
+			this.borderPanel3 = new CloneDetective.Package.BorderPanel();
 			this.resultTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
 			this.memoryLabel = new System.Windows.Forms.Label();
 			this.timeLabel = new System.Windows.Forms.Label();
@@ -53,6 +57,7 @@ namespace CloneDetective.Package
 			this.pictureBox = new System.Windows.Forms.PictureBox();
 			this.runningLabel = new System.Windows.Forms.Label();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
 			this.borderPanel1.SuspendLayout();
 			this.borderPanel2.SuspendLayout();
 			this.toolStrip.SuspendLayout();
@@ -78,7 +83,7 @@ namespace CloneDetective.Package
 			this.borderPanel1.Location = new System.Drawing.Point(0, 49);
 			this.borderPanel1.Name = "borderPanel1";
 			this.borderPanel1.Padding = new System.Windows.Forms.Padding(1);
-			this.borderPanel1.Size = new System.Drawing.Size(313, 166);
+			this.borderPanel1.Size = new System.Drawing.Size(343, 166);
 			this.borderPanel1.TabIndex = 3;
 			// 
 			// treeView
@@ -93,7 +98,7 @@ namespace CloneDetective.Package
 			this.treeView.Name = "treeView";
 			this.treeView.SelectedImageIndex = 0;
 			this.treeView.ShowRootLines = false;
-			this.treeView.Size = new System.Drawing.Size(311, 164);
+			this.treeView.Size = new System.Drawing.Size(341, 164);
 			this.treeView.TabIndex = 1;
 			this.treeView.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView_NodeMouseDoubleClick);
 			this.treeView.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterCollapse);
@@ -107,7 +112,7 @@ namespace CloneDetective.Package
 			// 
 			this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
 						| System.Windows.Forms.AnchorStyles.Right)));
-			this.progressBar.Location = new System.Drawing.Point(226, 5);
+			this.progressBar.Location = new System.Drawing.Point(256, 5);
 			this.progressBar.Name = "progressBar";
 			this.progressBar.Size = new System.Drawing.Size(83, 13);
 			this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
@@ -124,7 +129,7 @@ namespace CloneDetective.Package
 			this.borderPanel2.Location = new System.Drawing.Point(0, 0);
 			this.borderPanel2.Name = "borderPanel2";
 			this.borderPanel2.Padding = new System.Windows.Forms.Padding(1, 1, 1, 0);
-			this.borderPanel2.Size = new System.Drawing.Size(313, 26);
+			this.borderPanel2.Size = new System.Drawing.Size(343, 26);
 			this.borderPanel2.TabIndex = 4;
 			// 
 			// toolStrip
@@ -133,20 +138,24 @@ namespace CloneDetective.Package
 			this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.runToolStripButton,
             this.stopToolStripButton,
+            this.settingsToolStripButton,
+            this.toolStripSeparator2,
+            this.exportToolStripButton,
             this.importToolStripButton,
+            this.closeToolStripButton,
             this.toolStripSeparator1,
             this.toolStripLabel1,
             this.rollupTypeToolStripComboBox});
 			this.toolStrip.Location = new System.Drawing.Point(1, 1);
 			this.toolStrip.Name = "toolStrip";
-			this.toolStrip.Size = new System.Drawing.Size(311, 25);
+			this.toolStrip.Size = new System.Drawing.Size(341, 25);
 			this.toolStrip.TabIndex = 1;
 			this.toolStrip.Text = "toolStrip1";
 			// 
 			// runToolStripButton
 			// 
 			this.runToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.runToolStripButton.Image = Res.Run;
+			this.runToolStripButton.Image = global::CloneDetective.Package.Res.Run;
 			this.runToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.runToolStripButton.Name = "runToolStripButton";
 			this.runToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -156,22 +165,57 @@ namespace CloneDetective.Package
 			// stopToolStripButton
 			// 
 			this.stopToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.stopToolStripButton.Image = Res.Stop;
+			this.stopToolStripButton.Image = global::CloneDetective.Package.Res.Stop;
 			this.stopToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.stopToolStripButton.Name = "stopToolStripButton";
 			this.stopToolStripButton.Size = new System.Drawing.Size(23, 22);
 			this.stopToolStripButton.Text = "Stop Clone Detective";
 			this.stopToolStripButton.Click += new System.EventHandler(this.stopToolStripButton_Click);
 			// 
+			// settingsToolStripButton
+			// 
+			this.settingsToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.settingsToolStripButton.Image = global::CloneDetective.Package.Res.Settings;
+			this.settingsToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.settingsToolStripButton.Name = "settingsToolStripButton";
+			this.settingsToolStripButton.Size = new System.Drawing.Size(23, 22);
+			this.settingsToolStripButton.Text = "Edit Solution Settings";
+			this.settingsToolStripButton.Click += new System.EventHandler(this.settingsToolStripButton_Click);
+			// 
+			// toolStripSeparator2
+			// 
+			this.toolStripSeparator2.Name = "toolStripSeparator2";
+			this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+			// 
+			// exportToolStripButton
+			// 
+			this.exportToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.exportToolStripButton.Image = global::CloneDetective.Package.Res.Export;
+			this.exportToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.exportToolStripButton.Name = "exportToolStripButton";
+			this.exportToolStripButton.Size = new System.Drawing.Size(23, 22);
+			this.exportToolStripButton.Text = "Export Clone Detective Results";
+			this.exportToolStripButton.Click += new System.EventHandler(this.exportToolStripButton_Click);
+			// 
 			// importToolStripButton
 			// 
 			this.importToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.importToolStripButton.Image = Res.Import;
+			this.importToolStripButton.Image = global::CloneDetective.Package.Res.Import;
 			this.importToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.importToolStripButton.Name = "importToolStripButton";
 			this.importToolStripButton.Size = new System.Drawing.Size(23, 22);
 			this.importToolStripButton.Text = "Import Clone Detective Results";
 			this.importToolStripButton.Click += new System.EventHandler(this.importToolStripButton_Click);
+			// 
+			// closeToolStripButton
+			// 
+			this.closeToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.closeToolStripButton.Image = global::CloneDetective.Package.Res.CloseResults;
+			this.closeToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.closeToolStripButton.Name = "closeToolStripButton";
+			this.closeToolStripButton.Size = new System.Drawing.Size(23, 22);
+			this.closeToolStripButton.Text = "Close Clone Detective Results";
+			this.closeToolStripButton.Click += new System.EventHandler(this.closeToolStripButton_Click);
 			// 
 			// toolStripSeparator1
 			// 
@@ -181,8 +225,8 @@ namespace CloneDetective.Package
 			// toolStripLabel1
 			// 
 			this.toolStripLabel1.Name = "toolStripLabel1";
-			this.toolStripLabel1.Size = new System.Drawing.Size(76, 22);
-			this.toolStripLabel1.Text = "Show Rollup:";
+			this.toolStripLabel1.Size = new System.Drawing.Size(44, 22);
+			this.toolStripLabel1.Text = "Rollup:";
 			// 
 			// rollupTypeToolStripComboBox
 			// 
@@ -195,7 +239,7 @@ namespace CloneDetective.Package
             "Number of Lines",
             "Clone Percentage"});
 			this.rollupTypeToolStripComboBox.Name = "rollupTypeToolStripComboBox";
-			this.rollupTypeToolStripComboBox.Size = new System.Drawing.Size(150, 25);
+			this.rollupTypeToolStripComboBox.Size = new System.Drawing.Size(140, 25);
 			this.rollupTypeToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.rollupTypeToolStripComboBox_SelectedIndexChanged);
 			// 
 			// borderPanel3
@@ -211,7 +255,7 @@ namespace CloneDetective.Package
 			this.borderPanel3.Location = new System.Drawing.Point(0, 26);
 			this.borderPanel3.Name = "borderPanel3";
 			this.borderPanel3.Padding = new System.Windows.Forms.Padding(1, 1, 1, 0);
-			this.borderPanel3.Size = new System.Drawing.Size(313, 23);
+			this.borderPanel3.Size = new System.Drawing.Size(343, 23);
 			this.borderPanel3.TabIndex = 3;
 			// 
 			// resultTableLayoutPanel
@@ -231,7 +275,7 @@ namespace CloneDetective.Package
 			this.resultTableLayoutPanel.Name = "resultTableLayoutPanel";
 			this.resultTableLayoutPanel.RowCount = 1;
 			this.resultTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.resultTableLayoutPanel.Size = new System.Drawing.Size(287, 13);
+			this.resultTableLayoutPanel.Size = new System.Drawing.Size(317, 13);
 			this.resultTableLayoutPanel.TabIndex = 2;
 			// 
 			// memoryLabel
@@ -288,6 +332,10 @@ namespace CloneDetective.Package
 			// 
 			this.openFileDialog.Filter = "Clone Detective Reports (*.xml)|*.xml|All Files (*.*)|*.*";
 			// 
+			// saveFileDialog
+			// 
+			this.saveFileDialog.Filter = "Clone Detective Reports (*.xml)|*.xml|All Files (*.*)|*.*";
+			// 
 			// CloneExplorerControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,7 +344,7 @@ namespace CloneDetective.Package
 			this.Controls.Add(this.borderPanel3);
 			this.Controls.Add(this.borderPanel2);
 			this.Name = "CloneExplorerControl";
-			this.Size = new System.Drawing.Size(313, 215);
+			this.Size = new System.Drawing.Size(343, 215);
 			this.borderPanel1.ResumeLayout(false);
 			this.borderPanel2.ResumeLayout(false);
 			this.borderPanel2.PerformLayout();
@@ -334,6 +382,11 @@ namespace CloneDetective.Package
 		private System.Windows.Forms.TableLayoutPanel resultTableLayoutPanel;
 		private System.Windows.Forms.ToolStripButton importToolStripButton;
 		private System.Windows.Forms.OpenFileDialog openFileDialog;
+		private System.Windows.Forms.ToolStripButton settingsToolStripButton;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+		private System.Windows.Forms.ToolStripButton exportToolStripButton;
+		private System.Windows.Forms.ToolStripButton closeToolStripButton;
+		private System.Windows.Forms.SaveFileDialog saveFileDialog;
 
 	}
 }

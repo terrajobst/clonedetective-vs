@@ -43,6 +43,8 @@
     <Reference Include="Microsoft.VisualStudio.TextManager.Interop" />
     <Reference Include="Microsoft.VisualStudio.Shell.9.0" />
     <Reference Include="Microsoft.VisualStudio.TextManager.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.VSHelp, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.VSHelp80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="SandDock, Version=1.0.6.1, Culture=neutral, PublicKeyToken=75b7ec17dd7c14c3">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Lib\SandDock.dll</HintPath>
@@ -78,6 +80,18 @@
     </Compile>
     <Compile Include="Option Pages\CloneDetectiveOptionPageControl.Designer.cs">
       <DependentUpon>CloneDetectiveOptionPageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PropertyForm.Designer.cs">
+      <DependentUpon>PropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SolutionSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SolutionSettingsForm.Designer.cs">
+      <DependentUpon>SolutionSettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Property Summaries\CloneFileSummary.cs" />
     <Compile Include="Property Summaries\CloneIntersectionSummary.cs" />
@@ -148,6 +162,14 @@
       <DependentUpon>CloneDetectiveOptionPageControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PropertyForm.resx">
+      <DependentUpon>PropertyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SolutionSettingsForm.resx">
+      <DependentUpon>SolutionSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tool Windows\CloneExplorerControl.resx">
       <DependentUpon>CloneExplorerControl.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -197,7 +219,15 @@
     <None Include="Resources\Error 16x16.png" />
     <None Include="Resources\Import 16x16.png" />
     <CodeAnalysisDictionary Include="CodeAnalysisDictionary.xml" />
+    <None Include="Resources\Edit 16x16.png" />
+    <None Include="Resources\New Item 16x16.png" />
+    <None Include="Resources\Delete 16x16.png" />
+    <None Include="Resources\Down 16x16.png" />
+    <None Include="Resources\Export 16x16.png" />
+    <None Include="Resources\Close Results 16x16.png" />
     <Content Include="Resources\Package.ico" />
+    <None Include="Resources\Settings 16x16.png" />
+    <None Include="Resources\Up 16x16.png" />
     <None Include="Resources\Stopped 16x16.png" />
     <None Include="Resources\Running 16x16.png" />
     <None Include="Resources\Succeeded 16x16.png" />

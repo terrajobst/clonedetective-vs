@@ -14,6 +14,7 @@ using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TextManager.Interop;
+using Microsoft.VisualStudio.VSHelp80;
 using Microsoft.Win32;
 
 using IServiceProvider = Microsoft.VisualStudio.OLE.Interop.IServiceProvider;
@@ -67,6 +68,7 @@ namespace CloneDetective.Package
 		public const string Company = ProductName;
 
 		private static VSPackage _instance;
+		private IVsOutputWindowPane _outputWindowPane;
 
 		/// <summary>
 		/// Default constructor of the package.
@@ -318,35 +320,18 @@ namespace CloneDetective.Package
 		{
 			CloneDetectiveOptionPage optionPage = GetOptionPage();
 
-			if (String.IsNullOrEmpty(optionPage.ConqatFileName))
-			{
-				const string rootKey = @"SOFTWARE\Microsoft\VisualStudio\9.0\" + ProductName;
-				using (RegistryKey machineRegistryRoot = Registry.LocalMachine.OpenSubKey(rootKey))
-				{
-					if (machineRegistryRoot != null)
-						optionPage.ConqatFileName = Convert.ToString(machineRegistryRoot.GetValue("ConqatFileName"), CultureInfo.InvariantCulture);
-				}
-			}
+			bool conqatFileNameInitialized = !String.IsNullOrEmpty(optionPage.ConqatFileName);
+			if (!conqatFileNameInitialized)
+				optionPage.ConqatFileName = GlobalSettings.GetConqatBatFileName();
 
-			if (String.IsNullOrEmpty(optionPage.JavaHome))
-			{
-				const string rootKey = @"SOFTWARE\JavaSoft\Java Runtime Environment";
-				using (RegistryKey javaRuntimeRoot = Registry.LocalMachine.OpenSubKey(rootKey))
-				{
-					if (javaRuntimeRoot != null)
-					{
-						string currentVersion = Convert.ToString(javaRuntimeRoot.GetValue("CurrentVersion"), CultureInfo.InvariantCulture);
-						if (currentVersion != null)
-						{
-							using (RegistryKey currentVersionRoot = Registry.LocalMachine.OpenSubKey(rootKey + "\\" + currentVersion))
-							{
-								if (currentVersionRoot != null)
-									optionPage.JavaHome = Convert.ToString(currentVersionRoot.GetValue("JavaHome"), CultureInfo.InvariantCulture);
-							}
-						}
-					}
-				}
-			}
+			bool javaHomeInitialized = !String.IsNullOrEmpty(optionPage.JavaHome);
+			if (!javaHomeInitialized)
+				optionPage.JavaHome = GlobalSettings.GetJavaHome();
+
+			bool needSave = !conqatFileNameInitialized ||
+			                !javaHomeInitialized;
+			if (needSave)
+				optionPage.SaveSettingsToStorage();
 		}
 
 		#endregion
@@ -467,5 +452,56 @@ namespace CloneDetective.Package
 			ServiceProvider serviceProvider = new ServiceProvider(GetServiceProvider());
 			VsShellUtilities.ShowMessageBox(serviceProvider, message, ProductName, OLEMSGICON.OLEMSGICON_CRITICAL, OLEMSGBUTTON.OLEMSGBUTTON_OK, OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);
 		}
+
+		[SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "f")]
+		public void ShowHelp(string f1Keyword)
+		{
+			// Obtain the Help2 object from SVsHelp service.
+			Help2 help2 = (Help2)GetService(typeof(Microsoft.VisualStudio.VSHelp.SVsHelp));
+			help2.DisplayTopicFromF1Keyword(f1Keyword);
+		}
+
+		#region Output Window
+
+		public void ClearOutput()
+		{
+			if (_outputWindowPane != null)
+				ErrorHandler.ThrowOnFailure(_outputWindowPane.Clear());
+		}
+
+		public void WriteOutput(string message)
+		{
+			if (_outputWindowPane == null)
+			{
+				IVsOutputWindow output = (IVsOutputWindow)GetService(typeof(SVsOutputWindow));
+
+				Guid paneGuid = Guid.Empty;
+				const bool visible = true;
+				const bool clearWithSolution = true;
+
+				// Create a new pane.
+				ErrorHandler.ThrowOnFailure(output.CreatePane(ref paneGuid, Res.CloneDetective, Convert.ToInt32(visible),
+				                                              Convert.ToInt32(clearWithSolution)));
+
+				// Retrieve the new pane.
+				ErrorHandler.ThrowOnFailure(output.GetPane(ref paneGuid, out _outputWindowPane));
+			}
+
+			ErrorHandler.ThrowOnFailure(_outputWindowPane.OutputString(message));
+		}
+
+		public void WriteOutputLine()
+		{
+			WriteOutput(Environment.NewLine);
+		}
+
+		public void WriteOutputLine(string message)
+		{
+			WriteOutput(message);
+			WriteOutputLine();
+		}
+
+		#endregion
+
 	}
 }

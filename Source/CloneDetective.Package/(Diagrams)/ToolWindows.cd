@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
-  <Class Name="VisualCloneDetective.Package.CloneExplorerControl">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="CloneDetective.Package.CloneExplorerControl">
     <Position X="6" Y="3.5" Width="1.75" />
     <Members>
       <Method Name="AbortCloneDetective" Hidden="true" />
@@ -9,9 +9,15 @@
       <Field Name="borderPanel2" Hidden="true" />
       <Field Name="borderPanel3" Hidden="true" />
       <Method Name="CloneExplorerControl" Hidden="true" />
+      <Method Name="CloseCloneDetectiveResults" Hidden="true" />
+      <Field Name="closeToolStripButton" Hidden="true" />
+      <Method Name="closeToolStripButton_Click" Hidden="true" />
       <Field Name="components" Hidden="true" />
       <Property Name="CurrentUIState" Hidden="true" />
       <Method Name="Dispose" Hidden="true" />
+      <Method Name="ExportCloneDetectiveResults" Hidden="true" />
+      <Field Name="exportToolStripButton" Hidden="true" />
+      <Method Name="exportToolStripButton_Click" Hidden="true" />
       <Method Name="FormatRollupValue" Hidden="true" />
       <Method Name="GetRollupLabel" Hidden="true" />
       <Field Name="imageList" Hidden="true" />
@@ -35,15 +41,19 @@
       <Field Name="runningLabel" Hidden="true" />
       <Field Name="runToolStripButton" Hidden="true" />
       <Method Name="runToolStripButton_Click" Hidden="true" />
+      <Field Name="saveFileDialog" Hidden="true" />
       <Method Name="SaveSettings" Hidden="true" />
       <Property Name="SelectedRollupType" Hidden="true" />
       <Property Name="SelectedSourceNode" Hidden="true" />
+      <Field Name="settingsToolStripButton" Hidden="true" />
+      <Method Name="settingsToolStripButton_Click" Hidden="true" />
       <Field Name="stopToolStripButton" Hidden="true" />
       <Method Name="stopToolStripButton_Click" Hidden="true" />
       <Field Name="timeLabel" Hidden="true" />
       <Field Name="toolStrip" Hidden="true" />
       <Field Name="toolStripLabel1" Hidden="true" />
       <Field Name="toolStripSeparator1" Hidden="true" />
+      <Field Name="toolStripSeparator2" Hidden="true" />
       <Field Name="treeView" Hidden="true" />
       <Method Name="treeView_AfterCollapse" Hidden="true" />
       <Method Name="treeView_AfterExpand" Hidden="true" />
@@ -57,30 +67,30 @@
       <Method Name="UpdateUI" Hidden="true" />
     </Members>
     <NestedTypes>
-      <Enum Name="VisualCloneDetective.Package.CloneExplorerControl.RollupType" Collapsed="true">
+      <Enum Name="CloneDetective.Package.CloneExplorerControl.RollupType" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Tool Windows\CloneExplorerControl.cs</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
-      <Enum Name="VisualCloneDetective.Package.CloneExplorerControl.UIState" Collapsed="true">
+      <Enum Name="CloneDetective.Package.CloneExplorerControl.UIState" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Tool Windows\CloneExplorerControl.cs</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>A4IQABFQAiAAg5AhAkCAQQALECFAk2AkEBAAUgAAEAA=</HashCode>
+      <HashCode>B4IYBBlQAjIAg5AhAkCAQSALECFAm2AkEJAAUgAAEIA=</HashCode>
       <FileName>Tool Windows\CloneExplorerControl.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="VisualCloneDetective.Package.CloneExplorerToolWindow" Collapsed="true">
-    <Position X="3.75" Y="6.75" Width="1.5" />
+  <Class Name="CloneDetective.Package.CloneExplorerToolWindow" Collapsed="true">
+    <Position X="3.25" Y="6.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAABAAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>Tool Windows\CloneExplorerToolWindow.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="VisualCloneDetective.Package.CloneIntersectionsControl">
+  <Class Name="CloneDetective.Package.CloneIntersectionsControl">
     <Position X="3.5" Y="3.5" Width="2" />
     <Members>
       <Field Name="_cloneBrushes" Hidden="true" />
@@ -135,13 +145,13 @@
       <Method Name="UpdateSelection" Hidden="true" />
     </Members>
     <NestedTypes>
-      <Class Name="VisualCloneDetective.Package.CloneIntersectionsControl.SelectionTracker" Collapsed="true">
+      <Class Name="CloneDetective.Package.CloneIntersectionsControl.SelectionTracker" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Tool Windows\CloneIntersectionsControl.cs</NewMemberFileName>
         </TypeIdentifier>
         <Lollipop Position="0.2" />
       </Class>
-      <Class Name="VisualCloneDetective.Package.CloneIntersectionsControl.ReferenceHitTestInfo" Collapsed="true">
+      <Class Name="CloneDetective.Package.CloneIntersectionsControl.ReferenceHitTestInfo" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Tool Windows\CloneIntersectionsControl.cs</NewMemberFileName>
         </TypeIdentifier>
@@ -152,14 +162,14 @@
       <FileName>Tool Windows\CloneIntersectionsControl.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="VisualCloneDetective.Package.CloneIntersectionsToolWindow" Collapsed="true">
-    <Position X="6" Y="6.75" Width="1.5" />
+  <Class Name="CloneDetective.Package.CloneIntersectionsToolWindow" Collapsed="true">
+    <Position X="5.75" Y="6.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAABAAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>Tool Windows\CloneIntersectionsToolWindow.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="VisualCloneDetective.Package.CloneResultsControl">
+  <Class Name="CloneDetective.Package.CloneResultsControl">
     <Position X="0.5" Y="3.5" Width="2.5" />
     <Members>
       <Method Name="CloneResultsControl" Hidden="true" />
@@ -180,24 +190,14 @@
       <FileName>Tool Windows\CloneResultsControl.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="VisualCloneDetective.Package.CloneResultsToolWindow" Collapsed="true">
+  <Class Name="CloneDetective.Package.CloneResultsToolWindow" Collapsed="true">
     <Position X="1.5" Y="6.75" Width="1.5" />
-    <Members>
-      <Method Name="CloneResultsToolWindow" Hidden="true" />
-    </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAABAAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>Tool Windows\CloneResultsToolWindow.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="VisualCloneDetective.Package.ServicedToolWindowPane" Collapsed="true">
-    <Position X="3.5" Y="5.25" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAAA=</HashCode>
-      <FileName>Tool Windows\ServicedToolWindowPane.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="VisualCloneDetective.Package.ToolWindowUserControl">
+  <Class Name="CloneDetective.Package.ToolWindowUserControl">
     <Position X="2.25" Y="0.5" Width="4.5" />
     <Members>
       <Field Name="_selectionContainer" Hidden="true" />
@@ -217,7 +217,14 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="VisualCloneDetective.Package.IServiceProviderHost">
+  <Class Name="CloneDetective.Package.ServicedToolWindowPane" Collapsed="true">
+    <Position X="3.5" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAQAAAAAAAQAEAAAAA=</HashCode>
+      <FileName>Tool Windows\ServicedToolWindowPane.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="CloneDetective.Package.IServiceProviderHost">
     <Position X="7.75" Y="0.5" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>

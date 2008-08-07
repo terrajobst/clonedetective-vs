@@ -61,6 +61,15 @@ namespace CloneDetective.Package {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have already overridden all available properties in the file {0}..
+        /// </summary>
+        internal static string AllPropertiesAlreadyOverridden {
+            get {
+                return ResourceManager.GetString("AllPropertiesAlreadyOverridden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Can not create tool window..
         /// </summary>
         internal static string CannotCreateWindow {
@@ -84,6 +93,15 @@ namespace CloneDetective.Package {
         internal static string CloneClassName {
             get {
                 return ResourceManager.GetString("CloneClassName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clone Detective.
+        /// </summary>
+        internal static string CloneDetective {
+            get {
+                return ResourceManager.GetString("CloneDetective", resourceCulture);
             }
         }
         
@@ -177,6 +195,13 @@ namespace CloneDetective.Package {
             }
         }
         
+        internal static System.Drawing.Bitmap CloseResults {
+            get {
+                object obj = ResourceManager.GetObject("CloseResults", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Find Clones.
         /// </summary>
@@ -198,6 +223,13 @@ namespace CloneDetective.Package {
         internal static System.Drawing.Bitmap CSharpFile {
             get {
                 object obj = ResourceManager.GetObject("CSharpFile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Delete {
+            get {
+                object obj = ResourceManager.GetObject("Delete", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -265,9 +297,30 @@ namespace CloneDetective.Package {
             }
         }
         
+        internal static System.Drawing.Bitmap Down {
+            get {
+                object obj = ResourceManager.GetObject("Down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Edit {
+            get {
+                object obj = ResourceManager.GetObject("Edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Error {
             get {
                 object obj = ResourceManager.GetObject("Error", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Export {
+            get {
+                object obj = ResourceManager.GetObject("Export", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -392,12 +445,55 @@ namespace CloneDetective.Package {
             }
         }
         
+        internal static System.Drawing.Bitmap NewItem {
+            get {
+                object obj = ResourceManager.GetObject("NewItem", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to No clone report loaded or no file selected..
         /// </summary>
         internal static string NoCloneReportOrNoFileSelected {
             get {
                 return ResourceManager.GetString("NoCloneReportOrNoFileSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ====== Clone detection failed ======.
+        /// </summary>
+        internal static string OutputFooterFailed {
+            get {
+                return ResourceManager.GetString("OutputFooterFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ====== Clone detection stopped ======.
+        /// </summary>
+        internal static string OutputFooterStopped {
+            get {
+                return ResourceManager.GetString("OutputFooterStopped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ====== Clone detection succeeded ======.
+        /// </summary>
+        internal static string OutputFooterSucceeded {
+            get {
+                return ResourceManager.GetString("OutputFooterSucceeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ------ Clone detection started ------.
+        /// </summary>
+        internal static string OutputHeaderStarted {
+            get {
+                return ResourceManager.GetString("OutputHeaderStarted", resourceCulture);
             }
         }
         
@@ -411,6 +507,13 @@ namespace CloneDetective.Package {
         internal static System.Drawing.Bitmap Running {
             get {
                 object obj = ResourceManager.GetObject("Running", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Settings {
+            get {
+                object obj = ResourceManager.GetObject("Settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -494,6 +597,13 @@ namespace CloneDetective.Package {
         internal static string UnhandledCaseLabel {
             get {
                 return ResourceManager.GetString("UnhandledCaseLabel", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Up {
+            get {
+                object obj = ResourceManager.GetObject("Up", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

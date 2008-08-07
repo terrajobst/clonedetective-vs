@@ -56,12 +56,17 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Clone Detective\CloneDetectiveMessageEventArgs.cs" />
+    <Compile Include="Clone Detective\CloneDetectiveStartedEventArgs.cs" />
+    <Compile Include="Clone Detective\GlobalSettings.cs" />
+    <Compile Include="Clone Detective\MacroExpander.cs" />
+    <Compile Include="Clone Detective\SolutionSettings.cs" />
     <Compile Include="Clone Report\Clone.cs" />
     <Compile Include="Clone Report\CloneClass.cs" />
     <Compile Include="Clone Detective\CloneDetectiveResult.cs" />
-    <Compile Include="Clone Detective\CloneDetectiveResultEventArgs.cs" />
+    <Compile Include="Clone Detective\CloneDetectiveCompletedEventArgs.cs" />
     <Compile Include="Clone Detective\CloneDetectiveResultStatus.cs" />
-    <Compile Include="Clone Detective\CloneDetectiveRunner.cs" />
+    <Compile Include="Clone Detective\CloneDetective.cs" />
     <Compile Include="Clone Intersection\CloneIntersectedItem.cs" />
     <Compile Include="Clone Intersection\CloneIntersection.cs" />
     <Compile Include="Clone Intersection\CloneIntersectionResult.cs" />
@@ -69,7 +74,7 @@
     <Compile Include="Clone Report\CloneReport.cs" />
     <Compile Include="Clone Report\CloneReportReader.cs" />
     <Compile Include="Clone Report\CloneReportWriter.cs" />
-    <Compile Include="Clone Detective\ConqatFiles.cs" />
+    <Compile Include="Clone Detective\PathHelper.cs" />
     <Compile Include="ExceptionBuilder.cs" />
     <Compile Include="Clone Detective\LogHelper.cs" />
     <Compile Include="GlobalSuppressions.cs" />
