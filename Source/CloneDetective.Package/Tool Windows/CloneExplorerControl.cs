@@ -492,6 +492,21 @@ namespace CloneDetective.Package
 				VSPackage.Instance.OpenDocumentReadOnly(CloneDetectiveManager.ConqatLogFileName);
 		}
 
+		private void openToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			OpenSelectedSourceNode();
+		}
+
+		private void showCloneIntersectionsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			VSPackage.Instance.ShowToolWindow<CloneIntersectionsToolWindow>();
+		}
+
+		private void propertiesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			VSPackage.Instance.ShowPropertiesToolWindow();
+		}
+
 		private void treeView_BeforeCollapse(object sender, TreeViewCancelEventArgs e)
 		{
 			e.Cancel = e.Node.Parent == null;
@@ -567,15 +582,25 @@ namespace CloneDetective.Package
 				TextRenderer.DrawText(e.Graphics, rollupLabel, font, labelPosition, Color.Blue);
 		}
 
-		private void treeView_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
-		{
-			OpenSelectedSourceNode();
-		}
-
 		private void treeView_KeyDown(object sender, KeyEventArgs e)
 		{
 			if (e.KeyData == Keys.Enter || e.KeyData == Keys.Return)
 				OpenSelectedSourceNode();
+		}
+
+		private void treeView_MouseClick(object sender, MouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Right)
+			{
+				TreeNode node = treeView.GetNodeAt(e.X, e.Y);
+				if (node != null)
+					treeView.SelectedNode = node;
+			}
+		}
+
+		private void treeView_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+		{
+			OpenSelectedSourceNode();
 		}
 	}
 }

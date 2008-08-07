@@ -225,7 +225,10 @@
     <None Include="Resources\Down 16x16.png" />
     <None Include="Resources\Export 16x16.png" />
     <None Include="Resources\Close Results 16x16.png" />
+    <None Include="Resources\Clone Intersection 16x16.png" />
+    <None Include="Resources\Open 16x16.png" />
     <Content Include="Resources\Package.ico" />
+    <None Include="Resources\Properties 16x16.png" />
     <None Include="Resources\Settings 16x16.png" />
     <None Include="Resources\Up 16x16.png" />
     <None Include="Resources\Stopped 16x16.png" />

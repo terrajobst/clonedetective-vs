@@ -36,6 +36,11 @@ namespace CloneDetective.Package
 			this.imageList = new System.Windows.Forms.ImageList(this.components);
 			this.borderPanel1 = new CloneDetective.Package.BorderPanel();
 			this.treeView = new System.Windows.Forms.TreeView();
+			this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.showCloneIntersectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+			this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.progressBar = new System.Windows.Forms.ProgressBar();
 			this.borderPanel2 = new CloneDetective.Package.BorderPanel();
 			this.toolStrip = new System.Windows.Forms.ToolStrip();
@@ -59,6 +64,7 @@ namespace CloneDetective.Package
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
 			this.borderPanel1.SuspendLayout();
+			this.contextMenuStrip.SuspendLayout();
 			this.borderPanel2.SuspendLayout();
 			this.toolStrip.SuspendLayout();
 			this.borderPanel3.SuspendLayout();
@@ -89,6 +95,7 @@ namespace CloneDetective.Package
 			// treeView
 			// 
 			this.treeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.treeView.ContextMenuStrip = this.contextMenuStrip;
 			this.treeView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.treeView.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText;
 			this.treeView.HideSelection = false;
@@ -102,11 +109,51 @@ namespace CloneDetective.Package
 			this.treeView.TabIndex = 1;
 			this.treeView.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView_NodeMouseDoubleClick);
 			this.treeView.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterCollapse);
+			this.treeView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.treeView_MouseClick);
 			this.treeView.DrawNode += new System.Windows.Forms.DrawTreeNodeEventHandler(this.treeView_DrawNode);
 			this.treeView.BeforeCollapse += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView_BeforeCollapse);
 			this.treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterSelect);
 			this.treeView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView_KeyDown);
 			this.treeView.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterExpand);
+			// 
+			// contextMenuStrip
+			// 
+			this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.showCloneIntersectionsToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.propertiesToolStripMenuItem});
+			this.contextMenuStrip.Name = "contextMenuStrip";
+			this.contextMenuStrip.Size = new System.Drawing.Size(208, 98);
+			// 
+			// openToolStripMenuItem
+			// 
+			this.openToolStripMenuItem.Image = global::CloneDetective.Package.Res.Open;
+			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+			this.openToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+			this.openToolStripMenuItem.Text = "Open";
+			this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+			// 
+			// showCloneIntersectionsToolStripMenuItem
+			// 
+			this.showCloneIntersectionsToolStripMenuItem.Image = global::CloneDetective.Package.Res.CloneIntersections;
+			this.showCloneIntersectionsToolStripMenuItem.Name = "showCloneIntersectionsToolStripMenuItem";
+			this.showCloneIntersectionsToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+			this.showCloneIntersectionsToolStripMenuItem.Text = "Show Clone Intersections";
+			this.showCloneIntersectionsToolStripMenuItem.Click += new System.EventHandler(this.showCloneIntersectionsToolStripMenuItem_Click);
+			// 
+			// toolStripMenuItem1
+			// 
+			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(204, 6);
+			// 
+			// propertiesToolStripMenuItem
+			// 
+			this.propertiesToolStripMenuItem.Image = global::CloneDetective.Package.Res.Properties;
+			this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
+			this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+			this.propertiesToolStripMenuItem.Text = "Properties";
+			this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.propertiesToolStripMenuItem_Click);
 			// 
 			// progressBar
 			// 
@@ -346,6 +393,7 @@ namespace CloneDetective.Package
 			this.Name = "CloneExplorerControl";
 			this.Size = new System.Drawing.Size(343, 215);
 			this.borderPanel1.ResumeLayout(false);
+			this.contextMenuStrip.ResumeLayout(false);
 			this.borderPanel2.ResumeLayout(false);
 			this.borderPanel2.PerformLayout();
 			this.toolStrip.ResumeLayout(false);
@@ -387,6 +435,11 @@ namespace CloneDetective.Package
 		private System.Windows.Forms.ToolStripButton exportToolStripButton;
 		private System.Windows.Forms.ToolStripButton closeToolStripButton;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
+		private System.Windows.Forms.ToolStripMenuItem showCloneIntersectionsToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
 
 	}
 }

@@ -168,6 +168,13 @@ namespace CloneDetective.Package {
             }
         }
         
+        internal static System.Drawing.Bitmap CloneIntersections {
+            get {
+                object obj = ResourceManager.GetObject("CloneIntersections", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Clone Intersections.
         /// </summary>
@@ -461,6 +468,13 @@ namespace CloneDetective.Package {
             }
         }
         
+        internal static System.Drawing.Bitmap Open {
+            get {
+                object obj = ResourceManager.GetObject("Open", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to ====== Clone detection failed ======.
         /// </summary>
@@ -494,6 +508,13 @@ namespace CloneDetective.Package {
         internal static string OutputHeaderStarted {
             get {
                 return ResourceManager.GetString("OutputHeaderStarted", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Properties {
+            get {
+                object obj = ResourceManager.GetObject("Properties", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

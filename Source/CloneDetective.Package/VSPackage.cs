@@ -159,6 +159,21 @@ namespace CloneDetective.Package
 
 			IVsWindowFrame windowFrame = (IVsWindowFrame)window.Frame;
 			ErrorHandler.ThrowOnFailure(windowFrame.Show());
+
+		}
+
+		public void ShowPropertiesToolWindow()
+		{
+			IVsUIShell shell = GetService(typeof(SVsUIShell)) as IVsUIShell;
+			if (shell != null)
+			{
+				var guidPropertyBrowser = new Guid(ToolWindowGuids.PropertyBrowser);
+				IVsWindowFrame propertyWindowFrame;
+				ErrorHandler.ThrowOnFailure(shell.FindToolWindow((uint) __VSFINDTOOLWIN.FTW_fForceCreate, ref guidPropertyBrowser,
+				                                                 out propertyWindowFrame));
+
+				ErrorHandler.ThrowOnFailure(propertyWindowFrame.Show());
+			}
 		}
 
 		#region Package Members
@@ -502,6 +517,5 @@ namespace CloneDetective.Package
 		}
 
 		#endregion
-
 	}
 }
