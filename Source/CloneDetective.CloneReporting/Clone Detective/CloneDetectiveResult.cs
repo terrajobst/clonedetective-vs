@@ -7,7 +7,7 @@ namespace CloneDetective.CloneReporting
 {
 	/// <summary>
 	/// This class acts as container that groups all the artifacts returned
-	/// by <see cref="CloneDetective"/>.
+	/// by <see cref="CloneDetectiveRunner"/>.
 	/// </summary>
 	public sealed class CloneDetectiveResult
 	{

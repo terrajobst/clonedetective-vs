@@ -5,7 +5,7 @@ namespace CloneDetective.CloneReporting
 	/// <summary>
 	/// This class wraps the startup arguments of ConQAT in the .NET standard 
 	/// <see cref="EventArgs"/> fashion needed by event handlers. This event
-	/// argument is passed to <see cref="CloneDetective.Started"/>.
+	/// argument is passed to <see cref="CloneDetectiveRunner.Started"/>.
 	/// </summary>
 	public sealed class CloneDetectiveStartedEventArgs : EventArgs
 	{

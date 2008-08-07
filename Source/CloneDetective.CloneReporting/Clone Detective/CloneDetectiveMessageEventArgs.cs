@@ -5,7 +5,7 @@ namespace CloneDetective.CloneReporting
 	/// <summary>
 	/// This class wraps an output message written during clone detection
 	/// in the .NET standard <see cref="EventArgs"/> fashion needed by event
-	/// handlers. This event argument is passed to <see cref="CloneDetective.Message"/>.
+	/// handlers. This event argument is passed to <see cref="CloneDetectiveRunner.Message"/>.
 	/// </summary>
 	public sealed class CloneDetectiveMessageEventArgs : EventArgs
 	{

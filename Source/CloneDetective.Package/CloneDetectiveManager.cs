@@ -20,7 +20,7 @@ namespace CloneDetective.Package
 	{
 		public static event EventHandler<EventArgs> CloneDetectiveResultChanged;
 
-		private static CloneReporting.CloneDetective _cloneDetective;
+		private static CloneReporting.CloneDetectiveRunner _cloneDetectiveRunner;
 		private static CloneDetectiveResult _cloneDetectiveResult;
 		private static Dictionary<IVsTextLines, DocumentInfo> _textLinesToDocInfos = new Dictionary<IVsTextLines, DocumentInfo>();
 
@@ -98,13 +98,13 @@ namespace CloneDetective.Package
 
 		internal static void OnSolutionClosed()
 		{
-			if (_cloneDetective != null)
+			if (_cloneDetectiveRunner != null)
 			{
 				// Terminate clone detective if it is still running. We need to disable
 				// the events upfront to prevent any unwanted UI changes after we close
 				// the result.
-				_cloneDetective.DisableEvents();
-				_cloneDetective.Abort();
+				_cloneDetectiveRunner.DisableEvents();
+				_cloneDetectiveRunner.Abort();
 			}
 
 			// Since the clone report is solution specific now it's the right time to
@@ -276,14 +276,14 @@ namespace CloneDetective.Package
 
 			VSPackage.Instance.ClearOutput();
 
-			_cloneDetective = new CloneReporting.CloneDetective(solutionPath);
-			_cloneDetective.Started += (sender, e) => WriteStartedMessage(e);
-			_cloneDetective.Message += (sender, e) => WriteOutputMessage(e);
-			_cloneDetective.Completed += (sender, e) =>
+			_cloneDetectiveRunner = new CloneReporting.CloneDetectiveRunner(solutionPath);
+			_cloneDetectiveRunner.Started += (sender, e) => WriteStartedMessage(e);
+			_cloneDetectiveRunner.Message += (sender, e) => WriteOutputMessage(e);
+			_cloneDetectiveRunner.Completed += (sender, e) =>
 			                                   	{
 													WriteCompletedMessage(e);
 
-			                                   		_cloneDetective = null;
+			                                   		_cloneDetectiveRunner = null;
 
 			                                   		if (e.Result != null)
 			                                   			CloneDetectiveResult = e.Result;
@@ -309,7 +309,7 @@ namespace CloneDetective.Package
 			}
 
 			// Now run the clone detective.
-			_cloneDetective.RunAsync();
+			_cloneDetectiveRunner.RunAsync();
 
 			return true;
 		}
@@ -350,13 +350,13 @@ namespace CloneDetective.Package
 
 		public static void AbortCloneDetective()
 		{
-			if (_cloneDetective != null)
-				_cloneDetective.Abort();
+			if (_cloneDetectiveRunner != null)
+				_cloneDetectiveRunner.Abort();
 		}
 
 		public static bool IsCloneDetectiveRunning
 		{
-			get { return _cloneDetective != null; }
+			get { return _cloneDetectiveRunner != null; }
 		}
 
 		public static bool IsCloneReportAvailable

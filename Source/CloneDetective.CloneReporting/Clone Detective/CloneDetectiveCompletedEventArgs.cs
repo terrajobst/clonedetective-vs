@@ -5,7 +5,7 @@ namespace CloneDetective.CloneReporting
 	/// <summary>
 	/// This class wraps a <see cref="CloneDetectiveResult"/> in the .NET standard
 	/// <see cref="EventArgs"/> fashion needed by event handlers. This event argument
-	/// is passed to <see cref="CloneDetective.Completed"/>
+	/// is passed to <see cref="CloneDetectiveRunner.Completed"/>
 	/// </summary>
 	public sealed class CloneDetectiveCompletedEventArgs : EventArgs
 	{

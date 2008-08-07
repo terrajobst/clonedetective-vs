@@ -66,7 +66,7 @@
     <Compile Include="Clone Detective\CloneDetectiveResult.cs" />
     <Compile Include="Clone Detective\CloneDetectiveCompletedEventArgs.cs" />
     <Compile Include="Clone Detective\CloneDetectiveResultStatus.cs" />
-    <Compile Include="Clone Detective\CloneDetective.cs" />
+    <Compile Include="Clone Detective\CloneDetectiveRunner.cs" />
     <Compile Include="Clone Intersection\CloneIntersectedItem.cs" />
     <Compile Include="Clone Intersection\CloneIntersection.cs" />
     <Compile Include="Clone Intersection\CloneIntersectionResult.cs" />

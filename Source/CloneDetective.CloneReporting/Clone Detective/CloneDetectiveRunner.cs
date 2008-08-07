@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
@@ -10,17 +11,14 @@ using System.Threading;
 namespace CloneDetective.CloneReporting
 {
 	/// <summary>
-	/// This class encapsulates the asynchronous execution of running Clone Detective.
+	/// This class encapsulates the asynchronous execution of Clone Detective.
 	/// </summary>
+	[SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
 	public sealed class CloneDetectiveRunner
 	{
-		private string _conqatFileName;
-		private string _javaHome;
-		private int _minimumCloneLength;
-		private string _solutionFileName;
+		private SolutionSettings _solutionSettings = new SolutionSettings();
 		private string _conqatLogFileName;
 		private string _cloneReportFileName;
-
 		private bool _running;
 		private Process _process;
 		private TimeSpan _usedTime;
@@ -28,12 +26,29 @@ namespace CloneDetective.CloneReporting
 		private bool _aborted;
 
 		/// <summary>
+		/// Creates a new instance of <see cref="CloneDetectiveRunner"/> by the given
+		/// solution file name.
+		/// </summary>
+		/// <param name="solutionFileName">The fully qualified path to the Visual Studio solution.</param>
+		/// <remarks>
+		/// <para>The path to the solution settings as well as the log file are derived from the
+		/// solution name.</para>
+		/// </remarks>
+		public CloneDetectiveRunner(string solutionFileName)
+		{
+			// First we load settings in the expanded form, i.e. all macros and
+			// flags are expanded in order to create the effective settings.
+			_solutionSettings.LoadAndExpand(solutionFileName);
+
+			// Derive solution specific log and clone report file names.
+			_conqatLogFileName = PathHelper.GetLogPath(solutionFileName);
+			_cloneReportFileName = PathHelper.GetCloneReportPath(solutionFileName);
+		}
+
+		/// <summary>
 		/// Starts Clone Detective by spawning a new process that runs ConQAT.
 		/// </summary>
-		/// <param name="conqatConfigFileName">The path and file name of the ConQAT config file.</param>
-		/// <param name="tempConqatLogFileName">The path and file name of the temporary ConQAT log file.</param>
-		/// <param name="tempCloneReportFileName">The path and file name of the temporary clone report file.</param>
-		private void RunConQAT(string conqatConfigFileName, string tempConqatLogFileName, string tempCloneReportFileName)
+		private void RunConQAT(Action<string> outputHandler)
 		{
 			// NOTE: We use a field instead of a local variable because we need a reference
 			//       to the spawned process in order to be able to terminate it in Abort().
@@ -43,53 +58,81 @@ namespace CloneDetective.CloneReporting
 				// Start new stop watch to measure the time Clone Detective needed.
 				Stopwatch stopwatch = Stopwatch.StartNew();
 
-				// We will use the location of the temporary log file as our working folder.
-				// Since the log file will reside in the user's temp folder our working folder
-				// will also be in the temp folder. This ensures ConQAT has write permissions
-				// there.
-				string workingDirectory = Path.GetDirectoryName(tempConqatLogFileName);
+				// We will use the directory of the analysis file as the working directory.
+				// Normally, ConQAT also creates additional files in working directory (such as
+				// the log4j log file). This makes sure the file is in a location the user expects.
+				// If the analysis is the default analysis file (which resides under %ProgramFiles%) 
+				// ConQAT will not have write permission in the working folder but log4j will just
+				// ignore this.
+				string workingDirectory = Path.GetDirectoryName(_solutionSettings.AnalysisFileName);
 
 				// Build the command line arguments string.
-				string arguments = BuildArgumentsString(
-					conqatConfigFileName,
-					tempConqatLogFileName,
-					tempCloneReportFileName,
-					_solutionFileName,
-					_minimumCloneLength);
+				string arguments = BuildArgumentsString(_solutionSettings);
+
+				// Read global settings
+				string conqatBatFileName = GlobalSettings.GetConqatBatFileName();
+				string javaHome = GlobalSettings.GetJavaHome();
 
 				// Setup the process. Make sure the process starts in a hidden window.
-				// NOTE: We will not use redirection features of System.Process() because we use output
-				//       redirection using the command line. See BuildArgumentsString() for details.
-				_process.StartInfo.FileName = _conqatFileName;
+				_process.StartInfo.FileName = conqatBatFileName;
 				_process.StartInfo.WorkingDirectory = workingDirectory;
 				_process.StartInfo.Arguments = arguments;
 				_process.StartInfo.UseShellExecute = false;
 				_process.StartInfo.CreateNoWindow = true;
-				_process.StartInfo.EnvironmentVariables["PATH"] = PrependPathWithJavaBinFolder(_process.StartInfo.EnvironmentVariables["PATH"], _javaHome);
-				_process.StartInfo.EnvironmentVariables["JAVA_HOME"] = _javaHome;
+				_process.StartInfo.EnvironmentVariables["PATH"] = PrependPathWithJavaBinFolder(_process.StartInfo.EnvironmentVariables["PATH"], javaHome);
+				_process.StartInfo.EnvironmentVariables["JAVA_HOME"] = javaHome;
 
-				// Run ConQAT and wait for completion.
-				_process.Start();
-				_process.WaitForExit();
+				// Notify start handler that we are going to start clone detection.
+				EventHandler<CloneDetectiveStartedEventArgs> started = Started;
+				if (started != null)
+					started(this, new CloneDetectiveStartedEventArgs(_process.StartInfo.FileName, _process.StartInfo.Arguments));
+
+				// NOTE: We will not use a commmand line redirect to create the log file.
+				//       Instead we manually redirect the error and standard ouput streams
+				//       in order to be able to progressively report progress to our host.
+				//       Since we also want it to be written to a log file we write the
+				//       received output to our log file as well.
+				using (StreamWriter sw = new StreamWriter(_conqatLogFileName, false))
+				{
+					DataReceivedEventHandler dataReceivedHandler = (sender, e) =>
+					                                               	{
+																		// At the end of the stream we will get a null value.
+																		// We will just ignore that.
+																		if (e.Data == null)
+																			return;
+
+					                                               		sw.WriteLine(e.Data);
+					                                               		outputHandler(e.Data);
+					                                               	};
+
+					_process.StartInfo.RedirectStandardError = true;
+					_process.StartInfo.RedirectStandardOutput = true;
+					_process.ErrorDataReceived += dataReceivedHandler;
+					_process.OutputDataReceived += dataReceivedHandler;
+
+					// Run ConQAT.
+					_process.Start();
+
+					// Read output and wait for completion.
+					_process.BeginErrorReadLine();
+					_process.BeginOutputReadLine();
+					_process.WaitForExit();
+				}
 
 				// Get run time.
 				_usedTime = stopwatch.Elapsed;
 
 				// Get memory consumption.
-				// NOTE: Since we have to scan the log file to get the memory consumption we cannot
-				//       calculate the memory consumption if Clone Detective has been aborted. The
-				//       reason is that the file might be still locked by ConQAT. Since ConQAT is not
-				//       a single process (it is a batch file that starts Java) there is a race
-				//       condition in Abort() that might result in Java still being running. This is
-				//       by design. To be on the safe side we will not access any file that is touched
-				//       by ConQAT if we abort Clone Detective.
-				if (_aborted)
-					_usedMemory = 0;
-				else
-					_usedMemory = GetMemory(tempConqatLogFileName);
+				_usedMemory = GetMemory(_conqatLogFileName);
 			}
 		}
 
+		/// <summary>
+		/// Prepends the given path by the Java bin folder of the given Java home directory.
+		/// </summary>
+		/// <param name="path">The path to be prefixed.</param>
+		/// <param name="javaHome">The fully qualified path of the Jave home directory.</param>
+		/// <returns></returns>
 		private static string PrependPathWithJavaBinFolder(string path, string javaHome)
 		{
 			string javaBinFolder = Path.Combine(javaHome, "bin");
@@ -99,50 +142,44 @@ namespace CloneDetective.CloneReporting
 		/// <summary>
 		/// Builds a string representing the command line arguments for ConQAT.
 		/// </summary>
-		/// <param name="conqatConfigFileName">The path and file name of the ConQAT config file.</param>
-		/// <param name="tempConqatLogFileName">The path and file name of the temporary ConQAT log file.</param>
-		/// <param name="tempCloneReportFileName">The path and file name of the temporary clone report file.</param>
-		/// <param name="solutionFileName">The path and file name of the Visual Studio solution file.</param>
-		/// <param name="minimumCloneLength">The minimum clone length.</param>
-		/// <returns></returns>
-		private static string BuildArgumentsString(string conqatConfigFileName, string tempConqatLogFileName, string tempCloneReportFileName, string solutionFileName, int minimumCloneLength)
+		private static string BuildArgumentsString(SolutionSettings solutionSettings)
 		{
 			StringBuilder sb = new StringBuilder();
 
 			// Set the name of the config file.
 			sb.Append("-f \"");
-			sb.Append(conqatConfigFileName);
+			sb.Append(solutionSettings.AnalysisFileName);
 			sb.Append("\"");
 
-			// Set parameter solution.dir
-			sb.Append(" -p \"solution.dir=");
-			sb.Append(Path.GetDirectoryName(solutionFileName));
-			// Ensure trailing backslash.
-			// NOTE: Please note that we need two backslashes at the end. Otherwise the trailing backslash
-			//       together with the quote would be interpreted as an escaped quote.
-			sb.Append("\\\\\"");
+			// TODO: Make path to properties file configurable.
+			string propertiesFilePath = PathHelper.GetPropertiesFilePath(solutionSettings.AnalysisFileName);
+			if (File.Exists(propertiesFilePath))
+			{
+				sb.Append("-s \"");
+				sb.Append(propertiesFilePath);
+				sb.Append("\"");
+			}
 
-			// Set parameter output.dir
-			sb.Append(" -p \"output.dir=");
-			sb.Append(Path.GetDirectoryName(tempCloneReportFileName));
-			// NOTE: Please note that we need two backslashes at the end. Otherwise the trailing backslash
-			//       together with the quote would be interpreted as an escaped quote.
-			sb.Append("\\\\\"");
+			// Add all property overrides by -p flag.
+			foreach (KeyValuePair<string, string> propertyOverride in solutionSettings.PropertyOverrides)
+			{
+				sb.Append(" -p \"");
+				sb.Append(propertyOverride.Key);
+				sb.Append("=");
+				sb.Append(propertyOverride.Value);
 
-			// Set parameter output.file
-			sb.Append(" -p \"output.file=");
-			sb.Append(Path.GetFileName(tempCloneReportFileName));
-			sb.Append("\"");
+				if (!String.IsNullOrEmpty(propertyOverride.Value))
+				{
+					// If the last character is a backslash we need to add another one. Otherwise the trailing
+					// backslash together with the quote would be interpreted as an escaped quote.
+					bool lastCharacterIsBackslash = (propertyOverride.Value[propertyOverride.Value.Length - 1] == '\\');
+					if (lastCharacterIsBackslash)
+						sb.Append("\\");
+				}
 
-			// Set parameter clone.minlength
-			sb.Append(" -p \"clone.minlength=");
-			sb.Append(minimumCloneLength);
-			sb.Append("\"");
+				sb.Append("\"");
+			}
 
-			// Add redirection of standard output and standard error to temporary log file.
-			sb.Append(" > \"");
-			sb.Append(tempConqatLogFileName);
-			sb.Append("\" 2>&1");
 
 			return sb.ToString();
 		}
@@ -185,50 +222,19 @@ namespace CloneDetective.CloneReporting
 		/// <summary>
 		/// Runs Clone Detective asynchronously.
 		/// </summary>
-		/// <exception cref="InvalidOperationException">
-		/// <para>Thrown when <see cref="ConqatFileName"/> has not been initialized.</para>
-		/// <para>- or -</para>
-		/// <para>Thrown when <see cref="SolutionFileName"/> has not been initialized.</para>
-		/// <para>- or -</para>
-		/// <para>Thrown when Clone Detective is already running.</para>
-		/// </exception>
+		/// <remarks>
+		/// To get the Clone Detection results you must register a handler for the <see cref="Completed"/>
+		/// event.
+		/// </remarks>
 		[SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
 		public void RunAsync()
 		{
-			if (String.IsNullOrEmpty(_conqatFileName))
-				throw ExceptionBuilder.PropertyMustBeInitializedFirst("ConqatFileName");
-
-			if (String.IsNullOrEmpty(_solutionFileName))
-				throw ExceptionBuilder.PropertyMustBeInitializedFirst("SolutionFileName");
-
 			if (_running)
 				throw ExceptionBuilder.CloneDetectiveAlreadyRunning();
 
 			// Make sure our internal state is updated first.
 			_running = true;
 			_aborted = false;
-
-			// Now we decide which clone detection analysis file we will use. If the solution folder
-			// contains a clone detection we will use that. Otherwise we will fallback on the default
-			// analysis file stored in the installation folder.
-			string solutionConqatConfigFileName = ConqatFiles.GetSolutionCloneDetectionPath(_solutionFileName);
-			string defaultConqatConfigFileName = ConqatFiles.GetDefaultCloneDetectionPath();
-			string conqatConfigFileName;
-			if (File.Exists(solutionConqatConfigFileName))
-			{
-				// Ok, the solution folder contains a ConQAT clone detection analysis file.
-				// We will use that.
-				conqatConfigFileName = solutionConqatConfigFileName;
-			}
-			else
-			{
-				// I am sorry, no custom clone detection file present. Use the default one.
-				conqatConfigFileName = defaultConqatConfigFileName;
-			}
-
-			// For the log file and clone report file we first use temporary log files.
-			string tempConqatLogFileName = Path.GetTempFileName();
-			string tempCloneReportFileName = Path.GetTempFileName();
 			
 			// Time for multi-threading.
 			//
@@ -248,49 +254,55 @@ namespace CloneDetective.CloneReporting
 						Exception exception = null;
 						try
 						{
-							try
+							// Make sure the directory exists
+							string cloneReportDirectory = Path.GetDirectoryName(_solutionSettings.CloneReportFileName);
+							if (!Directory.Exists(cloneReportDirectory))
+								Directory.CreateDirectory(cloneReportDirectory);
+
+							// First we delete the old clone report
+							File.Delete(_solutionSettings.CloneReportFileName);
+
+							// Create output lambda that is used by RunConQAT.
+							Action<string> outputHandler;
+							EventHandler<CloneDetectiveMessageEventArgs> messageHandler = Message;
+							if (messageHandler == null)
+								outputHandler = s => { };
+							else
+								outputHandler = (s => ctx.Send(delegate
+								                               	{
+								                               		CloneDetectiveMessageEventArgs args = new CloneDetectiveMessageEventArgs(s);
+								                               		messageHandler(this, args);
+								                               	}, null));
+
+							// Run ConQAT and wait for completion.
+							RunConQAT(outputHandler);
+
+							// Check if ConQAT exited normally or we killed it using Abort().
+							if (!_aborted)
 							{
-								// Run ConQAT and wait for completion.
-								RunConQAT(conqatConfigFileName, tempConqatLogFileName, tempCloneReportFileName);
+								// OK, ConQAT has run to completion.
+								//
+								// Check if ConQAT produced a clone report.
+								//
+								// If this is not the case then ConQAT failed for some reason.
+								if (!File.Exists(_solutionSettings.CloneReportFileName) || (new FileInfo(_solutionSettings.CloneReportFileName)).Length == 0)
+									throw ExceptionBuilder.ConqatDidNotProduceCloneReport();
 
-								// Check if ConQAT exited normally or we killed it using Abort().
-								if (_aborted)
+								// Copy the clone report file to our solution clone report file (overwriting any existing one).
+								try
 								{
-									// ConQAT has been aborted.
-									//
-									// As mentioned above we cannot access any file that has been touched by
-									// ConQAT. Write the note to our log file.
-									File.WriteAllText(_conqatLogFileName, "ConQAT aborted -- log is unknown.");
+									File.Copy(_solutionSettings.CloneReportFileName, _cloneReportFileName, true);
 								}
-								else
+								catch (IOException)
 								{
-									// OK, ConQAT has run to completion.
+									// If the _solutionSettings.CloneReportFileName points to the same file
+									// as _cloneReportFileName we obviously cannot copy the file. However,
+									// in .NET there is no simple way to check whether to given paths point
+									// to the same file (remember that there are many ways to express file paths:
+									// mapped drives, relative paths, special characters, etc.)
 									//
-									// Copy the temp log to our solution log file (overwriting any existing one).
-									File.Copy(tempConqatLogFileName, _conqatLogFileName, true);
-
-									// Check if ConQAT produced a clone report.
-									//
-									// If this is not the case then ConQAT failed for some reason.
-									if (!File.Exists(tempCloneReportFileName) || (new FileInfo(tempCloneReportFileName)).Length == 0)
-										throw ExceptionBuilder.ConqatDidNotProduceCloneReport();
-
-									// Great! ConQAT produced a clone report so we are just fine. Copy the temp report
-									// to our solution folder (overwriting any exisiting one).
-									File.Copy(tempCloneReportFileName, _cloneReportFileName, true);
-								}
-							}
-							finally
-							{
-								// Check if ConQAT has been aborted.
-								// In this case we cannot access any file that has been touched by
-								// ConQAT.
-								if (!_aborted)
-								{
-									// No, ConQAT either ran successfully or failed -- but we did not kill the
-									// process. So we can safely delete our temp files.
-									File.Delete(tempConqatLogFileName);
-									File.Delete(tempCloneReportFileName);
+									// The safest way is to just try to copy and in case of a failure just ignore
+									// the error.
 								}
 							}
 						}
@@ -335,11 +347,11 @@ namespace CloneDetective.CloneReporting
 							_running = false;
 
 							// Load clone detective result and notify event subscribers (if any).
-							CloneDetectiveResult cloneDetectiveResult = CloneDetectiveResult.FromSolutionPath(_solutionFileName);
-							EventHandler<CloneDetectiveResultEventArgs> handler = Completed;
+							CloneDetectiveResult cloneDetectiveResult = CloneDetectiveResult.FromSolutionPath(_solutionSettings.SolutionFileName);
+							EventHandler<CloneDetectiveCompletedEventArgs> handler = Completed;
 							if (handler != null)
 							{
-								CloneDetectiveResultEventArgs eventArgs = new CloneDetectiveResultEventArgs(cloneDetectiveResult, exception);
+								CloneDetectiveCompletedEventArgs eventArgs = new CloneDetectiveCompletedEventArgs(cloneDetectiveResult, exception);
 								handler(this, eventArgs);
 							}
 						}, null);
@@ -383,8 +395,8 @@ namespace CloneDetective.CloneReporting
 		}
 
 		/// <summary>
-		/// This method disables all completed events by clearing the event handler
-		/// list.
+		/// This method disables all <see cref="Started"/>, <see cref="Message"/>, and <see cref="Completed"/>
+		/// events by clearing their event handler lists.
 		/// </summary>
 		/// <remarks>
 		/// This is useful if the host application is going to be shut down
@@ -393,6 +405,8 @@ namespace CloneDetective.CloneReporting
 		/// </remarks>
 		public void DisableEvents()
 		{
+			Started = null;
+			Message = null;
 			Completed = null;
 		}
 
@@ -405,67 +419,38 @@ namespace CloneDetective.CloneReporting
 		}
 
 		/// <summary>
-		/// Gets or sets the path and file name of the ConQAT executable.
+		/// Adds or removes a handler for the started notification.
 		/// </summary>
-		public string ConqatFileName
-		{
-			get { return _conqatFileName; }
-			set { _conqatFileName = value; }
-		}
+		/// <note>The handler will be executed in the context of the thread that called
+		/// <see cref="RunAsync"/> (typically the main UI thread) as opposed to the thread
+		/// that is running Clone Detective. That means no synchronization is required by
+		/// handler itself.</note>
+		public event EventHandler<CloneDetectiveStartedEventArgs> Started;
 
 		/// <summary>
-		/// Gets or sets the path to the Java Home directory.
-		/// </summary>
-		public string JavaHome
-		{
-			get { return _javaHome; }
-			set { _javaHome = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the minimum clone length.
-		/// </summary>
-		public int MinimumCloneLength
-		{
-			get { return _minimumCloneLength; }
-			set { _minimumCloneLength = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the path and file name of the Visual Studio solution file.
-		/// </summary>
-		public string SolutionFileName
-		{
-			get { return _solutionFileName; }
-			set
-			{
-				_solutionFileName = value;
-				UpdateOtherFileNames();
-			}
-		}
-
-		/// <summary>
-		/// This method updates the file names that are dependent on the path of
-		/// the <see cref="SolutionFileName"/>.
-		/// </summary>
-		private void UpdateOtherFileNames()
-		{
-			if (_solutionFileName != null)
-			{
-				_conqatLogFileName = ConqatFiles.GetLogPath(_solutionFileName);
-				_cloneReportFileName = ConqatFiles.GetCloneReportPath(_solutionFileName);
-			}
-		}
-
-		/// <summary>
-		/// Adds or removes a handler completion notification.
+		/// Adds or removes a handler for a message notification.
 		/// </summary>
 		/// <remarks>
-		/// The <see cref="Completed"/> handler will be raised regardless whether Clone
-		/// Detective succeeded, failed or was aborted. The handler will be executed in
-		/// the context of the main thread (opposed to the thread that is running Clone
-		/// Detective). No synchronization is required.
+		/// <para>This event can be raised mutliple times by clone detection.
+		/// Each message represents an output line of its own.</para>
+		/// <note>The handler will be executed in the context of the thread that called
+		/// <see cref="RunAsync"/> (typically the main UI thread) as opposed to the thread
+		/// that is running Clone Detective. That means no synchronization is required by
+		/// handler itself.</note>
 		/// </remarks>
-		public event EventHandler<CloneDetectiveResultEventArgs> Completed;
+		public event EventHandler<CloneDetectiveMessageEventArgs> Message;
+
+		/// <summary>
+		/// Adds or removes a handler for the completion notification.
+		/// </summary>
+		/// <remarks>
+		/// <para>The <see cref="Completed"/> handler will be raised regardless whether Clone
+		/// Detective succeeded, failed or was aborted.</para>
+		/// <note>The handler will be executed in the context of the thread that called
+		/// <see cref="RunAsync"/> (typically the main UI thread) as opposed to the thread
+		/// that is running Clone Detective. That means no synchronization is required by
+		/// handler itself.</note>
+		/// </remarks>
+		public event EventHandler<CloneDetectiveCompletedEventArgs> Completed;
 	}
 }
