@@ -291,18 +291,15 @@ namespace CloneDetective.Package
 			                                   		completedHandler(sender, e);
 			                                   	};
 
-			// Get configuration options.
-			CloneDetectiveOptionPage optionPage = VSPackage.Instance.GetOptionPage();
-
 			// Validate path to ConQAT.bat
-			if (!File.Exists(optionPage.ConqatFileName))
+			if (!File.Exists(GlobalSettings.GetConqatBatFileName()))
 			{
 				VSPackage.Instance.ShowError(Res.InvalidConqatBatPath);
 				return false;
 			}
 
 			// Validate Java Home.
-			if (!File.Exists(Path.Combine(Path.Combine(optionPage.JavaHome, "bin"), "Java.exe")))
+			if (!File.Exists(Path.Combine(Path.Combine(GlobalSettings.GetJavaHome(), "bin"), "Java.exe")))
 			{
 				VSPackage.Instance.ShowError(Res.InvalidJavaExePath);
 				return false;
