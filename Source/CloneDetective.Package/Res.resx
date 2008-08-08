@@ -322,4 +322,16 @@
   <data name="Parameter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Parameter 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FileDoesNotExist" xml:space="preserve">
+    <value>File {0} does not exist.</value>
+  </data>
+  <data name="PropertyAlreadyOverridden" xml:space="preserve">
+    <value>Property {0} already overridden above. Remove one entry in this list.</value>
+  </data>
+  <data name="PropertyCannotBeOverridden" xml:space="preserve">
+    <value>Property {0} cannot be overriden because the analysis file does not contain such a property.</value>
+  </data>
+  <data name="InvalidMacro" xml:space="preserve">
+    <value>The string {0} is not a valid macro. For a list of valid macros please look at the online help.</value>
+  </data>
 </root>

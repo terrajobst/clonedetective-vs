@@ -63,11 +63,11 @@ namespace CloneDetective.Package
 
 		private void ValidateFileNames()
 		{
-			_analysisFileValid = ValidateFileName(analysisFileNameTextBox);
-			_cloneReportFileValid = ValidateFileName(cloneReportFileNameTextBox);
+			_analysisFileValid = ValidateFileName(analysisFileNameTextBox, false);
+			_cloneReportFileValid = ValidateFileName(cloneReportFileNameTextBox, true);
 		}
 
-		private bool ValidateFileName(TextBox textBox)
+		private bool ValidateFileName(TextBox textBox, bool suppressExistenceCheck)
 		{
 			string macroErrorMessage = GetMacroErrorMessage(_macroExpander, textBox.Text);
 			if (macroErrorMessage != null)
@@ -77,13 +77,16 @@ namespace CloneDetective.Package
 				return false;
 			}
 
-			string expandedFileName = _macroExpander.Expand(textBox.Text);
-			if (!File.Exists(expandedFileName))
+			if (!suppressExistenceCheck)
 			{
-				string errorMessage = String.Format(CultureInfo.CurrentCulture, "File {0} does not exist.", expandedFileName);
-				errorProvider.SetError(textBox, errorMessage);
-				toolTip.SetToolTip(textBox, null);
-				return false;
+				string expandedFileName = _macroExpander.Expand(textBox.Text);
+				if (!File.Exists(expandedFileName))
+				{
+					string errorMessage = String.Format(CultureInfo.CurrentCulture, Res.FileDoesNotExist, expandedFileName);
+					errorProvider.SetError(textBox, errorMessage);
+					toolTip.SetToolTip(textBox, null);
+					return false;
+				}
 			}
 
 			errorProvider.SetError(textBox, null);
@@ -107,12 +110,12 @@ namespace CloneDetective.Package
 
 				if (!_declaredProperties.Contains(propertyName))
 				{
-					sb.AppendFormat(CultureInfo.CurrentCulture, "Property {0} cannot be overriden because the analysis file does not contain such a property.", propertyName);
+					sb.AppendFormat(CultureInfo.CurrentCulture, Res.PropertyCannotBeOverridden, propertyName);
 					sb.AppendLine();
 				}
 				else if (!overriddenProperties.Add(propertyName))
 				{
-					sb.AppendFormat(CultureInfo.CurrentCulture, "Property {0} already overridden above. Remove one entry in this list.", propertyName);
+					sb.AppendFormat(CultureInfo.CurrentCulture, Res.PropertyAlreadyOverridden, propertyName);
 					sb.AppendLine();
 				}
 
@@ -200,7 +203,7 @@ namespace CloneDetective.Package
 				string macro = match.Value;
 				if (!macroExpander.Macros.ContainsKey(macro))
 				{
-					sb.AppendFormat(CultureInfo.CurrentCulture, "Macro {0} is invalid.", macro);
+					sb.AppendFormat(CultureInfo.CurrentCulture, Res.InvalidMacro, macro);
 					sb.AppendLine();
 				}
 			}
@@ -320,7 +323,7 @@ namespace CloneDetective.Package
 
 		private void analysisFileNameTextBox_Validating(object sender, CancelEventArgs e)
 		{
-			_analysisFileValid = ValidateFileName(analysisFileNameTextBox);
+			_analysisFileValid = ValidateFileName(analysisFileNameTextBox, false);
 		}
 
 		private void analysisFileNameTextBox_Validated(object sender, EventArgs e)
@@ -337,7 +340,7 @@ namespace CloneDetective.Package
 
 		private void cloneReportFileNameTextBox_Validating(object sender, CancelEventArgs e)
 		{
-			_cloneReportFileValid = ValidateFileName(cloneReportFileNameTextBox);
+			_cloneReportFileValid = ValidateFileName(cloneReportFileNameTextBox, true);
 		}
 
 		private void browseCloneReportFileNameButton_Click(object sender, EventArgs e)

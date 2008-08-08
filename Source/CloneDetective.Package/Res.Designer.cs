@@ -323,6 +323,15 @@ namespace CloneDetective.Package {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to File {0} does not exist..
+        /// </summary>
+        internal static string FileDoesNotExist {
+            get {
+                return ResourceManager.GetString("FileDoesNotExist", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap FolderClosed {
             get {
                 object obj = ResourceManager.GetObject("FolderClosed", resourceCulture);
@@ -377,6 +386,15 @@ namespace CloneDetective.Package {
         internal static string InvalidJavaExePath {
             get {
                 return ResourceManager.GetString("InvalidJavaExePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The string {0} is not a valid macro. For a list of valid macros please look at the online help..
+        /// </summary>
+        internal static string InvalidMacro {
+            get {
+                return ResourceManager.GetString("InvalidMacro", resourceCulture);
             }
         }
         
@@ -513,6 +531,24 @@ namespace CloneDetective.Package {
             get {
                 object obj = ResourceManager.GetObject("Properties", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Property {0} already overridden above. Remove one entry in this list..
+        /// </summary>
+        internal static string PropertyAlreadyOverridden {
+            get {
+                return ResourceManager.GetString("PropertyAlreadyOverridden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Property {0} cannot be overriden because the analysis file does not contain such a property..
+        /// </summary>
+        internal static string PropertyCannotBeOverridden {
+            get {
+                return ResourceManager.GetString("PropertyCannotBeOverridden", resourceCulture);
             }
         }
         
