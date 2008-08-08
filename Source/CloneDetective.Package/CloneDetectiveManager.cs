@@ -20,7 +20,7 @@ namespace CloneDetective.Package
 	{
 		public static event EventHandler<EventArgs> CloneDetectiveResultChanged;
 
-		private static CloneReporting.CloneDetectiveRunner _cloneDetectiveRunner;
+		private static CloneDetectiveRunner _cloneDetectiveRunner;
 		private static CloneDetectiveResult _cloneDetectiveResult;
 		private static Dictionary<IVsTextLines, DocumentInfo> _textLinesToDocInfos = new Dictionary<IVsTextLines, DocumentInfo>();
 
@@ -276,7 +276,7 @@ namespace CloneDetective.Package
 
 			VSPackage.Instance.ClearOutput();
 
-			_cloneDetectiveRunner = new CloneReporting.CloneDetectiveRunner(solutionPath);
+			_cloneDetectiveRunner = new CloneDetectiveRunner(solutionPath);
 			_cloneDetectiveRunner.Started += (sender, e) => WriteStartedMessage(e);
 			_cloneDetectiveRunner.Message += (sender, e) => WriteOutputMessage(e);
 			_cloneDetectiveRunner.Completed += (sender, e) =>
