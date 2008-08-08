@@ -19,6 +19,11 @@ namespace CloneDetective.Package
 			set { base.AutoSize = value; }
 		}
 
+		protected override Padding DefaultMargin
+		{
+			get { return new Padding(3, 10, 3, 10); }
+		}
+
 		protected override void OnPaint(PaintEventArgs e)
 		{
 			base.OnPaint(e);
