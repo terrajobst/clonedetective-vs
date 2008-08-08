@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="VisualCloneDetective.CloneReporting.CloneIntersectionResult">
+  <Class Name="CloneDetective.CloneReporting.CloneIntersectionResult">
     <Position X="1" Y="0.5" Width="2" />
     <Members>
       <Field Name="_references" Hidden="true" />
       <Field Name="_target" Hidden="true" />
     </Members>
-    <AssociationLine Name="References" Type="VisualCloneDetective.CloneReporting.CloneIntersectedItem" FixedToPoint="true">
+    <AssociationLine Name="References" Type="CloneDetective.CloneReporting.CloneIntersectedItem" FixedToPoint="true">
       <Path>
         <Point X="2.375" Y="1.368" />
         <Point X="2.375" Y="2" />
@@ -15,7 +15,7 @@
         <Position X="-2.69" Y="0.12" />
       </MemberNameLabel>
     </AssociationLine>
-    <AssociationLine Name="Target" Type="VisualCloneDetective.CloneReporting.CloneIntersectedItem" FixedToPoint="true">
+    <AssociationLine Name="Target" Type="CloneDetective.CloneReporting.CloneIntersectedItem" FixedToPoint="true">
       <Path>
         <Point X="1.719" Y="1.368" />
         <Point X="1.719" Y="2" />
@@ -35,7 +35,7 @@
       <Property Name="References" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="VisualCloneDetective.CloneReporting.CloneIntersection">
+  <Class Name="CloneDetective.CloneReporting.CloneIntersection">
     <Position X="0.75" Y="3.5" Width="2.5" />
     <Members>
       <Field Name="_clone" Hidden="true" />
@@ -46,13 +46,13 @@
       <FileName>CloneIntersection.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="VisualCloneDetective.CloneReporting.CloneIntersectedItem">
+  <Class Name="CloneDetective.CloneReporting.CloneIntersectedItem">
     <Position X="0.5" Y="2" Width="3" />
     <Members>
       <Field Name="_clones" Hidden="true" />
       <Field Name="_sourceNode" Hidden="true" />
     </Members>
-    <AssociationLine Name="Clones" Type="VisualCloneDetective.CloneReporting.CloneIntersection">
+    <AssociationLine Name="Clones" Type="CloneDetective.CloneReporting.CloneIntersection">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="-2.221" Y="0.131" />
       </MemberNameLabel>
