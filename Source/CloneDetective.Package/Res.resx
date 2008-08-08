@@ -329,7 +329,7 @@
     <value>Property {0} already overridden above. Remove one entry in this list.</value>
   </data>
   <data name="PropertyCannotBeOverridden" xml:space="preserve">
-    <value>Property {0} cannot be overriden because the analysis file does not contain such a property.</value>
+    <value>Property {0} cannot be overridden because the analysis file does not contain such a property.</value>
   </data>
   <data name="InvalidMacro" xml:space="preserve">
     <value>The string {0} is not a valid macro. For a list of valid macros please look at the online help.</value>

@@ -553,7 +553,7 @@ namespace CloneDetective.Package {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Property {0} cannot be overriden because the analysis file does not contain such a property..
+        ///   Looks up a localized string similar to Property {0} cannot be overridden because the analysis file does not contain such a property..
         /// </summary>
         internal static string PropertyCannotBeOverridden {
             get {
