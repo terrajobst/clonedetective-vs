@@ -332,6 +332,15 @@ namespace CloneDetective.Package {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify a valid file name..
+        /// </summary>
+        internal static string FileNameCannotBeBlank {
+            get {
+                return ResourceManager.GetString("FileNameCannotBeBlank", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap FolderClosed {
             get {
                 object obj = ResourceManager.GetObject("FolderClosed", resourceCulture);
@@ -659,6 +668,15 @@ namespace CloneDetective.Package {
             get {
                 object obj = ResourceManager.GetObject("Up", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Before you can save the changes you have to fix all errors first..
+        /// </summary>
+        internal static string YouMustFixAllErrors {
+            get {
+                return ResourceManager.GetString("YouMustFixAllErrors", resourceCulture);
             }
         }
     }

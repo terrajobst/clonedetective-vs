@@ -334,4 +334,10 @@
   <data name="InvalidMacro" xml:space="preserve">
     <value>The string {0} is not a valid macro. For a list of valid macros please look at the online help.</value>
   </data>
+  <data name="YouMustFixAllErrors" xml:space="preserve">
+    <value>Before you can save the changes you have to fix all errors first.</value>
+  </data>
+  <data name="FileNameCannotBeBlank" xml:space="preserve">
+    <value>Please specify a valid file name.</value>
+  </data>
 </root>

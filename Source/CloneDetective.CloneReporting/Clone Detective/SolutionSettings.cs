@@ -16,6 +16,8 @@ namespace CloneDetective.CloneReporting
 		private bool _useCustomAnalysis;
 		private string _analysisFileName;
 		private string _cloneReportFileName;
+		private bool _usePropertiesFile;
+		private string _propertiesFileName;
 		private Dictionary<string, string> _propertyOverrides = new Dictionary<string, string>();
 
 		/// <summary>
@@ -53,6 +55,8 @@ namespace CloneDetective.CloneReporting
 				_useCustomAnalysis = XmlConvert.ToBoolean(document.SelectSingleNode("/solutionSettings/useCustomAnalysis").InnerText);
 				_analysisFileName = document.SelectSingleNode("/solutionSettings/analysisFileName").InnerText;
 				_cloneReportFileName = document.SelectSingleNode("/solutionSettings/cloneReportFileName").InnerText;
+				_usePropertiesFile = XmlConvert.ToBoolean(document.SelectSingleNode("/solutionSettings/usePropertiesFile").InnerText);
+				_propertiesFileName = document.SelectSingleNode("/solutionSettings/propertiesFileName").InnerText;
 
 				foreach (XmlNode propertyNode in document.SelectNodes("/solutionSettings/propertyOverrides/property"))
 				{
@@ -87,6 +91,7 @@ namespace CloneDetective.CloneReporting
 			MacroExpander macroExpander = new MacroExpander(_solutionFileName);
 			_analysisFileName = macroExpander.Expand(_analysisFileName);
 			_cloneReportFileName = macroExpander.Expand(_cloneReportFileName);
+			_propertiesFileName = macroExpander.Expand(_propertiesFileName);
 
 			List<string> copiedKeys = new List<string>(_propertyOverrides.Keys);
 			foreach (string property in copiedKeys)
@@ -101,6 +106,8 @@ namespace CloneDetective.CloneReporting
 			_useCustomAnalysis = false;
 			_analysisFileName = "$(InstallDir)" + PathHelper.DefaultAnalysisFileName;
 			_cloneReportFileName = "$(SolutionDir)$(SolutionName)" + PathHelper.CloneReportExtension;
+			_usePropertiesFile = false;
+			_propertiesFileName = null;
 			_propertyOverrides.Clear();
 			_propertyOverrides.Add("solution.dir", "$(SolutionDir)");
 			_propertyOverrides.Add("output.dir", "$(SolutionDir)");
@@ -129,6 +136,14 @@ namespace CloneDetective.CloneReporting
 			XmlNode cloneReportFileNameNode = document.CreateElement("cloneReportFileName");
 			cloneReportFileNameNode.InnerText = _cloneReportFileName;
 			rootNode.AppendChild(cloneReportFileNameNode);
+
+			XmlNode usePropertiesFileNode = document.CreateElement("usePropertiesFile");
+			usePropertiesFileNode.InnerText = XmlConvert.ToString(_usePropertiesFile);
+			rootNode.AppendChild(usePropertiesFileNode);
+
+			XmlNode propertiesFileNameNode = document.CreateElement("propertiesFileName");
+			propertiesFileNameNode.InnerText = _propertiesFileName;
+			rootNode.AppendChild(propertiesFileNameNode);
 
 			XmlNode propertyOverridesNode = document.CreateElement("propertyOverrides");
 			rootNode.AppendChild(propertyOverridesNode);
@@ -198,6 +213,31 @@ namespace CloneDetective.CloneReporting
 		{
 			get { return _cloneReportFileName; }
 			set { _cloneReportFileName = value; }
+		}
+
+		/// <summary>
+		/// Gets or sets a value that indicates whether the <c>.properties</c> file defined
+		/// in <see cref="PropertiesFileName"/> is passed to ConQAT.
+		/// </summary>
+		public bool UsePropertiesFile
+		{
+			get { return _usePropertiesFile; }
+			set { _usePropertiesFile = value; }
+		}
+
+		/// <summary>
+		/// Gets or set the fully qualified file name of a <c>.properties</c> file that is
+		/// passed to ConQAT in order to override the values directly contained in the
+		/// analysis file.
+		/// </summary>
+		/// <remarks>
+		/// This setting is only used when <see cref="UsePropertiesFile"/> is set to
+		/// <see langword="true"/>.
+		/// </remarks>
+		public string PropertiesFileName
+		{
+			get { return _propertiesFileName; }
+			set { _propertiesFileName = value; }
 		}
 
 		/// <summary>

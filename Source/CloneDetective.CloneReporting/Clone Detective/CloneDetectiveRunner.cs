@@ -146,17 +146,16 @@ namespace CloneDetective.CloneReporting
 		{
 			StringBuilder sb = new StringBuilder();
 
-			// Set the name of the config file.
+			// Set the name of the config file by -f flag.
 			sb.Append("-f \"");
 			sb.Append(solutionSettings.AnalysisFileName);
 			sb.Append("\"");
 
-			// TODO: Make path to .properties file configurable.
-			string propertiesFilePath = PathHelper.GetPropertiesFilePath(solutionSettings.AnalysisFileName);
-			if (File.Exists(propertiesFilePath))
+			// Add properties file by -s flag.
+			if (solutionSettings.UsePropertiesFile)
 			{
-				sb.Append("-s \"");
-				sb.Append(propertiesFilePath);
+				sb.Append(" -s \"");
+				sb.Append(solutionSettings.PropertiesFileName);
 				sb.Append("\"");
 			}
 
