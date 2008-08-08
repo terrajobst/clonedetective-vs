@@ -14,12 +14,6 @@ namespace CloneDetective.Package
 				propertyNameComboBox.Items.Add(property);
 		}
 
-		public bool PropertyNameReadOnly
-		{
-			get { return !propertyNameComboBox.Enabled; }
-			set { propertyNameComboBox.Enabled = !value; }
-		}
-
 		public string PropertyName
 		{
 			get { return propertyNameComboBox.Text; }

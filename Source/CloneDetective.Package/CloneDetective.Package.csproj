@@ -226,14 +226,15 @@
     <None Include="Resources\Import 16x16.png" />
     <CodeAnalysisDictionary Include="CodeAnalysisDictionary.xml" />
     <None Include="Resources\Edit 16x16.png" />
-    <None Include="Resources\New Item 16x16.png" />
     <None Include="Resources\Delete 16x16.png" />
     <None Include="Resources\Down 16x16.png" />
     <None Include="Resources\Export 16x16.png" />
     <None Include="Resources\Close Results 16x16.png" />
     <None Include="Resources\Clone Intersection 16x16.png" />
     <None Include="Resources\Open 16x16.png" />
+    <None Include="Resources\New Parameter 16x16.png" />
     <Content Include="Resources\Package.ico" />
+    <None Include="Resources\Parameter 16x16.png" />
     <None Include="Resources\Properties 16x16.png" />
     <None Include="Resources\Settings 16x16.png" />
     <None Include="Resources\Up 16x16.png" />

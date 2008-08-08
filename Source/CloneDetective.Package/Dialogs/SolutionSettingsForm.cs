@@ -5,6 +5,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -17,8 +19,11 @@ namespace CloneDetective.Package
 		private SolutionSettings _solutionSettings = new SolutionSettings();
 		private MacroExpander _macroExpander;
 		private string _lastAnalysisFileName;
-		private List<string> _declaredProperties;
-		private HashSet<string> _usedProperies = new HashSet<string>();
+		private HashSet<string> _declaredProperties;
+
+		private bool _analysisFileValid;
+		private bool _cloneReportFileValid;
+		private bool _propertiesValid;
 
 		public SolutionSettingsForm(string solutionPath)
 		{
@@ -34,44 +39,128 @@ namespace CloneDetective.Package
 			UpdateProperties();
 			foreach (KeyValuePair<string, string> propertyOverride in _solutionSettings.PropertyOverrides)
 			{
-				propertyOverridesDataGridView.Rows.Add(propertyOverride.Key, propertyOverride.Value);
-				_usedProperies.Add(propertyOverride.Key);
+				DataGridViewRow row = new DataGridViewRow();
+				row.CreateCells(propertyOverridesDataGridView);
+				row.Cells[0].ToolTipText = propertyOverride.Key;
+				row.Cells[0].Value = Res.Parameter;
+				row.Cells[1].Value = propertyOverride.Key;
+				row.Cells[2].Value = propertyOverride.Value;
+
+				propertyOverridesDataGridView.Rows.Add(row);
 			}
 
 			propertyOverridesDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
 			UpdateEnabledState();
+			ValidateAll();
+		}
+
+		private void ValidateAll()
+		{
+			ValidateFileNames();
+			ValidateProperties();
+		}
+
+		private void ValidateFileNames()
+		{
+			_analysisFileValid = ValidateFileName(analysisFileNameTextBox);
+			_cloneReportFileValid = ValidateFileName(cloneReportFileNameTextBox);
+		}
+
+		private bool ValidateFileName(TextBox textBox)
+		{
+			string macroErrorMessage = GetMacroErrorMessage(_macroExpander, textBox.Text);
+			if (macroErrorMessage != null)
+			{
+				errorProvider.SetError(textBox, macroErrorMessage);
+				toolTip.SetToolTip(textBox, null);
+				return false;
+			}
+
+			string expandedFileName = _macroExpander.Expand(textBox.Text);
+			if (!File.Exists(expandedFileName))
+			{
+				string errorMessage = String.Format(CultureInfo.CurrentCulture, "File {0} does not exist.", expandedFileName);
+				errorProvider.SetError(textBox, errorMessage);
+				toolTip.SetToolTip(textBox, null);
+				return false;
+			}
+
+			errorProvider.SetError(textBox, null);
+			toolTip.SetToolTip(textBox, _macroExpander.Expand(textBox.Text));
+			return true;
+		}
+
+		private void ValidateProperties()
+		{
+			bool atLeastOnePropertyInvalid = false;
+
+			HashSet<string> overriddenProperties = new HashSet<string>();
+			StringBuilder sb = new StringBuilder();
+
+			foreach (DataGridViewRow row in propertyOverridesDataGridView.Rows)
+			{
+				sb.Length = 0;
+
+				string propertyName = (string)row.Cells[1].Value;
+				string propertyValue = (string)row.Cells[2].Value;
+
+				if (!_declaredProperties.Contains(propertyName))
+				{
+					sb.AppendFormat(CultureInfo.CurrentCulture, "Property {0} cannot be overriden because the analysis file does not contain such a property.", propertyName);
+					sb.AppendLine();
+				}
+				else if (!overriddenProperties.Add(propertyName))
+				{
+					sb.AppendFormat(CultureInfo.CurrentCulture, "Property {0} already overridden above. Remove one entry in this list.", propertyName);
+					sb.AppendLine();
+				}
+
+				string macroErrorMessage = GetMacroErrorMessage(_macroExpander, propertyValue);
+				if (macroErrorMessage != null)
+					sb.AppendLine(macroErrorMessage);
+
+				if (sb.Length == 0)
+				{
+					row.Cells[0].ToolTipText = String.Empty;
+					row.Cells[0].Value = Res.Parameter;
+				}
+				else
+				{
+					row.Cells[0].ToolTipText = sb.ToString();
+					row.Cells[0].Value = errorProvider.Icon;
+					atLeastOnePropertyInvalid = true;
+				}
+			}
+
+			_propertiesValid = !atLeastOnePropertyInvalid;
 		}
 
 		private void UpdateProperties()
 		{
 			if (analysisFileNameTextBox.Text != _lastAnalysisFileName)
 			{
-				_declaredProperties = GetDeclaredProperties();
-				_lastAnalysisFileName = analysisFileNameTextBox.Text;
-			}
-		}
-
-		private IEnumerable<string> GetUnusedProperties()
-		{
-			foreach (string property in _declaredProperties)
-			{
-				if (!_usedProperies.Contains(property))
-					yield return property;
+				string expandedAnalysisFileName = GetExpandedAnalysisFileName();
+				HashSet<string> declaredProperties = GetDeclaredProperties(expandedAnalysisFileName);
+				if (declaredProperties.Count > 0)
+				{
+					_declaredProperties = declaredProperties;
+					_lastAnalysisFileName = analysisFileNameTextBox.Text;
+				}
 			}
 		}
 
 		[SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
-		private List<string> GetDeclaredProperties()
+		private static HashSet<string> GetDeclaredProperties(string analysisFileName)
 		{
-			List<string> propertyNames = new List<string>();
+			HashSet<string> propertyNames = new HashSet<string>();
 
 			XmlDocument document = new XmlDocument();
 			XmlNamespaceManager namespaceManager = new XmlNamespaceManager(document.NameTable);
 			namespaceManager.AddNamespace("cqa", "http://conqat.cs.tum.edu/ns/config");
 			try
 			{
-				string expandedAnalysisFileName = GetExpandedAnalysisFileName();
+				string expandedAnalysisFileName = analysisFileName;
 				document.Load(expandedAnalysisFileName);
 			}
 			catch (Exception)
@@ -98,6 +187,30 @@ namespace CloneDetective.Package
 		private string GetExpandedCloneReportFileName()
 		{
 			return _macroExpander.Expand(cloneReportFileNameTextBox.Text);
+		}
+
+		private static string GetMacroErrorMessage(MacroExpander macroExpander, string text)
+		{
+			Regex regex = new Regex(@"\$\([^)]*\)?");
+
+			StringBuilder sb = new StringBuilder();
+
+			foreach (Match match in regex.Matches(text))
+			{
+				string macro = match.Value;
+				if (!macroExpander.Macros.ContainsKey(macro))
+				{
+					sb.AppendFormat(CultureInfo.CurrentCulture, "Macro {0} is invalid.", macro);
+					sb.AppendLine();
+				}
+			}
+
+			string errorMessage;
+			if (sb.Length == 0)
+				errorMessage = null;
+			else
+				errorMessage = sb.ToString();
+			return errorMessage;
 		}
 
 		private void UpdateEnabledState()
@@ -152,6 +265,8 @@ namespace CloneDetective.Package
 			
 			foreach (DataGridViewRow row in selectedRows)
 				row.Selected = true;
+
+			ValidateProperties();
 		}
 
 		private string TryToMakePathRelativeToSolution(string path)
@@ -166,6 +281,17 @@ namespace CloneDetective.Package
 			VSPackage.Instance.ShowHelp("CloneDetective.UI.SolutionSettings");
 		}
 
+		private void SolutionSettingsForm_HelpButtonClicked(object sender, CancelEventArgs e)
+		{
+			ShowHelp();
+			e.Cancel = true;
+		}
+
+		private void SolutionSettingsForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+		{
+			ShowHelp();
+		}
+
 		private void SolutionSettingsForm_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			if (DialogResult == DialogResult.OK)
@@ -177,8 +303,8 @@ namespace CloneDetective.Package
 				_solutionSettings.PropertyOverrides.Clear();
 				foreach (DataGridViewRow row in propertyOverridesDataGridView.Rows)
 				{
-					string key = (string) row.Cells[0].Value;
-					string value = (string) row.Cells[1].Value;
+					string key = (string) row.Cells[1].Value;
+					string value = (string) row.Cells[2].Value;
 					if (key != null)
 						_solutionSettings.PropertyOverrides[key] = value;
 				}
@@ -192,7 +318,12 @@ namespace CloneDetective.Package
 			UpdateEnabledState();
 		}
 
-		private void analysisFileNameTextBox_Leave(object sender, EventArgs e)
+		private void analysisFileNameTextBox_Validating(object sender, CancelEventArgs e)
+		{
+			_analysisFileValid = ValidateFileName(analysisFileNameTextBox);
+		}
+
+		private void analysisFileNameTextBox_Validated(object sender, EventArgs e)
 		{
 			UpdateProperties();
 		}
@@ -204,6 +335,11 @@ namespace CloneDetective.Package
 				analysisFileNameTextBox.Text = TryToMakePathRelativeToSolution(openFileDialog.FileName);
 		}
 
+		private void cloneReportFileNameTextBox_Validating(object sender, CancelEventArgs e)
+		{
+			_cloneReportFileValid = ValidateFileName(cloneReportFileNameTextBox);
+		}
+
 		private void browseCloneReportFileNameButton_Click(object sender, EventArgs e)
 		{
 			saveFileDialog.FileName = GetExpandedCloneReportFileName();
@@ -213,22 +349,12 @@ namespace CloneDetective.Package
 
 		private void addToolStripButton_Click(object sender, EventArgs e)
 		{
-			if (_usedProperies.Count == _declaredProperties.Count)
+			using (PropertyForm dlg = new PropertyForm(_declaredProperties))
 			{
-				string expandedAnalysisFileName = GetExpandedAnalysisFileName();
-				string message = String.Format(CultureInfo.CurrentCulture, Res.AllPropertiesAlreadyOverridden, expandedAnalysisFileName);
-				VSPackage.Instance.ShowError(message);
-				return;
-			}
-
-			using (PropertyForm dlg = new PropertyForm(GetUnusedProperties()))
-			{
-				dlg.PropertyNameReadOnly = false;
-
 				if (dlg.ShowDialog(this) == DialogResult.OK)
 				{
-					propertyOverridesDataGridView.Rows.Add(dlg.PropertyName, dlg.PropertyValue);
-					_usedProperies.Add(dlg.PropertyName);
+					propertyOverridesDataGridView.Rows.Add(Res.Parameter, dlg.PropertyName, dlg.PropertyValue);
+					ValidateProperties();
 				}
 			}
 		}
@@ -242,14 +368,14 @@ namespace CloneDetective.Package
 
 			using (PropertyForm dlg = new PropertyForm(_declaredProperties))
 			{
-				dlg.PropertyNameReadOnly = true;
-				dlg.PropertyName = (string)selectedRow.Cells[0].Value;
-				dlg.PropertyValue = (string)selectedRow.Cells[1].Value;
+				dlg.PropertyName = (string)selectedRow.Cells[1].Value;
+				dlg.PropertyValue = (string)selectedRow.Cells[2].Value;
 
 				if (dlg.ShowDialog(this) == DialogResult.OK)
 				{
-					selectedRow.Cells[0].Value = dlg.PropertyName;
-					selectedRow.Cells[1].Value = dlg.PropertyValue;
+					selectedRow.Cells[1].Value = dlg.PropertyName;
+					selectedRow.Cells[2].Value = dlg.PropertyValue;
+					ValidateProperties();
 				}
 			}
 		}
@@ -260,11 +386,9 @@ namespace CloneDetective.Package
 			propertyOverridesDataGridView.SelectedRows.CopyTo(selectedRows, 0);
 
 			foreach (DataGridViewRow selectedRow in selectedRows)
-			{
-				string property = (string)selectedRow.Cells[0].Value;
-				_usedProperies.Remove(property);
 				propertyOverridesDataGridView.Rows.Remove(selectedRow);
-			}
+
+			ValidateProperties();
 		}
 
 		private void upToolStripButton_Click(object sender, EventArgs e)
@@ -279,18 +403,18 @@ namespace CloneDetective.Package
 
 		private void propertyOverridesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
-			editToolStripButton.PerformClick();
+			if (e.RowIndex >= 0)
+				editToolStripButton.PerformClick();
 		}
 
-		private void SolutionSettingsForm_HelpButtonClicked(object sender, CancelEventArgs e)
+		private void SolutionSettingsForm_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			ShowHelp();
-			e.Cancel = true;
-		}
-
-		private void SolutionSettingsForm_HelpRequested(object sender, HelpEventArgs hlpevent)
-		{
-			ShowHelp();
+			if (DialogResult == DialogResult.OK)
+			{
+				e.Cancel = !_analysisFileValid || !_cloneReportFileValid || !_propertiesValid;
+				if (e.Cancel)
+					VSPackage.Instance.ShowError("Before you can save the changes you have to fix all errors first.");
+			}
 		}
 	}
 }

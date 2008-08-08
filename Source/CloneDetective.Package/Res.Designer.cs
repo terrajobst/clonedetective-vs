@@ -61,15 +61,6 @@ namespace CloneDetective.Package {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have already overridden all available properties in the file {0}..
-        /// </summary>
-        internal static string AllPropertiesAlreadyOverridden {
-            get {
-                return ResourceManager.GetString("AllPropertiesAlreadyOverridden", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Can not create tool window..
         /// </summary>
         internal static string CannotCreateWindow {
@@ -452,9 +443,9 @@ namespace CloneDetective.Package {
             }
         }
         
-        internal static System.Drawing.Bitmap NewItem {
+        internal static System.Drawing.Bitmap NewParameter {
             get {
-                object obj = ResourceManager.GetObject("NewItem", resourceCulture);
+                object obj = ResourceManager.GetObject("NewParameter", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -508,6 +499,13 @@ namespace CloneDetective.Package {
         internal static string OutputHeaderStarted {
             get {
                 return ResourceManager.GetString("OutputHeaderStarted", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Parameter {
+            get {
+                object obj = ResourceManager.GetObject("Parameter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

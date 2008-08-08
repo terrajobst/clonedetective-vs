@@ -292,14 +292,8 @@
   <data name="Export" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Export 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NewItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\new item 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="CloneDetective" xml:space="preserve">
     <value>Clone Detective</value>
-  </data>
-  <data name="AllPropertiesAlreadyOverridden" xml:space="preserve">
-    <value>You have already overridden all available properties in the file {0}.</value>
   </data>
   <data name="OutputFooterFailed" xml:space="preserve">
     <value>====== Clone detection failed ======</value>
@@ -321,5 +315,11 @@
   </data>
   <data name="Open" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Open 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewParameter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\New Parameter 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Parameter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Parameter 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

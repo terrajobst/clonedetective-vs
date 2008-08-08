@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -41,8 +42,9 @@
 			this.browseAnalysisFileNameButton = new System.Windows.Forms.Button();
 			this.browseCloneReportFileNameButton = new System.Windows.Forms.Button();
 			this.propertyOverridesDataGridView = new System.Windows.Forms.DataGridView();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.iconColumn = new System.Windows.Forms.DataGridViewImageColumn();
+			this.propertyColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.valueColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.propertyOverridesToolStrip = new System.Windows.Forms.ToolStrip();
 			this.addToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.editToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -52,17 +54,20 @@
 			this.downToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+			this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.pathsGroupLabel = new CloneDetective.Package.GroupLabel();
 			this.propertyOverridesGroupLabel = new CloneDetective.Package.GroupLabel();
 			((System.ComponentModel.ISupportInitialize)(this.propertyOverridesDataGridView)).BeginInit();
 			this.propertyOverridesToolStrip.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// okButton
 			// 
 			this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.okButton.Location = new System.Drawing.Point(388, 313);
+			this.okButton.Location = new System.Drawing.Point(388, 317);
 			this.okButton.Name = "okButton";
 			this.okButton.Size = new System.Drawing.Size(75, 23);
 			this.okButton.TabIndex = 11;
@@ -73,7 +78,7 @@
 			// 
 			this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.cancelButton.Location = new System.Drawing.Point(469, 313);
+			this.cancelButton.Location = new System.Drawing.Point(469, 317);
 			this.cancelButton.Name = "cancelButton";
 			this.cancelButton.Size = new System.Drawing.Size(75, 23);
 			this.cancelButton.TabIndex = 12;
@@ -102,20 +107,26 @@
 			// 
 			this.analysisFileNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
 						| System.Windows.Forms.AnchorStyles.Right)));
+			this.errorProvider.SetIconAlignment(this.analysisFileNameTextBox, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+			this.errorProvider.SetIconPadding(this.analysisFileNameTextBox, 3);
 			this.analysisFileNameTextBox.Location = new System.Drawing.Point(164, 68);
 			this.analysisFileNameTextBox.Name = "analysisFileNameTextBox";
 			this.analysisFileNameTextBox.Size = new System.Drawing.Size(299, 20);
 			this.analysisFileNameTextBox.TabIndex = 3;
-			this.analysisFileNameTextBox.Leave += new System.EventHandler(this.analysisFileNameTextBox_Leave);
+			this.analysisFileNameTextBox.Validated += new System.EventHandler(this.analysisFileNameTextBox_Validated);
+			this.analysisFileNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.analysisFileNameTextBox_Validating);
 			// 
 			// cloneReportFileNameTextBox
 			// 
 			this.cloneReportFileNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
 						| System.Windows.Forms.AnchorStyles.Right)));
+			this.errorProvider.SetIconAlignment(this.cloneReportFileNameTextBox, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+			this.errorProvider.SetIconPadding(this.cloneReportFileNameTextBox, 3);
 			this.cloneReportFileNameTextBox.Location = new System.Drawing.Point(164, 94);
 			this.cloneReportFileNameTextBox.Name = "cloneReportFileNameTextBox";
 			this.cloneReportFileNameTextBox.Size = new System.Drawing.Size(299, 20);
 			this.cloneReportFileNameTextBox.TabIndex = 6;
+			this.cloneReportFileNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.cloneReportFileNameTextBox_Validating);
 			// 
 			// useCustomCloneDetectionCheckBox
 			// 
@@ -154,7 +165,6 @@
 			// 
 			this.propertyOverridesDataGridView.AllowUserToAddRows = false;
 			this.propertyOverridesDataGridView.AllowUserToDeleteRows = false;
-			this.propertyOverridesDataGridView.AllowUserToOrderColumns = true;
 			this.propertyOverridesDataGridView.AllowUserToResizeRows = false;
 			this.propertyOverridesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
 						| System.Windows.Forms.AnchorStyles.Left)
@@ -174,8 +184,9 @@
 			this.propertyOverridesDataGridView.ColumnHeadersHeight = 21;
 			this.propertyOverridesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.propertyOverridesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
+            this.iconColumn,
+            this.propertyColumn,
+            this.valueColumn});
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
 			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -197,25 +208,33 @@
 			this.propertyOverridesDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this.propertyOverridesDataGridView.RowHeadersVisible = false;
 			this.propertyOverridesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.propertyOverridesDataGridView.Size = new System.Drawing.Size(512, 129);
+			this.propertyOverridesDataGridView.Size = new System.Drawing.Size(512, 133);
 			this.propertyOverridesDataGridView.TabIndex = 10;
 			this.propertyOverridesDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.propertyOverridesDataGridView_CellDoubleClick);
 			// 
-			// Column1
+			// iconColumn
 			// 
-			this.Column1.HeaderText = "Property";
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-			this.Column1.Width = 71;
+			this.iconColumn.HeaderText = "";
+			this.iconColumn.Name = "iconColumn";
+			this.iconColumn.ReadOnly = true;
+			this.iconColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.iconColumn.Width = 25;
 			// 
-			// Column2
+			// propertyColumn
 			// 
-			this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column2.HeaderText = "Value";
-			this.Column2.Name = "Column2";
-			this.Column2.ReadOnly = true;
-			this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			this.propertyColumn.HeaderText = "Property";
+			this.propertyColumn.Name = "propertyColumn";
+			this.propertyColumn.ReadOnly = true;
+			this.propertyColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			this.propertyColumn.Width = 71;
+			// 
+			// valueColumn
+			// 
+			this.valueColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.valueColumn.HeaderText = "Value";
+			this.valueColumn.Name = "valueColumn";
+			this.valueColumn.ReadOnly = true;
+			this.valueColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
 			// 
 			// propertyOverridesToolStrip
 			// 
@@ -240,21 +259,19 @@
 			// 
 			// addToolStripButton
 			// 
-			this.addToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.addToolStripButton.Image = global::CloneDetective.Package.Res.NewItem;
+			this.addToolStripButton.Image = global::CloneDetective.Package.Res.NewParameter;
 			this.addToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.addToolStripButton.Name = "addToolStripButton";
-			this.addToolStripButton.Size = new System.Drawing.Size(23, 22);
+			this.addToolStripButton.Size = new System.Drawing.Size(97, 22);
 			this.addToolStripButton.Text = "Add property";
 			this.addToolStripButton.Click += new System.EventHandler(this.addToolStripButton_Click);
 			// 
 			// editToolStripButton
 			// 
-			this.editToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			this.editToolStripButton.Image = global::CloneDetective.Package.Res.Edit;
 			this.editToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.editToolStripButton.Name = "editToolStripButton";
-			this.editToolStripButton.Size = new System.Drawing.Size(23, 22);
+			this.editToolStripButton.Size = new System.Drawing.Size(95, 22);
 			this.editToolStripButton.Text = "Edit property";
 			this.editToolStripButton.Click += new System.EventHandler(this.editToolStripButton_Click);
 			// 
@@ -301,6 +318,15 @@
 			// 
 			this.saveFileDialog.Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*";
 			// 
+			// errorProvider
+			// 
+			this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+			this.errorProvider.ContainerControl = this;
+			// 
+			// toolTip
+			// 
+			this.toolTip.ToolTipTitle = "Expanded Path";
+			// 
 			// pathsGroupLabel
 			// 
 			this.pathsGroupLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
@@ -329,7 +355,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.cancelButton;
-			this.ClientSize = new System.Drawing.Size(556, 348);
+			this.ClientSize = new System.Drawing.Size(556, 352);
 			this.Controls.Add(this.pathsGroupLabel);
 			this.Controls.Add(this.propertyOverridesGroupLabel);
 			this.Controls.Add(this.propertyOverridesToolStrip);
@@ -346,6 +372,7 @@
 			this.HelpButton = true;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
+			this.MinimumSize = new System.Drawing.Size(572, 388);
 			this.Name = "SolutionSettingsForm";
 			this.ShowIcon = false;
 			this.ShowInTaskbar = false;
@@ -353,10 +380,12 @@
 			this.Text = "Clone Detective Solution Settings";
 			this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.SolutionSettingsForm_HelpButtonClicked);
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SolutionSettingsForm_FormClosed);
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SolutionSettingsForm_FormClosing);
 			this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.SolutionSettingsForm_HelpRequested);
 			((System.ComponentModel.ISupportInitialize)(this.propertyOverridesDataGridView)).EndInit();
 			this.propertyOverridesToolStrip.ResumeLayout(false);
 			this.propertyOverridesToolStrip.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -381,11 +410,14 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripButton upToolStripButton;
 		private System.Windows.Forms.ToolStripButton downToolStripButton;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
 		private System.Windows.Forms.OpenFileDialog openFileDialog;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog;
 		private GroupLabel propertyOverridesGroupLabel;
 		private GroupLabel pathsGroupLabel;
+		private System.Windows.Forms.ErrorProvider errorProvider;
+		private System.Windows.Forms.ToolTip toolTip;
+		private System.Windows.Forms.DataGridViewImageColumn iconColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn propertyColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn valueColumn;
 	}
 }
