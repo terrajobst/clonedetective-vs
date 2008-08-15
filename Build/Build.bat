@@ -1,6 +1,5 @@
 @echo off
 
-SET PATH=%PATH%;%SystemRoot%\Microsoft.NET\Framework\v3.5
-MSBuild Build.proj
+"%SystemRoot%\Microsoft.NET\Framework\v3.5\MSBuild.exe" Build.proj /t:Build
 
 PAUSE

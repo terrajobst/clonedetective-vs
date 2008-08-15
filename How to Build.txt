@@ -27,7 +27,7 @@ Prerequisites
 Building
 --------
 
-1. Run Build.bat (make sure the path to MSBuild is correct)
+1. Run Build\Build.bat (make sure the path to MSBuild is correct)
 
 2. The folder Output will now contain the following subfolders:
    - Bin. Contains the binaries (compiled in "Release" configuration).
