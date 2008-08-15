@@ -329,6 +329,7 @@ namespace CloneDetective.Package
 			browsePropertiesFileName.Enabled = useCustomCloneDetectionCheckBox.Checked && usePropertiesFileCheckBox.Checked;
 
 			propertyOverridesGroupLabel.Enabled =  useCustomCloneDetectionCheckBox.Checked;
+			propertyOverridesNoteLabel.Enabled = useCustomCloneDetectionCheckBox.Checked;
 			propertyOverridesToolStrip.Enabled = useCustomCloneDetectionCheckBox.Checked;
 			propertyOverridesDataGridView.Enabled = useCustomCloneDetectionCheckBox.Checked;
 

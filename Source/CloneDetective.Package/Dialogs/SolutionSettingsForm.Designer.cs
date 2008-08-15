@@ -60,7 +60,7 @@
 			this.browsePropertiesFileName = new System.Windows.Forms.Button();
 			this.propertiesFileNameLabel = new System.Windows.Forms.Label();
 			this.usePropertiesFileCheckBox = new System.Windows.Forms.CheckBox();
-			this.label1 = new System.Windows.Forms.Label();
+			this.propertyOverridesNoteLabel = new System.Windows.Forms.Label();
 			this.pathsGroupLabel = new CloneDetective.Package.GroupLabel();
 			this.propertiesFileGroupLabel = new CloneDetective.Package.GroupLabel();
 			this.propertyOverridesGroupLabel = new CloneDetective.Package.GroupLabel();
@@ -376,16 +376,16 @@
 			this.usePropertiesFileCheckBox.UseVisualStyleBackColor = true;
 			this.usePropertiesFileCheckBox.CheckedChanged += new System.EventHandler(this.usePropertiesFileCheckBox_CheckedChanged);
 			// 
-			// label1
+			// propertyOverridesNoteLabel
 			// 
-			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+			this.propertyOverridesNoteLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
 						| System.Windows.Forms.AnchorStyles.Right)));
-			this.label1.Location = new System.Drawing.Point(29, 235);
-			this.label1.Margin = new System.Windows.Forms.Padding(3);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(583, 13);
-			this.label1.TabIndex = 14;
-			this.label1.Text = "Here you can define properties that override the values defined in the .propertie" +
+			this.propertyOverridesNoteLabel.Location = new System.Drawing.Point(29, 235);
+			this.propertyOverridesNoteLabel.Margin = new System.Windows.Forms.Padding(3);
+			this.propertyOverridesNoteLabel.Name = "propertyOverridesNoteLabel";
+			this.propertyOverridesNoteLabel.Size = new System.Drawing.Size(583, 13);
+			this.propertyOverridesNoteLabel.TabIndex = 14;
+			this.propertyOverridesNoteLabel.Text = "Here you can define properties that override the values defined in the .propertie" +
 				"s file and inside ConQAT analysis file.";
 			// 
 			// pathsGroupLabel
@@ -425,7 +425,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.cancelButton;
 			this.ClientSize = new System.Drawing.Size(624, 444);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.propertyOverridesNoteLabel);
 			this.Controls.Add(this.usePropertiesFileCheckBox);
 			this.Controls.Add(this.browsePropertiesFileName);
 			this.Controls.Add(this.propertiesFileNameTextBox);
@@ -496,7 +496,7 @@
 		private System.Windows.Forms.Label propertiesFileNameLabel;
 		private GroupLabel propertiesFileGroupLabel;
 		private System.Windows.Forms.CheckBox usePropertiesFileCheckBox;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label propertyOverridesNoteLabel;
 		private System.Windows.Forms.DataGridViewImageColumn iconColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn propertyColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn valueColumn;
