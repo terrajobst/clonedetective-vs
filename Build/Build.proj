@@ -24,10 +24,15 @@
 		<GeneratedHelpTopics>$(OutputDir)Additional Content\</GeneratedHelpTopics>
 		<GeneratedHtmlHelp1>$(OutputDir)Help CHM\</GeneratedHtmlHelp1>
 		<GeneratedHtmlHelp2>$(OutputDir)Help VS\</GeneratedHtmlHelp2>
+		<GeneratedRelease>$(OutputDir)Release\</GeneratedRelease>
 		<Configuration>Release</Configuration>
 		<TopicTransformationFile>$(HelpDir)TopicTransform.xslt</TopicTransformationFile>
 	</PropertyGroup>
 
+	<!-- External projects -->
+
+	<Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+	
 	<!-- External Tasks -->
 
 	<UsingTask AssemblyFile="$(CustomTasksDir)CloneDetective.Build.dll" TaskName="CloneDetective.Build.ApplyXslTransform" />
@@ -65,6 +70,7 @@
 		<CallTarget Targets="GenerateHelp" />
 		<CallTarget Targets="GenerateSetup" />
 		<CallTarget Targets="GenerateSourceCode" />
+		<CallTarget Targets="GenerateRelease" />
 	</Target>
 
 	<!-- Compile -->
@@ -141,11 +147,25 @@
 	<Target Name="GenerateSourceCode" DependsOnTargets="CompileBuildTasks">
 		<ItemGroup>
 			<SourceCodeFiles Include="$(ProjectDir)**\*.*"
-							 Exclude="$(OutputDir)**\*.*;$(LibDir)**\*.*;$(CustomTasksDir)**\*.*;$(ProjectDir)**\bin\**\*.*;$(ProjectDir)**\obj\**\*.*;$(ProjectDir)**\*.scc;$(ProjectDir)**\*.vssscc;$(ProjectDir)**\*.vspscc;$(ProjectDir)**\*.suo;$(ProjectDir)**\*.user;$(ProjectDir)**\*.resharper" />
+							 Exclude="$(OutputDir)**\*.*;$(LibDir)**\*.*;$(CustomTasksDir)**\*.*;$(ProjectDir)**\bin\**\*.*;$(ProjectDir)**\obj\**\*.*;$(ProjectDir)**\*.scc;$(ProjectDir)**\*.vssscc;$(ProjectDir)**\*.vspscc;$(ProjectDir)**\*.suo;$(ProjectDir)**\*.cache;$(ProjectDir)**\*.user;$(ProjectDir)**\*.resharper" />
 		</ItemGroup>
 
 		<Copy SourceFiles="@(SourceCodeFiles)" DestinationFolder="$(GeneratedSourceCode)%(RecursiveDir)" />
 		<Exec Command="attrib -r -h /s" WorkingDirectory="$(GeneratedSourceCode)" />
 		<RemoveTfsBindings SolutionFiles="$(GeneratedSourceCode)Source\Clone Detective.sln" />
+	</Target>
+	
+	<!-- Generate Release -->
+
+	<Target Name="GenerateRelease" DependsOnTargets="GenerateSetup;GenerateSourceCode">
+		<ItemGroup>
+			<GeneratedSourceCodeFiles Include="$(GeneratedSourceCode)\**\*.*" />
+			<GeneratedSetupFiles Include="$(GeneratedSetup)\**\*.*" />
+		</ItemGroup>
+
+		<RemoveDir Directories="$(GeneratedRelease)" />
+		<MakeDir Directories="$(GeneratedRelease)" />
+		<Zip WorkingDirectory="$(GeneratedSourceCode)" Files="@(GeneratedSourceCodeFiles)" ZipFileName="$(GeneratedRelease)SourceCode.zip" />
+		<Zip WorkingDirectory="$(GeneratedSetup)" Files="@(GeneratedSetupFiles)" ZipFileName="$(GeneratedRelease)Setup.zip" />
 	</Target>
 </Project>

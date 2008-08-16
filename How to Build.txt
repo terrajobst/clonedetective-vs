@@ -15,13 +15,16 @@ Prerequisites
 4. ConQAT 1.3, download and copy to Lib\ConQAT
    http://conqat.cs.tum.edu/index.php/Download
 
-5. Sandcastle
+5. MSBuild community tasks
+   http://msbuildtasks.tigris.org/
+   
+6. Sandcastle
    http://www.codeplex.com/Sandcastle
 
-6. Sandcastle Help File Builder (SHFB)
+7. Sandcastle Help File Builder (SHFB)
    http://www.codeplex.com/SHFB
 
-7. Sandcastle Extensions
+8. Sandcastle Extensions
    http://www.codeplex.com/SandExtensions
 
 Building
