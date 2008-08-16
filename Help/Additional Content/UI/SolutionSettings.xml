@@ -37,14 +37,32 @@
 					clone results XML file that will be produced by the ConQAT analysis.
 				</li>
 				<li>
+					<b>Property file</b>. In this text box you can specify the fully qualified path of a
+					Java properties file will be used by ConQAT to initialize properties of your analysis file.
+				</li>
+				<li>
 					<b>ConQAT parameter overrides</b>. This section allows you to override properties defined in
 					the ConQAT analysis file with other values. These values are passed to ConQAT using the <c>-p</c>
 					command line switch.
 				</li>
 			</ul>
 			<note>
-				All settings are only applicable if you enabled custom clone clone analysis settings by
-				checking <b>Use custom clone analysis</b>.
+				<ul>
+					<li>
+						All settings are only applicable if you enabled custom clone clone analysis settings by
+						checking <b>Use custom clone analysis</b>.
+					</li>
+					<li>
+						Even if you disable the properties file ConQAT will still try to find a properties file that
+						is named as your analysis file with .properties appended. For example, if your analysis file
+						is named <c>CloneDetection.cqa</c> ConQAT will try to find a properties file named
+						<c>CloneDetection.cqa.properties</c> in the same folder as <c>CloneDetection.cqa</c>.
+					</li>
+					<li>
+						You only need to configure the properties file if it is named different or is located in
+						a different folder than your analysis file.
+					</li>
+				</ul>
 			</note>
 		</section>
 		<section title="Macros">
