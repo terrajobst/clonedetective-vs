@@ -165,7 +165,7 @@
 
 		<RemoveDir Directories="$(GeneratedRelease)" />
 		<MakeDir Directories="$(GeneratedRelease)" />
-		<Zip WorkingDirectory="$(GeneratedSourceCode)" Files="@(GeneratedSourceCodeFiles)" ZipFileName="$(GeneratedRelease)SourceCode.zip" />
+		<Zip WorkingDirectory="$(GeneratedSourceCode)" Files="@(GeneratedSourceCodeFiles)" ZipFileName="$(GeneratedRelease)Source.zip" />
 		<Zip WorkingDirectory="$(GeneratedSetup)" Files="@(GeneratedSetupFiles)" ZipFileName="$(GeneratedRelease)Setup.zip" />
 	</Target>
 </Project>
