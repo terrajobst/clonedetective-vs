@@ -98,6 +98,9 @@ namespace CloneDetective.Build
 			RemoveReadOnlyFlag(solutionFileName);
 			using (StreamWriter sw = new StreamWriter(solutionFileName, false, Encoding.Default))
 			{
+				if (solutionFileContents.Count > 0 && solutionFileContents[0].Length == 0)
+					solutionFileContents.RemoveAt(0);
+
 				bool inSourceCodeSection = false;
 				foreach (string line in solutionFileContents)
 				{
