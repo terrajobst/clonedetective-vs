@@ -32,6 +32,13 @@
 	
 	<Fragment>
 		<Component Id="C__Registry" Guid="B94A8F45-B25F-45f1-9ABA-FD61587D485D" Directory="INSTALLDIR">
+			
+			<!-- Clone Detective Settings -->
+			
+			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\$(var.ProductName)">
+				<RegistryValue Name="InstallDir" Value="[INSTALLDIR]" Type="string" />
+			</RegistryKey>
+
 			<!-- Package Registration -->
 
 			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\InstalledProducts\VSPackage">
