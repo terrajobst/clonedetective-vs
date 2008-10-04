@@ -29,72 +29,32 @@ namespace CloneDetective.Package
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.listView = new System.Windows.Forms.ListView();
-			this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
 			this.listViewContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.borderPanel1 = new BorderPanel();
+			this.borderPanel1 = new CloneDetective.Package.BorderPanel();
 			this.fileNameLabel = new System.Windows.Forms.Label();
-			this.borderPanel3 = new BorderPanel();
+			this.borderPanel3 = new CloneDetective.Package.BorderPanel();
+			this.dataGridView = new System.Windows.Forms.DataGridView();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.referenceContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.referencePictureBox = new System.Windows.Forms.PictureBox();
 			this.borderPanel3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize) (this.referencePictureBox)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.referencePictureBox)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// listView
-			// 
-			this.listView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-			this.listView.ContextMenuStrip = this.listViewContextMenuStrip;
-			this.listView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.listView.FullRowSelect = true;
-			this.listView.Location = new System.Drawing.Point(1, 27);
-			this.listView.MultiSelect = false;
-			this.listView.Name = "listView";
-			this.listView.OwnerDraw = true;
-			this.listView.Size = new System.Drawing.Size(790, 200);
-			this.listView.TabIndex = 2;
-			this.listView.UseCompatibleStateImageBehavior = false;
-			this.listView.View = System.Windows.Forms.View.Details;
-			this.listView.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listView_DrawColumnHeader);
-			this.listView.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listView_DrawItem);
-			this.listView.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listView_ColumnWidthChanged);
-			this.listView.SelectedIndexChanged += new System.EventHandler(this.listView_SelectedIndexChanged);
-			this.listView.DoubleClick += new System.EventHandler(this.listView_DoubleClick);
-			this.listView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listView_KeyDown);
-			this.listView.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listView_DrawSubItem);
-			// 
-			// columnHeader1
-			// 
-			this.columnHeader1.Text = "File Name";
-			this.columnHeader1.Width = 200;
-			// 
-			// columnHeader2
-			// 
-			this.columnHeader2.Text = "Clone Intersections";
-			this.columnHeader2.Width = 130;
-			// 
-			// columnHeader3
-			// 
-			this.columnHeader3.Text = "Clone Visualization";
-			this.columnHeader3.Width = 400;
 			// 
 			// listViewContextMenuStrip
 			// 
 			this.listViewContextMenuStrip.Name = "listViewContextMenuStrip";
-			this.listViewContextMenuStrip.Size = new System.Drawing.Size(153, 26);
+			this.listViewContextMenuStrip.Size = new System.Drawing.Size(61, 4);
 			this.listViewContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.listViewContextMenuStrip_Opening);
 			// 
 			// borderPanel1
 			// 
-			this.borderPanel1.BorderSides = ((System.Windows.Forms.Border3DSide) ((System.Windows.Forms.Border3DSide.Top | System.Windows.Forms.Border3DSide.Bottom)));
+			this.borderPanel1.BorderSides = ((System.Windows.Forms.Border3DSide)((System.Windows.Forms.Border3DSide.Top | System.Windows.Forms.Border3DSide.Bottom)));
 			this.borderPanel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.borderPanel1.Location = new System.Drawing.Point(1, 24);
 			this.borderPanel1.Name = "borderPanel1";
@@ -114,11 +74,11 @@ namespace CloneDetective.Package
 			// 
 			// borderPanel3
 			// 
-			this.borderPanel3.BorderSides = ((System.Windows.Forms.Border3DSide) (((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top)
+			this.borderPanel3.BorderSides = ((System.Windows.Forms.Border3DSide)(((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top)
 						| System.Windows.Forms.Border3DSide.Right)
 						| System.Windows.Forms.Border3DSide.Bottom)
 						| System.Windows.Forms.Border3DSide.Middle)));
-			this.borderPanel3.Controls.Add(this.listView);
+			this.borderPanel3.Controls.Add(this.dataGridView);
 			this.borderPanel3.Controls.Add(this.borderPanel1);
 			this.borderPanel3.Controls.Add(this.panel1);
 			this.borderPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -127,6 +87,60 @@ namespace CloneDetective.Package
 			this.borderPanel3.Padding = new System.Windows.Forms.Padding(1);
 			this.borderPanel3.Size = new System.Drawing.Size(792, 228);
 			this.borderPanel3.TabIndex = 6;
+			// 
+			// dataGridView
+			// 
+			this.dataGridView.AllowUserToAddRows = false;
+			this.dataGridView.AllowUserToDeleteRows = false;
+			this.dataGridView.AllowUserToResizeRows = false;
+			this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+			this.dataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+			this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+			this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+			this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+			this.dataGridView.ContextMenuStrip = this.listViewContextMenuStrip;
+			this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dataGridView.Location = new System.Drawing.Point(1, 27);
+			this.dataGridView.MultiSelect = false;
+			this.dataGridView.Name = "dataGridView";
+			this.dataGridView.ReadOnly = true;
+			this.dataGridView.RowHeadersVisible = false;
+			this.dataGridView.RowTemplate.Height = 19;
+			this.dataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dataGridView.Size = new System.Drawing.Size(790, 200);
+			this.dataGridView.TabIndex = 4;
+			this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
+			this.dataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_KeyDown);
+			this.dataGridView.ColumnWidthChanged += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridView_ColumnWidthChanged);
+			this.dataGridView.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
+			// 
+			// Column1
+			// 
+			this.Column1.HeaderText = "File Name";
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Width = 200;
+			// 
+			// Column2
+			// 
+			this.Column2.HeaderText = "Clone Intersections";
+			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
+			this.Column2.Width = 150;
+			// 
+			// Column3
+			// 
+			this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Column3.HeaderText = "Clone Visualization";
+			this.Column3.Name = "Column3";
+			this.Column3.ReadOnly = true;
+			this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
 			// 
 			// panel1
 			// 
@@ -166,24 +180,25 @@ namespace CloneDetective.Package
 			this.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
 			this.Size = new System.Drawing.Size(792, 229);
 			this.borderPanel3.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
 			this.panel1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize) (this.referencePictureBox)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.referencePictureBox)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.ListView listView;
-		private System.Windows.Forms.ColumnHeader columnHeader1;
-		private System.Windows.Forms.ColumnHeader columnHeader2;
 		private BorderPanel borderPanel1;
 		private System.Windows.Forms.Label fileNameLabel;
 		private BorderPanel borderPanel3;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.ColumnHeader columnHeader3;
 		private System.Windows.Forms.PictureBox referencePictureBox;
 		private System.Windows.Forms.ContextMenuStrip referenceContextMenuStrip;
 		private System.Windows.Forms.ContextMenuStrip listViewContextMenuStrip;
+		private System.Windows.Forms.DataGridView dataGridView;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+		private System.Windows.Forms.DataGridViewImageColumn Column3;
 	}
 }

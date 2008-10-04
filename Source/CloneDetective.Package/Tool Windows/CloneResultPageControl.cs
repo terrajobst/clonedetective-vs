@@ -19,6 +19,8 @@ namespace CloneDetective.Package
 		public CloneResultPageControl()
 		{
 			InitializeComponent();
+
+			dataGridView.Sort(dataGridView.Columns[1], ListSortDirection.Descending);
 		}
 
 		private static Bitmap CreateCloneBitmap()
@@ -45,8 +47,15 @@ namespace CloneDetective.Package
 			get { return _cloneClass; }
 			set
 			{
-				_cloneClass = value;
-				LoadClones();
+				try
+				{
+					_cloneClass = value;
+					LoadClones();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.ToString());
+				}
 			}
 		}
 
@@ -77,35 +86,37 @@ namespace CloneDetective.Package
 				cloneGroup.Clones.Add(clone);
 			}
 
-			listView.BeginUpdate();
-			try
-			{
-				listView.Items.Clear();
+			dataGridView.Rows.Clear();
 
-				foreach (CloneGroup cloneGroup in cloneGroups)
-				{
-					ListViewItem item = new ListViewItem();
-					item.Text = Path.GetFileName(cloneGroup.SourceFile.Path);
-					item.SubItems.Add(FormattingHelper.FormatInteger(cloneGroup.Clones.Count));
-					item.SubItems.Add(String.Empty);
-					item.Tag = cloneGroup;
-					listView.Items.Add(item);
-				}
-			}
-			finally
+			foreach (CloneGroup cloneGroup in cloneGroups)
 			{
-				listView.EndUpdate();				
+				DataGridViewRow row = new DataGridViewRow();
+				row.CreateCells(dataGridView);
+				row.Cells[0].Value = Path.GetFileName(cloneGroup.SourceFile.Path);
+				row.Cells[1].Value = cloneGroup.Clones.Count;
+				row.Cells[2].Value = GetCloneOverviewBitmap(cloneGroup);
+				row.Tag = cloneGroup;
+				dataGridView.Rows.Add(row);
 			}
+
+			dataGridView.Sort(dataGridView.SortedColumn, GetSortDirectionFromSortOrder(dataGridView.SortOrder));
+		}
+
+		private static ListSortDirection GetSortDirectionFromSortOrder(SortOrder sortOrder)
+		{
+			return sortOrder == SortOrder.Ascending
+					? ListSortDirection.Ascending
+					: ListSortDirection.Descending;
 		}
 
 		private CloneGroup SelectedCloneGroup
 		{
 			get
 			{
-				if (listView.FocusedItem == null)
+				if (dataGridView.SelectedRows.Count == 0)
 					return null;
 
-				return (CloneGroup)listView.FocusedItem.Tag;
+				return (CloneGroup)dataGridView.SelectedRows[0].Tag;
 			}
 		}
 
@@ -121,36 +132,54 @@ namespace CloneDetective.Package
 			return sourceNode.LinesOfCode;
 		}
 
-		private void DrawClones(Graphics graphics, Rectangle bounds, CloneGroup cloneGroup)
+		private void UpdateCloneVisualizations()
 		{
-			int linesOfCode = GetLinesOfCode(cloneGroup.SourceFile);
-			int totalWidth = (int) Math.Floor((double) (bounds.Width - 1)/_maximumLoc*linesOfCode);
-
-			Rectangle backgroundRect = new Rectangle();
-			backgroundRect.X = bounds.X;
-			backgroundRect.Y = bounds.Top;
-			backgroundRect.Width = totalWidth - 1;
-			backgroundRect.Height = bounds.Height - 1;
-			graphics.FillRectangle(Brushes.LightGray, backgroundRect);
-
-			// TODO: Use same color as marker
-			Brush brush = Brushes.Purple;
-			foreach (Clone clone in cloneGroup.Clones)
+			foreach (DataGridViewRow row in dataGridView.Rows)
 			{
-				Rectangle cloneRect = new Rectangle();
-				cloneRect.X = (int) Math.Floor(bounds.X + (double) clone.StartLine/linesOfCode*totalWidth);
-				cloneRect.Width = (int) Math.Floor((double) clone.LineCount/linesOfCode*totalWidth);
-				cloneRect.Y = bounds.Top;
-				cloneRect.Height = bounds.Height;
+				CloneGroup cloneGroup = (CloneGroup) row.Tag;
+				Bitmap oldBitmap = (Bitmap)row.Cells[2].Value;
+				if (oldBitmap != null)
+					oldBitmap.Dispose();
 
-				if (cloneRect.Right > bounds.X + totalWidth)
-					cloneRect.Width = bounds.X + totalWidth - cloneRect.X;
-
-				graphics.FillRectangle(brush, cloneRect);
+				row.Cells[2].Value = GetCloneOverviewBitmap(cloneGroup);
 			}
+		}
 
+		private object GetCloneOverviewBitmap(CloneGroup group)
+		{
+			Bitmap bitmap = new Bitmap(dataGridView.Columns[2].Width, 10);
+			Rectangle bounds = new Rectangle(0, 0, bitmap.Width - 1, bitmap.Height - 1);
+			using (Graphics graphics = Graphics.FromImage(bitmap))
+			{
+				int linesOfCode = GetLinesOfCode(group.SourceFile);
+				int totalWidth = (int) Math.Floor((double) (bounds.Width - 1)/_maximumLoc*linesOfCode);
 
-			graphics.DrawRectangle(Pens.Black, backgroundRect);
+				Rectangle backgroundRect = new Rectangle();
+				backgroundRect.X = bounds.X;
+				backgroundRect.Y = bounds.Top;
+				backgroundRect.Width = totalWidth - 1;
+				backgroundRect.Height = bounds.Height - 1;
+				graphics.FillRectangle(Brushes.LightGray, backgroundRect);
+
+				// TODO: Use same color as marker
+				Brush brush = Brushes.Purple;
+				foreach (Clone clone in group.Clones)
+				{
+					Rectangle cloneRect = new Rectangle();
+					cloneRect.X = (int) Math.Floor(bounds.X + (double) clone.StartLine/linesOfCode*totalWidth);
+					cloneRect.Width = (int) Math.Floor((double) clone.LineCount/linesOfCode*totalWidth);
+					cloneRect.Y = bounds.Top;
+					cloneRect.Height = bounds.Height;
+
+					if (cloneRect.Right > bounds.X + totalWidth)
+						cloneRect.Width = bounds.X + totalWidth - cloneRect.X;
+
+					graphics.FillRectangle(brush, cloneRect);
+				}
+
+				graphics.DrawRectangle(Pens.Black, backgroundRect);
+			}
+			return bitmap;
 		}
 
 		private void UpdateContextMenu()
@@ -178,54 +207,21 @@ namespace CloneDetective.Package
 			VSPackage.Instance.SelectCloneInEditor(clone);
 		}
 
-		private void listView_DoubleClick(object sender, EventArgs e)
+		private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
 			OpenSelectedClone();
 		}
 
-		private void listView_KeyDown(object sender, KeyEventArgs e)
+		private void dataGridView_KeyDown(object sender, KeyEventArgs e)
 		{
 			if (e.KeyData == Keys.Enter || e.KeyData == Keys.Return)
 				OpenSelectedClone();
 		}
 
-		private void listView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+		private void dataGridView_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
 		{
-			e.DrawDefault = true;
-		}
-
-		private void listView_DrawItem(object sender, DrawListViewItemEventArgs e)
-		{
-			e.DrawDefault = false;
-		}
-
-		private void listView_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
-		{
-			const int boxHeight = 10;
-
-			if (e.ColumnIndex < 2)
-			{
-				e.DrawDefault = true;
-			}
-			else
-			{
-				e.DrawDefault = false;
-				CloneGroup cloneGroup = (CloneGroup)e.Item.Tag;
-
-				if (e.Item.Selected && listView.Focused)
-					e.Graphics.FillRectangle(SystemBrushes.Highlight, e.Bounds);
-				else
-					e.Graphics.FillRectangle(SystemBrushes.Window, e.Bounds);
-
-				Rectangle cloneRect = e.Bounds;
-				if (boxHeight < e.Bounds.Height)
-				{
-					cloneRect.Y = e.Bounds.Top + (int)Math.Ceiling(e.Bounds.Height / 2.0 - boxHeight / 2.0);
-					cloneRect.Height = boxHeight;
-				}
-
-				DrawClones(e.Graphics, cloneRect, cloneGroup);
-			}
+			if (e.Column.Index == 2)
+				UpdateCloneVisualizations();
 		}
 
 		private void contextMenuStrip_Opening(object sender, CancelEventArgs e)

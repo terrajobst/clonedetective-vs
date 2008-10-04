@@ -451,14 +451,6 @@ namespace CloneDetective.CloneReporting
 				}
 			}
 
-			// Finally we sort the list of references to make sure items
-			// with more intersections come first.
-			result.References.Sort(
-				delegate(CloneIntersectedItem x, CloneIntersectedItem y)
-					{
-						return -x.Clones.Count.CompareTo(y.Clones.Count);
-					});
-
 			return result;
 		}
 	}

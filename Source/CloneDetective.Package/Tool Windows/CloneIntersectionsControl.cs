@@ -24,6 +24,8 @@ namespace CloneDetective.Package
 		public CloneIntersectionsControl()
 		{
 			InitializeComponent();
+
+			dataGridView.Sort(dataGridView.Columns[1], ListSortDirection.Descending);
 		}
 
 		protected override void Initialize()
@@ -156,10 +158,10 @@ namespace CloneDetective.Package
 		{
 			get
 			{
-				if (listView.FocusedItem == null)
+				if (dataGridView.SelectedRows.Count == 0)
 					return null;
 
-				return (CloneIntersectedItem)listView.FocusedItem.Tag;
+				return (CloneIntersectedItem)dataGridView.SelectedRows[0].Tag;
 			}
 		}
 
@@ -201,49 +203,61 @@ namespace CloneDetective.Package
 		{
 			if (ReferenceEquals(_sourceNode, newSourceNode))
 				return;
+			
+			dataGridView.Rows.Clear();
 
-			listView.BeginUpdate();
-			try
+			if (newSourceNode == null || newSourceNode.SourceFile == null)
 			{
-				listView.Items.Clear();
-
-				if (newSourceNode == null || newSourceNode.SourceFile == null)
-				{
-					fileNameLabel.Text = Res.NoCloneReportOrNoFileSelected;
-					referencePictureBox.Visible = false;
-				}
-				else
-				{
-
-					fileNameLabel.Text = newSourceNode.Name;
-					_cloneIntersectionResult = CloneDetectiveManager.CloneDetectiveResult.SourceTree.GetCloneIntersections(newSourceNode);
-
-					_maximumLoc = _cloneIntersectionResult.Target.SourceNode.LinesOfCode;
-					foreach (CloneIntersectedItem intersection in _cloneIntersectionResult.References)
-						_maximumLoc = Math.Max(_maximumLoc, intersection.SourceNode.LinesOfCode);
-
-					UpdateReferenceCloneVisualization();
-					referencePictureBox.Visible = true;
-
-					foreach (CloneIntersectedItem cloneIntersectedItem in _cloneIntersectionResult.References)
-					{
-						SourceNode sourceNode = cloneIntersectedItem.SourceNode;
-						ListViewItem item = new ListViewItem();
-						item.Text = sourceNode.Name;
-						item.SubItems.Add(FormattingHelper.FormatInteger(cloneIntersectedItem.Clones.Count));
-						item.SubItems.Add(String.Empty);
-						item.Tag = cloneIntersectedItem;
-						listView.Items.Add(item);
-					}
-				}
+				fileNameLabel.Text = Res.NoCloneReportOrNoFileSelected;
+				referencePictureBox.Visible = false;
 			}
-			finally
+			else
 			{
-				listView.EndUpdate();
+				fileNameLabel.Text = newSourceNode.Name;
+				_cloneIntersectionResult = CloneDetectiveManager.CloneDetectiveResult.SourceTree.GetCloneIntersections(newSourceNode);
+
+				_maximumLoc = _cloneIntersectionResult.Target.SourceNode.LinesOfCode;
+				foreach (CloneIntersectedItem intersection in _cloneIntersectionResult.References)
+					_maximumLoc = Math.Max(_maximumLoc, intersection.SourceNode.LinesOfCode);
+
+				UpdateReferenceCloneVisualization();
+				referencePictureBox.Visible = true;
+
+				foreach (CloneIntersectedItem cloneIntersectedItem in _cloneIntersectionResult.References)
+				{
+					DataGridViewRow row = new DataGridViewRow();
+					row.CreateCells(dataGridView);
+					row.Cells[0].Value = cloneIntersectedItem.SourceNode.Name;
+					row.Cells[1].Value = cloneIntersectedItem.Clones.Count;
+					row.Cells[2].Value = GetCloneOverviewBitmap(cloneIntersectedItem);
+					row.Tag = cloneIntersectedItem;
+					dataGridView.Rows.Add(row);
+				}
+
+				dataGridView.Sort(dataGridView.SortedColumn, GetSortDirectionFromSortOrder(dataGridView.SortOrder));
 			}
 
-			listView.Invalidate();
 			_sourceNode = newSourceNode;
+		}
+
+		private static ListSortDirection GetSortDirectionFromSortOrder(SortOrder sortOrder)
+		{
+			return sortOrder == SortOrder.Ascending
+			       	? ListSortDirection.Ascending
+			       	: ListSortDirection.Descending;
+		}
+
+		private void UpdateCloneVisualizations()
+		{
+			foreach (DataGridViewRow row in dataGridView.Rows)
+			{
+				CloneIntersectedItem cloneIntersectedItem = (CloneIntersectedItem) row.Tag;
+				Bitmap oldBitmap = (Bitmap) row.Cells[2].Value;
+				if (oldBitmap != null)
+					oldBitmap.Dispose();
+
+				row.Cells[2].Value = GetCloneOverviewBitmap(cloneIntersectedItem);
+			}
 		}
 
 		private void UpdateReferenceCloneVisualization()
@@ -251,17 +265,17 @@ namespace CloneDetective.Package
 			if (_cloneIntersectionResult == null)
 				return;
 
-			Bitmap referenceCloneOverviewBitmap = new Bitmap(listView.Columns[2].Width, GetBoxHeight());
-			Rectangle bounds = new Rectangle(0, 0, referenceCloneOverviewBitmap.Width - 1, GetBoxHeight());
-			using (Graphics graphics = Graphics.FromImage(referenceCloneOverviewBitmap))
-			{
-				graphics.FillRectangle(SystemBrushes.Info, bounds);
-				DrawCloneVisualization(graphics, bounds, _cloneIntersectionResult.Target);
-			}
+			Bitmap referenceCloneOverviewBitmap = GetCloneOverviewBitmap(_cloneIntersectionResult.Target);
+
+			Bitmap oldBitmap = (Bitmap) referencePictureBox.Image;
+			referencePictureBox.Image = null;
+			if (oldBitmap != null)
+				oldBitmap.Dispose();
 
 			referencePictureBox.Image = referenceCloneOverviewBitmap;
 			referencePictureBox.Width = referenceCloneOverviewBitmap.Width;
 
+			Rectangle bounds = new Rectangle(Point.Empty, referenceCloneOverviewBitmap.Size);
 			UpdateReferenceHitTestInfos(bounds);
 		}
 
@@ -294,10 +308,46 @@ namespace CloneDetective.Package
 			int offset = 0;
 			for (int i = 0; i < 2; i++)
 			{
-				ColumnHeader columnHeader = listView.Columns[i];
-				offset += columnHeader.Width;
+				DataGridViewColumn gridViewColumn = dataGridView.Columns[i];
+				offset += gridViewColumn.Width;
 			}
 			referencePictureBox.Left = offset;
+		}
+
+		private Bitmap GetCloneOverviewBitmap(CloneIntersectedItem cloneIntersectedItem)
+		{
+			Bitmap bitmap = new Bitmap(dataGridView.Columns[2].Width, GetBoxHeight());
+			Rectangle bounds = new Rectangle(0, 0, bitmap.Width - 1, bitmap.Height - 1);
+			using (Graphics graphics = Graphics.FromImage(bitmap))
+			{
+				int linesOfCode = cloneIntersectedItem.SourceNode.LinesOfCode;
+				int totalWidth = (int) Math.Floor((double)(bounds.Width - 1) / _maximumLoc * linesOfCode);
+
+				Rectangle backgroundRect = new Rectangle();
+				backgroundRect.X = bounds.X;
+				backgroundRect.Y = bounds.Top;
+				backgroundRect.Width = totalWidth - 1;
+				backgroundRect.Height = bounds.Height - 1;
+				graphics.FillRectangle(Brushes.LightGray, backgroundRect);
+
+				foreach (CloneIntersection cloneIntersection in cloneIntersectedItem.Clones)
+				{
+					Rectangle cloneRect = new Rectangle();
+					cloneRect.X = (int) Math.Floor(bounds.X + (double)cloneIntersection.Clone.StartLine / linesOfCode * totalWidth);
+					cloneRect.Width = (int) Math.Floor((double)cloneIntersection.Clone.LineCount / linesOfCode * totalWidth);
+					cloneRect.Y = bounds.Top;
+					cloneRect.Height = bounds.Height;
+
+					if (cloneRect.Right > bounds.X + totalWidth)
+						cloneRect.Width = bounds.X + totalWidth - cloneRect.X;
+
+					Brush brush = GetCloneIntersectonBrush(cloneIntersection);
+					graphics.FillRectangle(brush, cloneRect);
+				}
+
+				graphics.DrawRectangle(Pens.Black, backgroundRect);
+			}
+			return bitmap;
 		}
 
 		private void SelectCloneInEditor(Point point)
@@ -317,36 +367,6 @@ namespace CloneDetective.Package
 				if (SelectedCloneIntersectedItem.SourceNode.SourceFile != null)
 					VSPackage.Instance.OpenDocument(SelectedCloneIntersectedItem.SourceNode.SourceFile.Path);
 			}
-		}
-
-		private void DrawCloneVisualization(Graphics graphics, Rectangle bounds, CloneIntersectedItem cloneIntersectedItem)
-		{
-			int linesOfCode = cloneIntersectedItem.SourceNode.LinesOfCode;
-			int totalWidth = (int) Math.Floor((double)(bounds.Width - 1) / _maximumLoc * linesOfCode);
-
-			Rectangle backgroundRect = new Rectangle();
-			backgroundRect.X = bounds.X;
-			backgroundRect.Y = bounds.Top;
-			backgroundRect.Width = totalWidth - 1;
-			backgroundRect.Height = bounds.Height - 1;
-			graphics.FillRectangle(Brushes.LightGray, backgroundRect);
-
-			foreach (CloneIntersection cloneIntersection in cloneIntersectedItem.Clones)
-			{
-				Rectangle cloneRect = new Rectangle();
-				cloneRect.X = (int) Math.Floor(bounds.X + (double)cloneIntersection.Clone.StartLine / linesOfCode * totalWidth);
-				cloneRect.Width = (int) Math.Floor((double)cloneIntersection.Clone.LineCount / linesOfCode * totalWidth);
-				cloneRect.Y = bounds.Top;
-				cloneRect.Height = bounds.Height;
-
-				if (cloneRect.Right > bounds.X + totalWidth)
-					cloneRect.Width = bounds.X + totalWidth - cloneRect.X;
-
-				Brush brush = GetCloneIntersectonBrush(cloneIntersection);
-				graphics.FillRectangle(brush, cloneRect);
-			}
-
-			graphics.DrawRectangle(Pens.Black, backgroundRect);
 		}
 
 		private CloneIntersection FindRerefenceCloneIntersection(Point point)
@@ -455,64 +475,28 @@ namespace CloneDetective.Package
 			CloneDetectiveManager.FindClones(clone.CloneClass);
 		}
 
-		private void listView_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+		private void dataGridView_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
 		{
+			UpdateCloneVisualizations();
 			UpdateReferenceCloneVisualization();
 			UpdateReferenceCloneVisualizationOffset();
 		}
 
-		private void listView_SelectedIndexChanged(object sender, EventArgs e)
+		private void dataGridView_SelectionChanged(object sender, EventArgs e)
 		{
 			UpdatePropertyGrid();
 		}
 
-		private void listView_DoubleClick(object sender, EventArgs e)
+		private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
-			OpenSelectedIntersection();
-		}
-
-		private void listView_KeyDown(object sender, KeyEventArgs e)
-		{
-			if (e.KeyData == Keys.Enter || e.KeyData == Keys.Return)
+			if (e.RowIndex > -1)
 				OpenSelectedIntersection();
 		}
 
-		private void listView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+		private void dataGridView_KeyDown(object sender, KeyEventArgs e)
 		{
-			e.DrawDefault = true;
-		}
-
-		private void listView_DrawItem(object sender, DrawListViewItemEventArgs e)
-		{
-			e.DrawDefault = false;
-		}
-
-		private void listView_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
-		{
-			if (e.ColumnIndex < 2)
-			{
-				e.DrawDefault = true;
-			}
-			else
-			{
-				e.DrawDefault = false;
-				CloneIntersectedItem cloneIntersectedItem = (CloneIntersectedItem)e.Item.Tag;
-
-				if (e.Item.Selected && listView.Focused)
-					e.Graphics.FillRectangle(SystemBrushes.Highlight, e.Bounds);
-				else
-					e.Graphics.FillRectangle(SystemBrushes.Window, e.Bounds);
-
-				Rectangle cloneRect = e.Bounds;
-				int height = GetBoxHeight();
-				if (height < e.Bounds.Height)
-				{
-					cloneRect.Y = (int)Math.Floor(e.Bounds.Top + e.Bounds.Height / 2.0 - height / 2.0);
-					cloneRect.Height = height;
-				}
-
-				DrawCloneVisualization(e.Graphics, cloneRect, cloneIntersectedItem);
-			}
+			if (e.KeyData == Keys.Enter || e.KeyData == Keys.Return)
+				OpenSelectedIntersection();
 		}
 
 		private void referencePictureBox_MouseDoubleClick(object sender, MouseEventArgs e)
