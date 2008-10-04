@@ -193,7 +193,7 @@ namespace CloneDetective.CloneReporting
 		/// </returns>
 		private static long GetMemory(string tempConqatLogFileName)
 		{
-			Regex regex = new Regex(@"Max memory\: (?<Number>[0-9,.]+)kB");
+			Regex regex = new Regex(@"Max memory\: (?<Number>.+)kB");
 			long result = 0;
 
 			foreach (string message in File.ReadAllLines(tempConqatLogFileName))
