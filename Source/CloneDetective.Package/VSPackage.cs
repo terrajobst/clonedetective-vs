@@ -54,6 +54,10 @@ namespace CloneDetective.Package
 	[ProvideToolWindow(typeof(CloneIntersectionsToolWindow))]
 	[ProvideToolWindow(typeof(CloneResultsToolWindow))]
 	[ProvideOptionPage(typeof(CloneDetectiveOptionPage), "Clone Detective", "Settings", 0, 0, true)]
+	// Register text markers
+	[ProvideTextMarkerProvider(typeof(CloneMarkerTypeProvider), "Clone Service")]
+	[ProvideTextMarker(typeof(CloneBackgroundMarkerType), typeof(CloneMarkerTypeProvider), "Clone (Background)")]
+	[ProvideTextMarker(typeof(CloneMarginMarkerType), typeof(CloneMarkerTypeProvider), "Clone (Margin)")]
 	// We'd like to automatically load this package as soon as a solution exists.
 	// The GUID is the same as VSConstants.UICONTEXT_SolutionExists.
 	[ProvideAutoLoad("f1536ef8-92ec-443c-9ed7-fdadf150da82")]

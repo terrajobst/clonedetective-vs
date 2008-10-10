@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.OLE.Interop;
@@ -7,6 +8,7 @@ using Microsoft.VisualStudio.TextManager.Interop;
 
 namespace CloneDetective.Package
 {
+	[Guid(Guids.GuidCloneBackgroundMarkerString)]
 	internal sealed class CloneBackgroundMarkerType : IVsPackageDefinedTextMarkerType, IVsMergeableUIItem, IVsHiColorItem
 	{
 		private static int _id;

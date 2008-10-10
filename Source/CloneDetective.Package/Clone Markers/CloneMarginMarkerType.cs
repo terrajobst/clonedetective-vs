@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.OLE.Interop;
@@ -9,6 +10,7 @@ namespace CloneDetective.Package
 	// This marker type is not used throughout the whole system. However we
 	// need it to have a separate entry in the Options Fonts and Colors
 	// configuration dialog.
+	[Guid(Guids.GuidCloneMarginMarkerString)]
 	internal sealed class CloneMarginMarkerType : IVsPackageDefinedTextMarkerType, IVsMergeableUIItem, IVsHiColorItem
 	{
 		private static int _id;
