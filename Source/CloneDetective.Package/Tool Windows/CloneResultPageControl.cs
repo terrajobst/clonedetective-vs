@@ -47,15 +47,8 @@ namespace CloneDetective.Package
 			get { return _cloneClass; }
 			set
 			{
-				try
-				{
-					_cloneClass = value;
-					LoadClones();
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show(ex.ToString());
-				}
+				_cloneClass = value;
+				LoadClones();
 			}
 		}
 
