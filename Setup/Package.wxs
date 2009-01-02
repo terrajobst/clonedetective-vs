@@ -10,9 +10,11 @@
 		<DirectoryRef Id="INSTALLDIR">
 			<Component Id="C__Package" Guid="D9FC1FB8-4C77-43b7-B376-CDCE59A06A33">
 				<File Id="F__Package" Name="CloneDetective.Package.dll" DiskId="1" Source="..\Output\Bin\CloneDetective.Package.dll" />
+				<File Id="F__Package.pdb" Source="..\Output\Bin\CloneDetective.Package.pdb" />
 			</Component>
 			<Component Id="C__CloneReportModel" Guid="B98D4BDA-D39C-4f4f-B1E3-FD33028D847B">
 				<File Id="F__CloneReportModel" Name="CloneDetective.CloneReporting.dll" DiskId="1" Source="..\Output\Bin\CloneDetective.CloneReporting.dll" />
+				<File Id="F__CloneReportModel.pdb" Source="..\Output\Bin\CloneDetective.CloneReporting.pdb" />
 			</Component>
 			<Component Id="C__SandDock" Guid="0315C47A-347E-464f-AB03-45F365504D5A">
 				<File Id="F__SandDock" Name="SandDock.dll" DiskId="1" Source="..\Output\Bin\SandDock.dll" />
