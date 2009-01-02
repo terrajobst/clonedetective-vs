@@ -138,7 +138,7 @@
 	<!-- Generate Setup -->
 
 	<Target Name="GenerateSetup" DependsOnTargets="Compile;GenerateHelp">
-		<MSBuild Projects="$(SetupDir)Setup.sln" Targets="Build"
+		<MSBuild Projects="$(SetupDir)Setup.sln" Targets="Rebuild"
 				 Properties="Configuration=$(Configuration);OutDir=$(GeneratedSetup);" />
 	</Target>
 
