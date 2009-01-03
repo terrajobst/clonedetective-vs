@@ -102,6 +102,12 @@
 			<HtmlHelp20Files Include="$(HelpDir)HTML Help 2.0 Files\*.*" />
 		</ItemGroup>
 		<Copy SourceFiles="@(HtmlHelp20Files)" DestinationFolder="$(GeneratedHelp)" />
+		
+		<!--
+			SHFB has a CleanIntermediates option that also deletes the "Working" folder
+			but this currentl does not work as some files remain marked as read-only.
+		-->
+		<RemoveDir Directories="$(GeneratedHelp)Working" />
 	</Target>
 
 	<!-- Generate Setup -->
