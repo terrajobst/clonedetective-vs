@@ -59,6 +59,7 @@
 		<!-- Files and Directories -->
 
 		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="CommonFilesFolder" />
 			<Directory Id="ProgramFilesFolder" Name="PFiles">
 				<Directory Id="INSTALLDIR" Name="$(var.ProductName)">
 					<Directory Id="Help" Name="Help" />
