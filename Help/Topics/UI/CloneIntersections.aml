@@ -1,166 +1,166 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <topic id="7c677216-9aa1-4e27-8c6a-8e3055a5e231" revisionNumber="1">
-  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <introduction>
-      <para>
-			The Clone Intersections tool window provides you with a list of files that
-			share source code with the current selection.
-		</para>
-      <para>
-			To access Clone Intersections, select <ui>Clone Intersections</ui> on the
-			<ui>View - Other Windows</ui> menu.
-		</para>
-    </introduction>
-    <section address="Selection Context">
-      <title>Selection Context</title>
-      <content>
-        <para>
-				The content of the Clone Intersections tool window depends on the current
-				selection. If the selection can be interpreted as a file, Clone Intersections
-				will list all files that share source code, i.e. have at least one clone class
-				in common. This file will be called the <newTerm>reference file</newTerm>.
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>
+				The Clone Intersections tool window provides you with a list of files that
+				share source code with the current selection.
 			</para>
-        <para>
-				The selection context can be one of the following:
+			<para>
+				To access Clone Intersections, select <ui>Clone Intersections</ui> on the
+				<ui>View - Other Windows</ui> menu.
 			</para>
-        <table>
-          <tableHeader>
-            <row>
-              <entry>Context</entry>
-              <entry>Result</entry>
-            </row>
-          </tableHeader>
-          <row>
-            <entry>
-              <link xlink:href="9b748258-9091-4c16-adf7-f9776da4b1b7" />
-            </entry>
-            <entry>
-						If you have selected a file, Clone Intersections will use it as the
-						reference file.
-					</entry>
-          </row>
-          <row>
-            <entry>Solution Explorer</entry>
-            <entry>
-						If you have selected a file, Clone Intersections will use it as the
-						reference file.
-					</entry>
-          </row>
-          <row>
-            <entry>Class View</entry>
-            <entry>
-						If you have selected a type, Clone Intersections will determine the
-						file the type is contained in and use it as the reference file.
-					</entry>
-          </row>
-          <row>
-            <entry>Document</entry>
-            <entry>
-						If the document part of <token>VS</token> has the focus, Clone
-						Intersections will use the active document as the reference file.
-					</entry>
-          </row>
-        </table>
-      </content>
-    </section>
-    <section address="Representation">
-      <title>Representation</title>
-      <content>
-        <para>
-				A typical representation of Clone Intersections will look like this:
-			</para>
-        <mediaLink>
-          <image xlink:href="5daaaa88-7108-4fcb-858f-fe1493a2a514" />
-        </mediaLink>
-        <para>
-				The Clone Intersections tool window consists of two parts, a <ui>header</ui>
-				and a <ui>file list</ui>. The header contains the reference file while the
-				file list contains all other files that share source code with the reference
-				file.
-			</para>
-        <alert class="note">
-          <para>
-					If the reference file only shares source code with itself the file list
-					will be empty.
+		</introduction>
+		<section address="Selection Context">
+			<title>Selection Context</title>
+			<content>
+				<para>
+					The content of the Clone Intersections tool window depends on the current
+					selection. If the selection can be interpreted as a file, Clone Intersections
+					will list all files that share source code, i.e. have at least one clone class
+					in common. This file will be called the <newTerm>reference file</newTerm>.
 				</para>
-        </alert>
-        <para>
-				In the sample above <ui>FunctionInvocationExpression.cs</ui> is the reference file
-				and shares code with six other files.
-			</para>
-        <para>
-				The bar charts show a graphical representation of the file content and clone distribution.
-				The wider the bar, the more source code the file contains. Instead of displaying the content
-				in top-down fashion, the bars are displayed left-right. That means that the first line
-				is at the left side while the last line is at the right side. Each clone class is given
-				a unique color.
-			</para>
-        <para>
-				For the sample above this provides you with the following pieces of information:
-			</para>
-        <list class="bullet">
-          <listItem>
-					MethodInvocationExpression.cs is the biggest file but it is not much larger than
-					the reference file FunctionInvocationExpression.cs.
-				</listItem>
-          <listItem>
-					FunctionInvocationExpression.cs contains at least six clone classes.
-				</listItem>
-          <listItem>
-					Most clones are shared with MethodInvocationExpression.cs.
-				</listItem>
-          <listItem>
-					The clone class that is colored cyan is distributed across three files and is always
-					contained in the upper part of the file. Contrast this with the purple clone class
-					which contains clones in five files and is always contained in the lower part of a
+				<para>
+					The selection context can be one of the following:
+				</para>
+				<table>
+					<tableHeader>
+						<row>
+							<entry>Context</entry>
+							<entry>Result</entry>
+						</row>
+					</tableHeader>
+					<row>
+						<entry>
+							<link xlink:href="9b748258-9091-4c16-adf7-f9776da4b1b7" />
+						</entry>
+						<entry>
+							If you have selected a file, Clone Intersections will use it as the
+							reference file.
+						</entry>
+					</row>
+					<row>
+						<entry>Solution Explorer</entry>
+						<entry>
+							If you have selected a file, Clone Intersections will use it as the
+							reference file.
+						</entry>
+					</row>
+					<row>
+						<entry>Class View</entry>
+						<entry>
+							If you have selected a type, Clone Intersections will determine the
+							file the type is contained in and use it as the reference file.
+						</entry>
+					</row>
+					<row>
+						<entry>Document</entry>
+						<entry>
+							If the document part of <token>VS</token> has the focus, Clone
+							Intersections will use the active document as the reference file.
+						</entry>
+					</row>
+				</table>
+			</content>
+		</section>
+		<section address="Representation">
+			<title>Representation</title>
+			<content>
+				<para>
+					A typical representation of Clone Intersections will look like this:
+				</para>
+				<mediaLink>
+					<image xlink:href="5daaaa88-7108-4fcb-858f-fe1493a2a514" />
+				</mediaLink>
+				<para>
+					The Clone Intersections tool window consists of two parts, a <ui>header</ui>
+					and a <ui>file list</ui>. The header contains the reference file while the
+					file list contains all other files that share source code with the reference
 					file.
-				</listItem>
-        </list>
-        <alert class="note">
-          <para>
-					Please note that it is possible that clones overlap. Therefore we said above that
-					FunctionInvocationExpression.cs contains <quoteInline>at least</quoteInline> six clone
-					classes; it is still possible that it contains more clone classes which are hidden in
-					the chart due to overlapping.
 				</para>
-        </alert>
-      </content>
-    </section>
-    <section address="Navigation">
-      <title>Navigation</title>
-      <content>
-        <para>
-				The Clone Intersections tool window allows you to easily open the files and navigate to
-				the duplicated source code. For this you only have to right click the file (either the
-				reference file or a file contained in the file list). In the context menu you see all
-				clones contained in that file. Select the clone you want to open and click <ui>Open in Code Editor</ui>.
-			</para>
-        <mediaLink>
-          <image xlink:href="bb990f48-2128-4f82-bc76-4939b7c59960" />
-        </mediaLink>
-        <para>
-				The file will be opened in the code editor and the cloned source code is selected.
-			</para>
-        <alert class="tip">
-          <para>
-					For the reference file you can this even do quicker by just double clicking the appropriate
-					clone in the chart. Double clicking a file in the file list will only open it in the code
-					editor -- regardless which clone you clicked. Therefore, for files in the file list you have
-					to use the context menu.
+				<alert class="note">
+					<para>
+						If the reference file only shares source code with itself the file list
+						will be empty.
+					</para>
+				</alert>
+				<para>
+					In the sample above <ui>FunctionInvocationExpression.cs</ui> is the reference file
+					and shares code with six other files.
 				</para>
-        </alert>
-      </content>
-    </section>
-    <section address="Hunting a Particular Clone Class">
-      <title>Hunting a Particular Clone Class</title>
-      <content>
-        <para>
-				If you want to concentrate on a particular clone class you can also search all occurrences
-				of it by right clicking the file, selecting a clone, and clicking on <ui>Find all Occurrences</ui>.
-				This will open the <link xlink:href="9b748258-9091-4c16-adf7-f9776da4b1b7" /> tool window that lists all
-				files that contain the selected clone class.
-			</para>
-      </content>
-    </section>
-  </developerConceptualDocument>
+				<para>
+					The bar charts show a graphical representation of the file content and clone distribution.
+					The wider the bar, the more source code the file contains. Instead of displaying the content
+					in top-down fashion, the bars are displayed left-right. That means that the first line
+					is at the left side while the last line is at the right side. Each clone class is given
+					a unique color.
+				</para>
+				<para>
+					For the sample above this provides you with the following pieces of information:
+				</para>
+				<list class="bullet">
+					<listItem>
+						MethodInvocationExpression.cs is the biggest file but it is not much larger than
+						the reference file FunctionInvocationExpression.cs.
+					</listItem>
+					<listItem>
+						FunctionInvocationExpression.cs contains at least six clone classes.
+					</listItem>
+					<listItem>
+						Most clones are shared with MethodInvocationExpression.cs.
+					</listItem>
+					<listItem>
+						The clone class that is colored cyan is distributed across three files and is always
+						contained in the upper part of the file. Contrast this with the purple clone class
+						which contains clones in five files and is always contained in the lower part of a
+						file.
+					</listItem>
+				</list>
+				<alert class="note">
+					<para>
+						Please note that it is possible that clones overlap. Therefore we said above that
+						FunctionInvocationExpression.cs contains <quoteInline>at least</quoteInline> six clone
+						classes; it is still possible that it contains more clone classes which are hidden in
+						the chart due to overlapping.
+					</para>
+				</alert>
+			</content>
+		</section>
+		<section address="Navigation">
+			<title>Navigation</title>
+			<content>
+				<para>
+					The Clone Intersections tool window allows you to easily open the files and navigate to
+					the duplicated source code. For this you only have to right click the file (either the
+					reference file or a file contained in the file list). In the context menu you see all
+					clones contained in that file. Select the clone you want to open and click <ui>Open in Code Editor</ui>.
+				</para>
+				<mediaLink>
+					<image xlink:href="bb990f48-2128-4f82-bc76-4939b7c59960" />
+				</mediaLink>
+				<para>
+					The file will be opened in the code editor and the cloned source code is selected.
+				</para>
+				<alert class="tip">
+					<para>
+						For the reference file you can this even do quicker by just double clicking the appropriate
+						clone in the chart. Double clicking a file in the file list will only open it in the code
+						editor -- regardless which clone you clicked. Therefore, for files in the file list you have
+						to use the context menu.
+					</para>
+				</alert>
+			</content>
+		</section>
+		<section address="Hunting a Particular Clone Class">
+			<title>Hunting a Particular Clone Class</title>
+			<content>
+				<para>
+					If you want to concentrate on a particular clone class you can also search all occurrences
+					of it by right clicking the file, selecting a clone, and clicking on <ui>Find all Occurrences</ui>.
+					This will open the <link xlink:href="9b748258-9091-4c16-adf7-f9776da4b1b7" /> tool window that lists all
+					files that contain the selected clone class.
+				</para>
+			</content>
+		</section>
+	</developerConceptualDocument>
 </topic>

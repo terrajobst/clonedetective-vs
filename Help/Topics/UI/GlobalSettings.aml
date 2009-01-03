@@ -1,33 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <topic id="fd705544-c630-4eae-bb93-f2a180fd904e" revisionNumber="1">
-  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <introduction>
-      <para>
-			Allows customizing global (i.e. solution-independent) settings that affect which version
-			of <token>ConQAT</token> and the <application>Java Virtual Machine</application>
-			are used by <token>App</token>.
-		</para>
-      <para>
-			To access this dialog box, on the <ui>Tools</ui> menu, click <ui>Options</ui>,
-			and then click <ui><token>App</token></ui>.
-		</para>
-    </introduction>
-    <section address="Settings">
-      <title>Settings</title>
-      <content>
-        <definitionTable>
-          <definedTerm>ConQAT File Name</definedTerm>
-          <definition>
-					Sets the fully qualified path of the <command>conqat.bat</command>
-					file that starts <token>ConQAT</token> and runs the clone detection.
-				</definition>
-          <definedTerm>Java Home</definedTerm>
-          <definition>
-					Sets the fully qualified path of the directory that is used
-					as the Java Home directory.
-				</definition>
-        </definitionTable>
-      </content>
-    </section>
-  </developerConceptualDocument>
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>
+				Allows customizing global (i.e. solution-independent) settings that affect which version
+				of <token>ConQAT</token> and the <application>Java Virtual Machine</application>
+				are used by <token>App</token>.
+			</para>
+			<para>
+				To access this dialog box, on the <ui>Tools</ui> menu, click <ui>Options</ui>,
+				and then click <ui><token>App</token></ui>.
+			</para>
+		</introduction>
+		<section address="Settings">
+			<title>Settings</title>
+			<content>
+				<definitionTable>
+					<definedTerm>ConQAT File Name</definedTerm>
+					<definition>
+						Sets the fully qualified path of the <command>conqat.bat</command>
+						file that starts <token>ConQAT</token> and runs the clone detection.
+					</definition>
+					<definedTerm>Java Home</definedTerm>
+					<definition>
+						Sets the fully qualified path of the directory that is used
+						as the Java Home directory.
+					</definition>
+				</definitionTable>
+			</content>
+		</section>
+	</developerConceptualDocument>
 </topic>

@@ -1,79 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <topic id="bafcd2c8-e185-49ca-b1a2-33b7216acd44" revisionNumber="1">
-  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <introduction>
-      <para>
-			The Clone Results tool window provides you with a list of clone
-			class search results.
-		</para>
-      <para>
-			To access Clone Results, select <ui>Clone Results</ui> on the <ui>View - Other Windows</ui> menu.
-		</para>
-    </introduction>
-    <section address="Representation">
-      <title>Representation</title>
-      <content>
-        <para>
-				The searches are triggered by some other window, e.g. by using
-				<link xlink:href="7c677216-9aa1-4e27-8c6a-8e3055a5e231" /> or the
-				<link xlink:href="e83d1050-208a-41bd-b901-1380596fe086" />.
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>
+				The Clone Results tool window provides you with a list of clone
+				class search results.
 			</para>
-        <para>
-				Each result is contained in a tab of its own. The header shows the
-				ID of searched clone class.
+			<para>
+				To access Clone Results, select <ui>Clone Results</ui> on the <ui>View - Other Windows</ui> menu.
 			</para>
-        <mediaLink>
-          <image xlink:href="dce8f4e0-c6a2-492b-b7e3-618d8a905410" />
-        </mediaLink>
-        <para>
-				In the sample above the <ui>Clone Class 227</ui> contains clones in three
-				files.
-			</para>
-        <para>
-				The bar charts show a graphical representation of the file content and clone distribution.
-				The wider the bar, the more source code the file contains. Instead of displaying the content
-				in top-down fashion, the bars are displayed left-right. That means that the first line
-				is at the left side while the last line is at the right side. Since all clones belong to the
-				same clone class all clones are colored in a single color, which is purple.
-			</para>
-        <para>
-				For the sample above this provides you with the following pieces of information:
-			</para>
-        <list class="bullet">
-          <listItem>
-					MethodInvocationExpression.cs is the biggest file but it is not much larger than
-					FunctionInvocationExpression.cs.
-				</listItem>
-          <listItem>
-					AggregateExpression.cs is the smallest file.
-				</listItem>
-          <listItem>
-					All occurrences of the <ui>Clone Class 227</ui> are in the upper part of a file.
-				</listItem>
-        </list>
-      </content>
-    </section>
-    <section address="Navigation">
-      <title>Navigation</title>
-      <content>
-        <para>
-				The Clone Results tool window allows you to easily open the files and navigate to
-				the duplicated source code. For this you only have to right click the file. In the
-				context menu you see all clones contained in that file. Click the clone you want to open.
-			</para>
-        <mediaLink>
-          <image xlink:href="08f0f083-75bf-43a6-81f8-c78022e0801c" />
-        </mediaLink>
-        <para>
-				The file will be opened in the code editor and the cloned source code is selected.
-			</para>
-        <alert class="tip">
-          <para>
-					Double clicking the file will open it and select the first clone. This is handy for files
-					that only contain one clone.
+		</introduction>
+		<section address="Representation">
+			<title>Representation</title>
+			<content>
+				<para>
+					The searches are triggered by some other window, e.g. by using
+					<link xlink:href="7c677216-9aa1-4e27-8c6a-8e3055a5e231" /> or the
+					<link xlink:href="e83d1050-208a-41bd-b901-1380596fe086" />.
 				</para>
-        </alert>
-      </content>
-    </section>
-  </developerConceptualDocument>
+				<para>
+					Each result is contained in a tab of its own. The header shows the
+					ID of searched clone class.
+				</para>
+				<mediaLink>
+					<image xlink:href="dce8f4e0-c6a2-492b-b7e3-618d8a905410" />
+				</mediaLink>
+				<para>
+					In the sample above the <ui>Clone Class 227</ui> contains clones in three
+					files.
+				</para>
+				<para>
+					The bar charts show a graphical representation of the file content and clone distribution.
+					The wider the bar, the more source code the file contains. Instead of displaying the content
+					in top-down fashion, the bars are displayed left-right. That means that the first line
+					is at the left side while the last line is at the right side. Since all clones belong to the
+					same clone class all clones are colored in a single color, which is purple.
+				</para>
+				<para>
+					For the sample above this provides you with the following pieces of information:
+				</para>
+				<list class="bullet">
+					<listItem>
+						MethodInvocationExpression.cs is the biggest file but it is not much larger than
+						FunctionInvocationExpression.cs.
+					</listItem>
+					<listItem>
+						AggregateExpression.cs is the smallest file.
+					</listItem>
+					<listItem>
+						All occurrences of the <ui>Clone Class 227</ui> are in the upper part of a file.
+					</listItem>
+				</list>
+			</content>
+		</section>
+		<section address="Navigation">
+			<title>Navigation</title>
+			<content>
+				<para>
+					The Clone Results tool window allows you to easily open the files and navigate to
+					the duplicated source code. For this you only have to right click the file. In the
+					context menu you see all clones contained in that file. Click the clone you want to open.
+				</para>
+				<mediaLink>
+					<image xlink:href="08f0f083-75bf-43a6-81f8-c78022e0801c" />
+				</mediaLink>
+				<para>
+					The file will be opened in the code editor and the cloned source code is selected.
+				</para>
+				<alert class="tip">
+					<para>
+						Double clicking the file will open it and select the first clone. This is handy for files
+						that only contain one clone.
+					</para>
+				</alert>
+			</content>
+		</section>
+	</developerConceptualDocument>
 </topic>
