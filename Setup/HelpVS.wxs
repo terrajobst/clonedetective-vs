@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:vs="http://schemas.microsoft.com/wix/VSExtension">
+
 	<?include Product.wxi ?>
+
 	<Fragment>
 		<DirectoryRef Id="Help">
 			<Component Id="CloneDetectiveVS.hxs" Guid="{E5382D56-3D33-452B-9439-5595B39FAF45}">
