@@ -90,7 +90,7 @@
 
 		<Property Id="ApplicationFolderName" Value="$(var.ProductShortName)" />
 		<Property Id="WixAppFolder" Value="WixPerMachineFolder" />
-		<WixVariable Id="WixUILicenseRtf" Value="Resources\Eula.rtf" />
+		<WixVariable Id="WixUILicenseRtf" Value="Resources\License.rtf" />
 		<WixVariable Id="WixUIBannerBmp"  Value="Resources\Banner.bmp" />
 		<WixVariable Id="WixUIDialogBmp"  Value="Resources\Dialog.bmp" />
 
