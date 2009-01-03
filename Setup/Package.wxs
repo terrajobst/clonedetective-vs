@@ -138,14 +138,14 @@
 
 		<CustomAction Id="CA.DevenvSetup.Install"
 			  Directory="ProgramFilesFolder"
-			  ExeCommand="&quot;[VSINSTALLDIR]\DevEnv.exe&quot; /Setup"
+			  ExeCommand="&quot;[VSINSTALLDIR]\DevEnv.exe&quot; /setup /nosetupvstemplates "
 			  Return="ignore"
 			  Execute="deferred"
 			  Impersonate="no" />
 
 		<CustomAction Id="CA.DevenvSetup.Uninstall"
 					  Directory="ProgramFilesFolder"
-					  ExeCommand="&quot;[VSINSTALLDIR]\DevEnv.exe&quot; /Setup"
+					  ExeCommand="&quot;[VSINSTALLDIR]\DevEnv.exe&quot; /setup /nosetupvstemplates "
 					  Return="ignore"
 					  Execute="deferred"
 					  Impersonate="no" />
