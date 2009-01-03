@@ -11,7 +11,6 @@
 	<?define UpgradeCode         = "61E93395-1F0E-4ba1-A3E1-9074C4D79DE6" ?>
 
 	<?define LibFolder           = "..\Lib\" ?>
-	<?define SamplesFolder       = "..\Samples\" ?>
 	<?define BinFolder           = "$(var.TargetDir)..\Bin\" ?>
 	<?define HelpFolder          = "$(var.TargetDir)..\Help\" ?>
 
