@@ -19,14 +19,11 @@
 		<HelpDir>$(ProjectDir)Help\</HelpDir>
 		<OutputDir>$(ProjectDir)Output\</OutputDir>
 		<GeneratedBinaries>$(OutputDir)Bin\</GeneratedBinaries>
+		<GeneratedHelp>$(OutputDir)Help\</GeneratedHelp>
 		<GeneratedSetup>$(OutputDir)Setup\</GeneratedSetup>
 		<GeneratedSourceCode>$(OutputDir)Source\</GeneratedSourceCode>
-		<GeneratedHelpTopics>$(OutputDir)Additional Content\</GeneratedHelpTopics>
-		<GeneratedHtmlHelp1>$(OutputDir)Help CHM\</GeneratedHtmlHelp1>
-		<GeneratedHtmlHelp2>$(OutputDir)Help VS\</GeneratedHtmlHelp2>
 		<GeneratedRelease>$(OutputDir)Release\</GeneratedRelease>
 		<Configuration>Release</Configuration>
-		<TopicTransformationFile>$(HelpDir)TopicTransform.xslt</TopicTransformationFile>
 	</PropertyGroup>
 
 	<!-- External projects -->
@@ -35,7 +32,6 @@
 	
 	<!-- External Tasks -->
 
-	<UsingTask AssemblyFile="$(CustomTasksDir)CloneDetective.Build.dll" TaskName="CloneDetective.Build.ApplyXslTransform" />
 	<UsingTask AssemblyFile="$(CustomTasksDir)CloneDetective.Build.dll" TaskName="CloneDetective.Build.RemoveTfsBindings" />
 
 	<!-- Clean -->
@@ -80,64 +76,37 @@
 				 Properties="Configuration=$(Configuration);OutDir=$(GeneratedBinaries);RegisterOutputPackage=false" />
 	</Target>
 
-	<!-- Generate Help -->
-
-	<Target Name="GenerateHelpContent" DependsOnTargets="CompileBuildTasks">
-
-		<ItemGroup>
-			<HelpTopicFiles Include="$(HelpDir)Additional Content\**\*.xml" />
-			<HelpContentFiles Include="$(HelpDir)Additional Content\**\*.*" Exclude="$(HelpDir)Additional Content\**\*.xml"/>
-		</ItemGroup>
-
-		<CreateItem
-			Include="$(GeneratedHelpTopics)%(HelpTopicFiles.RecursiveDir)%(HelpTopicFiles.Filename)%(HelpTopicFiles.Extension)">
-			<Output
-				TaskParameter="Include"
-				ItemName="IntermediateHelpTopicFiles"/>
-		</CreateItem>
-
-		<CreateItem
-			Include="%(IntermediateHelpTopicFiles.RootDir)%(IntermediateHelpTopicFiles.Directory)%(IntermediateHelpTopicFiles.Filename).html">
-			<Output
-				TaskParameter="Include"
-				ItemName="GeneratedHelpTopicFiles"/>
-		</CreateItem>
-
-		<Copy SourceFiles="@(HelpTopicFiles)" DestinationFiles="@(IntermediateHelpTopicFiles)" />
-		<Copy SourceFiles="@(HelpContentFiles)" DestinationFolder="$(GeneratedHelpTopics)\%(RecursiveDir)"></Copy>
-
-		<ApplyXslTransform XslFile="$(TopicTransformationFile)"
-						   SourceFiles="@(IntermediateHelpTopicFiles)"
-						   DestinationFiles="@(GeneratedHelpTopicFiles)" />
-
-		<Delete Files="@(IntermediateHelpTopicFiles)" />
-	</Target>
-
-	<Target Name="GenerateHelp" DependsOnTargets="Compile;GenerateHelpContent">
+	<Target Name="GenerateHelp" DependsOnTargets="Compile">
 		<Error Text="Documentation can only be generated for release builds." Condition="'$(Configuration)' != 'Release'" />
 
+		<!--
+			Since SHFB uses MSBuild as project format runing SHFB should be as easy as this:
+
+				<MSBuild Projects="$(HelpDir)Help.shfbproj" />
+		
+			Unfortunately it is not that easy. On 64 bit machines the MSBuild running SHFB must be loaded as 64 bit.
+			Otherwise Sandcastle crashes with a DirectoryNotFound exception. However, MSBuild should always run
+			as 32 bit otherwise all extensions that are loaded via MSBuildExtensionsPath will not work (such as
+			VSSDK and MSBuildCommunityTasks).
+		-->
+
+		<PropertyGroup Condition="'$(PROCESSOR_ARCHITECTURE)'=='AMD64' OR '$(PROCESSOR_ARCHITEW6432)'=='AMD64'">
+			<MSBuildPath>$(SystemRoot)\Microsoft.NET\Framework64\v3.5\MSBuild.exe</MSBuildPath>
+		</PropertyGroup>
+		<PropertyGroup Condition="!('$(PROCESSOR_ARCHITECTURE)'=='AMD64' OR '$(PROCESSOR_ARCHITEW6432)'=='AMD64')">
+			<MSBuildPath>$(SystemRoot)\Microsoft.NET\Framework\v3.5\MSBuild.exe</MSBuildPath>
+		</PropertyGroup>
+		<Exec Command="&quot;$(MSBuildPath)&quot; &quot;$(HelpDir)Help.shfbproj&quot;" />
+
 		<ItemGroup>
-			<HtmlHelp2TemplateFiles Include="$(HelpDir)HtmlHelp2 Templates\*.*" />
+			<HtmlHelp20Files Include="$(HelpDir)HTML Help 2.0 Files\*.*" />
 		</ItemGroup>
-
-		<!-- Build HTML Help 1 -->
-		<MakeDir Directories="$(GeneratedHtmlHelp1)" Condition="!Exists('$(GeneratedHtmlHelp1)')" />
-		<Exec Command="&quot;$(SandcastleHFBPath)SandcastleBuilderConsole.exe&quot; &quot;$(HelpDir)HtmlHelp1.shfb&quot;" />
-		<Delete Files="$(GeneratedHtmlHelp1)LastBuild.log" />
-
-		<!-- Build HTML Help 2 -->
-		<MakeDir Directories="$(GeneratedHtmlHelp2)" Condition="!Exists('$(GeneratedHtmlHelp2)')" />
-		<Exec Command="&quot;$(SandcastleHFBPath)SandcastleBuilderConsole.exe&quot; &quot;$(HelpDir)HtmlHelp2.shfb&quot;" />
-		<Delete Files="$(GeneratedHtmlHelp2)LastBuild.log" />
-		<Copy SourceFiles="@(HtmlHelp2TemplateFiles)" DestinationFolder="$(GeneratedHtmlHelp2)" />
-
-		<!-- Remove temporary additional content files -->
-		<RemoveDir Directories="$(GeneratedHelpTopics)" />
+		<Copy SourceFiles="@(HtmlHelp20Files)" DestinationFolder="$(GeneratedHelp)" />
 	</Target>
 
 	<!-- Generate Setup -->
 
-	<Target Name="GenerateSetup" DependsOnTargets="Compile;GenerateHelp">
+	<Target Name="GenerateSetup" DependsOnTargets="Compile">
 		<MSBuild Projects="$(SetupDir)Setup.sln" Targets="Rebuild"
 				 Properties="Configuration=$(Configuration);OutDir=$(GeneratedSetup);" />
 	</Target>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="4107659b-5753-4167-9e34-44275a780e34" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>
+        <token>App</token> is a <token>VS</token> integration that allows you
+			to analyze C# projects for source code that is duplicated somewhere else. Having duplicates can
+			easily lead to inconsistencies and often is an indicator for poorly factored code.
+		</para>
+      <para>
+        <token>App</token> uses <token>ConQAT</token> to perform the clone detection.
+		</para>
+      <mediaLink>
+        <image xlink:href="69985867-e7c2-4ebc-8a22-0a4e16425ae0" />
+      </mediaLink>
+    </introduction>
+  </developerConceptualDocument>
+</topic>

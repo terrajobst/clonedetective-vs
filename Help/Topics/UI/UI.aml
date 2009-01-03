@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="de1e4a6f-0850-4a0b-bd34-ab077d64fbd8" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>
+			The topics in this section describe the user interface of <token>App</token>.
+		</para>
+    </introduction>
+    <section address="In This Section">
+      <title>In This Section</title>
+      <content>
+        <para>
+				This section contains the following topics:
+			</para>
+        <para>
+          <link xlink:href="9b748258-9091-4c16-adf7-f9776da4b1b7" />
+        </para>
+        <para>
+          <link xlink:href="7c677216-9aa1-4e27-8c6a-8e3055a5e231" />
+        </para>
+        <para>
+          <link xlink:href="bafcd2c8-e185-49ca-b1a2-33b7216acd44" />
+        </para>
+        <para>
+          <link xlink:href="e83d1050-208a-41bd-b901-1380596fe086" />
+        </para>
+        <para>
+          <link xlink:href="fd705544-c630-4eae-bb93-f2a180fd904e" />
+        </para>
+        <para>
+          <link xlink:href="6841b9a8-e833-4d97-9ef6-b5d419e30f01" />
+        </para>
+      </content>
+    </section>
+  </developerConceptualDocument>
+</topic>

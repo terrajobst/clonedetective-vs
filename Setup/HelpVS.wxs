@@ -6,31 +6,31 @@
 			<Merge Id="HTML_Help_Registration" DiskId="1" Language="1033" SourceFile="$(var.LibFolder)HTML_Help_Registration__RTL_X86_---.msm" />
 			<Merge Id="VSIPCC_Collection_Files_RTL" DiskId="1" Language="1033" SourceFile="$(var.LibFolder)VSIPCC_Collection_Files_RTL_---_---.msm" />
 			<Component Id="CloneDetectiveVS.hxs" Guid="{E5382D56-3D33-452B-9439-5595B39FAF45}">
-				<File Id="CloneDetectiveVS.hxs" Name="CloneDetectiveVS.hxs" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS.hxs" />
+				<File Id="CloneDetectiveVS.hxs" Name="CloneDetectiveVS.hxs" KeyPath="yes" Source="$(var.HelpFolder)CloneDetectiveVS.hxs" />
 			</Component>
 			<Component Id="CloneDetectiveVS.hxc" Guid="{FD584357-1C71-43A3-800F-DEF71E9B2DCC}">
-				<File Id="CloneDetectiveVS.hxc" Name="CloneDetectiveVS.hxc" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS.hxc" />
+				<File Id="CloneDetectiveVS.hxc" Name="CloneDetectiveVS.hxc" KeyPath="yes" Source="$(var.HelpFolder)CloneDetectiveVS.hxc" />
 			</Component>
 			<Component Id="CloneDetectiveVS.hxt" Guid="{DCA0211C-CFBF-44BB-BFDA-253F162C8046}">
-				<File Id="CloneDetectiveVS.hxt" Name="CloneDetectiveVS.hxt" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS.hxt" />
+				<File Id="CloneDetectiveVS.hxt" Name="CloneDetectiveVS.hxt" KeyPath="yes" Source="$(var.HelpFolder)CloneDetectiveVS.hxt" />
 			</Component>
 			<Component Id="CloneDetectiveVS_a.hxk" Guid="{60378CFB-D2FD-4E72-931E-10880265250A}">
-				<File Id="CloneDetectiveVS_a.hxk" Name="CloneDetectiveVS_a.hxk" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS_a.hxk" />
+				<File Id="CloneDetectiveVS_a.hxk" Name="CloneDetectiveVS_a.hxk" KeyPath="yes" Source="$(var.HelpFolder)CloneDetectiveVS_a.hxk" />
 			</Component>
 			<Component Id="CloneDetectiveVS_b.hxk" Guid="{C01F94FC-DC5D-4F03-967F-F9038F67A845}">
-				<File Id="CloneDetectiveVS_b.hxk" Name="CloneDetectiveVS_b.hxk" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS_b.hxk" />
+				<File Id="CloneDetectiveVS_b.hxk" Name="CloneDetectiveVS_b.hxk" KeyPath="yes" Source="$(var.HelpFolder)CloneDetectiveVS_b.hxk" />
 			</Component>
 			<Component Id="CloneDetectiveVS_f.hxk" Guid="{EC03B95C-791E-44F7-85DB-A4F5DDF80DE4}">
-				<File Id="CloneDetectiveVS_f.hxk" Name="CloneDetectiveVS_f.hxk" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS_f.hxk" />
+				<File Id="CloneDetectiveVS_f.hxk" Name="CloneDetectiveVS_f.hxk" KeyPath="yes" Source="$(var.HelpFolder)CloneDetectiveVS_f.hxk" />
 			</Component>
 			<Component Id="CloneDetectiveVS_k.hxk" Guid="{DDBCE1EE-FDB4-4457-B8FD-448FD054D79B}">
-				<File Id="CloneDetectiveVS_k.hxk" Name="CloneDetectiveVS_k.hxk" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS_k.hxk" />
+				<File Id="CloneDetectiveVS_k.hxk" Name="CloneDetectiveVS_k.hxk" KeyPath="yes" Source="$(var.HelpFolder)CloneDetectiveVS_k.hxk" />
 			</Component>
 			<Component Id="CloneDetectiveVS_NamedURLIndex.hxk" Guid="{987E924F-666C-4C50-ABC1-9828BBA37CCA}">
-				<File Id="CloneDetectiveVS_NamedURLIndex.hxk" Name="CloneDetectiveVS_NamedURLIndex.hxk" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS_NamedURLIndex.hxk" />
+				<File Id="CloneDetectiveVS_NamedURLIndex.hxk" Name="CloneDetectiveVS_NamedURLIndex.hxk" KeyPath="yes" Source="$(var.HelpFolder)CloneDetectiveVS_NamedURLIndex.hxk" />
 			</Component>
 			<Component Id="CloneDetectiveVS_s.hxk" Guid="{365EC2D7-4DD6-48E4-8EFC-BB846211E27A}">
-				<File Id="CloneDetectiveVS_s.hxk" Name="CloneDetectiveVS_s.hxk" KeyPath="yes" Source="$(var.HelpVSFolder)CloneDetectiveVS_s.hxk" />
+				<File Id="CloneDetectiveVS_s.hxk" Name="CloneDetectiveVS_s.hxk" KeyPath="yes" Source="$(var.HelpFolder)CloneDetectiveVS_s.hxk" />
 			</Component>
 		</DirectoryRef>
 

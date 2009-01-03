@@ -4,7 +4,7 @@
 	<Fragment>
 		<DirectoryRef Id="Help">
 			<Component Id="CloneDetectiveVS.chm" Guid="{D809EE70-1F22-42E3-AB25-8FD0E5EA5DD4}">
-				<File Id="CloneDetectiveVS.chm" Name="CloneDetectiveVS.chm" KeyPath="yes" Source="$(var.HelpCHMFolder)CloneDetectiveVS.chm" />
+				<File Id="CloneDetectiveVS.chm" Name="CloneDetectiveVS.chm" KeyPath="yes" Source="$(var.HelpFolder)CloneDetectiveVS.chm" />
 			</Component>
 		</DirectoryRef>
 

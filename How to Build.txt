@@ -22,13 +22,10 @@ Prerequisites
 6. Sandcastle Style Patch
    http://www.codeplex.com/SandcastleStyles
 
-7. Sandcastle Extensions
-   http://www.codeplex.com/SandExtensions
-
-8. Sandcastle Help File Builder (SHFB)
+7. Sandcastle Help File Builder (SHFB)
    http://www.codeplex.com/SHFB
 
-9. Windows Installer XML (WiX) toolset Version 3
+8. Windows Installer XML (WiX) toolset Version 3
    http://wix.sourceforge.net/
 
 
@@ -39,7 +36,6 @@ Building
 
 2. The folder Output will now contain the following subfolders:
    - Bin. Contains the binaries (compiled in "Release" configuration).
-   - Help CHM. Contains the standalone help file.
-   - Help VS. COntains the help files needed for Visual Studio help integration.
+   - Help. Contains the standalone help file as well as help files needed for Visual Studio help integration.
    - Setup. Contains the setup.   
    - Source. Contains the complete source code (without TFS bindings).

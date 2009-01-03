@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloneDetective.CloneReporti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloneDetective.Build", "CloneDetective.Build\CloneDetective.Build.csproj", "{7A36E4BE-AF25-4AA8-B54E-DD781B2A3081}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{11336273-89F9-4AED-8FDE-0DE142137D41}"
+	ProjectSection(SolutionItems) = preProject
+		..\Help\Help.shfbproj = ..\Help\Help.shfbproj
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 4

@@ -13,7 +13,6 @@
 	<?define LibFolder           = "..\Lib\" ?>
 	<?define SamplesFolder       = "..\Samples\" ?>
 	<?define BinFolder           = "$(var.TargetDir)..\Bin\" ?>
-	<?define HelpVSFolder        = "$(var.TargetDir)..\Help VS\" ?>
-	<?define HelpCHMFolder       = "$(var.TargetDir)..\Help CHM\" ?>
+	<?define HelpFolder          = "$(var.TargetDir)..\Help\" ?>
 
 </Include>
