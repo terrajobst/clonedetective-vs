@@ -121,6 +121,9 @@ namespace CloneDetective.Package
 
 		private static int GetLinesOfCode(SourceFile sourceFile)
 		{
+			if (!CloneDetectiveManager.IsCloneReportAvailable)
+				return 1; // Since an empty text file contains at least one line.
+
 			SourceNode sourceNode = CloneDetectiveManager.CloneDetectiveResult.SourceTree.FindNode(sourceFile.Path);
 			return sourceNode.LinesOfCode;
 		}
