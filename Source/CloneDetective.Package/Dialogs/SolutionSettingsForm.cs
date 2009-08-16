@@ -246,12 +246,8 @@ namespace CloneDetective.Package
 			if (analysisFileNameTextBox.Text != _lastAnalysisFileName)
 			{
 				string expandedAnalysisFileName = _macroExpander.Expand(analysisFileNameTextBox.Text);
-				HashSet<string> declaredProperties = GetDeclaredProperties(expandedAnalysisFileName);
-				if (declaredProperties.Count > 0)
-				{
-					_declaredProperties = declaredProperties;
-					_lastAnalysisFileName = analysisFileNameTextBox.Text;
-				}
+				_declaredProperties = GetDeclaredProperties(expandedAnalysisFileName);
+				_lastAnalysisFileName = analysisFileNameTextBox.Text;
 			}
 		}
 
