@@ -434,7 +434,7 @@ namespace CloneDetective.Package
 		private void OpenSelectedSourceNode()
 		{
 			SourceNode sourceNode = SelectedSourceNode;
-			if (sourceNode.SourceFile != null)
+			if (sourceNode != null && sourceNode.SourceFile != null)
 				VSPackage.Instance.OpenDocument(sourceNode.SourceFile.Path);
 		}
 
@@ -590,7 +590,7 @@ namespace CloneDetective.Package
 
 		private void treeView_MouseClick(object sender, MouseEventArgs e)
 		{
-			if (e.Button == MouseButtons.Right)
+			if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
 			{
 				TreeNode node = treeView.GetNodeAt(e.X, e.Y);
 				if (node != null)
@@ -600,7 +600,13 @@ namespace CloneDetective.Package
 
 		private void treeView_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
 		{
-			OpenSelectedSourceNode();
+			if (e.Button == MouseButtons.Left)
+				OpenSelectedSourceNode();
+		}
+
+		private void contextMenuStrip_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+		{
+			openToolStripMenuItem.Enabled = (SelectedSourceNode != null && SelectedSourceNode.SourceFile != null);
 		}
 	}
 }
