@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
 
-	<!-- External Tools -->
-
-	<PropertyGroup>
-		<SandcastleHFBPath>C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\</SandcastleHFBPath>
-	</PropertyGroup>
-
 	<!-- Build Settings -->
 
 	<PropertyGroup>
@@ -29,7 +23,7 @@
 	<!-- External projects -->
 
 	<Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
-	
+
 	<!-- External Tasks -->
 
 	<UsingTask AssemblyFile="$(CustomTasksDir)CloneDetective.Build.dll" TaskName="CloneDetective.Build.RemoveTfsBindings" />
@@ -73,20 +67,20 @@
 
 	<Target Name="Compile">
 		<MSBuild Projects="$(SourceDir)Clone Detective.sln" Targets ="CloneDetective_Package"
-				 Properties="Configuration=$(Configuration);OutDir=$(GeneratedBinaries);RegisterOutputPackage=false" />
+		         Properties="Configuration=$(Configuration);OutDir=$(GeneratedBinaries);RegisterOutputPackage=false" />
 	</Target>
 
 	<Target Name="GenerateHelp" DependsOnTargets="Compile">
 		<Error Text="Documentation can only be generated for release builds." Condition="'$(Configuration)' != 'Release'" />
 
 		<!--
-			Since SHFB uses MSBuild as project format runing SHFB should be as easy as this:
+			Since SHFB uses MSBuild as project format running SHFB should be as easy as this:
 
 				<MSBuild Projects="$(HelpDir)Help.shfbproj" />
 		
-			Unfortunately it is not that easy. On 64 bit machines the MSBuild running SHFB must be loaded as 64 bit.
+			Unfortunately it is not that easy. On 64-bit machines the MSBuild running SHFB must be loaded as 64-bit.
 			Otherwise Sandcastle crashes with a DirectoryNotFound exception. However, MSBuild should always run
-			as 32 bit otherwise all extensions that are loaded via MSBuildExtensionsPath will not work (such as
+			as 32-bit otherwise all extensions that are loaded via MSBuildExtensionsPath will not work (such as
 			VSSDK and MSBuildCommunityTasks).
 		-->
 
@@ -102,10 +96,10 @@
 			<HtmlHelp20Files Include="$(HelpDir)HTML Help 2.0 Files\*.*" />
 		</ItemGroup>
 		<Copy SourceFiles="@(HtmlHelp20Files)" DestinationFolder="$(GeneratedHelp)" />
-		
+
 		<!--
 			SHFB has a CleanIntermediates option that also deletes the "Working" folder
-			but this currentl does not work as some files remain marked as read-only.
+			but this currently does not work as some files remain marked as read-only.
 		-->
 		<RemoveDir Directories="$(GeneratedHelp)Working" />
 	</Target>
@@ -114,7 +108,7 @@
 
 	<Target Name="GenerateSetup" DependsOnTargets="Compile">
 		<MSBuild Projects="$(SetupDir)Setup.sln" Targets="Rebuild"
-				 Properties="Configuration=$(Configuration);OutDir=$(GeneratedSetup);" />
+		         Properties="Configuration=$(Configuration);OutDir=$(GeneratedSetup);" />
 	</Target>
 
 	<!-- Generate Source Code -->
@@ -122,14 +116,14 @@
 	<Target Name="GenerateSourceCode" DependsOnTargets="CompileBuildTasks">
 		<ItemGroup>
 			<SourceCodeFiles Include="$(ProjectDir)**\*.*"
-							 Exclude="$(OutputDir)**\*.*;$(LibDir)**\*.*;$(CustomTasksDir)**\*.*;$(ProjectDir)**\bin\**\*.*;$(ProjectDir)**\obj\**\*.*;$(ProjectDir)**\*.scc;$(ProjectDir)**\*.vssscc;$(ProjectDir)**\*.vspscc;$(ProjectDir)**\*.suo;$(ProjectDir)**\*.cache;$(ProjectDir)**\*.user;$(ProjectDir)**\*.resharper" />
+			                 Exclude="$(OutputDir)**\*.*;$(LibDir)**\*.*;$(CustomTasksDir)**\*.*;$(ProjectDir)**\bin\**\*.*;$(ProjectDir)**\obj\**\*.*;$(ProjectDir)**\*.scc;$(ProjectDir)**\*.vssscc;$(ProjectDir)**\*.vspscc;$(ProjectDir)**\*.suo;$(ProjectDir)**\*.cache;$(ProjectDir)**\*.user;$(ProjectDir)**\*.resharper" />
 		</ItemGroup>
 
 		<Copy SourceFiles="@(SourceCodeFiles)" DestinationFolder="$(GeneratedSourceCode)%(RecursiveDir)" />
 		<Exec Command="attrib -r -h /s" WorkingDirectory="$(GeneratedSourceCode)" />
 		<RemoveTfsBindings SolutionFiles="$(GeneratedSourceCode)Source\Clone Detective.sln" />
 	</Target>
-	
+
 	<!-- Generate Release -->
 
 	<Target Name="GenerateRelease" DependsOnTargets="GenerateSetup;GenerateSourceCode">
