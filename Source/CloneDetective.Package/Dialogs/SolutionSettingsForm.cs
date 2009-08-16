@@ -239,7 +239,7 @@ namespace CloneDetective.Package
 		
 		#endregion
 
-		#region Helpers for extracting properties of .cqa files
+		#region Helpers for extracting properties of .cqb files
 
 		private void UpdateDeclaredProperties()
 		{
@@ -258,11 +258,10 @@ namespace CloneDetective.Package
 
 			XmlDocument document = new XmlDocument();
 			XmlNamespaceManager namespaceManager = new XmlNamespaceManager(document.NameTable);
-			namespaceManager.AddNamespace("cqa", "http://conqat.cs.tum.edu/ns/config");
+			namespaceManager.AddNamespace("cqb", "http://conqat.cs.tum.edu/ns/config");
 			try
 			{
-				string expandedAnalysisFileName = analysisFileName;
-				document.Load(expandedAnalysisFileName);
+				document.Load(analysisFileName);
 			}
 			catch (Exception)
 			{
@@ -271,10 +270,14 @@ namespace CloneDetective.Package
 				return propertyNames;
 			}
 
-			foreach (XmlNode propertyNode in document.SelectNodes("/cqa:conqat/cqa:property", namespaceManager))
+			foreach (XmlNode propertyNodeOuter in document.SelectNodes("/cqb:conqat/cqb:block-spec/cqb:param", namespaceManager))
 			{
-				string propertyName = propertyNode.Attributes["name"].Value;
-				propertyNames.Add(propertyName);
+				string parameterName = propertyNodeOuter.Attributes["name"].Value;
+				foreach (XmlNode propertyNodeInner in propertyNodeOuter.SelectNodes("cqb:attr", namespaceManager))
+				{
+					string attributeName = propertyNodeInner.Attributes["name"].Value;
+					propertyNames.Add(parameterName + "." + attributeName);
+				}
 			}
 
 			return propertyNames;

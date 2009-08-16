@@ -18,8 +18,8 @@
 			<Component Id="C__SandDock" Guid="0315C47A-347E-464f-AB03-45F365504D5A">
 				<File Id="F__SandDock" Name="SandDock.dll" DiskId="1" Source="..\Output\Bin\SandDock.dll" />
 			</Component>
-			<Component Id="C__DefaultCQA" Guid="9F610268-E2B2-4e3d-B404-54EC665DA4CE">
-				<File Id="F__DefaultCQA" Name="DefaultCloneDetection.cqa" DiskId="1" Source="..\Output\Bin\DefaultCloneDetection.cqa" />
+			<Component Id="C__DefaultCQB" Guid="9F610268-E2B2-4e3d-B404-54EC665DA4CE">
+				<File Id="F__DefaultCQB" Name="DefaultCloneDetection.cqb" DiskId="1" Source="..\Output\Bin\DefaultCloneDetection.cqb" />
 			</Component>
 			<Component Id="C__VsConQatPath" Guid="{79ED39C9-59A5-4a3f-9928-2017C3DE2EF6}">
 				<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\$(var.ProductName)">
@@ -168,7 +168,7 @@
 			<ComponentRef Id="C__Package"/>
 			<ComponentRef Id="C__CloneReportModel"/>
 			<ComponentRef Id="C__SandDock"/>
-			<ComponentRef Id="C__DefaultCQA"/>
+			<ComponentRef Id="C__DefaultCQB"/>
 		</ComponentGroup>
 	</Fragment>
 	

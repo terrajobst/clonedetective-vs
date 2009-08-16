@@ -319,7 +319,7 @@
 			// 
 			// openFileDialog
 			// 
-			this.openFileDialog.Filter = "ConQAT analysis files (*.cqa)|*.cqa|All files (*.*)|*.*";
+			this.openFileDialog.Filter = "ConQAT block files (*.cqb)|*.cqb|All files (*.*)|*.*";
 			// 
 			// saveFileDialog
 			// 

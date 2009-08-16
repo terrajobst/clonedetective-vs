@@ -41,7 +41,7 @@ namespace CloneDetective.CloneReporting
 		/// </remarks>
 		public static string DefaultAnalysisFileName
 		{
-			get { return "DefaultCloneDetection.cqa"; }
+			get { return "DefaultCloneDetection.cqb"; }
 		}
 
 		/// <summary>
@@ -142,8 +142,8 @@ namespace CloneDetective.CloneReporting
 		public static string GetPropertiesFilePath(string analysisFileName)
 		{
 			// NOTE: We don't use Path.ChangeExtension() because Java property files also include
-			//       the extension. For example the Java properties file for D:\ConQAT\Test.cqa is
-			//       simply D:\ConQAT\Test.cqa.properties.
+			//       the extension. For example the Java properties file for D:\ConQAT\Test.cqb is
+			//       simply D:\ConQAT\Test.cqb.properties.
 			return analysisFileName + ".properties";
 		}
 	}

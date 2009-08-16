@@ -58,9 +58,9 @@
 						<listItem>
 							Even if you disable the properties file ConQAT will still try to find a properties file that
 							is named as your analysis file with .properties appended. For example, if your analysis file
-							is named <localUri>CloneDetection.cqa</localUri> ConQAT will try to find a properties file
-							named <localUri>CloneDetection.cqa.properties</localUri> in the same folder as
-							<localUri>CloneDetection.cqa</localUri>.
+							is named <localUri>CloneDetection.cqb</localUri> ConQAT will try to find a properties file
+							named <localUri>CloneDetection.cqb.properties</localUri> in the same folder as
+							<localUri>CloneDetection.cqb</localUri>.
 						</listItem>
 						<listItem>
 							You only need to configure the properties file if it is named different or is located in
@@ -162,8 +162,8 @@
 				<para>
 					To use a macro just include it in any of the settings mentioned above. For example, assuming
 					<token>App</token> has been installed to <localUri>C:\Program Files (x86)\Clone Detective\</localUri>
-					a value for <ui>Analysis file</ui> of <localUri>$(InstallDir)DefaultCloneDetection.cqa</localUri> will
-					be extended to <localUri>C:\Program Files (x86)\Clone Detective\DefaultCloneDetection.cqa</localUri>.
+					a value for <ui>Analysis file</ui> of <localUri>$(InstallDir)DefaultCloneDetection.cqb</localUri> will
+					be extended to <localUri>C:\Program Files (x86)\Clone Detective\DefaultCloneDetection.cqb</localUri>.
 				</para>
 			</content>
 		</section>

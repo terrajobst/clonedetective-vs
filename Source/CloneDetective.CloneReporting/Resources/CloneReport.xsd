@@ -1,60 +1,78 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xs:schema targetNamespace="http://conqat.cs.tum.edu/ns/clonereport" elementFormDefault="qualified" attributeFormDefault="unqualified"
-  xmlns="http://conqat.cs.tum.edu/ns/clonereport" xmlns:mstns="http://conqat.cs.tum.edu/ns/clonereport"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:element name="cloneReport">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="sourceFile" minOccurs="0" maxOccurs="unbounded">
-					<xs:complexType>
-						<xs:attribute name="id" type="xs:int" use="required" />
-						<xs:attribute name="path" type="xs:string" use="required" />
-						<xs:attribute name="length" type="xs:int" use="required" />
-						<xs:attribute name="fingerprint" type="xs:string" use="required" />
-					</xs:complexType>
-				</xs:element>
-				<xs:element name="cloneClass" minOccurs="0" maxOccurs="unbounded">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="values" minOccurs="1" maxOccurs="1">
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="value" minOccurs="0" maxOccurs="unbounded">
-											<xs:complexType>
-												<xs:attribute name="key" type="xs:string" use="required" />
-												<xs:attribute name="value" type="xs:string" use="required" />
-												<xs:attribute name="type" type="xs:string" use="required" />
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="clone" minOccurs="0" maxOccurs="unbounded">
-								<xs:complexType>
-									<xs:attribute name="sourceFileId" type="xs:int" use="required" />
-									<xs:attribute name="startLine" type="xs:int" use="required" />
-									<xs:attribute name="lineCount" type="xs:int" use="required" />
-									<xs:attribute name="startUnitIndexInFile" type="xs:int" use="required" />
-									<xs:attribute name="lengthInUnits" type="xs:int" use="required" />
-									<xs:attribute name="gaps" type="xs:string" use="required" />
-									<xs:attribute name="fingerprint" type="xs:string" use="required" />
-								</xs:complexType>
-							</xs:element>
-						</xs:sequence>
-						<xs:attribute name="fingerprint" type="xs:string" use="required" />
-						<xs:attribute name="normalizedLength" type="xs:int" use="required" />
-						<xs:attribute name="id" type="xs:int" use="required" />
-					</xs:complexType>
-				</xs:element>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:simpleType name="RatingType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="UNRATED" />
-			<xs:enumeration value="UNDECIDED" />
-			<xs:enumeration value="ACCEPTED" />
-			<xs:enumeration value="REJECTED" />
-		</xs:restriction>
-	</xs:simpleType>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://conqat.cs.tum.edu/ns/clonereport" xmlns:mstns="http://conqat.cs.tum.edu/ns/clonereport" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://conqat.cs.tum.edu/ns/clonereport">
+  <xs:element name="cloneReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" minOccurs="0" name="sourceFile">
+          <xs:complexType>
+            <xs:attribute name="id" type="xs:int" use="required"/>
+            <xs:attribute name="path" type="xs:string" use="required"/>
+            <xs:attribute name="length" type="xs:int" use="required"/>
+            <xs:attribute name="fingerprint" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" minOccurs="0" name="cloneClass">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="1" minOccurs="0" name="values">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="value">
+                      <xs:complexType>
+                        <xs:attribute name="key" type="xs:string" use="required"/>
+                        <xs:attribute name="value" type="xs:string" use="required"/>
+                        <xs:attribute name="type" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="clone">
+                <xs:complexType>
+	                <xs:sequence>
+		              <xs:element maxOccurs="1" minOccurs="0" name="values">
+		                <xs:complexType>
+		                  <xs:sequence>
+		                    <xs:element maxOccurs="unbounded" minOccurs="0" name="value">
+		                      <xs:complexType>
+		                        <xs:attribute name="key" type="xs:string" use="required"/>
+		                        <xs:attribute name="value" type="xs:string" use="required"/>
+		                        <xs:attribute name="type" type="xs:string" use="required"/>
+		                      </xs:complexType>
+		                    </xs:element>
+		                  </xs:sequence>
+		                </xs:complexType>
+		              </xs:element>
+		            </xs:sequence>
+		          <xs:attribute name="id" type="xs:int" use="optional"/>
+		          <xs:attribute name="uniqueId" type="xs:string" use="optional"/>
+                  <xs:attribute name="sourceFileId" type="xs:int" use="required"/>
+                  <xs:attribute name="startLine" type="xs:int" use="required"/>
+                  <xs:attribute name="lineCount" type="xs:int" use="required"/>
+                  <xs:attribute name="startUnitIndexInFile" type="xs:int" use="required"/>
+                  <xs:attribute name="lengthInUnits" type="xs:int" use="required"/>
+                  <xs:attribute name="deltaInUnits" type="xs:int" use="required"/>
+                  <xs:attribute name="gaps" type="xs:string" use="required"/>
+                  <xs:attribute name="fingerprint" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:int" use="required"/>
+            <xs:attribute name="uniqueId" type="xs:string" use="optional"/>
+            <xs:attribute name="fingerprint" type="xs:string" use="required"/>
+            <xs:attribute name="normalizedLength" type="xs:int" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="systemdate" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="RatingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNRATED"/>
+      <xs:enumeration value="UNDECIDED"/>
+      <xs:enumeration value="ACCEPTED"/>
+      <xs:enumeration value="REJECTED"/>
+    </xs:restriction>
+  </xs:simpleType>
 </xs:schema>
