@@ -16,6 +16,8 @@ namespace CloneDetective.Package
 			double megaBytes = bytes / (1024 * 1024);
 			double gigaBytes = bytes / (1024 * 1024 * 1024);
 
+			if (bytes == 0)
+				return Res.MemoryUnknown;
 			if (kiloBytes < 1)
 				return String.Format(CultureInfo.CurrentCulture, Res.MemoryBytes, bytes);
 			if (megaBytes < 1)

@@ -207,7 +207,8 @@ namespace CloneDetective.CloneReporting
 						// NOTE: ConQAT writes the number using the system's current locale. Since they include
 						//       the culture dependent thousand marker we have to explicitly specify the
 						//       NumberStyles.AllowThousands and use the current culture (NOT CurrentUICulture).
-						result = Int64.Parse(number, NumberStyles.AllowThousands, CultureInfo.CurrentCulture)*1024;
+						Int64.TryParse(number, NumberStyles.AllowThousands, CultureInfo.CurrentCulture, out result);
+						result *= 1024;
 
 						// Don't break here. This will ensure we will use the last entry in the log file that
 						// matches the pattern.

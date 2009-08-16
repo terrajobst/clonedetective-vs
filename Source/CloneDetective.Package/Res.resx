@@ -340,4 +340,7 @@
   <data name="FileNameCannotBeBlank" xml:space="preserve">
     <value>Please specify a valid file name.</value>
   </data>
+  <data name="MemoryUnknown" xml:space="preserve">
+    <value>unknown</value>
+  </data>
 </root>
