@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyCopyright("Copyright \u00a9 2008 Thomas Dallmair, Immo Landwerth")]
+[assembly: AssemblyCopyright("Copyright \u00a9 2008-2009 Thomas Dallmair, Immo Landwerth")]
 [assembly: AssemblyCompany("Clone Detective for Visual Studio")]
 [assembly: AssemblyProduct("Clone Detective for Visual Studio")]
 

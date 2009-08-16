@@ -36,7 +36,7 @@
     <RootNamespaceContainer>True</RootNamespaceContainer>
     <RootNamespaceTitle>Class Library Reference</RootNamespaceTitle>
     <HelpTitle>Clone Detective Documentation</HelpTitle>
-    <CopyrightText>Copyright &amp;#169%3b 2008 by Thomas Dallmair, Immo Landwerth</CopyrightText>
+    <CopyrightText>Copyright &amp;#169%3b 2008-2009 by Thomas Dallmair, Immo Landwerth</CopyrightText>
     <PresentationStyle>vs2005</PresentationStyle>
     <SyntaxFilters>CSharp</SyntaxFilters>
     <HelpFileVersion>1.0.0.0</HelpFileVersion>

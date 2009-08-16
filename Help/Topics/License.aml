@@ -232,7 +232,7 @@
 			<content>
 				<definitionTable>
 					<definedTerm>Visual Studio Integration</definedTerm>
-					<definition>Copyright © 2008 Thomas Dallmair, Immo Landwerth.</definition>
+					<definition>Copyright © 2008-2009 Thomas Dallmair, Immo Landwerth.</definition>
 					<definedTerm>ConQAT</definedTerm>
 					<definition>
 						This product uses <token>ConQAT</token> developed at the
