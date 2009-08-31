@@ -202,10 +202,6 @@ namespace CloneDetective.Package
 
 			base.Initialize();
 
-			// Now it's time to initialize our copies of the marker IDs. We need them to be
-			// able to create marker instances.
-			CloneMarkerTypeProvider.InitializeMarkerIds(this);
-
 			// Add our command handlers for menu (commands must exist in the .vsct file)
 			OleMenuCommandService mcs = GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
 			if (null != mcs)
@@ -227,17 +223,18 @@ namespace CloneDetective.Package
 			// Advise event sinks. We need to know when a solution is opened and closed
 			// (SolutionEventSink), when a document is opened and closed (TextManagerEventSink),
 			// and when a document is saved (RunningDocTableEventSink).
+			//
+			// However unfortunately we can't advise the text manager event sink here due to a very
+			// strange constellation: On Windows XP running "devenv /setup" usually works fine but
+			// sometimes destruction of the text manager service crashes VS. The solution is to defer
+			// event sink registration to the point in time when the first solution is loaded. This works
+			// as solutions are only loaded in interactive mode and we don't have any work to do as long
+			// as there is no active solution.
 			SolutionEventSink solutionEventSink = new SolutionEventSink();
-			TextManagerEventSink textManagerEventSink = new TextManagerEventSink();
 			RunningDocTableEventSink runningDocTableEventSink = new RunningDocTableEventSink();
 
 			IVsSolution solution = (IVsSolution) GetService(typeof(SVsSolution));
 			ErrorHandler.ThrowOnFailure(solution.AdviseSolutionEvents(solutionEventSink, out _solutionEventCookie));
-
-			IConnectionPointContainer textManager = (IConnectionPointContainer) GetService(typeof(SVsTextManager));
-			Guid interfaceGuid = typeof(IVsTextManagerEvents).GUID;
-			textManager.FindConnectionPoint(ref interfaceGuid, out _tmConnectionPoint);
-			_tmConnectionPoint.Advise(textManagerEventSink, out _tmConnectionCookie);
 
 			IVsRunningDocumentTable rdt = (IVsRunningDocumentTable) GetService(typeof(SVsRunningDocumentTable));
 			ErrorHandler.ThrowOnFailure(rdt.AdviseRunningDocTableEvents(runningDocTableEventSink, out _rdtEventCookie));
@@ -394,6 +391,21 @@ namespace CloneDetective.Package
 
 		internal void OnSolutionOpened()
 		{
+			if (_tmConnectionPoint == null)
+			{
+				// Now it's time to initialize our copies of the marker IDs. We need them to be
+				// able to create marker instances.
+				CloneMarkerTypeProvider.InitializeMarkerIds(this);
+
+				// And we can query for the text manager service as we're surely running in
+				// interactive mode. So this is the right time to register for text manager events.
+				TextManagerEventSink textManagerEventSink = new TextManagerEventSink();
+				IConnectionPointContainer textManager = (IConnectionPointContainer) GetService(typeof(SVsTextManager));
+				Guid interfaceGuid = typeof(IVsTextManagerEvents).GUID;
+				textManager.FindConnectionPoint(ref interfaceGuid, out _tmConnectionPoint);
+				_tmConnectionPoint.Advise(textManagerEventSink, out _tmConnectionCookie);
+			}
+
 			EventHandler<EventArgs> handler = SolutionOpened;
 			if (handler != null)
 				handler(this, EventArgs.Empty);
