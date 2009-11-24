@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+
+	<?include ..\Product.wxi ?>
+
+	<?define ConQATFolder                               = "$(var.LibFolder)ConQAT\" ?>
+	<?define BundleFolder                               = "$(var.ConQATFolder)bundles\" ?>
+	<?define Bundle_edu.tum.cs.conqat.blocklib          = "$(var.BundleFolder)edu.tum.cs.conqat.blocklib\" ?>
+	<?define Bundle_edu.tum.cs.conqat.bugzilla          = "$(var.BundleFolder)edu.tum.cs.conqat.bugzilla\" ?>
+	<?define Bundle_edu.tum.cs.conqat.clonedetective    = "$(var.BundleFolder)edu.tum.cs.conqat.clonedetective\" ?>
+	<?define Bundle_edu.tum.cs.conqat.commons           = "$(var.BundleFolder)edu.tum.cs.conqat.commons\" ?>
+	<?define Bundle_edu.tum.cs.conqat.cpp               = "$(var.BundleFolder)edu.tum.cs.conqat.cpp\" ?>
+	<?define Bundle_edu.tum.cs.conqat.database          = "$(var.BundleFolder)edu.tum.cs.conqat.database\" ?>
+	<?define Bundle_edu.tum.cs.conqat.dotnet            = "$(var.BundleFolder)edu.tum.cs.conqat.dotnet\" ?>
+	<?define Bundle_edu.tum.cs.conqat.filesystem        = "$(var.BundleFolder)edu.tum.cs.conqat.filesystem\" ?>
+	<?define Bundle_edu.tum.cs.conqat.graph             = "$(var.BundleFolder)edu.tum.cs.conqat.graph\" ?>
+	<?define Bundle_edu.tum.cs.conqat.html_presentation = "$(var.BundleFolder)edu.tum.cs.conqat.html_presentation\" ?>
+	<?define Bundle_edu.tum.cs.conqat.io                = "$(var.BundleFolder)edu.tum.cs.conqat.io\" ?>
+	<?define Bundle_edu.tum.cs.conqat.java              = "$(var.BundleFolder)edu.tum.cs.conqat.java\" ?>
+	<?define Bundle_edu.tum.cs.conqat.junit             = "$(var.BundleFolder)edu.tum.cs.conqat.junit\" ?>
+	<?define Bundle_edu.tum.cs.conqat.klocwork          = "$(var.BundleFolder)edu.tum.cs.conqat.klocwork\" ?>
+	<?define Bundle_edu.tum.cs.conqat.model_clones      = "$(var.BundleFolder)edu.tum.cs.conqat.model_clones\" ?>
+	<?define Bundle_edu.tum.cs.conqat.scripting         = "$(var.BundleFolder)edu.tum.cs.conqat.scripting\" ?>
+	<?define Bundle_edu.tum.cs.conqat.self              = "$(var.BundleFolder)edu.tum.cs.conqat.self\" ?>
+	<?define Bundle_edu.tum.cs.conqat.simulink          = "$(var.BundleFolder)edu.tum.cs.conqat.simulink\" ?>
+	<?define Bundle_edu.tum.cs.conqat.sourcecode        = "$(var.BundleFolder)edu.tum.cs.conqat.sourcecode\" ?>
+	<?define Bundle_edu.tum.cs.conqat.svn               = "$(var.BundleFolder)edu.tum.cs.conqat.svn\" ?>
+	<?define Bundle_edu.tum.cs.conqat.text              = "$(var.BundleFolder)edu.tum.cs.conqat.text\" ?>
+	<?define Bundle_edu.tum.cs.conqat.architecture      = "$(var.BundleFolder)edu.tum.cs.conqat.architecture\" ?>
+</Include>

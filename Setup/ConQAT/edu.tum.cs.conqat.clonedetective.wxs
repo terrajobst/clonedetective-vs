@@ -1,0 +1,864 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<?include ConQAT.wxi ?>
+
+	<Fragment>
+		<ComponentGroup Id="edu.tum.cs.conqat.clonedetective">
+			<ComponentRef Id="cmpBA60A084A2DF5085E3FA084512ED833F" />
+			<ComponentRef Id="cmp1104229527270B4770C86FCF70D597E3" />
+			<ComponentRef Id="cmp8846820963932E68E2D1E2657BCA0E2A" />
+			<ComponentRef Id="cmp60B01CDF8304DB12D18D41052FB9AEFF" />
+			<ComponentRef Id="cmpB57DC51D351E3A32A4A110C6EDCEDFF4" />
+			<ComponentRef Id="cmpA8451E203056D42AC2BDD6417114F014" />
+			<ComponentRef Id="cmpCA5D39318BA505D6BA981767E1F0FF27" />
+			<ComponentRef Id="cmp73F10B33C46890489F83BFFE3C8C87A5" />
+			<ComponentRef Id="cmp808E89C0853CBA6DAE44DE43E3B79812" />
+			<ComponentRef Id="cmpFD9CA0AE8E95CC1443B20D8996F7AD94" />
+			<ComponentRef Id="cmp36A4F760C3E443E7503385FE9F3233DC" />
+			<ComponentRef Id="cmpE1729FBF0E067310B508B1A389C7E00D" />
+			<ComponentRef Id="cmpFF595A3F58F61A144835D5C450E15C63" />
+			<ComponentRef Id="cmp96B6162DCA531C74ACF2A2C6174FA034" />
+			<ComponentRef Id="cmp3D5598BE80F2D3ABBAED75F65A65BC75" />
+			<ComponentRef Id="cmpAD8EBFE6DBF98E87BC73B0C0486595D1" />
+			<ComponentRef Id="cmp87AE200201C5799417D1B79D9717891F" />
+			<ComponentRef Id="cmpA94F2732724C60B5DDD968AFA4817313" />
+			<ComponentRef Id="cmp6D527092B93F2891075422E4E341FACB" />
+			<ComponentRef Id="cmp8E21BBE1BF7A9D7DE6AC78DDFD159575" />
+			<ComponentRef Id="cmp45C602B3D71648B842A695EBEEDACE48" />
+			<ComponentRef Id="cmpBFA7BC3BF166C79A22D40F0659846BB6" />
+			<ComponentRef Id="cmpDA1E4479550BB58C3D0847B9E8F99FE5" />
+			<ComponentRef Id="cmpEC0C26C5EA1A8202050903816C8D8719" />
+			<ComponentRef Id="cmpA392CC83A0B39F8E782A728A7DEDCBB7" />
+			<ComponentRef Id="cmpAD0E602ACDF6DCAC14576DD4EE437339" />
+			<ComponentRef Id="cmpA5DF47A2D1141D771DF012F8C41A19E5" />
+			<ComponentRef Id="cmpC3C71679355C8C6A5FF98766FE024135" />
+			<ComponentRef Id="cmpE1CA05C257FD5E1A40D814618FDBA4E8" />
+			<ComponentRef Id="cmp7D1220DDFF02A283926912378642F66A" />
+			<ComponentRef Id="cmpF60B0133CAB5A9E679B088C0E4AD6843" />
+			<ComponentRef Id="cmpB9BC8151D772EEA67F3549B6233090EE" />
+			<ComponentRef Id="cmp21DE290FA3834A0E775518068548026F" />
+			<ComponentRef Id="cmpE918E59FAFE0CEF15B46000A0A2592E0" />
+			<ComponentRef Id="cmp937616E51234C92131F3AA5954754F0A" />
+			<ComponentRef Id="cmp6EE1707633989D58D7200CF4433F2B3E" />
+			<ComponentRef Id="cmp0310089B829C0105E2BE5B2D746CF024" />
+			<ComponentRef Id="cmp9FA218BDA0A9769E71FB265AB5A09BC7" />
+			<ComponentRef Id="cmp2037FEC4F6B9565D7B03303FA679EDBF" />
+			<ComponentRef Id="cmp40A9D8E5227039A689463CE3FDC62E4F" />
+			<ComponentRef Id="cmp77D7BC4821C2109AF43727D6D0DC473D" />
+			<ComponentRef Id="cmp53AA2E7FD267ED0BBAF88E831B2407B1" />
+			<ComponentRef Id="cmpD70074BD29FBE18EC9EF82D1DD1CE847" />
+			<ComponentRef Id="cmp36C840EB636C66CC1FF79B7A1168C7A4" />
+			<ComponentRef Id="cmp7FFD3FE7E4D860B0136D3E8B2AAECEE3" />
+			<ComponentRef Id="cmpBF8AFD87C59E6EB94FF8F63EDD1D0511" />
+			<ComponentRef Id="cmpABF995A0CEB8E4E50D9C70CC54EC6805" />
+			<ComponentRef Id="cmp4065401EB18786C9496A59D31F139840" />
+			<ComponentRef Id="cmpE3D06B3CB746D504E7C882A69DDF7098" />
+			<ComponentRef Id="cmp1A0209A9C162874604EE831A55D4EC84" />
+			<ComponentRef Id="cmpD16FE6D081AF9FE8E334B3BDB38ED3F0" />
+			<ComponentRef Id="cmpF8BCA102AB6CBFD4179401E90D8972E8" />
+			<ComponentRef Id="cmpB993EC0DC68995BBBBF2ACB4BBFBA6F5" />
+			<ComponentRef Id="cmp32FC62BA1F975ED00BAFD17BA6713368" />
+			<ComponentRef Id="cmpC4C6A67CA48F55850BFE3337F2AC897D" />
+			<ComponentRef Id="cmp57359FF6F0AEDBB0F1CDF99E4BC6DB56" />
+			<ComponentRef Id="cmpFE9531CB74C17F954BCCDA28B4AE2357" />
+			<ComponentRef Id="cmpB06DD5515E96133793E509E73F952DEE" />
+			<ComponentRef Id="cmp93D25CF212CF35710A9AB341158BC252" />
+			<ComponentRef Id="cmpF69624CA5E2A00BD9E9693B12CCAACC6" />
+			<ComponentRef Id="cmpB587E6D101CA655893EB558D0F2F55AF" />
+			<ComponentRef Id="cmpFE5C61ECA9720CDFA50FF6AE904FF4DB" />
+			<ComponentRef Id="cmpDA428B5F627B5275400C581C01197ABE" />
+			<ComponentRef Id="cmpABABD1C5E1E03B2AB49BA891748D23EE" />
+			<ComponentRef Id="cmpEA8E159BC3FC1EC766227AD0BE50F783" />
+			<ComponentRef Id="cmp0EE384073EC4D518D4A4F3C1A783CC6B" />
+			<ComponentRef Id="cmp8FC05B67E4B6F4D5E664DF63C70142BF" />
+			<ComponentRef Id="cmp8EB461335A9D706F8E3AD0C10F1B346A" />
+			<ComponentRef Id="cmp24807D599437B8C39CB018FBC4092F9A" />
+			<ComponentRef Id="cmpFDF0F73257491DA0AA7A5048DF1A5F10" />
+			<ComponentRef Id="cmp0C5E0D0A88D3717DB2A9FB183508850E" />
+			<ComponentRef Id="cmpD0398F60F625D2BA8F538E197E251C05" />
+			<ComponentRef Id="cmpDFBCB7EF9E79E3E918D13B24E37A8C92" />
+			<ComponentRef Id="cmpECDCB648ADE927E68ABD76B7D3431548" />
+			<ComponentRef Id="cmp234896EEA86AEFF37B2380D8D44FE696" />
+			<ComponentRef Id="cmp8CA076E8F01814AD0F03F5D4604698B3" />
+			<ComponentRef Id="cmp516E8B2B72370F4D03EF4F58619D3FEA" />
+			<ComponentRef Id="cmp7CD52B55CB32F7C470D0E09F8D8D9073" />
+			<ComponentRef Id="cmpB8D490FEBA6FC79E7BEA29C73E0F59CD" />
+			<ComponentRef Id="cmp26AA0607EC45A0AB8E9A86F387C44747" />
+			<ComponentRef Id="cmp5869729D0E9FE3F1661D0494BFEE7C80" />
+			<ComponentRef Id="cmp421369DB4119B17C1FFB158ACCC7EA7A" />
+			<ComponentRef Id="cmpF6EE595700DC8C502C0AD09F8090A09E" />
+			<ComponentRef Id="cmpFA4F6FB7D414FD1823513FC40462B3AB" />
+			<ComponentRef Id="cmpBCA0782BD2373512CA196206ED49475D" />
+			<ComponentRef Id="cmp44EF8AA16C679EE6986BF6657D02273E" />
+			<ComponentRef Id="cmp8FF4369FF8BD6AEF8F4EB91CB1528589" />
+			<ComponentRef Id="cmpCE9E10C7EF461558B15D7EF7BE3AE0B6" />
+			<ComponentRef Id="cmpB7ADA1611FF757F126BBAA8382541B6C" />
+			<ComponentRef Id="cmpC6E60395E6EE073CD8D2658886943EAE" />
+			<ComponentRef Id="cmp90F7864BD2E11807DA888A12B7880FA1" />
+			<ComponentRef Id="cmp40E1795AAE4128D145D20496E814749C" />
+			<ComponentRef Id="cmp3DD764A64FBE970D2BDAB18E24C4790A" />
+			<ComponentRef Id="cmp790004512246ACB1287442CC87C868D2" />
+			<ComponentRef Id="cmpAAA52A2C761FAD44C5C56A57EFEF0480" />
+			<ComponentRef Id="cmp60E23EC9AB15D1A054A56B440C46FCF3" />
+			<ComponentRef Id="cmp7029A9FE8F347EF6E67D9DF9EB4FBEA4" />
+			<ComponentRef Id="cmp4C94B075852A3EC42734A6A7A7F98324" />
+			<ComponentRef Id="cmpC9E5DE12E2CAF2DE5E775134DC1A1DF1" />
+			<ComponentRef Id="cmp4920940D16C63D3F4612E17A2AAF228C" />
+			<ComponentRef Id="cmp95C8A602C298FCA080C833A80DB224B9" />
+			<ComponentRef Id="cmpE4D718AECEAEB719D363496ACA71D731" />
+			<ComponentRef Id="cmpD78C3CF7B6D1554FB27A3940EBFB991E" />
+			<ComponentRef Id="cmp731CDC7B59CBBA78BF52303BCA79B4AF" />
+			<ComponentRef Id="cmp804414836398F7151B0B394A63477555" />
+			<ComponentRef Id="cmp6255C5BE5B2D012156F7A9ECF431C321" />
+			<ComponentRef Id="cmpF593D279E0CA168B54AD9ED0A6DA9708" />
+			<ComponentRef Id="cmpEB539E13F3DC33A519112E019CB9137C" />
+			<ComponentRef Id="cmpCB17F2FEB1A796FEC4A891DDEF885E6D" />
+			<ComponentRef Id="cmpC3C82B66D0C891C73D21E9871D7DA802" />
+			<ComponentRef Id="cmp333860F057EB8F8221149F43282B6863" />
+			<ComponentRef Id="cmp273C81C01A9822AB81E69C48103E5140" />
+			<ComponentRef Id="cmp56C5E8FEFF2735E6D23E4F65536C6782" />
+			<ComponentRef Id="cmpA3463F58FC49E3E3E21793AFEA4A446F" />
+			<ComponentRef Id="cmp478A9A1E5A08E7CAB59AD440ECDB24C3" />
+			<ComponentRef Id="cmpAAD00603FB959464DE651C161F969F8A" />
+			<ComponentRef Id="cmp12219F7C57F3087D95F174693AEA91D9" />
+			<ComponentRef Id="cmp071FDFAF3CD2DC81A5F113725DE1257B" />
+			<ComponentRef Id="cmpC64F195DE6123977001776DA91AC32ED" />
+			<ComponentRef Id="cmpCF7561532F4DD5F1A3499AA3AF3B38C8" />
+			<ComponentRef Id="cmp29BCB8CB9A906E96C70E33F8DD8A4613" />
+			<ComponentRef Id="cmpBDBE9849B1E7FE3C281602807F965595" />
+			<ComponentRef Id="cmp1DD6E3EB95D3B18EFF38E39003D0284E" />
+			<ComponentRef Id="cmpF5D70D376114502EA03D07F8DE32BBD3" />
+			<ComponentRef Id="cmp3FEF502627CA26454303071CE3B46DFE" />
+			<ComponentRef Id="cmp863BF11236DD6370CEF4E5170576F3E5" />
+			<ComponentRef Id="cmp731B37C716AB0B7A49888274EC89C6F4" />
+			<ComponentRef Id="cmp2A07A255E689DBAEFB3E5668D4DD0FD1" />
+			<ComponentRef Id="cmp2854F083EF21053E4EF5363458FEFA87" />
+			<ComponentRef Id="cmp7FA75F2D6B0BA11AEC2BCE19C6942A50" />
+			<ComponentRef Id="cmp9A593B55C64B822459CDFBC33380B4D0" />
+			<ComponentRef Id="cmp2A8C6A253A616D479B1B6F891060026C" />
+			<ComponentRef Id="cmp491927448973ACB0F72761BB6DC3AF5A" />
+			<ComponentRef Id="cmp31095165B616D84AB5A058D7CA772C72" />
+			<ComponentRef Id="cmpA34E6A0BD1E981A2C1CD96A637FB9F21" />
+			<ComponentRef Id="cmp7680C0DD82D3D587FB5BFE01230CD229" />
+			<ComponentRef Id="cmp10B280FC13841A531667C68A5C0C5BF7" />
+			<ComponentRef Id="cmp900E254E2A13332D44DC855E8C27740D" />
+			<ComponentRef Id="cmp99F84EF742AF187C1AAA75F3CEF7559D" />
+			<ComponentRef Id="cmpB53E68C04C26D73CD2CD84E795818E75" />
+			<ComponentRef Id="cmpBBA5B7F0441CD471FD96CDC1E241F67D" />
+			<ComponentRef Id="cmp8739E3176253B87C3933037D6290C9BE" />
+			<ComponentRef Id="cmp4144586737DF5DEA5335D5C2E2B911B6" />
+			<ComponentRef Id="cmp4EA24B563998696547B0253847776F20" />
+			<ComponentRef Id="cmpEB73FD1BA4347961BE3CC2A79409CCE3" />
+			<ComponentRef Id="cmp1995339324D9D085E94A5DAF5A1A3438" />
+			<ComponentRef Id="cmp6913C20CFD27795CDE9FBBDEE1444204" />
+			<ComponentRef Id="cmpF936DFCC89316EC5DA819E88CB482E00" />
+			<ComponentRef Id="cmp0AA5108A65BA94B6A23D973B9A8BF349" />
+			<ComponentRef Id="cmp962AE911EAB5D7BAC505E2E376D7C6B5" />
+			<ComponentRef Id="cmpA9D30E3FF7B7EEA647DBB53310CF49CD" />
+			<ComponentRef Id="cmpCEEE474B51D1C408C7DFF912B0FCA08A" />
+			<ComponentRef Id="cmp37FCDC46D7E960E1F6E3CAC19764C4FC" />
+			<ComponentRef Id="cmp4DC82E6FAD24E1A2E6A3C19B25F017BD" />
+			<ComponentRef Id="cmp2A1E58A31230F7799A37DDAC2086A45E" />
+			<ComponentRef Id="cmpBDF269083585DC880DB0A24D66C486F3" />
+			<ComponentRef Id="cmpB74C42B30707536625DF55D223D57FD7" />
+			<ComponentRef Id="cmp4A00DE2C6B00A516C1B6F7DD0C49A111" />
+			<ComponentRef Id="cmpE8C40A2EA25B1C0D8C450E0AED90A343" />
+			<ComponentRef Id="cmpD059843D6681B3D36C6B680A4E16F720" />
+			<ComponentRef Id="cmp80B0E87DA3E39F92269AEDC2A1E5BF64" />
+			<ComponentRef Id="cmpD57D022891823498788A23207FCDD9C8" />
+			<ComponentRef Id="cmp0073F4085F360B306BACDC2DE8AF74D8" />
+			<ComponentRef Id="cmp7683D0417211D8F0D515F2942CB1C27E" />
+			<ComponentRef Id="cmpD8445AEC8FC04697764A7626ADE4C86B" />
+			<ComponentRef Id="cmp02147B4A7FA44F8EC445C2AD9A18EBD3" />
+			<ComponentRef Id="cmpBA779CC4ADFF5DBC5399C5A669B0647A" />
+			<ComponentRef Id="cmp1E517ED46F46E70486042F7F066ECDF8" />
+			<ComponentRef Id="cmp07B0BAE58BC5482E5570F0021BAC4B41" />
+			<ComponentRef Id="cmp9AEA7BA1350B3D333E4C2763D6C4746F" />
+			<ComponentRef Id="cmp31B244249FD39758E58D0EDAFF5E7E9F" />
+			<ComponentRef Id="cmp757BF0FC301799FC03C21CD385880519" />
+			<ComponentRef Id="cmpBFDE5F5BA34100C71B921118B900F10E" />
+			<ComponentRef Id="cmp947AB39113474B8755CA3ADCB20FD287" />
+			<ComponentRef Id="cmpD609516AB166E2358CA8DAF0905718D9" />
+			<ComponentRef Id="cmpE0DF1BAC7EF5B22F2202D61A23EA1361" />
+			<ComponentRef Id="cmpB99B59F48FF0771BAD8F9090B5ADB31E" />
+			<ComponentRef Id="cmpC95314963D9939D4CFCB9D47525616C4" />
+			<ComponentRef Id="cmp664F0D953DB3F7D2435F936C99A378C5" />
+			<ComponentRef Id="cmpDCF14783095D29D0EB0ED998BA67D7E5" />
+			<ComponentRef Id="cmp0C28CB06822923E51A4159E3EDA4739B" />
+			<ComponentRef Id="cmpC4A08EF97DA5F74CF7C86570C9FFE58B" />
+			<ComponentRef Id="cmpA8951A45776C7BCD285F71515CF932B7" />
+			<ComponentRef Id="cmpF809899ABE3525951395DB98BEAC22D5" />
+			<ComponentRef Id="cmpE9E89F9721D16B537D2F86B8FE810BD4" />
+			<ComponentRef Id="cmpDD47A29F7F442B9A669D15E0D9AC0D7C" />
+			<ComponentRef Id="cmp63A96AEB407C51A7C77B72CAD875EE4D" />
+			<ComponentRef Id="cmpBABA96D04AD7DB192C4BA4A895463DD9" />
+			<ComponentRef Id="cmp1B7138C8BEF0D3F000C9986DD3E05CA2" />
+			<ComponentRef Id="cmpFA4051F6C25CDA0843A13C06F119E736" />
+		</ComponentGroup>
+	</Fragment>
+	<Fragment>
+		<DirectoryRef Id="bundles">
+			<Directory Id="dir7268DDA08009E593923A63575815A765" Name="edu.tum.cs.conqat.clonedetective">
+				<Component Id="cmpBA60A084A2DF5085E3FA084512ED833F" Guid="{41D31CC0-1A55-476A-BD67-8FEBB78B19FF}">
+					<File Id="fil4878B77F1F9C10086EEDA820FF9FB34C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)bundle.html" />
+				</Component>
+				<Component Id="cmp1104229527270B4770C86FCF70D597E3" Guid="{8170CAFB-CBAD-41CE-B0B8-707E11EBF026}">
+					<File Id="fil4E2A65F787C082C59AB807A3E46F729D" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)bundle.xml" />
+				</Component>
+				<Directory Id="dirD7CF4DB3F9540D47481D366106452800" Name="blocks">
+					<Directory Id="dir22AE8698AF4D058A0B57D3F7D80F8E26" Name="detection">
+						<Component Id="cmp8846820963932E68E2D1E2657BCA0E2A" Guid="{EC94B743-0DB6-42AA-B34C-12421F8D06FF}">
+							<File Id="filEFB5CF9786B5AFA72002DE1903B3F96A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\detection\LineCloneChain.cqb" />
+						</Component>
+						<Component Id="cmp60B01CDF8304DB12D18D41052FB9AEFF" Guid="{026401EF-E2F6-4E45-B9B8-D55ADAA33065}">
+							<File Id="filB857A53EF97FDF0259187FAEA717974B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\detection\LineCloneDetection.cqb" />
+						</Component>
+						<Component Id="cmpB57DC51D351E3A32A4A110C6EDCEDFF4" Guid="{542A105B-FE61-4B94-87E8-B9DA06CBFEB5}">
+							<File Id="fil8C06ED5681B9AE40B2ADF8EB03ED2944" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\detection\StatementCloneChain.cqb" />
+						</Component>
+						<Component Id="cmpA8451E203056D42AC2BDD6417114F014" Guid="{A3E82413-D827-46A8-9087-EE13B8A63512}">
+							<File Id="fil1F0FCCA97D08D044C4917BAE92D7ED14" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\detection\StatementCloneDetection.cqb" />
+						</Component>
+						<Component Id="cmpCA5D39318BA505D6BA981767E1F0FF27" Guid="{C2E5BB64-6B47-419A-AA1C-E9BBE40CAE9B}">
+							<File Id="filEF698125A9708B962C392C91404CF131" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\detection\StatementGappedCloneDetection.cqb" />
+						</Component>
+						<Component Id="cmp73F10B33C46890489F83BFFE3C8C87A5" Guid="{D45BCCE6-77B8-42E7-8D8D-A8DC087C4DF4}">
+							<File Id="fil8051E5245C60987D64376004B99E2B81" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\detection\StatementShapedCloneDetection.cqb" />
+						</Component>
+						<Component Id="cmp808E89C0853CBA6DAE44DE43E3B79812" Guid="{B1F1A647-F93F-4E15-B0F8-014C2201F609}">
+							<File Id="fil635E9C891F6741E7B326738BF9E0F3D3" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\detection\WordCloneChain.cqb" />
+						</Component>
+						<Component Id="cmpFD9CA0AE8E95CC1443B20D8996F7AD94" Guid="{6A4DB054-82A3-4302-87C7-7CA7C9385533}">
+							<File Id="fil1A1FA3D5C63727C86FBC2EF16D498B95" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\detection\WordCloneDetection.cqb" />
+						</Component>
+					</Directory>
+					<Directory Id="dir638D7EE78A0F6FE8CEBD0C9DBC0E9984" Name="languages">
+						<Directory Id="dirCC3E5F30754A4AC076F664823CC3EDEA" Name="abap">
+							<Component Id="cmp36A4F760C3E443E7503385FE9F3233DC" Guid="{A90598A5-68EB-453F-A25D-1B5448300681}">
+								<File Id="filB2C014A557298B94F6E25B690B97C124" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\languages\abap\AbapGappedCloneChain.cqb" />
+							</Component>
+							<Component Id="cmpE1729FBF0E067310B508B1A389C7E00D" Guid="{E633BA06-B391-4F61-BF9F-D9B162C99D84}">
+								<File Id="fil64111B5EEA7F926C1FD5DE2D49A62820" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\languages\abap\AbapGappedCloneDetection.cqb" />
+							</Component>
+						</Directory>
+						<Directory Id="dir3172E7333E38A140422F7AF5C2A0CD5B" Name="cs">
+							<Component Id="cmpFF595A3F58F61A144835D5C450E15C63" Guid="{8217A144-2DB6-470F-9BF6-C5AE1C346123}">
+								<File Id="fil1201F2B36A38855B7D1444DE36B854A8" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\languages\cs\CsCloneChain.cqb" />
+							</Component>
+							<Component Id="cmp96B6162DCA531C74ACF2A2C6174FA034" Guid="{642A941D-CB15-40B5-B6AE-32622F238021}">
+								<File Id="fil0B0B209DE3A6F88145EFC6A1E9EBC2B1" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\languages\cs\CsCloneDetection.cqb" />
+							</Component>
+							<Component Id="cmp3D5598BE80F2D3ABBAED75F65A65BC75" Guid="{01784DDC-C77B-4465-8AB1-6E4962E0C511}">
+								<File Id="fil83FA8F5722872ADDC1F83C07D7F8163C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\languages\cs\CsGappedCloneChain.cqb" />
+							</Component>
+							<Component Id="cmpAD8EBFE6DBF98E87BC73B0C0486595D1" Guid="{130DEB90-A99D-448A-84E9-93253E81189C}">
+								<File Id="fil25B2D7FE7C86790AE136B31DA9A9BB4D" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\languages\cs\CsGappedCloneDetection.cqb" />
+							</Component>
+							<Component Id="cmp87AE200201C5799417D1B79D9717891F" Guid="{4B976145-9F59-430F-8A55-485550BB60B9}">
+								<File Id="filF4AF689E20C7003AA07705D4BE07ABFB" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\languages\cs\CsPreprocessing.cqb" />
+							</Component>
+							<Component Id="cmpA94F2732724C60B5DDD968AFA4817313" Guid="{7562DAFC-18D7-42F2-B6E1-B59909DF4617}">
+								<File Id="fil3A1814F21954E643D20F8D6D3BC65955" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\languages\cs\CsShapedCloneChain.cqb" />
+							</Component>
+							<Component Id="cmp6D527092B93F2891075422E4E341FACB" Guid="{5D0A11F2-B808-4DF0-B461-05715DC4A1C0}">
+								<File Id="fil4933F54D476D551F2D1AB8F1C6918A6C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\languages\cs\CsShapedCloneDetection.cqb" />
+							</Component>
+						</Directory>
+						<Directory Id="dir59E40EADF22A54D05C281B9AC3F05B95" Name="java">
+							<Component Id="cmp8E21BBE1BF7A9D7DE6AC78DDFD159575" Guid="{2BC58C11-D8A6-4A01-838E-A891AD4BE86A}">
+								<File Id="filEE411B8E8F4404E9B3C8BF30688D13D4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\languages\java\JavaCloneChain.cqb" />
+							</Component>
+							<Component Id="cmp45C602B3D71648B842A695EBEEDACE48" Guid="{97A534AB-788B-4BC6-8F43-9D3EA5427709}">
+								<File Id="fil9B48D05071DC8F61C2FAC0DC91E88720" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\languages\java\JavaCloneDetection.cqb" />
+							</Component>
+							<Component Id="cmpBFA7BC3BF166C79A22D40F0659846BB6" Guid="{129B1D1B-DA9E-4E30-B934-DB8B027AFAA2}">
+								<File Id="filACBB88007F2E84E40225ED645E5E5630" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\languages\java\JavaGappedCloneChain.cqb" />
+							</Component>
+							<Component Id="cmpDA1E4479550BB58C3D0847B9E8F99FE5" Guid="{F0FDD53C-B7B9-45C4-8D94-7F15526533DA}">
+								<File Id="filA099BC4B9A3A7DF7C97937BA3F6F0BC7" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\languages\java\JavaGappedCloneDetection.cqb" />
+							</Component>
+							<Component Id="cmpEC0C26C5EA1A8202050903816C8D8719" Guid="{420C504C-00FF-458D-9405-D947651745B6}">
+								<File Id="fil411B456DAC833D6C4A7AD431A1A86C0E" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\languages\java\JavaPreprocessing.cqb" />
+							</Component>
+							<Component Id="cmpA392CC83A0B39F8E782A728A7DEDCBB7" Guid="{F2E24EF5-C9F6-46F5-88C1-6ABF14C9A0AE}">
+								<File Id="filF9443055453E422626AB632A2E48BDAC" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\languages\java\JavaShapedCloneChain.cqb" />
+							</Component>
+							<Component Id="cmpAD0E602ACDF6DCAC14576DD4EE437339" Guid="{62477C23-A6D5-40CB-9481-D7D917C2E26C}">
+								<File Id="fil2718F21EF1502D8088AF3A718F5821D0" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\languages\java\JavaShapedCloneDetection.cqb" />
+							</Component>
+						</Directory>
+					</Directory>
+					<Directory Id="dirA5BE52F1EF3DF1663086DED90CF42277" Name="normalization">
+						<Component Id="cmpA5DF47A2D1141D771DF012F8C41A19E5" Guid="{1688929C-FEAB-4F81-A997-DC2143DD7BD9}">
+							<File Id="fil352865EB53EEF1F74831D5917B053A33" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\normalization\FileIgnoreMarker.cqb" />
+						</Component>
+						<Component Id="cmpC3C71679355C8C6A5FF98766FE024135" Guid="{44859789-D680-474C-A144-5243D585CC30}">
+							<File Id="fil67DFB57ABA8DED5A7B80089DF875E00B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\normalization\InputClassification.cqb" />
+						</Component>
+						<Component Id="cmpE1CA05C257FD5E1A40D814618FDBA4E8" Guid="{06FC7A40-B8F7-42B4-8545-4355C42B8EF6}">
+							<File Id="fil884A2EAAC680DFD8218DCD183F55503A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\normalization\LineNormalization.cqb" />
+						</Component>
+						<Component Id="cmp7D1220DDFF02A283926912378642F66A" Guid="{86BD3D43-9D5C-4960-87BA-9D16FF0420C2}">
+							<File Id="fil896E9965975EFCA8E0322AC53842C7D1" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\normalization\MethodAwareStatementNormalization.cqb" />
+						</Component>
+						<Component Id="cmpF60B0133CAB5A9E679B088C0E4AD6843" Guid="{88AB67A5-F30C-4400-B8A0-CE3C99D403C2}">
+							<File Id="fil3C3FC3A1A47DB43B2600C867FD547825" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\normalization\MixedShapedStatementNormalization.cqb" />
+						</Component>
+						<Component Id="cmpB9BC8151D772EEA67F3549B6233090EE" Guid="{977B1816-26B7-4249-8AC6-F9E23320FA09}">
+							<File Id="filB35A21A128F3C54A22B573701722E7A9" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\normalization\MixedStatementNormalization.cqb" />
+						</Component>
+						<Component Id="cmp21DE290FA3834A0E775518068548026F" Guid="{ED1A06E7-D0EA-42C4-8521-C22165D283AE}">
+							<File Id="fil3D1B11E84FD7D4A7DEF9976E18459F57" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\normalization\RegionIgnoreMarker.cqb" />
+						</Component>
+						<Component Id="cmpE918E59FAFE0CEF15B46000A0A2592E0" Guid="{7DA28D57-311A-4885-ACBE-366D178F5E14}">
+							<File Id="filFB0A5A689170D563EC03F613FAE1A903" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\normalization\StatementNormalization.cqb" />
+						</Component>
+						<Component Id="cmp937616E51234C92131F3AA5954754F0A" Guid="{20CA88A0-FA83-4A6B-B386-4A063745791C}">
+							<File Id="fil9D37FF88F9085BC5CD6F20BD76BD60A4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\normalization\WordNormalization.cqb" />
+						</Component>
+					</Directory>
+					<Directory Id="dir4385C4D5705FD558418A32BAA22A4BA4" Name="postprocessing">
+						<Component Id="cmp6EE1707633989D58D7200CF4433F2B3E" Guid="{338616A3-C168-412E-AD4A-413647448986}">
+							<File Id="fil3B1B3B7E286FF9182AC69476DADAE215" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\postprocessing\BlacklistFilterChain.cqb" />
+						</Component>
+					</Directory>
+					<Directory Id="dir3158578A96A9DEB78626D76AC64D6A54" Name="preprocessing">
+						<Component Id="cmp0310089B829C0105E2BE5B2D746CF024" Guid="{41DBCB83-345E-48B1-968F-74B377199053}">
+							<File Id="fil50E879B8D6188AB8D3C0975FFB2472A2" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\preprocessing\ShapedStatementPreprocessing.cqb" />
+						</Component>
+						<Component Id="cmp9FA218BDA0A9769E71FB265AB5A09BC7" Guid="{898B4F5A-6ADE-4045-B276-423482962E10}">
+							<File Id="fil544A91C6E397ED6278E94D70B4272886" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\preprocessing\UnshapedStatementPreprocessing.cqb" />
+						</Component>
+					</Directory>
+					<Directory Id="dir48C595A79A97A973400FFD2CF52B1470" Name="result">
+						<Component Id="cmp2037FEC4F6B9565D7B03303FA679EDBF" Guid="{5CC12407-C6AC-494B-BC80-23C7EBBE408B}">
+							<File Id="fil271B96E097E48B6EE789417B41793FC9" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\result\CloneListOutput.cqb" />
+						</Component>
+						<Component Id="cmp40A9D8E5227039A689463CE3FDC62E4F" Guid="{5ABB5CF0-B2C4-4D3D-AB55-20CA4F6F21CA}">
+							<File Id="fil849A8766637190D606E27DF21972F3C8" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\result\CoverageAndReportOutput.cqb" />
+						</Component>
+						<Component Id="cmp77D7BC4821C2109AF43727D6D0DC473D" Guid="{11A0E4BF-FB11-4DBA-AF98-C4B8562FC2B0}">
+							<File Id="fil9BEC6ED35CF0C9155B59257660C2A4E9" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\result\CoverageMapOutput.cqb" />
+						</Component>
+						<Component Id="cmp53AA2E7FD267ED0BBAF88E831B2407B1" Guid="{F6A1A032-DDDD-4F08-B34B-1676F8330DDC}">
+							<File Id="fil7EEE482AC08E80F3C135537028D5BD64" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\result\CoverageOutput.cqb" />
+						</Component>
+						<Component Id="cmpD70074BD29FBE18EC9EF82D1DD1CE847" Guid="{24E3685B-3E64-415C-8817-355BFAA47906}">
+							<File Id="filD081172C5DFB1B5349B6B39F85351AEC" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\result\LightWeightOutput.cqb" />
+						</Component>
+						<Component Id="cmp36C840EB636C66CC1FF79B7A1168C7A4" Guid="{E3DAF9B7-CFB6-4465-8674-0D1AB7C394EC}">
+							<File Id="fil60A6FD5814B62C466E88BC5A503E6253" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\result\ListAndReportOutput.cqb" />
+						</Component>
+						<Component Id="cmp7FFD3FE7E4D860B0136D3E8B2AAECEE3" Guid="{991FBB9D-10B7-4633-8B16-7384A42C7E40}">
+							<File Id="fil8C1EF3E52EE58E641C972108A24C5147" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)blocks\result\MetricAnnotation.cqb" />
+						</Component>
+					</Directory>
+				</Directory>
+				<Directory Id="dir5FDD88550A3412226AFF26DD4FB32BD4" Name="class-resources">
+					<Directory Id="dir86C0AA5099E785EDACC1DA2C58F36262" Name="edu">
+						<Directory Id="dir9C16A4EF5C3171F2544DC2C427154157" Name="tum">
+							<Directory Id="dir02F7026C26D0E73BD83C7CCF11825C09" Name="cs">
+								<Directory Id="dir699653E6FBE9D01F48ED486189AB4393" Name="conqat">
+									<Directory Id="dirA58B800F2D459603CAADC497EAEB58AA" Name="clonedetective">
+										<Directory Id="dir183DC55EF83FE7DD5AE6907683B27816" Name="result">
+											<Directory Id="dir4F501CE398AD05F3761DE27A9011B437" Name="report">
+												<Component Id="cmpBF8AFD87C59E6EB94FF8F63EDD1D0511" Guid="{664B922E-510B-4B5C-A1D1-D00614FF7BF3}">
+													<File Id="filF903AA38DB33162E97F8A410D85ABB5E" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)class-resources\edu\tum\cs\conqat\clonedetective\result\report\clonereport.xsd" />
+												</Component>
+											</Directory>
+										</Directory>
+									</Directory>
+								</Directory>
+							</Directory>
+						</Directory>
+					</Directory>
+				</Directory>
+				<Directory Id="dir946ACAF1B90832706F0FE842B999D9C4" Name="classes">
+					<Directory Id="dir32220351A3E21598E6D397D3E4FE3634" Name="edu">
+						<Directory Id="dirD709F5AB09773A04F09A71222685C4C3" Name="tum">
+							<Directory Id="dirC3080FBE7C6AF30CC8C905A2571E0A91" Name="cs">
+								<Directory Id="dir45AF5F7DE638DF63CB5A9B5223B82913" Name="conqat">
+									<Directory Id="dirBBB4011506F70B12FAEA297928E0DC0C" Name="clonedetective">
+										<Component Id="cmpABF995A0CEB8E4E50D9C70CC54EC6805" Guid="{0168F50E-E65F-4342-8FC6-75DC3FF7244E}">
+											<File Id="fil243AEE0FB4BDC206F949BC2032E5F921" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\BundleContext.class" />
+										</Component>
+										<Component Id="cmp4065401EB18786C9496A59D31F139840" Guid="{0FED0E91-9179-408C-BF9A-107F39C37669}">
+											<File Id="fil63BBDFAC1C43A6999AA2D118104457B6" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\BundleResourcePathResolver.class" />
+										</Component>
+										<Directory Id="dir1D2894A45D574FE2058D0FF0609C9C2B" Name="core">
+											<Component Id="cmpE3D06B3CB746D504E7C882A69DDF7098" Guid="{126BA953-36B1-4D10-B944-026022CE43A0}">
+												<File Id="filDF2E68D6F2794C6D8CE0D0F88CCDA1CF" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\Clone.class" />
+											</Component>
+											<Component Id="cmp1A0209A9C162874604EE831A55D4EC84" Guid="{5C779C37-7F02-4591-88E4-D3AD951FCBFF}">
+												<File Id="filA83360778A0FFAD7B85E663F5025B875" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\CloneClass.class" />
+											</Component>
+											<Component Id="cmpD16FE6D081AF9FE8E334B3BDB38ED3F0" Guid="{00068A94-1942-47FB-9620-99A221054CE6}">
+												<File Id="fil7416398B4BD8934DCCE335DBC1155595" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\CloneClassList.class" />
+											</Component>
+											<Component Id="cmpF8BCA102AB6CBFD4179401E90D8972E8" Guid="{1B2ECD23-C468-4C47-92DE-D6294BCAAE94}">
+												<File Id="fil20D1E4E49E0F92961CAFBA40E406BC0C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\CloneDetectionException.class" />
+											</Component>
+											<Component Id="cmpB993EC0DC68995BBBBF2ACB4BBFBA6F5" Guid="{0F2736FE-AF09-43B2-A57E-37E0EB988FD1}">
+												<File Id="filF8F3C5D3911C6CFDBD8B9F4D31C5FCA6" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\CloneDetectionStatistics.class" />
+											</Component>
+											<Component Id="cmp32FC62BA1F975ED00BAFD17BA6713368" Guid="{43F9C217-2E72-43C9-95DE-AD4839567749}">
+												<File Id="filB9D061707921F951721586542CE406D1" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\ECloneDetectionStatistic.class" />
+											</Component>
+											<Component Id="cmpC4C6A67CA48F55850BFE3337F2AC897D" Guid="{D9E98767-2B3E-4881-81CA-FD9FE64570D8}">
+												<File Id="fil1D874962603690FA46B1AF9C65474BA5" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\EEditOperation.class" />
+											</Component>
+											<Component Id="cmp57359FF6F0AEDBB0F1CDF99E4BC6DB56" Guid="{424D464F-F64E-4D63-BA75-5C51C904061B}">
+												<File Id="filD4BEB5C4B0175CD8335A40FD701E2EB4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\IDatabaseSpace.class" />
+											</Component>
+											<Component Id="cmpFE9531CB74C17F954BCCDA28B4AE2357" Guid="{4D461E72-822B-4071-A2C6-7F1AB8E18CB2}">
+												<File Id="fil70CAD7D6008C8F3C32A69D542CD48F64" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\IdProvider.class" />
+											</Component>
+											<Component Id="cmpB06DD5515E96133793E509E73F952DEE" Guid="{8B8C7C7D-8678-4F2B-A8B6-62707DD27F73}">
+												<File Id="fil8BB110165BA47A2AAAEAEA96F0A13BAD" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\KeyValueStoreBase.class" />
+											</Component>
+											<Component Id="cmp93D25CF212CF35710A9AB341158BC252" Guid="{FFEE4ECF-730D-4ADD-9DAB-97A3B1603718}">
+												<File Id="fil9773770312EA07008413FAFCE08FC0A7" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\Unit.class" />
+											</Component>
+											<Directory Id="dirA78C6D0F39DA0875006D30BEE63FCC51" Name="constraint">
+												<Component Id="cmpF69624CA5E2A00BD9E9693B12CCAACC6" Guid="{53D769B5-874E-4480-8455-75227F38641F}">
+													<File Id="fil6F733659F8173E4498111224DF643C81" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\constraint\AddedAfterConstraint.class" />
+												</Component>
+												<Component Id="cmpB587E6D101CA655893EB558D0F2F55AF" Guid="{5337856E-0946-481A-9D63-EA89A0402A57}">
+													<File Id="filF0D68017C8530ACD1BC5966C4A71A741" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\constraint\CardinalityConstraint.class" />
+												</Component>
+												<Component Id="cmpFE5C61ECA9720CDFA50FF6AE904FF4DB" Guid="{55E397C4-59C8-4850-A55B-D49208DBE4FF}">
+													<File Id="fil207B6FAD533CADDD833F45A0B4E5EFEC" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\constraint\ConstraintBase.class" />
+												</Component>
+												<Component Id="cmpDA428B5F627B5275400C581C01197ABE" Guid="{001F769A-BC7F-46EB-A3C4-5ADE8576329C}">
+													<File Id="fil67AE70ECA02124CBDCDFC4B187F674E4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\constraint\ConstraintList.class" />
+												</Component>
+												<Component Id="cmpABABD1C5E1E03B2AB49BA891748D23EE" Guid="{8754E387-EEF8-4AFE-9CF2-7B6B626AB98C}">
+													<File Id="fil08109D3B14E53670EE4F1717C98E3CF2" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\constraint\DateConstraintBase.class" />
+												</Component>
+												<Component Id="cmpEA8E159BC3FC1EC766227AD0BE50F783" Guid="{5110E867-CFF5-4DF0-B9BB-D88179556250}">
+													<File Id="filED7C23A9BD31A0DD221D5A2C71A36CE0" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\constraint\GapConstraint.class" />
+												</Component>
+												<Component Id="cmp0EE384073EC4D518D4A4F3C1A783CC6B" Guid="{EF96D685-3A78-4696-8D4F-F63F3B714575}">
+													<File Id="fil54E24D8FC1D0E6936FFABA0A232D5EDB" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\constraint\GapRatioConstraint.class" />
+												</Component>
+												<Component Id="cmp8FC05B67E4B6F4D5E664DF63C70142BF" Guid="{61A1D410-FBC3-45E2-BBF7-AE03688C3F99}">
+													<File Id="filD6C795317F1CBDB62A429D220E3BF1E5" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\constraint\ICloneClassConstraint.class" />
+												</Component>
+												<Component Id="cmp8EB461335A9D706F8E3AD0C10F1B346A" Guid="{460EA198-678A-484A-8530-BB6CC527B0EE}">
+													<File Id="fil3D806FE1274A61CC79214A06EC2281FC" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\constraint\ModifiedAfterConstraint.class" />
+												</Component>
+												<Component Id="cmp24807D599437B8C39CB018FBC4092F9A" Guid="{26B9B3F6-F198-47D7-ADC8-D5D7A65CDD32}">
+													<File Id="filD4A3CAAF4E2DB4EB47114B0199079958" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\constraint\NoGhostConstraint.class" />
+												</Component>
+												<Component Id="cmpFDF0F73257491DA0AA7A5048DF1A5F10" Guid="{03EEC3A8-6AA4-4815-96D1-A0325DCEF67A}">
+													<File Id="fil2140C092B95C46BA0332EACF62AE7A02" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\constraint\NonOverlappingConstraint.class" />
+												</Component>
+												<Component Id="cmp0C5E0D0A88D3717DB2A9FB183508850E" Guid="{605EEAA9-2968-443A-9469-7C8A0D20012A}">
+													<File Id="filCDB7682A02492F3DE3DF4F85AB594D22" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\constraint\NotAllCoveredConstraint.class" />
+												</Component>
+												<Component Id="cmpD0398F60F625D2BA8F538E197E251C05" Guid="{A1414738-3CA2-4F2A-B212-1F7D7E50C6A0}">
+													<File Id="filED6639B9AAE30CD2E122EF53546747BD" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\constraint\SameFileConstraint.class" />
+												</Component>
+											</Directory>
+											<Directory Id="dir6CD50632CE9F44E969CB22B1341DC736" Name="report">
+												<Component Id="cmpDFBCB7EF9E79E3E918D13B24E37A8C92" Guid="{C9DF2771-B060-4ABF-B11B-6BCD1C365EB7}">
+													<File Id="fil1C52D78BC91AB1B92ED09EB715861CF4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\report\CloneReportReader.class" />
+												</Component>
+												<Component Id="cmpECDCB648ADE927E68ABD76B7D3431548" Guid="{34E50BB5-E2B1-4173-A641-A1CEA454E16A}">
+													<File Id="fil76CFFA665564A899906810AED3C7A422" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\report\CloneReportWriter$1.class" />
+												</Component>
+												<Component Id="cmp234896EEA86AEFF37B2380D8D44FE696" Guid="{8D03E9DD-7F55-4DF0-BE0D-7669C55A35DA}">
+													<File Id="fil80BD7AF90DC7FB0ADF691DC243D91843" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\report\CloneReportWriter$CloneReportResolver.class" />
+												</Component>
+												<Component Id="cmp8CA076E8F01814AD0F03F5D4604698B3" Guid="{7A3F5083-2B65-4D1F-B983-50F9CF570D3B}">
+													<File Id="fil02C9C2DA31CE9A75C066811F11A9315D" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\report\CloneReportWriter.class" />
+												</Component>
+												<Component Id="cmp516E8B2B72370F4D03EF4F58619D3FEA" Guid="{39F6EE6E-3E2A-45C9-B697-FA09210A6836}">
+													<File Id="fil312B27C4CACE2B6F10165EBB522D57CC" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\report\ECloneReportAttribute.class" />
+												</Component>
+												<Component Id="cmp7CD52B55CB32F7C470D0E09F8D8D9073" Guid="{929CCE04-7B64-4434-BB1E-8ACCF133CA3F}">
+													<File Id="filA8C087774D17F349FC43620750CA86B5" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\report\ECloneReportElement.class" />
+												</Component>
+												<Component Id="cmpB8D490FEBA6FC79E7BEA29C73E0F59CD" Guid="{BFCAD2B7-6BAE-4F69-81D0-BF2634ECE8D7}">
+													<File Id="fil81768049E0927B5D76E788F5F3F87A8A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\report\ReportUtils.class" />
+												</Component>
+												<Component Id="cmp26AA0607EC45A0AB8E9A86F387C44747" Guid="{AB28E485-2965-46C0-8447-D70D7E334F65}">
+													<File Id="fil2CA70F26B514DA71F008B1C2BF42E3A3" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\report\SourceFileDescriptor.class" />
+												</Component>
+											</Directory>
+											<Directory Id="dir0DE21146B71B4B499EFA3794A20C8AAB" Name="utils">
+												<Component Id="cmp5869729D0E9FE3F1661D0494BFEE7C80" Guid="{B25D9EF9-BE81-4F22-A8E0-B42B6E16E6DD}">
+													<File Id="filE001D74A8D45C7D323EF3E9C9BB25B97" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\utils\CloneStartPositionComparator.class" />
+												</Component>
+												<Component Id="cmp421369DB4119B17C1FFB158ACCC7EA7A" Guid="{872126C3-07EC-45F9-AB38-99A68735388B}">
+													<File Id="fil2FE2CC132023E028C84AE059CA24B005" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\utils\CloneUtils.class" />
+												</Component>
+												<Component Id="cmpF6EE595700DC8C502C0AD09F8090A09E" Guid="{80E27312-F0D3-46D7-AD5E-071E722EECCD}">
+													<File Id="filD5654D6847127200A88C38EAA99AD4B2" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\utils\EBooleanStoredValue.class" />
+												</Component>
+												<Component Id="cmpFA4F6FB7D414FD1823513FC40462B3AB" Guid="{BD2C24DB-299C-4C58-9B41-E2EEF425B73D}">
+													<File Id="fil2921A03E64E06170DF1C45D16E50B2F1" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\utils\ECloneClassChange.class" />
+												</Component>
+												<Component Id="cmpBCA0782BD2373512CA196206ED49475D" Guid="{79AB8FA1-5602-49F1-A68A-525C7F9E705A}">
+													<File Id="fil7DBDAF7F1899209C13438888E25EFDFA" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\utils\ECloneClassComparator$1.class" />
+												</Component>
+												<Component Id="cmp44EF8AA16C679EE6986BF6657D02273E" Guid="{6BCB3C16-19B2-4ECD-B48E-37B272A46C55}">
+													<File Id="filBDAE647DC599883285A4FD56411E35DD" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\utils\ECloneClassComparator$CardinalityDimension.class" />
+												</Component>
+												<Component Id="cmp8FF4369FF8BD6AEF8F4EB91CB1528589" Guid="{D7862CF6-641A-42AA-BFE5-B2D6E7D53170}">
+													<File Id="fil3EF31DDD2E82BA16A1B1C55319CD09F5" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\utils\ECloneClassComparator$ComparisonDimension.class" />
+												</Component>
+												<Component Id="cmpCE9E10C7EF461558B15D7EF7BE3AE0B6" Guid="{A1AB6504-365C-4BDD-961E-7DB7C831068F}">
+													<File Id="fil01B2024C8E01425B4BBC624BE84BD258" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\utils\ECloneClassComparator$GapCountDimension.class" />
+												</Component>
+												<Component Id="cmpB7ADA1611FF757F126BBAA8382541B6C" Guid="{10EF1F07-F703-49D6-98A2-580D3109B487}">
+													<File Id="fil17732A841A06D39667A366930FEAEB99" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\utils\ECloneClassComparator$IdDimension.class" />
+												</Component>
+												<Component Id="cmpC6E60395E6EE073CD8D2658886943EAE" Guid="{C3069701-7D49-4588-8D73-FE2F9C14DF23}">
+													<File Id="filF94A82BF4CD92274BD32625F9FE9A897" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\utils\ECloneClassComparator$NormalizedLengthDimension.class" />
+												</Component>
+												<Component Id="cmp90F7864BD2E11807DA888A12B7880FA1" Guid="{746646FD-5E3E-48CE-811E-A5D69671A47A}">
+													<File Id="fil3E8C8755D64F50CFC20D3D22550B8F7C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\utils\ECloneClassComparator$VolumeDimension.class" />
+												</Component>
+												<Component Id="cmp40E1795AAE4128D145D20496E814749C" Guid="{5E7B735F-6AB0-4268-9C76-729E8B5C3894}">
+													<File Id="fil6FE0C5993860C56C1A66C2928D35EB8A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\utils\ECloneClassComparator.class" />
+												</Component>
+												<Component Id="cmp3DD764A64FBE970D2BDAB18E24C4790A" Guid="{C020294B-D4EC-46B6-8EE9-B7298051C227}">
+													<File Id="filAD243E0F44BDC9738973214253A42078" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\core\utils\EIntStoredValue.class" />
+												</Component>
+											</Directory>
+										</Directory>
+										<Directory Id="dirF5F41DC90A15B0291B0BA62D35C1A3DD" Name="detection">
+											<Component Id="cmp790004512246ACB1287442CC87C868D2" Guid="{296D89D0-0384-4E53-9D0F-986ADEF0B8E9}">
+												<File Id="fil725A386FD6DB5B743E2A05F0F9339895" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\CloneDetectionResultElement.class" />
+											</Component>
+											<Component Id="cmpAAA52A2C761FAD44C5C56A57EFEF0480" Guid="{160EC568-CAE4-4B5E-B138-668A66AE35A3}">
+												<File Id="fil5BC977F9C36F9E3CAB9A9B2BE50E4319" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\CloneDetector.class" />
+											</Component>
+											<Component Id="cmp60E23EC9AB15D1A054A56B440C46FCF3" Guid="{3B407F51-0B1B-41CD-8926-3EB21837A3E9}">
+												<File Id="fil811D9A12BF2C0617B339509DB981D036" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\CloneDetectorBase$CloneConsumer.class" />
+											</Component>
+											<Component Id="cmp7029A9FE8F347EF6E67D9DF9EB4FBEA4" Guid="{6E257D3F-415D-4D79-8CA0-212CC8C1370A}">
+												<File Id="fil70095940075F37844A979371EF8AED15" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\CloneDetectorBase.class" />
+											</Component>
+											<Component Id="cmp4C94B075852A3EC42734A6A7A7F98324" Guid="{D86B3777-A80D-463D-85A1-A6ED25DD4299}">
+												<File Id="fil08F2136D820CB2E1F0709841E6AEF0C4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\GappedCloneDetector$1.class" />
+											</Component>
+											<Component Id="cmpC9E5DE12E2CAF2DE5E775134DC1A1DF1" Guid="{DC5E958E-ABF8-401B-84B7-C59080FA61F4}">
+												<File Id="fil4D079C5ED462D2485477CB2B42ADC885" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\GappedCloneDetector$GapDetectingCloneConsumer.class" />
+											</Component>
+											<Component Id="cmp4920940D16C63D3F4612E17A2AAF228C" Guid="{798CC9F1-7F74-469D-9257-6EE2532F5910}">
+												<File Id="fil8D34331667D6CDD2AADBA7478582BD90" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\GappedCloneDetector.class" />
+											</Component>
+											<Component Id="cmp95C8A602C298FCA080C833A80DB224B9" Guid="{41C4F4F6-CA17-41DA-9885-BE86769A9BEE}">
+												<File Id="fil3FAF78FCEAF35B36B7E07950F0CF2C9C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\Sentinelizer.class" />
+											</Component>
+											<Component Id="cmpE4D718AECEAEB719D363496ACA71D731" Guid="{7F189956-8FA5-42D4-9E0C-01D34DC667C8}">
+												<File Id="filA139209FBC40BDE726C2E8712A9232C5" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\SentinelUnit.class" />
+											</Component>
+											<Component Id="cmpD78C3CF7B6D1554FB27A3940EBFB991E" Guid="{5EA54168-18D6-42A2-BEA6-05F2304600DB}">
+												<File Id="fil61B774E802464069323AE3C0B16A0F6B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\UnitDrain.class" />
+											</Component>
+											<Directory Id="dirC78B3D0B4A43A3BB1640EB28F2180C7B" Name="filter">
+												<Component Id="cmp731CDC7B59CBBA78BF52303BCA79B4AF" Guid="{6BC4D44A-5EE8-49B0-AE38-73332BDD8C75}">
+													<File Id="fil213669CC3EFF96CD98D421469602B499" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\filter\BlackListFilter.class" />
+												</Component>
+												<Component Id="cmp804414836398F7151B0B394A63477555" Guid="{6649B235-D8DA-4B33-A044-8DDD483511B6}">
+													<File Id="fil3DB7F245124A308487201BABF7651B20" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\filter\CloneClassFilterBase.class" />
+												</Component>
+												<Component Id="cmp6255C5BE5B2D012156F7A9ECF431C321" Guid="{88E7B102-B9A7-44FC-8295-3678F2BB815A}">
+													<File Id="filD43491747760F2F3FB3755072ADFFEAF" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\filter\CloneClassMerger.class" />
+												</Component>
+												<Component Id="cmpF593D279E0CA168B54AD9ED0A6DA9708" Guid="{B3CD1156-389E-4555-AB8D-A4A81871D022}">
+													<File Id="fil499F3C3049FD8D7D06A39478CBB2B445" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\filter\ConstraintBasedCloneClassFilter.class" />
+												</Component>
+												<Component Id="cmpEB539E13F3DC33A519112E019CB9137C" Guid="{A6879512-D22D-431C-B5EE-72E0C3860691}">
+													<File Id="filDBE3202168B18B13B2CA4C6DD42C7EBA" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\filter\CrossProjectCloneClassFilter.class" />
+												</Component>
+												<Component Id="cmpCB17F2FEB1A796FEC4A891DDEF885E6D" Guid="{087E7875-18BD-4155-A8AD-31F9609BF3BC}">
+													<File Id="fil354DD52D672617D61EFE420B668BC4CF" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\filter\DuplicateCloneClassFilter.class" />
+												</Component>
+												<Component Id="cmpC3C82B66D0C891C73D21E9871D7DA802" Guid="{344E5039-3353-422D-B4A8-E3EDADA498F0}">
+													<File Id="filEB6B1B6D8FE3E4EE5542066563B156C8" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\filter\DuplicateGapFilter$GapCountSizeComparator.class" />
+												</Component>
+												<Component Id="cmp333860F057EB8F8221149F43282B6863" Guid="{23D9B480-C37F-46B4-A01A-73FEDF328255}">
+													<File Id="filD71614F051AD8DF8BFEDAE68BC91E963" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\filter\DuplicateGapFilter.class" />
+												</Component>
+												<Component Id="cmp273C81C01A9822AB81E69C48103E5140" Guid="{1C0A1F1F-945C-4393-A054-C39D849EAAA6}">
+													<File Id="fil1AFFF049599602B7123FEAF152FD89F0" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\filter\MaxCloneLengthFilter.class" />
+												</Component>
+												<Component Id="cmp56C5E8FEFF2735E6D23E4F65536C6782" Guid="{D1870EE6-FDBF-4ECE-BA9B-C417B466DF0E}">
+													<File Id="fil3303194C36E5A11E623C365FBB2AB35A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\filter\SpannedFilesFilter.class" />
+												</Component>
+											</Directory>
+											<Directory Id="dirD6237D9FB291CD912B3394EF0691DF1E" Name="suffixtree">
+												<Component Id="cmpA3463F58FC49E3E3E21793AFEA4A446F" Guid="{5D35E3CF-19E7-4C83-A89C-EC2B0940432D}">
+													<File Id="fil8E87EE281BABE0F2FC1B4A3B1D80204E" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\suffixtree\ApproximateCloneDetectingSuffixTree$CloneInfo.class" />
+												</Component>
+												<Component Id="cmp478A9A1E5A08E7CAB59AD440ECDB24C3" Guid="{71687561-2B61-4378-949A-DAAF7198B90A}">
+													<File Id="fil0710D27703215FABC7700EB74BE142E2" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\suffixtree\ApproximateCloneDetectingSuffixTree.class" />
+												</Component>
+												<Component Id="cmpAAD00603FB959464DE651C161F969F8A" Guid="{6919D20F-5D22-4FAE-94FA-C243290FB171}">
+													<File Id="filA174A0411728D05D8CE092A2519410EF" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\suffixtree\CloneDetectingSuffixTree.class" />
+												</Component>
+												<Component Id="cmp12219F7C57F3087D95F174693AEA91D9" Guid="{9664F10A-EDE7-4E4A-A6DA-BA04D684A135}">
+													<File Id="fil9B8F5EAE92F05C18F52AF21DBB5290A4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\suffixtree\ICloneConsumer.class" />
+												</Component>
+												<Component Id="cmp071FDFAF3CD2DC81A5F113725DE1257B" Guid="{CF5DE3ED-42DC-4F51-B2A7-D8C0D383A0FB}">
+													<File Id="filBD0A7E655A4C0C2B7EB015802163FC14" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\suffixtree\SuffixTree$Sentinel.class" />
+												</Component>
+												<Component Id="cmpC64F195DE6123977001776DA91AC32ED" Guid="{8E0F3C33-684E-4CBB-96ED-536490FF4A04}">
+													<File Id="fil3D509282344205F9454D14B417B8E909" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\suffixtree\SuffixTree.class" />
+												</Component>
+												<Component Id="cmpCF7561532F4DD5F1A3499AA3AF3B38C8" Guid="{9B10F0A0-8933-4E97-8174-0027E76E2E55}">
+													<File Id="filD04CD0940567E7DF63CA4306E1BF335D" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\detection\suffixtree\SuffixTreeHashTable.class" />
+												</Component>
+											</Directory>
+										</Directory>
+										<Directory Id="dir026DC632A0E69C74ADE8C3742158431D" Name="lazyscope">
+											<Component Id="cmp29BCB8CB9A906E96C70E33F8DD8A4613" Guid="{FFA0D9F1-5294-4919-A10D-6F885993E15B}">
+												<File Id="filF01B40661995D682C6E6DABF565E9B4B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\lazyscope\ElementProviderBase.class" />
+											</Component>
+											<Component Id="cmpBDBE9849B1E7FE3C281602807F965595" Guid="{48E3E1A7-ACA9-40C8-B3A7-A0BA5A90E087}">
+												<File Id="filEE8F477D0D3524BC49269303F1B7F2EE" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\lazyscope\FileSystemElementProvider.class" />
+											</Component>
+											<Component Id="cmp1DD6E3EB95D3B18EFF38E39003D0284E" Guid="{D233BC42-0A56-4BF0-8D82-5BDF1B464E3D}">
+												<File Id="fil01B6170385884BBD36F1B6F61E9D5DE6" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\lazyscope\FileSystemElementProviderFactory.class" />
+											</Component>
+											<Component Id="cmpF5D70D376114502EA03D07F8DE32BBD3" Guid="{68DFA2C3-8410-4871-A2BF-B038F11656D4}">
+												<File Id="filB636FFFCC6553E1BFC2A89DDA80F978E" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\lazyscope\IElementProvider.class" />
+											</Component>
+											<Component Id="cmp3FEF502627CA26454303071CE3B46DFE" Guid="{5693FD5E-A82E-4372-A683-80D168811173}">
+												<File Id="fil4C91526629B8E4310ED76F190D281D4C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\lazyscope\SourceCodeElementProvider.class" />
+											</Component>
+											<Component Id="cmp863BF11236DD6370CEF4E5170576F3E5" Guid="{D83F1E58-BE0B-4081-A40E-3632256F21BD}">
+												<File Id="filC80F74A705DCD90BCBEE4FA74CF85D99" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\lazyscope\SourceCodeElementProviderFactory.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dirBA9E820EC3B1C4A316F18BDE534ECA2E" Name="normalization">
+											<Component Id="cmp731B37C716AB0B7A49888274EC89C6F4" Guid="{0FBB746A-D1F7-463C-A9EE-45898317C7AB}">
+												<File Id="fil9E17562D98235645902A96057ECDDFC7" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\FilteringTokenProviderFactory.class" />
+											</Component>
+											<Component Id="cmp2A07A255E689DBAEFB3E5668D4DD0FD1" Guid="{6F3A01C8-6D9A-4953-B5ED-4BF366F4E12D}">
+												<File Id="filD144E3C7C66ED274B4D84E2F85227FFD" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\LineNormalizationFactory.class" />
+											</Component>
+											<Component Id="cmp2854F083EF21053E4EF5363458FEFA87" Guid="{1431227A-2D54-4570-B5AB-F568E9F1B8ED}">
+												<File Id="filFF595183874D0682C9C05EE902E9E3E6" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\StatementNormalizationFactory.class" />
+											</Component>
+											<Component Id="cmp7FA75F2D6B0BA11AEC2BCE19C6942A50" Guid="{F432F65F-9B84-4779-922B-28BA19B183E7}">
+												<File Id="filABB3DEB97F4BB4FB0B1532758B6A346F" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\StringNormalizationFactoryBase.class" />
+											</Component>
+											<Component Id="cmp9A593B55C64B822459CDFBC33380B4D0" Guid="{EFAA675F-2B09-4E7D-8520-B81518DCBAEE}">
+												<File Id="fil730BCD69DBC2E4C4DF9EF3540E7C7E29" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\TokenBasedNormalizationFactoryBase.class" />
+											</Component>
+											<Component Id="cmp2A8C6A253A616D479B1B6F891060026C" Guid="{4B7BFCD5-ECCC-4D98-A438-35430F4DCB8D}">
+												<File Id="fil30C3CE319A1A097B8A6EF04A3F9D18C0" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\TokenNormalizationFactory.class" />
+											</Component>
+											<Component Id="cmp491927448973ACB0F72761BB6DC3AF5A" Guid="{273A98FF-3F54-4F6D-A330-FC239B4F934A}">
+												<File Id="filA4FA003FE160905D68CFC4995DB72D3E" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\TokenProviderFactory.class" />
+											</Component>
+											<Component Id="cmp31095165B616D84AB5A058D7CA772C72" Guid="{2174715A-0712-4D4C-B01B-568B80DC5D1C}">
+												<File Id="fil3B220364DBECB2FA9D0120468ED8AFD7" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\UnitProviderBase.class" />
+											</Component>
+											<Component Id="cmpA34E6A0BD1E981A2C1CD96A637FB9F21" Guid="{99F2E382-EC3C-4334-9748-D3D5EA029843}">
+												<File Id="fil85A6FDD7D4CBA75CA571E5097779CCFF" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\WordNormalizationFactory.class" />
+											</Component>
+											<Directory Id="dir115EC14EFE1EFF42635BAA9D06868A97" Name="provider">
+												<Component Id="cmp7680C0DD82D3D587FB5BFE01230CD229" Guid="{45CA4B72-4D48-4F5C-A7DB-FECBF8F14971}">
+													<File Id="fil487CA8C3ECBED9DAB1E2C6E786534237" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\provider\IProvider.class" />
+												</Component>
+												<Component Id="cmp10B280FC13841A531667C68A5C0C5BF7" Guid="{2E9E83B8-014E-488A-8E61-C1CBC8735E00}">
+													<File Id="fil26C03B4C5A27B7EC13B5BB816C15FEE0" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\provider\IUnitProvider.class" />
+												</Component>
+												<Component Id="cmp900E254E2A13332D44DC855E8C27740D" Guid="{8755CFF9-9F9D-47CF-92DA-848B409FF144}">
+													<File Id="fil52877DE9170678CAF66072CAB4D00FA7" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\provider\ListBasedTokenProvider.class" />
+												</Component>
+												<Component Id="cmp99F84EF742AF187C1AAA75F3CEF7559D" Guid="{C6D3531B-0E44-4DDC-983D-87A0824DA8E2}">
+													<File Id="fil96D30308F9F0682CA3985D1C35740D13" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\provider\ProviderBase.class" />
+												</Component>
+											</Directory>
+											<Directory Id="dirD227927D8BC72C320EBBC6499B561782" Name="repetition">
+												<Component Id="cmpB53E68C04C26D73CD2CD84E795818E75" Guid="{06165145-7B48-45AA-964D-A465B5D3558A}">
+													<File Id="fil9C11BCF366C579ADEE97BDCF44F7105B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\repetition\Repetition.class" />
+												</Component>
+												<Component Id="cmpBBA5B7F0441CD471FD96CDC1E241F67D" Guid="{829450A4-220B-47CA-A1AA-83A865F3E149}">
+													<File Id="filFEECB36658B2C63DB64850CBF62215D2" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\repetition\RepetitionFinder.class" />
+												</Component>
+												<Component Id="cmp8739E3176253B87C3933037D6290C9BE" Guid="{E9107754-73AF-431C-A9F4-F7F1A4DC152A}">
+													<File Id="fil71AEBEE2AABF9D102CC7858C8FCF326D" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\repetition\RepetitionUtils.class" />
+												</Component>
+												<Component Id="cmp4144586737DF5DEA5335D5C2E2B911B6" Guid="{F6BAF54A-E2D5-4303-B101-303AC51D3CFC}">
+													<File Id="fil49EDBD6AD6254099EEACE3A0516FA826" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\repetition\RepetitiveStatementsRegionMarker.class" />
+												</Component>
+												<Component Id="cmp4EA24B563998696547B0253847776F20" Guid="{F24668DE-B5D0-4B97-98E0-4381B37C576D}">
+													<File Id="fil80119937A5A03BD501A517224894DA81" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\repetition\StatementEquator.class" />
+												</Component>
+											</Directory>
+											<Directory Id="dir1927C035380A099D7DA91A68960E5575" Name="shapers">
+												<Component Id="cmpEB73FD1BA4347961BE3CC2A79409CCE3" Guid="{08CAD796-3BDB-4653-9E6F-54D8C5ADF257}">
+													<File Id="fil84BB36D54F5428621F9FA87C73D2D6D3" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\shapers\BasicBlockShaper.class" />
+												</Component>
+												<Component Id="cmp1995339324D9D085E94A5DAF5A1A3438" Guid="{AD9AC336-E992-4477-BB36-9E484E86749F}">
+													<File Id="filDE2587743161D9B3EC209CC7E2563548" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\shapers\MethodShaper.class" />
+												</Component>
+												<Component Id="cmp6913C20CFD27795CDE9FBBDEE1444204" Guid="{BB2C9DB6-502A-4B08-BC49-91F5FC7712B5}">
+													<File Id="fil85BAEAF3F95CCF8AAFC71337E2DE2570" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\shapers\RegexShaper.class" />
+												</Component>
+												<Component Id="cmpF936DFCC89316EC5DA819E88CB482E00" Guid="{0433634C-74E3-4BCC-9B23-7FE9683C8141}">
+													<File Id="fil0E0AD9A4B464967EEF2FEED0AF917EBA" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\shapers\SentinelToken.class" />
+												</Component>
+												<Component Id="cmp0AA5108A65BA94B6A23D973B9A8BF349" Guid="{6BC55352-CA8B-4386-84E2-218BF8E7DFBF}">
+													<File Id="fil6689B8C4AB67AFBF8F9349BAB2630559" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\shapers\ShaperBase.class" />
+												</Component>
+											</Directory>
+											<Directory Id="dir23BB516F512B04F3FD2F45E69691EE71" Name="statement">
+												<Component Id="cmp962AE911EAB5D7BAC505E2E376D7C6B5" Guid="{794B01ED-1940-4E3A-BC95-932070EB4D77}">
+													<File Id="fil8180B5E47BB61B1E30CEDC5DD9F47210" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\statement\StatementNormalization.class" />
+												</Component>
+												<Component Id="cmpA9D30E3FF7B7EEA647DBB53310CF49CD" Guid="{15A9068C-2C14-430B-9924-226A56371D21}">
+													<File Id="fil590052B3388C508E03A67E1E36CDBB0C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\statement\StatementUnit.class" />
+												</Component>
+											</Directory>
+											<Directory Id="dir86C1F79738BF945E0CCAE4B1450AAA1D" Name="string">
+												<Component Id="cmpCEEE474B51D1C408C7DFF912B0FCA08A" Guid="{1B19FB11-1B31-4B3A-8603-ED075C7EB56B}">
+													<File Id="fil06AD9B55BFCCEED39AB722290AC653B5" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\string\LayoutPreservingPatternReplacer.class" />
+												</Component>
+												<Component Id="cmp37FCDC46D7E960E1F6E3CAC19764C4FC" Guid="{C66E22C8-060D-441B-B1BB-A8F29A29712B}">
+													<File Id="filAC48E642D0D81F0C58192DD58CAE3612" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\string\LineNormalization.class" />
+												</Component>
+												<Component Id="cmp4DC82E6FAD24E1A2E6A3C19B25F017BD" Guid="{DE27FBD0-05D5-4918-8D97-5115DB4F6EAE}">
+													<File Id="fil034E2BDCC91C7AB47F1866A0CF11EA0C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\string\StringNormalizationBase.class" />
+												</Component>
+												<Component Id="cmp2A1E58A31230F7799A37DDAC2086A45E" Guid="{C9A16AFF-7520-4DDA-A599-AF96DF6823AA}">
+													<File Id="fil9C81D52CC5C2720762D51AB3DF8372F3" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\string\StringUnit.class" />
+												</Component>
+												<Component Id="cmpBDF269083585DC880DB0A24D66C486F3" Guid="{BDE094BC-27DF-4522-A042-D9DF70DADD7F}">
+													<File Id="filE076865D06A5BF0F7572C3A51A2D4183" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\string\WordNormalization.class" />
+												</Component>
+											</Directory>
+											<Directory Id="dir20123FC62C0B5B8273637CE255C52FE7" Name="token">
+												<Component Id="cmpB74C42B30707536625DF55D223D57FD7" Guid="{3B575780-7235-4C3B-81E8-1A94402D2615}">
+													<File Id="fil8E6D0EAF53A1FD108A0EC8F7E715ED2C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\token\FilteringTokenProvider.class" />
+												</Component>
+												<Component Id="cmp4A00DE2C6B00A516C1B6F7DD0C49A111" Guid="{BD72B47E-8646-4BCB-BA71-3B1B34BC7970}">
+													<File Id="filB715CC7E2643B3067C339226D45C55D1" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\token\ITokenProvider.class" />
+												</Component>
+												<Component Id="cmpE8C40A2EA25B1C0D8C450E0AED90A343" Guid="{C5AE0C16-1B1A-4FB7-9865-564C06DCE089}">
+													<File Id="fil240F4386613003E8F666568A01EC9C2C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\token\NormalizationDebugUtils.class" />
+												</Component>
+												<Component Id="cmpD059843D6681B3D36C6B680A4E16F720" Guid="{78C71862-20E0-4C05-A25D-3F155C6FE33D}">
+													<File Id="filA76E9AC8BE0BD897A10A013C1A427D45" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\token\TokenNormalization$1.class" />
+												</Component>
+												<Component Id="cmp80B0E87DA3E39F92269AEDC2A1E5BF64" Guid="{A74840FB-0190-4365-8EAA-87BAC0AA99C1}">
+													<File Id="fil179D87426F2457DB89B4C2B267069A9E" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\token\TokenNormalization.class" />
+												</Component>
+												<Component Id="cmpD57D022891823498788A23207FCDD9C8" Guid="{0A120530-CEC1-4AAD-805F-A8A598F1E6CE}">
+													<File Id="fil93B8CA77A0666A1F33BC52CA9642D85C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\token\TokenProvider.class" />
+												</Component>
+												<Component Id="cmp0073F4085F360B306BACDC2DE8AF74D8" Guid="{2728E72E-D5C0-467B-8951-71093D7CE032}">
+													<File Id="fil0303BA4B97459E200513C4B880E191A3" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\token\TokenProviderBase.class" />
+												</Component>
+												<Component Id="cmp7683D0417211D8F0D515F2942CB1C27E" Guid="{7D8D609C-FFB3-44E2-97BC-444B5D4CAB04}">
+													<File Id="fil3202767E648D713AA370C0CA506A5EA3" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\token\TokenUnit.class" />
+												</Component>
+												<Directory Id="dirA8E1CEAAD66977F5971739B5FB79ED88" Name="configuration">
+													<Component Id="cmpD8445AEC8FC04697764A7626ADE4C86B" Guid="{DC862A86-9F3D-4DBA-853D-C5FA46CE9125}">
+														<File Id="fil6A5337BE2D5BC1A96C5F750CFB82B0A4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\token\configuration\ITokenConfiguration.class" />
+													</Component>
+													<Component Id="cmp02147B4A7FA44F8EC445C2AD9A18EBD3" Guid="{E462C671-DE95-45DE-93D7-1E3E9D03DF39}">
+														<File Id="filA6405F3EF8E9BF227CBD36DBB02B3AEB" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\normalization\token\configuration\TokenConfigurationDef.class" />
+													</Component>
+												</Directory>
+											</Directory>
+										</Directory>
+										<Directory Id="dir7A18A3BD5E2D93F654E467D50C96390C" Name="result">
+											<Component Id="cmpBA779CC4ADFF5DBC5399C5A669B0647A" Guid="{59B13B24-01D6-4DCC-A9D0-37957249E282}">
+												<File Id="filBB03818D2AB376C2B7767D2BC414EC37" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\CloneClassLayouter$1.class" />
+											</Component>
+											<Component Id="cmp1E517ED46F46E70486042F7F066ECDF8" Guid="{35A1B8A2-1490-42C0-A092-BCFCBDDB6F64}">
+												<File Id="filA30E978018889A73731347BD74889E74" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\CloneClassLayouter.class" />
+											</Component>
+											<Component Id="cmp07B0BAE58BC5482E5570F0021BAC4B41" Guid="{13F4AD70-30CD-4E06-8742-6B983E2540BC}">
+												<File Id="fil9C21180C32FFBBA491AFD9F070619452" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\CloneClassNode$CloneClassNodeComparator.class" />
+											</Component>
+											<Component Id="cmp9AEA7BA1350B3D333E4C2763D6C4746F" Guid="{E46E9718-70D2-4AE7-878E-CC3F73BCE722}">
+												<File Id="filD21E6B64B19112A0B8148A0A82EF32B2" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\CloneClassNode.class" />
+											</Component>
+											<Component Id="cmp31B244249FD39758E58D0EDAFF5E7E9F" Guid="{E99A1655-28BB-427C-BF62-2A9EAD85B622}">
+												<File Id="filEC87D2DB04F32C6594B543F308248C83" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\CloneListBuilder.class" />
+											</Component>
+											<Component Id="cmp757BF0FC301799FC03C21CD385880519" Guid="{D953A885-EE7D-49C5-B0AA-622857B58D47}">
+												<File Id="fil58170BE11C4C5F6478D72D321B77D28A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\CloneListBuilderBase.class" />
+											</Component>
+											<Component Id="cmpBFDE5F5BA34100C71B921118B900F10E" Guid="{B549A03B-EC08-4E85-9D31-47CA1987CEC8}">
+												<File Id="filF4772C2B339365B80D7B97721CBC86D5" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\CloneListReportWriterProcessor.class" />
+											</Component>
+											<Component Id="cmp947AB39113474B8755CA3ADCB20FD287" Guid="{A054EFF7-B0D2-4F8E-B117-A01A07990F6A}">
+												<File Id="filBF78A632A20EC5A022E22CABB337A9DE" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\CloneNode.class" />
+											</Component>
+											<Component Id="cmpD609516AB166E2358CA8DAF0905718D9" Guid="{96BDE224-A776-4A02-BC95-EDC3D6289063}">
+												<File Id="fil0F4449353C801983CB7E35610CD2CF2B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\CloneReportReaderProcessor.class" />
+											</Component>
+											<Component Id="cmpE0DF1BAC7EF5B22F2202D61A23EA1361" Guid="{90C68653-F589-4166-95DB-3A837FC3FB63}">
+												<File Id="fil9BD89A098B38A33E367DD2061C2B3CCF" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\CloneReportWriterProcessor.class" />
+											</Component>
+											<Component Id="cmpB99B59F48FF0771BAD8F9090B5ADB31E" Guid="{BEBD756E-8682-4476-9BF4-B70E3670828B}">
+												<File Id="filD2979EFDBB7C54B56B28F43FFC7858A4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\CloneReportWriterProcessorBase.class" />
+											</Component>
+											<Component Id="cmpC95314963D9939D4CFCB9D47525616C4" Guid="{4A19A5C1-D7F4-472C-9C9E-7E9F2DB5C036}">
+												<File Id="filF877C365F95CAFD2AE20D021A3C24BDA" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\DetectionResultBuilder.class" />
+											</Component>
+											<Component Id="cmp664F0D953DB3F7D2435F936C99A378C5" Guid="{4525DA74-7BF2-40AB-8588-785476C85778}">
+												<File Id="filE78BCBFD913B09946FDB11B070161929" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\DetectionResultRootNode.class" />
+											</Component>
+											<Directory Id="dir4E5F404DB6E1D57CA1B7CF4ED3051241" Name="annotation">
+												<Component Id="cmpDCF14783095D29D0EB0ED998BA67D7E5" Guid="{45DF17D8-D8F4-46B2-A375-DA74AF97C12A}">
+													<File Id="filD82E7E3F8B7975CA023777D25F1DABE1" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\annotation\CloneAnnotatorBase.class" />
+												</Component>
+												<Component Id="cmp0C28CB06822923E51A4159E3EDA4739B" Guid="{5F511DA3-002E-4687-BE5C-C62EDD0EFB29}">
+													<File Id="filEE9EE0775083E03378DFEE0DBB6C8694" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\annotation\CloneAssessmentAnnotator.class" />
+												</Component>
+												<Component Id="cmpC4A08EF97DA5F74CF7C86570C9FFE58B" Guid="{A9018542-E90F-46A7-BF52-240702EDD963}">
+													<File Id="fil91FD90FB844DEECBBCCEF6B2A0B68995" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\annotation\CloneCountAnnotator.class" />
+												</Component>
+												<Component Id="cmpA8951A45776C7BCD285F71515CF932B7" Guid="{0E8B24BE-6D23-4100-BCEF-596937AF443D}">
+													<File Id="fil5C8B1C4681A913D63F49C2A27764B04C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\annotation\CloneDependencyAnnotator.class" />
+												</Component>
+												<Component Id="cmpF809899ABE3525951395DB98BEAC22D5" Guid="{F6D02BEF-EB68-4BDF-A267-47C52C4A2953}">
+													<File Id="fil2637C22469F7A13216082D1DB11C9F64" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\annotation\CloneDescriptionAnnotator.class" />
+												</Component>
+												<Component Id="cmpE9E89F9721D16B537D2F86B8FE810BD4" Guid="{F0A6962B-0781-42D7-BB63-933BE09A6C9D}">
+													<File Id="filB59C8CEA7D4638B2AC8B3A0B5AC6319A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\annotation\CloneLocAnnotator.class" />
+												</Component>
+												<Component Id="cmpDD47A29F7F442B9A669D15E0D9AC0D7C" Guid="{110196BC-DC15-4F29-BAEA-0D5AB166AD81}">
+													<File Id="fil97002DCEF3D1BCF77BAAEB6C618CF4D0" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\annotation\CloneUnitsAnnotator.class" />
+												</Component>
+												<Component Id="cmp63A96AEB407C51A7C77B72CAD875EE4D" Guid="{F199AE78-D60E-4980-A614-8EAFC6628C6A}">
+													<File Id="filD1CDB5F2AC77EC0C03F7132E089688BB" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\annotation\RfssAnnotator.class" />
+												</Component>
+											</Directory>
+											<Directory Id="dir4CCB8BDDDD71CC94818032CD63852881" Name="diff">
+												<Component Id="cmpBABA96D04AD7DB192C4BA4A895463DD9" Guid="{51D6C03E-AD2E-43D6-9F5D-68947DE7F822}">
+													<File Id="filEF0199CF3DD855DCAD1D1B4F0974BB4E" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\diff\CloneDetectionResultDiffer.class" />
+												</Component>
+												<Component Id="cmp1B7138C8BEF0D3F000C9986DD3E05CA2" Guid="{65ABC38D-1FC1-49D3-86DF-FC26DD9E164F}">
+													<File Id="fil1A7CE96FE25B6812DBEDF13C0D318880" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\diff\CloneDetectionResultDifferBase.class" />
+												</Component>
+											</Directory>
+											<Directory Id="dir84438583E43F3EC0CC547EEDB6FDF58E" Name="report">
+												<Component Id="cmpFA4051F6C25CDA0843A13C06F119E736" Guid="{FAD6B797-3483-400A-B581-23DDA23C4FE1}">
+													<File Id="fil19C131A2CF9A809C58BE4236015E488E" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.clonedetective)classes\edu\tum\cs\conqat\clonedetective\result\report\clonereport.xsd" />
+												</Component>
+											</Directory>
+										</Directory>
+									</Directory>
+								</Directory>
+							</Directory>
+						</Directory>
+					</Directory>
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

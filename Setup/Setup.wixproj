@@ -35,6 +35,7 @@
 	</Target>
 	-->
   <ItemGroup>
+    <Content Include="ConQAT\ConQAT.wxi" />
     <Content Include="Product.wxi" />
     <Content Include="Resources\Banner.bmp" />
     <Content Include="Resources\Dialog.bmp" />
@@ -42,13 +43,36 @@
     <Content Include="Resources\Product.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConQAT.wxs" />
+    <Compile Include="ConQAT\ConQAT.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.architecture.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.blocklib.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.bugzilla.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.clonedetective.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.commons.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.cpp.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.database.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.dotnet.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.filesystem.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.graph.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.html_presentation.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.io.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.java.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.junit.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.klocwork.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.model_clones.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.scripting.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.self.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.simulink.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.sourcecode.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.svn.wxs" />
+    <Compile Include="ConQAT\edu.tum.cs.conqat.text.wxs" />
     <Compile Include="HelpCHM.wxs" />
     <Compile Include="HelpVS.wxs" />
     <Compile Include="Package.wxs" />
     <Compile Include="Product.wxs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ConQAT" />
     <Folder Include="Resources" />
   </ItemGroup>
   <ItemGroup>

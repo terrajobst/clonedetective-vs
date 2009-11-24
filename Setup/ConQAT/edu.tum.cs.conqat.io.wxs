@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<?include ConQAT.wxi ?>
+
+	<Fragment>
+		<ComponentGroup Id="edu.tum.cs.conqat.io">
+			<ComponentRef Id="cmp2C495F4D9040F6A01FD9E1A9D08B4FCB" />
+			<ComponentRef Id="cmpC4603EE5B447CB6A4069225F9450E226" />
+			<ComponentRef Id="cmp1744F918EBCBCDFA7D13495C1D8C31D3" />
+			<ComponentRef Id="cmpBEF19AF46FCF8C6D974497DF0DDDFF0E" />
+			<ComponentRef Id="cmpA59B10F1878CFB92C949878FF4867B90" />
+			<ComponentRef Id="cmp003AEC0FBEE9B144E995ED63265478D1" />
+			<ComponentRef Id="cmp34F567A3EF69A92AC0688E1EDEB895DB" />
+			<ComponentRef Id="cmp41EA75A4B7953D7305EC269C67B5937D" />
+			<ComponentRef Id="cmp7510992E4D7E5F13014C9CF6555C87F8" />
+			<ComponentRef Id="cmp2FBF9869C21D4D4D07DF1D1F9E169A96" />
+			<ComponentRef Id="cmp4AD4686F0CB42185B55519C181942A05" />
+			<ComponentRef Id="cmp7577A35C86E597DDDF4D719588F00915" />
+			<ComponentRef Id="cmp5E5BD0604E96A602C1830939EE8B99D7" />
+			<ComponentRef Id="cmp78F8174048A8150E1BCE1C60C1114CC4" />
+			<ComponentRef Id="cmp8C86CF18001D238C8B75F2211083FCE5" />
+			<ComponentRef Id="cmp1CB4B3441D565274160BAC4F8E4166C4" />
+		</ComponentGroup>
+	</Fragment>
+	<Fragment>
+		<DirectoryRef Id="bundles">
+			<Directory Id="dirB29D34F1F532496A332E57FE473D2E74" Name="edu.tum.cs.conqat.io">
+				<Component Id="cmp2C495F4D9040F6A01FD9E1A9D08B4FCB" Guid="{A18C606B-FCEC-4C50-A1A7-5DE2E04BAC8D}">
+					<File Id="fil12ABC00DEA53A5CD99D6642C9517C57F" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.io)bundle.html" />
+				</Component>
+				<Component Id="cmpC4603EE5B447CB6A4069225F9450E226" Guid="{C9B843CF-8B65-44A4-9F79-AE143E1731D1}">
+					<File Id="fil0B62C0085F67660F2F57076515192893" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.io)bundle.xml" />
+				</Component>
+				<Directory Id="dir2ED858C719B5C2FD7BD79F3A62A6C57B" Name="classes">
+					<Directory Id="dirAFA92C72182769D466CDB8772C6B139B" Name="edu">
+						<Directory Id="dirD011749CE2065723CB1FBB3818657F24" Name="tum">
+							<Directory Id="dirB317B624327D43C78944980C8A749449" Name="cs">
+								<Directory Id="dir9D4A747701F7A8DFA5268EB6315F08EC" Name="conqat">
+									<Directory Id="dir27AA3F31A2D6C6C0F40AAC089EABC518" Name="io">
+										<Component Id="cmp1744F918EBCBCDFA7D13495C1D8C31D3" Guid="{B123E598-9D84-4EE6-8170-05F9C80E5154}">
+											<File Id="fil680855248C08072E532EEF3403A8FBE8" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.io)classes\edu\tum\cs\conqat\io\CSVReader.class" />
+										</Component>
+										<Component Id="cmpBEF19AF46FCF8C6D974497DF0DDDFF0E" Guid="{8F40905A-7714-41FC-B415-EC3058BBC8C0}">
+											<File Id="fil176394C63A0F449E00D58BEC585239FD" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.io)classes\edu\tum\cs\conqat\io\FileRegexReplacer.class" />
+										</Component>
+										<Component Id="cmpA59B10F1878CFB92C949878FF4867B90" Guid="{91970DBE-B8E3-4A70-A4BE-9D3C75DA53BC}">
+											<File Id="filBB0758E541B53C8289DEAFE933582BD2" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.io)classes\edu\tum\cs\conqat\io\FileWriterBase.class" />
+										</Component>
+										<Component Id="cmp003AEC0FBEE9B144E995ED63265478D1" Guid="{3E4D3ECC-2FC4-4E6A-ACD0-859260B170CC}">
+											<File Id="fil9E8A761D93B0D05B55D6AC54B0D162B7" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.io)classes\edu\tum\cs\conqat\io\FindingReportReader.class" />
+										</Component>
+										<Component Id="cmp34F567A3EF69A92AC0688E1EDEB895DB" Guid="{2CAFE5A2-924A-4C85-8281-43EB413755DB}">
+											<File Id="filE346DE532E1AD78D63515BC61890A448" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.io)classes\edu\tum\cs\conqat\io\FindingReportWriter.class" />
+										</Component>
+										<Component Id="cmp41EA75A4B7953D7305EC269C67B5937D" Guid="{C9915ACE-2A9F-4927-BD55-E3B8DC36C974}">
+											<File Id="fil26BD81616672FDB9660D8BB592008CBA" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.io)classes\edu\tum\cs\conqat\io\GraphWriter.class" />
+										</Component>
+										<Component Id="cmp7510992E4D7E5F13014C9CF6555C87F8" Guid="{2C1D07F7-DBA9-4ECB-A672-E36BF5DDB32A}">
+											<File Id="filBE5FC6DCFD0FA540A6C384F72175436C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.io)classes\edu\tum\cs\conqat\io\InputFileWriterBase.class" />
+										</Component>
+										<Component Id="cmp2FBF9869C21D4D4D07DF1D1F9E169A96" Guid="{7A3CFCA2-E032-4801-A7B7-E0C1B4208A06}">
+											<File Id="fil397BE64255B8796BCFBEC572E5D728F1" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.io)classes\edu\tum\cs\conqat\io\LogFileWriter.class" />
+										</Component>
+										<Component Id="cmp4AD4686F0CB42185B55519C181942A05" Guid="{946994B8-E66F-4D06-A67B-ABF9D5767F4E}">
+											<File Id="filDF9DFBFD367720669967148C8999DCA3" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.io)classes\edu\tum\cs\conqat\io\TextFileReader.class" />
+										</Component>
+										<Component Id="cmp7577A35C86E597DDDF4D719588F00915" Guid="{63BF103B-2181-434E-96E3-CCAEC7BACAD0}">
+											<File Id="filE97307F6654AFC6EDDD4A945D1261516" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.io)classes\edu\tum\cs\conqat\io\TextFileWriter.class" />
+										</Component>
+										<Component Id="cmp5E5BD0604E96A602C1830939EE8B99D7" Guid="{46DD0E23-733B-4C31-AE9F-1F9F0F93BD90}">
+											<File Id="fil6813E9115DC9C819ABF3EDCC738C1D2A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.io)classes\edu\tum\cs\conqat\io\XMLFileWriter.class" />
+										</Component>
+										<Component Id="cmp78F8174048A8150E1BCE1C60C1114CC4" Guid="{80705FC7-A2D6-4573-A035-F6EB1F92F608}">
+											<File Id="filE66C628B8594FD42F42750C6AC82618E" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.io)classes\edu\tum\cs\conqat\io\ZipFileCreator.class" />
+										</Component>
+										<Directory Id="dirCF8413C20F8F791C4EE0FDA4A3B9626D" Name="format">
+											<Component Id="cmp8C86CF18001D238C8B75F2211083FCE5" Guid="{F114C727-4CD9-4A6D-8643-6B97DA8C90D8}">
+												<File Id="fil40A45188490DCE6DDDDCC264271AC44A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.io)classes\edu\tum\cs\conqat\io\format\EXMLAttribute.class" />
+											</Component>
+											<Component Id="cmp1CB4B3441D565274160BAC4F8E4166C4" Guid="{A7B34546-4369-4D47-A999-BBEF0E875468}">
+												<File Id="fil45128DB800A32BAD022F56FDB4D4C2D1" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.io)classes\edu\tum\cs\conqat\io\format\EXMLElement.class" />
+											</Component>
+										</Directory>
+									</Directory>
+								</Directory>
+							</Directory>
+						</Directory>
+					</Directory>
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

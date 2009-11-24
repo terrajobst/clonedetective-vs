@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<?include ConQAT.wxi ?>
+
+	<Fragment>
+		<ComponentGroup Id="edu.tum.cs.conqat.dotnet">
+			<ComponentRef Id="cmp060BCBF500B88170520F959E76C6B564" />
+			<ComponentRef Id="cmp3765EA1BC3A98F96A1B694F8C5F07125" />
+			<ComponentRef Id="cmp1FF15D177DFC6E42A564ECB178BD19F8" />
+			<ComponentRef Id="cmp5A894EF8D53889FDC15090DD8CFE1F5B" />
+			<ComponentRef Id="cmp4F250C8A472C29EF97D7A3059452B43B" />
+			<ComponentRef Id="cmp6AC5668D43920869E8D1D5783A4701D1" />
+			<ComponentRef Id="cmpF8ADFB73EE915025CB020E8312E5302C" />
+			<ComponentRef Id="cmp5BD4D424607CF5305BEF7959135F72C2" />
+			<ComponentRef Id="cmp2A11DB3B1F61993751DEFFF164EE112E" />
+			<ComponentRef Id="cmp81C05FC9DC038F802EE33FF3586EF60B" />
+			<ComponentRef Id="cmp7B479BF940E79CCF23A3B433618BFDC2" />
+			<ComponentRef Id="cmp35E8ED0148603EA8BBA073B40DEABF9D" />
+			<ComponentRef Id="cmpCA89D1F51261A0E1F3A8C2E9985DA478" />
+			<ComponentRef Id="cmp67BF378E042BF311818F1DB2C692CF4E" />
+			<ComponentRef Id="cmp9FE73B61255CD9C49352A0E57E64A73D" />
+			<ComponentRef Id="cmpEE4AE789C64F438FE48574B924697CFC" />
+			<ComponentRef Id="cmp31B75171D2E4B4A17C6ABE27B0456C40" />
+			<ComponentRef Id="cmp498064EA88099BFB222ACC40CDB0C45D" />
+			<ComponentRef Id="cmp1CB159767B7E1A57191D76EB21F72D31" />
+			<ComponentRef Id="cmpB1D73935BCF60D09ADCEFA0B8D61483A" />
+			<ComponentRef Id="cmpCF3225B735F7230CA463AD023AAE50A5" />
+			<ComponentRef Id="cmp958F4097BC05B2D9464D3D03365385B1" />
+			<ComponentRef Id="cmpE080BAECB39EF25CF0793E44E996AFE5" />
+			<ComponentRef Id="cmp4CA48F881DFE40D91631A441A547EF6F" />
+			<ComponentRef Id="cmpD448651A3434479749330DF2C87E1727" />
+			<ComponentRef Id="cmpA556DBFC5BC08072C6CC46A883562B16" />
+			<ComponentRef Id="cmp104995B4823A26B1EA50D7998A1FDC78" />
+			<ComponentRef Id="cmp120431D156BF1E011C1AE0909E247815" />
+			<ComponentRef Id="cmpED555C8141F3DC7643B7A0C2CB3D2BC1" />
+			<ComponentRef Id="cmpE52F572EDE4834950C8DF2CCF495FCA4" />
+			<ComponentRef Id="cmp416FD7385FC534D8B72011F58D385D08" />
+			<ComponentRef Id="cmp81F4049E2DDEC6F168FC2A065CC0571D" />
+			<ComponentRef Id="cmp64F67BBD9FB5E263A9577BDCD0EE1A2C" />
+			<ComponentRef Id="cmp993498FBD67B22D1A727C2B3EF106C29" />
+			<ComponentRef Id="cmpA98F74AC0AA31236F20BA0EEEF66C309" />
+			<ComponentRef Id="cmpE489686BA54C9D6F5BC538C8B0650979" />
+			<ComponentRef Id="cmp2F75A909A8AE511C199165E356EB880C" />
+			<ComponentRef Id="cmp120B40592B1B0D3CC0BF589AD30AC6BC" />
+			<ComponentRef Id="cmpDC2CC3D7D20D7ABA9DFF9FCA9E9F9D0E" />
+			<ComponentRef Id="cmpA0B9E1F9E6791BCF87CC0816D03F9739" />
+			<ComponentRef Id="cmpD1CAE620AEBE6310F6A552CB4DF81D1A" />
+			<ComponentRef Id="cmp67BC582F9586152E95D5BAA92CE3497A" />
+			<ComponentRef Id="cmp7768A76EF015A95B6127BC574E19E77E" />
+			<ComponentRef Id="cmp79E7593D7FA224D394020C6B30773E4C" />
+			<ComponentRef Id="cmpD483A1377B1462DFDF945053A600D1CA" />
+			<ComponentRef Id="cmpB4DAFE3CF70170D9B84F5F0D5CDD1D72" />
+			<ComponentRef Id="cmp5C0ED1E1B7DFD3597A89533D3D4186CA" />
+			<ComponentRef Id="cmp7C2ED7A958DE3FB5AAE8E21FD93C5C7B" />
+			<ComponentRef Id="cmp587EE26DCDC1766D8C5F4152EA524F0F" />
+			<ComponentRef Id="cmpC8F4D962933AD21584BB23CB63D682D8" />
+			<ComponentRef Id="cmpD6C55BBBD7840C019D79981B63F10D40" />
+			<ComponentRef Id="cmp2A8ABD913F1B62E534463DAEA74FBB35" />
+		</ComponentGroup>
+	</Fragment>
+	<Fragment>
+		<DirectoryRef Id="bundles">
+			<Directory Id="dir4594F472DB3223950A991D9E03162E10" Name="edu.tum.cs.conqat.dotnet">
+				<Component Id="cmp060BCBF500B88170520F959E76C6B564" Guid="{675EB32B-5FAF-44B0-A00C-A2745EF4ECE8}">
+					<File Id="filD42B5F387AF55649A01BF502BDD31A54" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)bundle.html" />
+				</Component>
+				<Component Id="cmp3765EA1BC3A98F96A1B694F8C5F07125" Guid="{D8BFE059-D045-4919-A844-07CD261B7A7C}">
+					<File Id="fil0FF79853B5330A8EB65751E9A3F1164F" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)bundle.xml" />
+				</Component>
+				<Directory Id="dir1BD963410843FD0C833D6A5D2DF69198" Name="classes">
+					<Directory Id="dirD919620E261FF6CA317494AB360B0AC9" Name="edu">
+						<Directory Id="dir17DCC474D03DACFAA898E6D7F8A17736" Name="tum">
+							<Directory Id="dir210E091E5E4D1A99BFA2BA0E60C5CFB5" Name="cs">
+								<Directory Id="dirC54EB1FAB603C4F2ED29FCDFE2900D08" Name="conqat">
+									<Directory Id="dirC2016365BEC691AA49755B56E93802A2" Name="dotnet">
+										<Component Id="cmp1FF15D177DFC6E42A564ECB178BD19F8" Guid="{B9B2E806-237B-477D-B534-1DB76B9212B7}">
+											<File Id="filFA3161C26DD86C74285CA76493D4FB75" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\BundleContext.class" />
+										</Component>
+										<Component Id="cmp5A894EF8D53889FDC15090DD8CFE1F5B" Guid="{13CE730B-C875-4503-A582-905DD1202414}">
+											<File Id="filDA0D6E6B83246CED369069421946A519" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\BundleResourcePathResolver.class" />
+										</Component>
+										<Directory Id="dir439F40C46DBBB9355EA535ADE1369E65" Name="fxcop">
+											<Component Id="cmp4F250C8A472C29EF97D7A3059452B43B" Guid="{41EC9BE4-DA52-46B2-9CA1-E70ACE5AB2B1}">
+												<File Id="fil041C15461D639F544F1F2AE3110FCC01" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\fxcop\FxCopAnalyzer$EXMLAttribute.class" />
+											</Component>
+											<Component Id="cmp6AC5668D43920869E8D1D5783A4701D1" Guid="{172B4D38-14AD-4684-A8F1-C097277B1A19}">
+												<File Id="filC2406E4064CD57B68857338F11699056" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\fxcop\FxCopAnalyzer$EXMLElement.class" />
+											</Component>
+											<Component Id="cmpF8ADFB73EE915025CB020E8312E5302C" Guid="{F8F29C34-0B57-4E5E-9E57-657535E5B735}">
+												<File Id="filC9CA982A0DE8424CE0967E0CCB0D24D4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\fxcop\FxCopAnalyzer$FxCopFileReader$IssueProcessor.class" />
+											</Component>
+											<Component Id="cmp5BD4D424607CF5305BEF7959135F72C2" Guid="{84E3DF87-816F-4800-9B01-017E90224033}">
+												<File Id="filE07CB1F142CA6686A157E708CFC473FC" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\fxcop\FxCopAnalyzer$FxCopFileReader.class" />
+											</Component>
+											<Component Id="cmp2A11DB3B1F61993751DEFFF164EE112E" Guid="{6D349F34-8738-4BF6-858A-B64F372C875E}">
+												<File Id="fil8F8E0457AF0EAD318FB33698CEB35A2E" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\fxcop\FxCopAnalyzer.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dirD3E02E25AFD59B88FC908AE4C7DB3E4D" Name="ila">
+											<Component Id="cmp81C05FC9DC038F802EE33FF3586EF60B" Guid="{2A8F558F-6288-41B6-887A-39BC9CA8AE82}">
+												<File Id="fil828B187345953D139C0E7996B00CB275" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\ila\EIlaXmlAttribute.class" />
+											</Component>
+											<Component Id="cmp7B479BF940E79CCF23A3B433618BFDC2" Guid="{E26CA849-F65C-4247-A931-940D947B4176}">
+												<File Id="filCFA1F65531E8BE378704B7F7A4BF2FCC" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\ila\EIlaXmlElement.class" />
+											</Component>
+											<Component Id="cmp35E8ED0148603EA8BBA073B40DEABF9D" Guid="{F5A7F2AC-E2C1-403F-8369-1B09E74225DF}">
+												<File Id="filEFCE3E605F5CA92BA6D6003EB52064B5" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\ila\ILAnalyzerRunnerProcessor.class" />
+											</Component>
+											<Component Id="cmpCA89D1F51261A0E1F3A8C2E9985DA478" Guid="{D65B40F5-8B61-4F74-A91A-2551EA761033}">
+												<File Id="fil23154BBE93F6BE10E7C35CA300487AEC" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\ila\IlaXmlReader$1.class" />
+											</Component>
+											<Component Id="cmp67BF378E042BF311818F1DB2C692CF4E" Guid="{4DBEC39E-F4D4-4FAE-8262-8B166329A569}">
+												<File Id="fil0974E0DB4EFD942EB5C1AB6C85DDE4C0" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\ila\IlaXmlReader$BaseTypeReader.class" />
+											</Component>
+											<Component Id="cmp9FE73B61255CD9C49352A0E57E64A73D" Guid="{FCE1A5F2-EAD7-4451-95E9-2DD943A807E8}">
+												<File Id="fil7B8500104E9A26641621401BB9BBAA7A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\ila\IlaXmlReader$DependsReader.class" />
+											</Component>
+											<Component Id="cmpEE4AE789C64F438FE48574B924697CFC" Guid="{9A79DB6A-6A6C-451E-ABA7-CFBA86373AC9}">
+												<File Id="fil28794A1AB89D5742FDF5E310FFC35868" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\ila\IlaXmlReader$MemberReader.class" />
+											</Component>
+											<Component Id="cmp31B75171D2E4B4A17C6ABE27B0456C40" Guid="{92F9EF41-2064-457B-8893-E46D8EBF2261}">
+												<File Id="filD4803BA0B29CDCC85A7D7E4BD14AA00C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\ila\IlaXmlReader$XmlTypeElementReader.class" />
+											</Component>
+											<Component Id="cmp498064EA88099BFB222ACC40CDB0C45D" Guid="{BF7ACA21-58DC-405A-A076-7BDEE3ABEE69}">
+												<File Id="fil48ADD2ED83D8BDB2E3A5FDE67869886B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\ila\IlaXmlReader.class" />
+											</Component>
+											<Component Id="cmp1CB159767B7E1A57191D76EB21F72D31" Guid="{D783AF4C-8D25-4F6A-989E-B180839187FD}">
+												<File Id="fil19308EC7787DF84660D804E087570712" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\ila\ILDependenciesImporterProcessor.class" />
+											</Component>
+											<Component Id="cmpB1D73935BCF60D09ADCEFA0B8D61483A" Guid="{FB4DF8A0-F358-4E00-91E6-5F6A29AEB698}">
+												<File Id="filFF5B66B52FBCA34A985CF9F700678050" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\ila\Member.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dirC7B7DB00A1BE96F2AD67CBACEE291135" Name="scope">
+											<Component Id="cmpCF3225B735F7230CA463AD023AAE50A5" Guid="{6FCE81BF-0AAB-4DC7-AB4A-91919F43EE1C}">
+												<File Id="fil37B6C06499419CBB6CC5CA370639FB23" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\BuildConfiguration.class" />
+											</Component>
+											<Component Id="cmp958F4097BC05B2D9464D3D03365385B1" Guid="{A351EFD9-CDC7-4079-976C-C8608784747C}">
+												<File Id="fil1D8A424FB5F6F2DC48EBD627F3B5D25F" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\SolutionAssemblyScope.class" />
+											</Component>
+											<Component Id="cmpE080BAECB39EF25CF0793E44E996AFE5" Guid="{407A6E12-EACD-4075-9607-6F48F100E1BC}">
+												<File Id="filDAFA792A9F636279A7E49F0664CB57FB" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\SolutionScopeBase.class" />
+											</Component>
+											<Component Id="cmp4CA48F881DFE40D91631A441A547EF6F" Guid="{4718EA6C-7D0D-4D28-A40F-76CAB68A38B0}">
+												<File Id="fil67B25EB5EEB0E044F3D830320841F2B8" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\SolutionSourceCodeScope.class" />
+											</Component>
+											<Directory Id="dir2250669A14EFB5E9EFBF39DF06E3997F" Name="project">
+												<Component Id="cmpD448651A3434479749330DF2C87E1727" Guid="{E603B5AC-D0C5-49D2-B4E0-9177C6BA9D80}">
+													<File Id="fil04E240804CF464FDC418B8B68035C72D" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\EProjectFileXmlAttribute.class" />
+												</Component>
+												<Component Id="cmpA556DBFC5BC08072C6CC46A883562B16" Guid="{E49ED937-F049-4700-B4C3-27BBB8536A1D}">
+													<File Id="filF6FEB67004232448F531E74326D9E57B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\EProjectFileXmlElement.class" />
+												</Component>
+												<Component Id="cmp104995B4823A26B1EA50D7998A1FDC78" Guid="{0E46FAFC-A3B5-4F52-BD6D-4A29E2A35473}">
+													<File Id="fil546F49E9C07327EDFCCA2A3A736AFC5E" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser$1.class" />
+												</Component>
+												<Component Id="cmp120431D156BF1E011C1AE0909E247815" Guid="{82160D77-A3C4-412C-88A0-D5DB3E75E27E}">
+													<File Id="fil54156AA43571CD77812A1914D6271D4F" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser$ProjectFileReaderBase.class" />
+												</Component>
+												<Component Id="cmpED555C8141F3DC7643B7A0C2CB3D2BC1" Guid="{668497B0-5658-475F-8BC7-48368681F87E}">
+													<File Id="fil2728891B9FB95BFA03E10F666679B6F7" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser.class" />
+												</Component>
+												<Component Id="cmpE52F572EDE4834950C8DF2CCF495FCA4" Guid="{9B5D8109-67D4-4930-89E2-3662235C59BE}">
+													<File Id="fil7FB4061115594301079A455539E2FD07" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser8$1.class" />
+												</Component>
+												<Component Id="cmp416FD7385FC534D8B72011F58D385D08" Guid="{55047392-B68D-4634-9E57-E2B9B9B9E8E4}">
+													<File Id="fil8C40583904DB399F6B55940CC4488217" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser8$ProjectFileReader8$AssemblyProcessor.class" />
+												</Component>
+												<Component Id="cmp81F4049E2DDEC6F168FC2A065CC0571D" Guid="{231BE866-284B-4D5B-984C-44A649C6053F}">
+													<File Id="fil56B09BC08E332E1130D50BD1FA10B1D7" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser8$ProjectFileReader8$ConfigProcessor.class" />
+												</Component>
+												<Component Id="cmp64F67BBD9FB5E263A9577BDCD0EE1A2C" Guid="{7A8DBFBE-EE27-401B-B226-D44BD77D65BC}">
+													<File Id="filC5F6D0D8B0331DF0BD14CF860516C921" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser8$ProjectFileReader8$FileProcessor.class" />
+												</Component>
+												<Component Id="cmp993498FBD67B22D1A727C2B3EF106C29" Guid="{FBBCBE19-5556-4B78-9227-1E94598EAEA7}">
+													<File Id="fil0838DBB703C2267279E55302E3D661BA" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser8$ProjectFileReader8$IncludeProcessor.class" />
+												</Component>
+												<Component Id="cmpA98F74AC0AA31236F20BA0EEEF66C309" Guid="{D62BB4CE-35D7-4F20-9366-C7A0A71ADA2B}">
+													<File Id="fil8FD6C250427BD777EA3A8111C14B47B0" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser8$ProjectFileReader8.class" />
+												</Component>
+												<Component Id="cmpE489686BA54C9D6F5BC538C8B0650979" Guid="{93BD70A5-1864-4AFB-A17F-2368E66437E1}">
+													<File Id="filE26A4981C08B1443BB5F839B21920C8D" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser8.class" />
+												</Component>
+												<Component Id="cmp2F75A909A8AE511C199165E356EB880C" Guid="{1B430873-4030-441C-8218-9074026E5EF7}">
+													<File Id="fil46285D0B4F2120A13B21F01E27055A8D" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser9_10$1.class" />
+												</Component>
+												<Component Id="cmp120B40592B1B0D3CC0BF589AD30AC6BC" Guid="{5CB2BD7F-1D7C-4880-838D-6BC26F67E929}">
+													<File Id="fil24633D4EBCA76855FAFD601B1DB27C44" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser9_10$ProjectFileReader9_10$AssemblyNameProcessor.class" />
+												</Component>
+												<Component Id="cmpDC2CC3D7D20D7ABA9DFF9FCA9E9F9D0E" Guid="{66628D8F-1791-4EFD-AB6D-640BE574F439}">
+													<File Id="filA17CF71F1655776A9D5C532E48692605" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser9_10$ProjectFileReader9_10$CompileProcessor.class" />
+												</Component>
+												<Component Id="cmpA0B9E1F9E6791BCF87CC0816D03F9739" Guid="{17FE6534-617F-407F-B5AA-6C5AAC7D149A}">
+													<File Id="fil340A6B43B3361D167EB883A9BD0EEB48" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser9_10$ProjectFileReader9_10$ItemGroupProcessor.class" />
+												</Component>
+												<Component Id="cmpD1CAE620AEBE6310F6A552CB4DF81D1A" Guid="{79805107-E9D6-4D81-B1DE-C72A25C61722}">
+													<File Id="filB1984608970A56C9B9EEF767E8BA1952" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser9_10$ProjectFileReader9_10$OutputPathProcessor.class" />
+												</Component>
+												<Component Id="cmp67BC582F9586152E95D5BAA92CE3497A" Guid="{1F84BE48-BA15-4948-A194-58A765E9096A}">
+													<File Id="filE4399AF5EE530D1C2440D894969E2E13" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser9_10$ProjectFileReader9_10$OutputTypeProcessor.class" />
+												</Component>
+												<Component Id="cmp7768A76EF015A95B6127BC574E19E77E" Guid="{7597B986-7B0D-45ED-B128-2FCAC63FA8AA}">
+													<File Id="fil97DE864B6DB456A15E82CFD80A9719F4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser9_10$ProjectFileReader9_10$PropertyGroupProcessor.class" />
+												</Component>
+												<Component Id="cmp79E7593D7FA224D394020C6B30773E4C" Guid="{78B54D96-442A-496E-916A-F4268CEEA6BE}">
+													<File Id="fil5B7C42E0B430C8728DC38B1B267BA45D" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser9_10$ProjectFileReader9_10.class" />
+												</Component>
+												<Component Id="cmpD483A1377B1462DFDF945053A600D1CA" Guid="{58FB9E6A-07E3-499E-A97D-9B52C48C0D79}">
+													<File Id="filDB6CF55C68C9F73AEB4201FE58EC60B4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\project\ProjectFileParser9_10.class" />
+												</Component>
+											</Directory>
+											<Directory Id="dir3C63BDF55CA343FE890F7D00541AF9ED" Name="solution">
+												<Component Id="cmpB4DAFE3CF70170D9B84F5F0D5CDD1D72" Guid="{912A5CDD-466B-4E4C-B9E3-AE6E30C58F5D}">
+													<File Id="filD22DF43B3497916DC41FA89042568B67" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\solution\SolutionFileParser$EFormatVersion.class" />
+												</Component>
+												<Component Id="cmp5C0ED1E1B7DFD3597A89533D3D4186CA" Guid="{C2964902-D416-441D-BFCF-4C6E869C52DB}">
+													<File Id="fil475BD0D2954EC348DB7CEC28E7B52814" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)classes\edu\tum\cs\conqat\dotnet\scope\solution\SolutionFileParser.class" />
+												</Component>
+											</Directory>
+										</Directory>
+									</Directory>
+								</Directory>
+							</Directory>
+						</Directory>
+					</Directory>
+				</Directory>
+				<Directory Id="dir10848DF1C13895E75C5389E62028ED39" Name="resources">
+					<Component Id="cmp7C2ED7A958DE3FB5AAE8E21FD93C5C7B" Guid="{ACE36403-842D-473E-8B00-3BBBB2544E49}">
+						<File Id="filA2C5765DEA762D29E2D0683F93A6D0C0" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)resources\CecilLicence.txt" />
+					</Component>
+					<Component Id="cmp587EE26DCDC1766D8C5F4152EA524F0F" Guid="{7B2BA283-222F-48DD-A0EC-DE1161F78C10}">
+						<File Id="filAB7CF6E31B4DF11981C2EB153EF19EBB" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)resources\ILAnalyzer.exe" />
+					</Component>
+					<Component Id="cmpC8F4D962933AD21584BB23CB63D682D8" Guid="{F097F763-7168-475B-9CA3-BE58CB3138A5}">
+						<File Id="fil75632C3CED2356E9B6712A0C629CE4E2" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)resources\Mono.Cecil.dll" />
+					</Component>
+					<Component Id="cmpD6C55BBBD7840C019D79981B63F10D40" Guid="{587611D6-27A5-478A-AA3E-A4F0A7F4F563}">
+						<File Id="filF4E008F4D99E5A1830FCDCE37B0A3A76" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)resources\Mono.Cecil.Mdb.dll" />
+					</Component>
+					<Component Id="cmp2A8ABD913F1B62E534463DAEA74FBB35" Guid="{7CFC2F5E-013C-4E63-978F-0D566F45D523}">
+						<File Id="filDC8B5170AF0A7963493ADDF71D101D42" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.dotnet)resources\Mono.Cecil.Pdb.dll" />
+					</Component>
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

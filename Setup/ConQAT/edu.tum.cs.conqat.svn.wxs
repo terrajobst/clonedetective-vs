@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<?include ConQAT.wxi ?>
+
+	<Fragment>
+		<ComponentGroup Id="edu.tum.cs.conqat.svn">
+			<ComponentRef Id="cmp2C855083452A24FEB6EC5086749288CF" />
+			<ComponentRef Id="cmpD0869EB6CBF90B1952E5E45E57E6F201" />
+			<ComponentRef Id="cmp1F6FBB07A570AA1022C4A4594428FC53" />
+			<ComponentRef Id="cmp86A551E9622C8655348DBB98B855FCE2" />
+			<ComponentRef Id="cmp31EE7B6546DB44171BC0D9260D5FB18E" />
+			<ComponentRef Id="cmp58688073F9B36C173F51776B6D147F24" />
+			<ComponentRef Id="cmpF09FE0B71AD9A7591E9BB3090B8C96E5" />
+			<ComponentRef Id="cmp4FFF47BCEA2E501D036E4D59E9F37CA5" />
+		</ComponentGroup>
+	</Fragment>
+	<Fragment>
+		<DirectoryRef Id="bundles">
+			<Directory Id="dir6DFB93FD3DAE749324735EE04533BBC9" Name="edu.tum.cs.conqat.svn">
+				<Component Id="cmp2C855083452A24FEB6EC5086749288CF" Guid="{FD4F543E-288D-48F3-9C03-886E4BF319DA}">
+					<File Id="fil3B0821CE291F38F5BD244C1CD8FA4DA9" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.svn)bundle.html" />
+				</Component>
+				<Component Id="cmpD0869EB6CBF90B1952E5E45E57E6F201" Guid="{4421D9AA-A59D-401C-AB04-00D69891D083}">
+					<File Id="fil8C3D6368175D8380BBB9C51AC8B1B543" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.svn)bundle.xml" />
+				</Component>
+				<Directory Id="dir72E575183A2C0D28C19DACAFB0A9B1FD" Name="classes">
+					<Directory Id="dir8594FA1481D6A7B058F1FF2CA7A5F1D2" Name="edu">
+						<Directory Id="dirF6E8414791CC355B8F2E4385854F2DD9" Name="tum">
+							<Directory Id="dir51A82349C81C6BD4999444EB87105A92" Name="cs">
+								<Directory Id="dirA5451457E390B1FA61F538598504705C" Name="conqat">
+									<Directory Id="dirAD773D607FA2D418FA7F73F8A99BD485" Name="svn">
+										<Component Id="cmp1F6FBB07A570AA1022C4A4594428FC53" Guid="{A4B44C20-8D77-4BF7-8881-67289EBC5491}">
+											<File Id="filA3B3A19B0C2B2568C9319877DD126320" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.svn)classes\edu\tum\cs\conqat\svn\SVNLogEntriesScope.class" />
+										</Component>
+										<Component Id="cmp86A551E9622C8655348DBB98B855FCE2" Guid="{690AAE9D-83CC-42D6-AE09-F8B85DFC1A21}">
+											<File Id="fil323B8E8F421E8E9B57B12B2583479E05" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.svn)classes\edu\tum\cs\conqat\svn\SVNLogEntryNode.class" />
+										</Component>
+										<Component Id="cmp31EE7B6546DB44171BC0D9260D5FB18E" Guid="{891306CC-E6BB-45B1-9DD7-B5F77D890A38}">
+											<File Id="filC5049BFCE870A5CEFA9307DB3F2E29DC" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.svn)classes\edu\tum\cs\conqat\svn\SVNLogEntryRoot.class" />
+										</Component>
+										<Component Id="cmp58688073F9B36C173F51776B6D147F24" Guid="{C80350AC-1F5D-4DEE-9297-640D9D9361B2}">
+											<File Id="filFD4A3733ECFCB4C386BEA671B2C5EB3F" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.svn)classes\edu\tum\cs\conqat\svn\SVNPropertiesExtractor.class" />
+										</Component>
+										<Component Id="cmpF09FE0B71AD9A7591E9BB3090B8C96E5" Guid="{A216C5C2-58DF-4B40-AA24-16535AA5E9EC}">
+											<File Id="filBBBB658F4C1A97C730563780FCA6A285" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.svn)classes\edu\tum\cs\conqat\svn\SVNRevisionComparator.class" />
+										</Component>
+									</Directory>
+								</Directory>
+							</Directory>
+						</Directory>
+					</Directory>
+				</Directory>
+				<Directory Id="dir7A0884736B07C951A364C46FC9BA1CB9" Name="lib">
+					<Component Id="cmp4FFF47BCEA2E501D036E4D59E9F37CA5" Guid="{54053035-A9A0-498B-A16F-6C7C26B883B9}">
+						<File Id="filD829AAFCFFA1587A13E30114129E874B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.svn)lib\svnkit.jar" />
+					</Component>
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

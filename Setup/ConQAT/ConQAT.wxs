@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+
+	<?include ConQAT.wxi ?>
+
+	<Fragment>
+		<ComponentGroup Id="ConQAT">
+			<ComponentRef Id="cmpE035E65BA941AB681C13A0AF14C9F9C3" />
+			<ComponentRef Id="cmp32F253392280A2F5D149AAB45FBA6AD7" />
+			<ComponentRef Id="cmpF7399D175D33FB8ABC113633D31BD690" />
+			<ComponentRef Id="cmpD0A2E88019FD0471EEF0D936A9102A96" />
+			<ComponentRef Id="cmp54C5A93DD77B5DB6FADA92EE630CF3FB" />
+			<ComponentRef Id="cmp3074CD287708E0FE8EF4648633B03937" />
+			<ComponentRef Id="cmp2808D3CEF66985167C7806E35485AA17" />
+			<ComponentRef Id="cmpB94C2E5EBD33DA8E6C083683E1EE10C5" />
+			<ComponentRef Id="cmp477F494A0B484FF6B304539DF0EB1868" />
+			<ComponentRef Id="cmpAC97ED39A4E8370530BF61488BC4A166" />
+			<ComponentRef Id="cmp1AB355E59B836B16BACF9211F61BE74B" />
+			<ComponentRef Id="cmpC103CE19E3FA767A07BBC4253B58F185" />
+			<ComponentRef Id="cmp1358294E16C993F33D079B719F6ADFB8" />
+			<ComponentRef Id="cmp8A090BAEEA10937A613EFE22D2D55DB8" />
+			<ComponentRef Id="cmpF49146175D417A57005C5D25AD78E11B" />
+			<ComponentRef Id="cmpCB2D886B0907C6028ACC1190549FDFE2" />
+			<ComponentRef Id="cmpE0C89FBC790A771E0C25CEFECF6536FB" />
+			<ComponentRef Id="cmp31B51E732BB3B8C6BF84BC2F5447EA74" />
+			<ComponentRef Id="cmp88F956B79614BC304162D49DC5868BF0" />
+			<ComponentRef Id="cmpD29D6F396BA74810406963E4EFE6C2D9" />
+			<ComponentRef Id="cmpDBECA5E24B7B43B5FC26CC48FC7A28E9" />
+		</ComponentGroup>
+	</Fragment>
+	<Fragment>
+		<DirectoryRef Id="CONQATDIR">
+			<Component Id="cmpE035E65BA941AB681C13A0AF14C9F9C3" Guid="{046F324C-EE73-4C8D-8717-F359CFCF77A1}">
+				<File Id="filDC2EEB6C8F243207DB86BB2DE7DDB172" KeyPath="yes" Source="$(var.ConQATFolder)\LICENSE" />
+			</Component>
+			<Component Id="cmp32F253392280A2F5D149AAB45FBA6AD7" Guid="{3B548A6F-60D2-41E3-A2C7-032717655130}">
+				<File Id="fil06B044E3486D65329CFAA91671F80BB4" KeyPath="yes" Source="$(var.ConQATFolder)\NOTICE" />
+			</Component>
+			<Directory Id="dir73763622E5B2EBE45183BACC0E65788A" Name="bin">
+				<Component Id="cmpF7399D175D33FB8ABC113633D31BD690" Guid="{2253E42F-801C-4C28-87BE-76E9E349AED9}">
+					<File Id="filA421D05F390FC41D25044292263C4D74" KeyPath="yes" Source="$(var.ConQATFolder)\bin\conqat.bat" />
+				</Component>
+				<Component Id="cmpD0A2E88019FD0471EEF0D936A9102A96" Guid="{6A689158-3DD7-4D6D-B797-5E4003C037CC}">
+					<File Id="fil4EFC067C9961F7300A9712B924A1B6F8" KeyPath="yes" Source="$(var.ConQATFolder)\bin\conqat.sh" />
+				</Component>
+				<Component Id="cmp54C5A93DD77B5DB6FADA92EE630CF3FB" Guid="{2B5B2692-EA12-4374-970E-A3ECB14341F3}">
+					<File Id="filA793C759B74FDC41220C109C1A7CFA8F" KeyPath="yes" Source="$(var.ConQATFolder)\bin\conqatdoc.bat" />
+				</Component>
+				<Component Id="cmp3074CD287708E0FE8EF4648633B03937" Guid="{644770BA-E18C-4236-9939-ABF550FB6C79}">
+					<File Id="fil78CA50DA636558720F38FD36B0474671" KeyPath="yes" Source="$(var.ConQATFolder)\bin\conqatdoc.sh" />
+				</Component>
+				<Component Id="cmp2808D3CEF66985167C7806E35485AA17" Guid="{EC91F1D4-313E-4571-8D37-554E3A1D7DE0}">
+					<File Id="filEBE5A8155BDC36C040AB58B65592E2A3" KeyPath="yes" Source="$(var.ConQATFolder)\bin\dot.exe" />
+				</Component>
+				<Component Id="cmpB94C2E5EBD33DA8E6C083683E1EE10C5" Guid="{0B251756-DBE9-4CE5-844F-AED50204980E}">
+					<File Id="fil5B493A91D315CF5F515B286BD1FA2835" KeyPath="yes" Source="$(var.ConQATFolder)\bin\freetype6.dll" />
+				</Component>
+				<Component Id="cmp477F494A0B484FF6B304539DF0EB1868" Guid="{91E12705-CC49-4DCB-9561-E63DB3E813B6}">
+					<File Id="filFB9F55361CE6524A8110ACA68E701D02" KeyPath="yes" Source="$(var.ConQATFolder)\bin\jpeg.dll" />
+				</Component>
+				<Component Id="cmpAC97ED39A4E8370530BF61488BC4A166" Guid="{2C9FD601-81B1-479C-A0AC-948821228974}">
+					<File Id="fil97A275F12C7CC20C18C68E4C5B00A690" KeyPath="yes" Source="$(var.ConQATFolder)\bin\libexpat.dll" />
+				</Component>
+				<Component Id="cmp1AB355E59B836B16BACF9211F61BE74B" Guid="{BBABC4FC-C78D-4A08-86E3-4700171D63E1}">
+					<File Id="fil29AEA9A90D1F8D829B434E66FF2E6103" KeyPath="yes" Source="$(var.ConQATFolder)\bin\png.dll" />
+				</Component>
+				<Component Id="cmpC103CE19E3FA767A07BBC4253B58F185" Guid="{B919ED50-AA05-42BF-9CD7-59CF86F97C34}">
+					<File Id="filAE434D72CCA69BD99DFC1E0D7ABB9EA5" KeyPath="yes" Source="$(var.ConQATFolder)\bin\z.dll" />
+				</Component>
+				<Component Id="cmp1358294E16C993F33D079B719F6ADFB8" Guid="{4FB9CAFD-D6F9-402F-AF68-5BE43C58F962}">
+					<File Id="fil1792EFA265DF1D127805CB11AE57F8D3" KeyPath="yes" Source="$(var.ConQATFolder)\bin\zlib1.dll" />
+				</Component>
+			</Directory>
+			<Directory Id="bundles" Name="bundles">
+				<Component Id="cmp8A090BAEEA10937A613EFE22D2D55DB8" Guid="{7F2CAC5D-F6CE-48E6-858C-4E5F76EB31B5}" KeyPath="yes">
+					<CreateFolder />
+				</Component>
+			</Directory>
+			<Directory Id="dir6B03788D302EBBD084DF454D49C0B3B1" Name="config">
+				<Component Id="cmpF49146175D417A57005C5D25AD78E11B" Guid="{1583575D-1C37-4F8C-BD74-20F096D651E5}">
+					<File Id="filE21D3EF061E18597CA30822B032DDCE0" KeyPath="yes" Source="$(var.ConQATFolder)\config\logging.properties" />
+				</Component>
+			</Directory>
+			<Directory Id="dir9FF49B6E22BC274658098AA2AF226B2D" Name="lib">
+				<Component Id="cmpCB2D886B0907C6028ACC1190549FDFE2" Guid="{656CDD63-E2B0-452D-BD1B-3502F7325A49}">
+					<File Id="filF62C86EC7894545EAA616B8CB93AB6B7" KeyPath="yes" Source="$(var.ConQATFolder)\lib\ant.jar" />
+				</Component>
+				<Component Id="cmpE0C89FBC790A771E0C25CEFECF6536FB" Guid="{E93B5C67-D024-4104-AC8F-17C18D24FC21}">
+					<File Id="fil2DCF2CCAFA53CC782DFB11377E3884D6" KeyPath="yes" Source="$(var.ConQATFolder)\lib\ccsm-commons.jar" />
+				</Component>
+				<Component Id="cmp31B51E732BB3B8C6BF84BC2F5447EA74" Guid="{5BFD90A2-9374-49F4-9ADE-3E0D6D2A7A19}">
+					<File Id="filCFE7554FC3D1130101D83BA4426E870E" KeyPath="yes" Source="$(var.ConQATFolder)\lib\conqat.jar" />
+				</Component>
+				<Component Id="cmp88F956B79614BC304162D49DC5868BF0" Guid="{900511A9-D8DF-4164-A971-85029EC83027}">
+					<File Id="filD37A9ACA4BF0A05D669E4F5F37C584A3" KeyPath="yes" Source="$(var.ConQATFolder)\lib\javadoc.jar" />
+				</Component>
+				<Component Id="cmpD29D6F396BA74810406963E4EFE6C2D9" Guid="{D5D58440-B186-48BF-B761-EC498DAE90E0}">
+					<File Id="fil93E48E22C07AAF11ED4F3912C0D36A76" KeyPath="yes" Source="$(var.ConQATFolder)\lib\junit.jar" />
+				</Component>
+				<Component Id="cmpDBECA5E24B7B43B5FC26CC48FC7A28E9" Guid="{B7B3E0EF-4BDE-454D-98BA-FC2F28BA67E5}">
+					<File Id="fil6CC89C236620597898473A62F0D748FE" KeyPath="yes" Source="$(var.ConQATFolder)\lib\log4j.jar" />
+				</Component>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+
+	<!-- Feature Tree -->
+
+	<Fragment>
+		<Feature Id="F__ConQAT" Level="1" AllowAdvertise="no" ConfigurableDirectory="CONQATDIR"
+				 Title="ConQAT"
+				 Description="ConQAT is a continuous quality assessment toolkit. Used by Clone Detective to find the clones.">
+			<ComponentGroupRef Id="ConQAT" />
+
+			<Feature Id="edu.tum.cs.conqat.blocklib" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.blocklib" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.bugzilla" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.bugzilla" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.clonedetective" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.clonedetective" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.commons" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.commons" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.cpp" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.cpp" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.database" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.database" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.dotnet" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.dotnet" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.filesystem" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.filesystem" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.graph" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.graph" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.html_presentation" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.html_presentation" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.io" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.io" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.java" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.java" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.junit" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.junit" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.klocwork" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.klocwork" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.model_clones" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.model_clones" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.scripting" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.scripting" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.self" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.self" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.simulink" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.simulink" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.sourcecode" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.sourcecode" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.svn" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.svn" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.text" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.text" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.architecture" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.architecture" />
+			</Feature>
+		</Feature>
+	</Fragment>
+</Wix>

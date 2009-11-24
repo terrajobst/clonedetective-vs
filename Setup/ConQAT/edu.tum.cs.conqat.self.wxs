@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<?include ConQAT.wxi ?>
+
+	<Fragment>
+		<ComponentGroup Id="edu.tum.cs.conqat.self">
+			<ComponentRef Id="cmpF8569CDF7F9D5986A55BF8569BC742E6" />
+			<ComponentRef Id="cmpECA6D40989F2EF79423A1D046B462647" />
+			<ComponentRef Id="cmp61ECCDFC0EE4CAE2E8D4C08F2F6DE7F6" />
+			<ComponentRef Id="cmp445E44D98C3ED6CB35E26AB719A15D2E" />
+			<ComponentRef Id="cmpEEDBA8954318627E8F1223A618CB9AE4" />
+			<ComponentRef Id="cmp2E4A2DDCE6B3D8ED527F9124EFAB9AC0" />
+			<ComponentRef Id="cmpDF3BC4B21D4A351A3426D29DD6F2AB10" />
+			<ComponentRef Id="cmp86D20243EEEC2107A842EC2470FF2024" />
+			<ComponentRef Id="cmp5521B98ABAC3587F6F25362D4382AADD" />
+		</ComponentGroup>
+	</Fragment>
+	<Fragment>
+		<DirectoryRef Id="bundles">
+			<Directory Id="dir794862ADD1120958920826660ECE1B88" Name="edu.tum.cs.conqat.self">
+				<Component Id="cmpF8569CDF7F9D5986A55BF8569BC742E6" Guid="{E511CA5A-6D09-4351-80CC-85B33ED732F0}">
+					<File Id="filC59EA40493E99BDF4A3A6913071BB4D0" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.self)bundle.html" />
+				</Component>
+				<Component Id="cmpECA6D40989F2EF79423A1D046B462647" Guid="{EE35DBDF-D79D-4C3C-BADB-9E332DA8A594}">
+					<File Id="filF98A45B024C6712BD25160A08C381457" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.self)bundle.xml" />
+				</Component>
+				<Directory Id="dirF11F7CDEEACD880517CC5889A58F6435" Name="blocks">
+					<Component Id="cmp61ECCDFC0EE4CAE2E8D4C08F2F6DE7F6" Guid="{36C89A47-4BEA-491D-BBC6-C5D2486043AC}">
+						<File Id="fil3773A6C340C8FED932765F1A626A25D4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.self)blocks\SelfDependencyChain.cqb" />
+					</Component>
+				</Directory>
+				<Directory Id="dir83BF001FCF0F43A173D52BEB74C50753" Name="classes">
+					<Directory Id="dir84A278CBAE7CF2F1F57D80182E0E716C" Name="edu">
+						<Directory Id="dir72EC929062B93A0B4746DD2F7C814AAE" Name="tum">
+							<Directory Id="dirE70ED2DDB86140CFB2EFB07B9CE33BFA" Name="cs">
+								<Directory Id="dir44C9AD9A0D8888C78E42E2CC556A55AB" Name="conqat">
+									<Directory Id="dir1A5C870D9C35DD3089CD6B9974558B41" Name="self">
+										<Component Id="cmp445E44D98C3ED6CB35E26AB719A15D2E" Guid="{D3EC35A3-E10F-409F-9212-F54390E46239}">
+											<File Id="fil1A1221536A87D8962FBBCDC6D78B2F42" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.self)classes\edu\tum\cs\conqat\self\ConQATBundleNode.class" />
+										</Component>
+										<Component Id="cmpEEDBA8954318627E8F1223A618CB9AE4" Guid="{58B466FE-6654-4C92-9F40-08CF5838012E}">
+											<File Id="fil55645960EE40E913A8DF1622D1FF88E8" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.self)classes\edu\tum\cs\conqat\self\ConQATInstallationDependencyGraphBuilder.class" />
+										</Component>
+										<Component Id="cmp2E4A2DDCE6B3D8ED527F9124EFAB9AC0" Guid="{44AB7FC5-F3B2-492A-B1A8-B8D5B1288539}">
+											<File Id="fil18EE07F565F6A67122D845A9CDB3095E" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.self)classes\edu\tum\cs\conqat\self\ConQATInstallationJavaScope.class" />
+										</Component>
+										<Component Id="cmpDF3BC4B21D4A351A3426D29DD6F2AB10" Guid="{ED06F10D-4193-4C5F-AD01-D299ED4BCCDB}">
+											<File Id="fil614421979177C59DB8CAA1075C2E0001" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.self)classes\edu\tum\cs\conqat\self\ConQATInstallationJUnitResultScope.class" />
+										</Component>
+										<Component Id="cmp86D20243EEEC2107A842EC2470FF2024" Guid="{943B15C8-FE45-48BF-B9E9-549BA5E95392}">
+											<File Id="fil16A14B79D016F4E76CE705F13BFCB0C7" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.self)classes\edu\tum\cs\conqat\self\ConQATInstallationRoot.class" />
+										</Component>
+										<Component Id="cmp5521B98ABAC3587F6F25362D4382AADD" Guid="{E6DB2A2F-7681-4E29-B395-1E3FD3931D2C}">
+											<File Id="filCBD9C373DF87B89DFC360C5C9A5C4D5C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.self)classes\edu\tum\cs\conqat\self\ConQATInstallationScope.class" />
+										</Component>
+									</Directory>
+								</Directory>
+							</Directory>
+						</Directory>
+					</Directory>
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

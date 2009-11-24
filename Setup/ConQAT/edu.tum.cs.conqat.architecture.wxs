@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<?include ConQAT.wxi ?>
+
+	<Fragment>
+		<ComponentGroup Id="edu.tum.cs.conqat.architecture">
+			<ComponentRef Id="cmp115143A794EAC5F523782DBA22EB8A29" />
+			<ComponentRef Id="cmp85E12D54D9A210D0740BCCD4EA842CD7" />
+			<ComponentRef Id="cmp26CF96412AAD95DCB3F9DF5B2E7E131A" />
+			<ComponentRef Id="cmpDE96446710F4DE1E66C422383FA84E40" />
+			<ComponentRef Id="cmp910F3394745B4F3EB88D3E4507C0CE7A" />
+			<ComponentRef Id="cmp31D64591816EEE7899CB069F10B2F211" />
+			<ComponentRef Id="cmp57EDBD0B47AAF17B9881C1DA172ED7A5" />
+			<ComponentRef Id="cmpFDB61164041E93AC1B890822C912F043" />
+			<ComponentRef Id="cmpAD51FBA85EDC6D51AED900A368BB2A6F" />
+			<ComponentRef Id="cmpC8BF26C40374FB1FC6C5A9FE6C53B3F3" />
+			<ComponentRef Id="cmp1CD122D4AB813C3CA29D67B4BA5FD0C0" />
+			<ComponentRef Id="cmpBE7FCEF1E6B82B99A43E8404BEA74955" />
+			<ComponentRef Id="cmp7934B46820AA644A14A4C3ECE183EA83" />
+			<ComponentRef Id="cmpB85804176C27C4270B5A17C292BBEA6E" />
+			<ComponentRef Id="cmp3F20F7DDE0D48571DF0AC67B2D88077B" />
+			<ComponentRef Id="cmp58273C688736D935F2A25E1ADF6AEF4C" />
+			<ComponentRef Id="cmpAD6EE360803710C9C6A03D65C2EBB62F" />
+			<ComponentRef Id="cmpD3E580F6B2DB8BEB21FB11FE643BC8D4" />
+			<ComponentRef Id="cmp958AE627CF337367A4904939CAD0B433" />
+			<ComponentRef Id="cmp8882A1A347123A887C11245D19788299" />
+			<ComponentRef Id="cmp5CABED50B995B1BCCDFA961CE14A41EF" />
+			<ComponentRef Id="cmpC73210CEEB52CF28CE6217A841698BF6" />
+			<ComponentRef Id="cmp40F91A4FEAF827199CB8293AFEE076CD" />
+			<ComponentRef Id="cmpEFE3E5D94ACF359C52F077ECCDC8F8D5" />
+			<ComponentRef Id="cmp2856EDDED8CC9804B6F43E3FFA7B9A5F" />
+			<ComponentRef Id="cmp48021653E88242840AF9794AB30D65DD" />
+			<ComponentRef Id="cmp9F09C8780B56ED9BC80CDD4856701401" />
+			<ComponentRef Id="cmp6B984B17D2A4F10C9A61534ABE1F5621" />
+			<ComponentRef Id="cmpCD8B1113CA91390B88B61EE132E7A9A5" />
+			<ComponentRef Id="cmp1DA53D821D700F472C2B2FEEBECF6384" />
+			<ComponentRef Id="cmpA6132870F53D8477A42F8D0B3EFDCB75" />
+			<ComponentRef Id="cmp79B70E40B70513AF952B020CC183634E" />
+			<ComponentRef Id="cmp3608AB8C19245E00C4A71FCC73672B96" />
+		</ComponentGroup>
+	</Fragment>
+	<Fragment>
+		<DirectoryRef Id="bundles">
+			<Directory Id="dirCC0AD08B9D37DE3CB64372AD8B4547F3" Name="edu.tum.cs.conqat.architecture">
+				<Component Id="cmp115143A794EAC5F523782DBA22EB8A29" Guid="{07A5147D-C21A-4683-A2E1-8E41D4734321}">
+					<File Id="fil0B0C613A361168615D568AF0967EA8EF" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)bundle.html" />
+				</Component>
+				<Component Id="cmp85E12D54D9A210D0740BCCD4EA842CD7" Guid="{6F4414A2-C0B5-4E30-8BF9-8D8B9975E56C}">
+					<File Id="fil96F7376D02AC7FD0333E7FA82BD7249F" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)bundle.xml" />
+				</Component>
+				<Directory Id="dir3F216E546956BB5E041028BAFBC8BD97" Name="blocks">
+					<Component Id="cmp26CF96412AAD95DCB3F9DF5B2E7E131A" Guid="{2F2F693B-2313-43FB-A803-37657501678E}">
+						<File Id="filD121EE3CE6FE6D2319D675D301684986" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)blocks\ArchitectureAnalysis.cqb" />
+					</Component>
+					<Component Id="cmpDE96446710F4DE1E66C422383FA84E40" Guid="{859835F8-7D3E-4026-A6AB-C3A9D27301FA}">
+						<File Id="filFB5E5A953AD05E30D7BE49E36BA6C50B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)blocks\ArchitectureLayouterChain.cqb" />
+					</Component>
+					<Component Id="cmp910F3394745B4F3EB88D3E4507C0CE7A" Guid="{A3A9B972-D977-494A-B349-56848BDA714A}">
+						<File Id="filD3F34E9BF8C6515D80CDBF9E6C214D1A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)blocks\DependencyListLayouter.cqb" />
+					</Component>
+				</Directory>
+				<Directory Id="dir6FB2D4B7806EB48550B989A1BC2D6E64" Name="classes">
+					<Directory Id="dir799392D5B9685E40FD2A72D68A0761D2" Name="edu">
+						<Directory Id="dirB330D5E85E68E9A5EB672454A88EE610" Name="tum">
+							<Directory Id="dirA70B2C4A629386B181E4E1ADDE83E10F" Name="cs">
+								<Directory Id="dir7A710CFD3399C61927DDED6A9F968B91" Name="conqat">
+									<Directory Id="dirFDD1D82945B2AB630A605B76BE5B6F17" Name="architecture">
+										<Directory Id="dirC9BCA68A6AE679B82A610AE725D3CB46" Name="assessment">
+											<Component Id="cmp31D64591816EEE7899CB069F10B2F211" Guid="{FBEDA85C-988A-4CC7-96B7-6CC5BB07817B}">
+												<File Id="fil28A2CF19147DF993BEA182130F3B3FB1" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\assessment\ArchitectureEdgeAssessor$1.class" />
+											</Component>
+											<Component Id="cmp57EDBD0B47AAF17B9881C1DA172ED7A5" Guid="{7DA409AB-366D-49FF-9C01-E4FBBE40EF3F}">
+												<File Id="fil9645B2D901E203B73A2A5166318AC145" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\assessment\ArchitectureEdgeAssessor.class" />
+											</Component>
+											<Component Id="cmpFDB61164041E93AC1B890822C912F043" Guid="{C0880D8A-80E1-4B94-82B5-1547B3252A1B}">
+												<File Id="filD549B8FD47597413536A6DFCCE61B8FE" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\assessment\AssessmentFileWriter.class" />
+											</Component>
+											<Component Id="cmpAD51FBA85EDC6D51AED900A368BB2A6F" Guid="{9D9B7454-2308-4A3F-A18F-F78D26D6E60B}">
+												<File Id="fil1C6907CD3C983A4795A1708B2BD8B488" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\assessment\AssessmentFileWriterProcessor.class" />
+											</Component>
+											<Component Id="cmpC8BF26C40374FB1FC6C5A9FE6C53B3F3" Guid="{D2A27E27-948E-4D38-9841-80E1DE48254C}">
+												<File Id="fil8F8A9CB35C6484853C85AADD250FD24A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\assessment\DependencyAnnotator$DependecyVisitor.class" />
+											</Component>
+											<Component Id="cmp1CD122D4AB813C3CA29D67B4BA5FD0C0" Guid="{648ABCF3-0E38-4462-8FDC-080AC5D24445}">
+												<File Id="fil24ED6E6065F8E95C206DD141118BAB90" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\assessment\DependencyAnnotator.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dir9607384C371D5AF18CF8A449E8017597" Name="format">
+											<Component Id="cmpBE7FCEF1E6B82B99A43E8404BEA74955" Guid="{96A29CC6-5235-4BE1-ADC9-9AFCED3B39F8}">
+												<File Id="filB109BC6DB20DE670D12F6DF304C20969" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\format\ArchitectureDesignConstants.class" />
+											</Component>
+											<Component Id="cmp7934B46820AA644A14A4C3ECE183EA83" Guid="{A848985C-86CE-4F1A-ABB9-030BB1B33176}">
+												<File Id="fil61A261DD5FC022F09D8722282835AA1B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\format\ArchitectureFormats.class" />
+											</Component>
+											<Component Id="cmpB85804176C27C4270B5A17C292BBEA6E" Guid="{98F55718-8D61-4577-90BD-7F9E0DC1A627}">
+												<File Id="fil4CE48DBE567581D744FEE1D50B98926C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\format\EArchitectureIOAttribute.class" />
+											</Component>
+											<Component Id="cmp3F20F7DDE0D48571DF0AC67B2D88077B" Guid="{6D7580BF-440E-4DFC-B04A-9E36CACA2360}">
+												<File Id="fil35D5BCCF9BDFD82030FF95073293EEB5" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\format\EArchitectureIOElement.class" />
+											</Component>
+											<Component Id="cmp58273C688736D935F2A25E1ADF6AEF4C" Guid="{2C822194-DA27-4BA2-9A8D-2C92ACF67578}">
+												<File Id="filFC6C4D0B8C6DB551CC0C56A92AF46552" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\format\EAssessmentType.class" />
+											</Component>
+											<Component Id="cmpAD6EE360803710C9C6A03D65C2EBB62F" Guid="{EBED9EB4-58DE-4459-A726-B61E99BD647F}">
+												<File Id="fil8FF0BFE538129518FCB58E098E914AFA" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\format\ECodeMappingType.class" />
+											</Component>
+											<Component Id="cmpD3E580F6B2DB8BEB21FB11FE643BC8D4" Guid="{FA860CF0-499B-4674-B7FE-84B41237DD0A}">
+												<File Id="fil9C44BE58AB1869049A33DB6BC0474AAB" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\format\EPolicyType$1.class" />
+											</Component>
+											<Component Id="cmp958AE627CF337367A4904939CAD0B433" Guid="{06D1F50E-9B1C-4918-BDA3-D60C1877F782}">
+												<File Id="fil72F3701E5460CFD37DD7C893350AB475" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\format\EPolicyType.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dirE1B17415F3F7DC0F5E51F830DBEB576E" Name="output">
+											<Component Id="cmp8882A1A347123A887C11245D19788299" Guid="{EC00768C-BBEE-497E-B765-00A23524E082}">
+												<File Id="fil0C43F2F31C6E25A97CCE32247B1C950A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\output\ArchitectureLayouter.class" />
+											</Component>
+											<Component Id="cmp5CABED50B995B1BCCDFA961CE14A41EF" Guid="{BBE5CFCC-D523-41A9-A543-91AC522F4215}">
+												<File Id="fil9C2C62C2199887B5C548FF47CF2B0357" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\output\ERenderMode$1.class" />
+											</Component>
+											<Component Id="cmpC73210CEEB52CF28CE6217A841698BF6" Guid="{68A26B10-AF06-4189-B28D-6D16FCBA501D}">
+												<File Id="filF16BEA973A0ABF35C5C9C01C1D6F57D4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\output\ERenderMode.class" />
+											</Component>
+											<Component Id="cmp40F91A4FEAF827199CB8293AFEE076CD" Guid="{59F48A4A-0E17-4FB4-A847-ECEFC84C8B28}">
+												<File Id="fil40A8A4920F6964E8C27B4D66FB6C7C66" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\output\PolicyListCreator.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dir5CF09E8CBCE0BF76F18309021C07CA06" Name="scope">
+											<Component Id="cmpEFE3E5D94ACF359C52F077ECCDC8F8D5" Guid="{2E2D1691-DC11-4A3E-80F2-98C5DE759ADF}">
+												<File Id="fil30D57C5A9A59A1BF47C95A5ECFB3D91E" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\scope\ArchitectureDefinition.class" />
+											</Component>
+											<Component Id="cmp2856EDDED8CC9804B6F43E3FFA7B9A5F" Guid="{A4CF9D7F-98CF-4277-80B7-567A40902575}">
+												<File Id="filC124D51ABB66A03F5A93567D26BD9273" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\scope\ArchitectureDefinitionReader$Reader$CodeMappingProcessor.class" />
+											</Component>
+											<Component Id="cmp48021653E88242840AF9794AB30D65DD" Guid="{C829C221-E6AC-4CB4-8B71-59A5E3A1A595}">
+												<File Id="fil0CCFE590C083757DFFD9CE445B48298F" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\scope\ArchitectureDefinitionReader$Reader$ComponentProcessor.class" />
+											</Component>
+											<Component Id="cmp9F09C8780B56ED9BC80CDD4856701401" Guid="{1DDCD771-7A77-4C7C-BF08-2039B8581205}">
+												<File Id="fil51C9706CE7B2A688A435BD7258BF2861" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\scope\ArchitectureDefinitionReader$Reader$PolicyProcessor.class" />
+											</Component>
+											<Component Id="cmp6B984B17D2A4F10C9A61534ABE1F5621" Guid="{F4D6BCE1-F735-46F4-9903-3186C864AEC2}">
+												<File Id="filE3B479B9FBC52F76E4EA025C9D51448F" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\scope\ArchitectureDefinitionReader$Reader$ToleratePolicyProcessor.class" />
+											</Component>
+											<Component Id="cmpCD8B1113CA91390B88B61EE132E7A9A5" Guid="{8EBC8F34-9A7F-4B5F-AE01-BB981F73370F}">
+												<File Id="fil64E774D8DC9A48B382DE3A8DA32EF7E0" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\scope\ArchitectureDefinitionReader$Reader.class" />
+											</Component>
+											<Component Id="cmp1DA53D821D700F472C2B2FEEBECF6384" Guid="{9C8B1EA2-5237-445B-BDE1-7FA00D7C5072}">
+												<File Id="fil64A1FED5DBC4DCB568FDF65A43BBB5A4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\scope\ArchitectureDefinitionReader.class" />
+											</Component>
+											<Component Id="cmpA6132870F53D8477A42F8D0B3EFDCB75" Guid="{CF970B5C-137E-4BE6-A754-3E171C1B30D2}">
+												<File Id="fil17E5236A3C3DCC319502981F690181B6" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\scope\ComponentNode.class" />
+											</Component>
+											<Component Id="cmp79B70E40B70513AF952B020CC183634E" Guid="{DE280634-36A6-48EB-AE2C-79680344106E}">
+												<File Id="filD8C6AD2846E519F961AC74B422026BE9" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\scope\ComponentResolver.class" />
+											</Component>
+											<Component Id="cmp3608AB8C19245E00C4A71FCC73672B96" Guid="{476B567B-3EE6-4F30-8951-4D71A4605F4C}">
+												<File Id="fil525D8BF52045E1C85255D1D191628A6B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.architecture)classes\edu\tum\cs\conqat\architecture\scope\DependencyPolicy.class" />
+											</Component>
+										</Directory>
+									</Directory>
+								</Directory>
+							</Directory>
+						</Directory>
+					</Directory>
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

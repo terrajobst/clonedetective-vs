@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<?include ConQAT.wxi ?>
+
+	<Fragment>
+		<ComponentGroup Id="edu.tum.cs.conqat.scripting">
+			<ComponentRef Id="cmp511E6DAC13E8FCE338B71E827A878659" />
+			<ComponentRef Id="cmpC4E709CA306DDA93B96E6E1A3106F654" />
+			<ComponentRef Id="cmp297EF29523C53A00E91A1EC7F74AEC78" />
+			<ComponentRef Id="cmpF772C245970D80E0D745BD857D756413" />
+			<ComponentRef Id="cmp32F03557FE03748A0441B4A0AA45CCA5" />
+			<ComponentRef Id="cmp9D30FBC48698FC4B87A5531FD7AAE7EB" />
+			<ComponentRef Id="cmp06B1D84CCDDA30967C19668DC2E281B9" />
+			<ComponentRef Id="cmpF934CB8D52E7B886D141B291C07BDF70" />
+			<ComponentRef Id="cmp371096B590D1BF8FFAC4A626A0B47602" />
+			<ComponentRef Id="cmp5D213453F32EAA1F012632C8FD83BBA6" />
+			<ComponentRef Id="cmp3638B0807A995E9425BB4DB015DEEFDB" />
+		</ComponentGroup>
+	</Fragment>
+	<Fragment>
+		<DirectoryRef Id="bundles">
+			<Directory Id="dir61CBE6388DBB73CDD087DFAC5D7C5CC5" Name="edu.tum.cs.conqat.scripting">
+				<Component Id="cmp511E6DAC13E8FCE338B71E827A878659" Guid="{02763C50-EFC0-4667-9663-469BABE5D83A}">
+					<File Id="filBEC1EEA12710D1B124A9014AD327206B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.scripting)bundle.html" />
+				</Component>
+				<Component Id="cmpC4E709CA306DDA93B96E6E1A3106F654" Guid="{8A14DFE6-234A-4B1C-ADD3-19757D09E040}">
+					<File Id="filB2D66B0E8A52F14BF152371B395C8D6C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.scripting)bundle.xml" />
+				</Component>
+				<Directory Id="dir6433DCA975E2619A46F212B2897998EB" Name="blocks">
+					<Component Id="cmp297EF29523C53A00E91A1EC7F74AEC78" Guid="{1AB23D8B-3214-47CB-8EAC-C447E7144B44}">
+						<File Id="fil74AB7CFEF96B055AD60262444B86C161" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.scripting)blocks\BshExample.cqb" />
+					</Component>
+				</Directory>
+				<Directory Id="dir275E2B22387DAD912A0CE5181583A9EB" Name="classes">
+					<Directory Id="dirB5C022FF5B17D8DD2BB6CF32AF1C1B2D" Name="edu">
+						<Directory Id="dir34DF81BDC4AAE201751056142EED7BA8" Name="tum">
+							<Directory Id="dir77F9DE0C5A3ADCBC36947E674B9C2615" Name="cs">
+								<Directory Id="dir013438E1BE5A52F5D4202ECD2AD865E5" Name="conqat">
+									<Directory Id="dir8506D592B4E35B83DF9FAB83DE3966EB" Name="scripting">
+										<Component Id="cmpF772C245970D80E0D745BD857D756413" Guid="{2EB5C1CF-D9B9-47E2-A130-4A4332720720}">
+											<File Id="fil809977CB6B9CD143036A402EC9BCB8EC" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.scripting)classes\edu\tum\cs\conqat\scripting\BeanShellProcessor.class" />
+										</Component>
+										<Component Id="cmp32F03557FE03748A0441B4A0AA45CCA5" Guid="{E0062F04-AB05-44BC-8001-388EE95887D6}">
+											<File Id="fil051C452FF73634AF229694004AC3162B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.scripting)classes\edu\tum\cs\conqat\scripting\CalculatorBase.class" />
+										</Component>
+										<Component Id="cmp9D30FBC48698FC4B87A5531FD7AAE7EB" Guid="{E8D4B929-0E87-46B9-86DB-70AB0C192C88}">
+											<File Id="fil88418DC72C9A34497CB719C199AF261D" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.scripting)classes\edu\tum\cs\conqat\scripting\DoubleCalculator.class" />
+										</Component>
+										<Component Id="cmp06B1D84CCDDA30967C19668DC2E281B9" Guid="{7D784CB3-E181-4E3D-8B50-51E5C2936BC5}">
+											<File Id="fil6C3A774FEF08B6D494DAFD4FEDFACA78" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.scripting)classes\edu\tum\cs\conqat\scripting\ExpressionAssessor.class" />
+										</Component>
+										<Component Id="cmpF934CB8D52E7B886D141B291C07BDF70" Guid="{A2B288D3-9052-4899-A9A5-344F9D6BBFED}">
+											<File Id="filF665C68AD5C63F4B991698BCB641EDD8" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.scripting)classes\edu\tum\cs\conqat\scripting\ExpressionProcessor.class" />
+										</Component>
+										<Component Id="cmp371096B590D1BF8FFAC4A626A0B47602" Guid="{8D34AF29-9EDC-45F0-A855-697BFC0161AC}">
+											<File Id="fil20FA34ADA9A910ED8443814A2E844B33" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.scripting)classes\edu\tum\cs\conqat\scripting\LocalExpressionProcessorBase.class" />
+										</Component>
+										<Component Id="cmp5D213453F32EAA1F012632C8FD83BBA6" Guid="{59CBFDA7-875C-4893-8640-D3226793ABDB}">
+											<File Id="fil3D1672800EE2286BF1F8A40ECC38C65E" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.scripting)classes\edu\tum\cs\conqat\scripting\NodeValueCalculator.class" />
+										</Component>
+									</Directory>
+								</Directory>
+							</Directory>
+						</Directory>
+					</Directory>
+				</Directory>
+				<Directory Id="dirC3669D221551B1544C61256E33B1B772" Name="lib">
+					<Component Id="cmp3638B0807A995E9425BB4DB015DEEFDB" Guid="{BA6B3D9D-0ECB-42A9-8FA5-5DCFBD4E2D52}">
+						<File Id="filA1C22578EAD660DF9A28C51052F279E1" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.scripting)lib\bsh.jar" />
+					</Component>
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

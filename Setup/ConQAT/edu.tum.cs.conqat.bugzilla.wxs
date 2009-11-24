@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<?include ConQAT.wxi ?>
+
+	<Fragment>
+		<ComponentGroup Id="edu.tum.cs.conqat.bugzilla">
+			<ComponentRef Id="cmp141F2973F01F4836ABF9FC0647D9CC40" />
+			<ComponentRef Id="cmpAE7B514E564B181F1FED043A22F13B0F" />
+			<ComponentRef Id="cmpE0D1C84E538298A80653DBEBEDA2384E" />
+			<ComponentRef Id="cmp8190C4AC2E1AEA08F4A83A9982FF78B5" />
+			<ComponentRef Id="cmpBC6498FE8188A35B55E0FB85098F4FE3" />
+			<ComponentRef Id="cmpF73DB4E3F9853915FCE7BC971A232C08" />
+			<ComponentRef Id="cmp3AE3667C72E461D9CE4F3486564FE362" />
+		</ComponentGroup>
+	</Fragment>
+	<Fragment>
+		<DirectoryRef Id="bundles">
+			<Directory Id="dir4097487651FC22448FF4303F3E4DA0DA" Name="edu.tum.cs.conqat.bugzilla">
+				<Component Id="cmp141F2973F01F4836ABF9FC0647D9CC40" Guid="{F2AB7A8C-520E-432F-8C34-717530557ED4}">
+					<File Id="fil02B1038BA022419961AF05754ED7DA7B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.bugzilla)bundle.html" />
+				</Component>
+				<Component Id="cmpAE7B514E564B181F1FED043A22F13B0F" Guid="{F8B6F902-EC91-4040-B460-DCED1FAA49C6}">
+					<File Id="fil7A63EC8C13D75E5C9CC16E460A859A17" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.bugzilla)bundle.xml" />
+				</Component>
+				<Directory Id="dir6134EFDD1723D50D222121F71EE19073" Name="classes">
+					<Directory Id="dir5B8C98E3DDB79B5CEE1C5D36E132B0EF" Name="edu">
+						<Directory Id="dir5D49CB627D988D078235060996BF3DEC" Name="tum">
+							<Directory Id="dirBC2D55FB05CDE94D6D83D71BD1ED9A74" Name="cs">
+								<Directory Id="dirC402EED62557E2058964E36446509449" Name="conqat">
+									<Directory Id="dirBD2A831A8540541D5FD43AAEC76E8126" Name="bugzilla">
+										<Component Id="cmpE0D1C84E538298A80653DBEBEDA2384E" Guid="{4556ADB7-131E-4595-A4BF-F0B31DA22E0E}">
+											<File Id="fil97C8C0A7CC510D1C2CB9E7C1E0D83568" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.bugzilla)classes\edu\tum\cs\conqat\bugzilla\BugzillaWebScope.class" />
+										</Component>
+									</Directory>
+								</Directory>
+							</Directory>
+						</Directory>
+					</Directory>
+				</Directory>
+				<Directory Id="dir6F74CA569F2146C95C99FD85BE7AA624" Name="lib">
+					<Component Id="cmp8190C4AC2E1AEA08F4A83A9982FF78B5" Guid="{05ED03F8-80F7-4D8D-A13A-1D90A34DD862}">
+						<File Id="fil1A95D4B4A37160BE9E415C98E756F46B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.bugzilla)lib\bugzilla.jar" />
+					</Component>
+					<Component Id="cmpBC6498FE8188A35B55E0FB85098F4FE3" Guid="{D12976AF-21E9-4FBC-871B-C59E83F79085}">
+						<File Id="filF610534128FFFCF18AC1BFF1E0EA0619" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.bugzilla)lib\commons-codec.jar" />
+					</Component>
+					<Component Id="cmpF73DB4E3F9853915FCE7BC971A232C08" Guid="{1F0ECC46-C8B4-4B26-9225-48059534B16B}">
+						<File Id="filF6ED49D716761CFA24D0AC512E353717" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.bugzilla)lib\commons-httpclient.jar" />
+					</Component>
+					<Component Id="cmp3AE3667C72E461D9CE4F3486564FE362" Guid="{9E9BC222-7776-4844-BEEF-8F0D3AA69F93}">
+						<File Id="fil1DEA2E8E0959FEBAA471A196F7EF9B05" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.bugzilla)lib\commons-logging.jar" />
+					</Component>
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>
