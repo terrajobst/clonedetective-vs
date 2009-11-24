@@ -64,7 +64,7 @@
     <PlugInConfigurations>
       <PlugInConfig id="XML Schema Documenter" enabled="True">
         <configuration>
-          <document rootSchemas="false" rootElements="false" constraints="true" schemas="false" syntax="false" />
+          <document rootSchemas="false" rootElements="true" constraints="true" schemas="false" syntax="false" />
           <schemaSet container="true" title="Clone Report XML Reference" />
           <namespace container="false" />
           <sortOrder>1</sortOrder>
