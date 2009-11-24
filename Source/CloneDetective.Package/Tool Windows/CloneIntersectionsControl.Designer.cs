@@ -156,7 +156,7 @@ namespace CloneDetective.Package
 			// 
 			// referenceContextMenuStrip
 			// 
-			this.referenceContextMenuStrip.Name = "contextMenuStrip";
+			this.referenceContextMenuStrip.Name = "referenceContextMenuStrip";
 			this.referenceContextMenuStrip.Size = new System.Drawing.Size(61, 4);
 			this.referenceContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip_Opening);
 			// 
