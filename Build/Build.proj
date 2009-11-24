@@ -26,6 +26,7 @@
 
 	<!-- External Tasks -->
 
+	<UsingTask AssemblyFile="$(CustomTasksDir)CloneDetective.Build.dll" TaskName="CloneDetective.Build.GetFileVersion" />
 	<UsingTask AssemblyFile="$(CustomTasksDir)CloneDetective.Build.dll" TaskName="CloneDetective.Build.RemoveTfsBindings" />
 
 	<!-- Clean -->
@@ -70,28 +71,25 @@
 		         Properties="Configuration=$(Configuration);OutDir=$(GeneratedBinaries);RegisterOutputPackage=false" />
 	</Target>
 
-	<Target Name="GenerateHelp" DependsOnTargets="Compile">
+	<!-- Get Version -->
+
+	<Target Name="GetVersion" DependsOnTargets="CompileBuildTasks">
+		<GetFileVersion File="$(GeneratedBinaries)CloneDetective.Package.dll">
+			<Output TaskParameter="Version"
+					PropertyName="CloneDetectiveVersion" />
+		</GetFileVersion>
+	</Target>
+
+	<!-- Generate Help -->
+
+	<Target Name="GenerateHelp" DependsOnTargets="GetVersion">
 		<Error Text="Documentation can only be generated for release builds." Condition="'$(Configuration)' != 'Release'" />
 
-		<!--
-			Since SHFB uses MSBuild as project format running SHFB should be as easy as this:
+		<!-- Invoke SHFB -->
+		<MSBuild Projects="$(HelpDir)Help.shfbproj"
+				 Properties="OutputPath=$(GeneratedHelp);HelpFileVersion=$(CloneDetectiveVersion)" />
 
-				<MSBuild Projects="$(HelpDir)Help.shfbproj" />
-		
-			Unfortunately it is not that easy. On 64-bit machines the MSBuild running SHFB must be loaded as 64-bit.
-			Otherwise Sandcastle crashes with a DirectoryNotFound exception. However, MSBuild should always run
-			as 32-bit otherwise all extensions that are loaded via MSBuildExtensionsPath will not work (such as
-			VSSDK and MSBuildCommunityTasks).
-		-->
-
-		<PropertyGroup Condition="'$(PROCESSOR_ARCHITECTURE)'=='AMD64' OR '$(PROCESSOR_ARCHITEW6432)'=='AMD64'">
-			<MSBuildPath>$(SystemRoot)\Microsoft.NET\Framework64\v3.5\MSBuild.exe</MSBuildPath>
-		</PropertyGroup>
-		<PropertyGroup Condition="!('$(PROCESSOR_ARCHITECTURE)'=='AMD64' OR '$(PROCESSOR_ARCHITEW6432)'=='AMD64')">
-			<MSBuildPath>$(SystemRoot)\Microsoft.NET\Framework\v3.5\MSBuild.exe</MSBuildPath>
-		</PropertyGroup>
-		<Exec Command="&quot;$(MSBuildPath)&quot; &quot;$(HelpDir)Help.shfbproj&quot;" />
-
+		<!-- Copy additional Help 2.0 support files to ouput folder. -->
 		<ItemGroup>
 			<HtmlHelp20Files Include="$(HelpDir)HTML Help 2.0 Files\*.*" />
 		</ItemGroup>
@@ -107,7 +105,7 @@
 	<!-- Generate Setup -->
 
 	<Target Name="GenerateSetup" DependsOnTargets="Compile">
-		<MSBuild Projects="$(SetupDir)Setup.sln" Targets="Rebuild"
+		<MSBuild Projects="$(SetupDir)Setup.sln"
 		         Properties="Configuration=$(Configuration);OutDir=$(GeneratedSetup);" />
 	</Target>
 
@@ -126,7 +124,7 @@
 
 	<!-- Generate Release -->
 
-	<Target Name="GenerateRelease" DependsOnTargets="GenerateSetup;GenerateSourceCode">
+	<Target Name="GenerateRelease">
 		<ItemGroup>
 			<GeneratedSourceCodeFiles Include="$(GeneratedSourceCode)\**\*.*" />
 			<GeneratedSetupFiles Include="$(GeneratedSetup)\**\*.*" />
@@ -134,7 +132,7 @@
 
 		<RemoveDir Directories="$(GeneratedRelease)" />
 		<MakeDir Directories="$(GeneratedRelease)" />
-		<Zip WorkingDirectory="$(GeneratedSourceCode)" Files="@(GeneratedSourceCodeFiles)" ZipFileName="$(GeneratedRelease)Source.zip" />
-		<Zip WorkingDirectory="$(GeneratedSetup)" Files="@(GeneratedSetupFiles)" ZipFileName="$(GeneratedRelease)Setup.zip" />
+		<Zip WorkingDirectory="$(GeneratedSourceCode)" Files="@(GeneratedSourceCodeFiles)" ZipFileName="$(GeneratedRelease)CloneDetectiveVS_Source.zip" />
+		<Zip WorkingDirectory="$(GeneratedSetup)" Files="@(GeneratedSetupFiles)" ZipFileName="$(GeneratedRelease)CloneDetectiveVS_Setup.zip" />
 	</Target>
 </Project>
