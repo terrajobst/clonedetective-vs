@@ -67,6 +67,7 @@ namespace CloneDetective.CloneReporting
 			manager.AddNamespace("cr", Resources.CloneReportSchemaNamespace);
 
 			CloneReport cloneReport = new CloneReport();
+			cloneReport.SystemDate = GetOptionalAttributeString(doc, "/cr:cloneReport/@systemdate", manager);
 
 			// In order to associate source files and clones we need to map
 			// source file ids to source file objects.
@@ -97,6 +98,7 @@ namespace CloneDetective.CloneReporting
 				// Create clone class and parse attributes.
 				CloneClass cloneClass = new CloneClass();
 				cloneClass.Id = XmlConvert.ToInt32(cloneClassNode.Attributes["id"].Value);
+				cloneClass.UniqueId = GetOptionalAttributeString(cloneClassNode, "@uniqueId", manager);
 				cloneClass.NormalizedLength = XmlConvert.ToInt32(cloneClassNode.Attributes["normalizedLength"].Value);
 				cloneClass.Fingerprint = cloneClassNode.Attributes["fingerprint"].Value;
 
@@ -104,18 +106,8 @@ namespace CloneDetective.CloneReporting
 				cloneReport.CloneClasses.Add(cloneClass);
 
 				// Read all key-value pairs associated with this clone class.
-				XmlNodeList values = cloneClassNode.SelectNodes("cr:values/cr:value", manager);
-				foreach (XmlNode valueNode in values)
-				{
-					// Create key-value pair and parse attributes.
-					CloneClassValue value = new CloneClassValue();
-					value.Key = valueNode.Attributes["key"].Value;
-					value.Value = valueNode.Attributes["value"].Value;
-					value.Type = valueNode.Attributes["type"].Value;
-
-					// Add value to the clone class' list of key-value pairs.
-					cloneClass.Values.Add(value);
-				}
+				XmlNodeList cloneClassValues = cloneClassNode.SelectNodes("cr:values/cr:value", manager);
+				ReadValues(cloneClassValues, cloneClass.Values);
 
 				// Read all clones.
 				XmlNodeList clones = cloneClassNode.SelectNodes("cr:clone", manager);
@@ -127,13 +119,20 @@ namespace CloneDetective.CloneReporting
 
 					// Create clone and parse attributes.
 					Clone clone = new Clone();
+					clone.Id = GetOptionalAttributeInt32(cloneNode, "@id", manager);
+					clone.UniqueId = GetOptionalAttributeString(cloneNode, "@uniqueId", manager);
 					clone.SourceFile = sourceFile;
 					clone.StartLine = XmlConvert.ToInt32(cloneNode.Attributes["startLine"].Value);
 					clone.LineCount = XmlConvert.ToInt32(cloneNode.Attributes["lineCount"].Value);
 					clone.StartUnitIndexInFile = XmlConvert.ToInt32(cloneNode.Attributes["startUnitIndexInFile"].Value);
 					clone.LengthInUnits = XmlConvert.ToInt32(cloneNode.Attributes["lengthInUnits"].Value);
+					clone.DeltaInUnits = XmlConvert.ToInt32(cloneNode.Attributes["deltaInUnits"].Value);
 					clone.Gaps = cloneNode.Attributes["gaps"].Value;
 					clone.Fingerprint = cloneNode.Attributes["fingerprint"].Value;
+
+					// Read all key-value pairs associated with this clone.
+					XmlNodeList cloneValues = cloneNode.SelectNodes("cr:values/cr:value", manager);
+					ReadValues(cloneValues, clone.Values);
 
 					clone.CloneClass = cloneClass;
 
@@ -146,6 +145,37 @@ namespace CloneDetective.CloneReporting
 			}
 
 			return cloneReport;
+		}
+
+		private static void ReadValues(XmlNodeList valueNodes, List<CustomValue> target)
+		{
+			foreach (XmlNode valueNode in valueNodes)
+			{
+				// Create key-value pair and parse attributes.
+				CustomValue value = new CustomValue();
+				value.Key = valueNode.Attributes["key"].Value;
+				value.Value = valueNode.Attributes["value"].Value;
+				value.Type = valueNode.Attributes["type"].Value;
+
+				// Add value to the clone class' list of key-value pairs.
+				target.Add(value);
+			}
+		}
+
+		private static string GetOptionalAttributeString(XmlNode doc, string xpath, XmlNamespaceManager manager)
+		{
+			XmlAttribute systemdateAttribute = (XmlAttribute)doc.SelectSingleNode(xpath, manager);
+			return systemdateAttribute == null
+			       	? null
+			       	: systemdateAttribute.Value;
+		}
+
+		private static int? GetOptionalAttributeInt32(XmlNode doc, string xpath, XmlNamespaceManager manager)
+		{
+			string stringValue = GetOptionalAttributeString(doc, xpath, manager);
+			return stringValue == null
+					? (int?) null
+					: XmlConvert.ToInt32(stringValue);
 		}
 	}
 }

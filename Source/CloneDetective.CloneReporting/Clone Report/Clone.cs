@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace CloneDetective.CloneReporting
 {
@@ -8,15 +9,27 @@ namespace CloneDetective.CloneReporting
 	/// </summary>
 	public sealed class Clone
 	{
+		private CloneClass _cloneClass;
 		private SourceFile _sourceFile;
+		private int? _id;
+		private string _uniqueId;
 		private int _startLine;
 		private int _lineCount;
 		private int _startUnitIndexInFile;
 		private int _lengthInUnits;
+		private int _deltaInUnits;
 		private string _gaps;
 		private string _fingerprint;
+		private List<CustomValue> _values = new List<CustomValue>();
 
-		private CloneClass _cloneClass;
+		/// <summary>
+		/// Gets or sets the associated <see cref="CloneClass"/> of this clone.
+		/// </summary>
+		public CloneClass CloneClass
+		{
+			get { return _cloneClass; }
+			set { _cloneClass = value; }
+		}
 
 		/// <summary>
 		/// The <see cref="SourceFile"/> this clone is contained in.
@@ -25,6 +38,24 @@ namespace CloneDetective.CloneReporting
 		{
 			get { return _sourceFile; }
 			set { _sourceFile = value; }
+		}
+
+		/// <summary>
+		/// Gets or sets the id of this clone.
+		/// </summary>
+		public int? Id
+		{
+			get { return _id; }
+			set { _id = value; }
+		}
+
+		/// <summary>
+		/// Gets or sets the string-based id of this clone.
+		/// </summary>
+		public string UniqueId
+		{
+			get { return _uniqueId; }
+			set { _uniqueId = value; }
 		}
 
 		/// <summary>
@@ -64,6 +95,15 @@ namespace CloneDetective.CloneReporting
 		}
 
 		/// <summary>
+		/// Gets or sets the delta in normalization units of this clone.
+		/// </summary>
+		public int DeltaInUnits
+		{
+			get { return _deltaInUnits; }
+			set { _deltaInUnits = value; }
+		}
+
+		/// <summary>
 		/// Gets or sets a string that represents the delta in modifications between
 		/// this clone and the associated <see cref="CloneClass"/>.
 		/// </summary>
@@ -87,12 +127,12 @@ namespace CloneDetective.CloneReporting
 		}
 
 		/// <summary>
-		/// Gets or sets the associated <see cref="CloneClass"/> of this clone.
+		/// Gets a list of all <see cref="CustomValue">values</see> associated
+		/// with this clone.
 		/// </summary>
-		public CloneClass CloneClass
+		public List<CustomValue> Values
 		{
-			get { return _cloneClass; }
-			set { _cloneClass = value; }
+			get { return _values; }
 		}
 	}
 }

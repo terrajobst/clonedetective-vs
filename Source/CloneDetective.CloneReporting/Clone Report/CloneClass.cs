@@ -11,9 +11,10 @@ namespace CloneDetective.CloneReporting
 	public sealed class CloneClass
 	{
 		private int _id;
+		private string _uniqueId;
 		private int _normalizedLength;
 		private string _fingerprint;
-		private List<CloneClassValue> _values = new List<CloneClassValue>();
+		private List<CustomValue> _values = new List<CustomValue>();
 		private List<Clone> _clones = new List<Clone>();
 
 		/// <summary>
@@ -29,6 +30,15 @@ namespace CloneDetective.CloneReporting
 		{
 			get { return _id; }
 			set { _id = value; }
+		}
+
+		///<summary>
+		/// Gets or sets a string-based unique ID.
+		///</summary>
+		public string UniqueId
+		{
+			get { return _uniqueId; }
+			set { _uniqueId = value; }
 		}
 
 		/// <summary>
@@ -54,11 +64,11 @@ namespace CloneDetective.CloneReporting
 		}
 
 		/// <summary>
-		/// Gets a list of all <see cref="CloneClassValue">values</see> associated
+		/// Gets a list of all <see cref="CustomValue">values</see> associated
 		/// with this clone class.
 		/// </summary>
 		[SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
-		public List<CloneClassValue> Values
+		public List<CustomValue> Values
 		{
 			get { return _values; }
 		}

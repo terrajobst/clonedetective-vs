@@ -83,7 +83,7 @@
     <Compile Include="Clone Intersection\CloneIntersectedItem.cs" />
     <Compile Include="Clone Intersection\CloneIntersection.cs" />
     <Compile Include="Clone Intersection\CloneIntersectionResult.cs" />
-    <Compile Include="Clone Report\CloneClassValue.cs" />
+    <Compile Include="Clone Report\CustomValue.cs" />
     <Compile Include="Clone Report\CloneReport.cs" />
     <Compile Include="Clone Report\CloneReportReader.cs" />
     <Compile Include="Clone Report\CloneReportWriter.cs" />

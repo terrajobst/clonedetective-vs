@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
@@ -39,6 +40,8 @@ namespace CloneDetective.CloneReporting
 		{
 			// Create root node.
 			XmlNode reportNode = doc.AppendChild(doc.CreateElement("cloneReport", Resources.CloneReportSchemaNamespace));
+			if (cloneReport.SystemDate != null)
+				reportNode.Attributes.Append(doc.CreateAttribute("systemdate")).Value = cloneReport.SystemDate;
 
 			// Write all source files.
 			foreach (SourceFile sourceFile in cloneReport.SourceFiles)
@@ -57,31 +60,54 @@ namespace CloneDetective.CloneReporting
 				// Create clone class node and write attributes.
 				XmlNode cloneClassNode = reportNode.AppendChild(doc.CreateElement("cloneClass", Resources.CloneReportSchemaNamespace));
 				cloneClassNode.Attributes.Append(doc.CreateAttribute("id")).Value = XmlConvert.ToString(cloneClass.Id);
+				if (cloneClass.UniqueId != null)
+					cloneClassNode.Attributes.Append(doc.CreateAttribute("uniqueId")).Value = cloneClass.UniqueId;
 				cloneClassNode.Attributes.Append(doc.CreateAttribute("normalizedLength")).Value = XmlConvert.ToString(cloneClass.NormalizedLength);
 				cloneClassNode.Attributes.Append(doc.CreateAttribute("fingerprint")).Value = cloneClass.Fingerprint;
 
 				// Write all key-value pairs of the current clone class.
-				XmlNode valuesNode = cloneClassNode.AppendChild(doc.CreateElement("values", Resources.CloneReportSchemaNamespace));
-				foreach (CloneClassValue value in cloneClass.Values)
+				if (cloneClass.Values.Count > 0)
 				{
-					XmlNode valueNode = valuesNode.AppendChild(doc.CreateElement("value", Resources.CloneReportSchemaNamespace));
-					valueNode.Attributes.Append(doc.CreateAttribute("key")).Value = value.Key;
-					valueNode.Attributes.Append(doc.CreateAttribute("value")).Value = value.Value;
-					valueNode.Attributes.Append(doc.CreateAttribute("type")).Value = value.Type;
+					XmlNode valuesNode = cloneClassNode.AppendChild(doc.CreateElement("values", Resources.CloneReportSchemaNamespace));
+					WriteValues(valuesNode, cloneClass.Values);
 				}
 
 				// Write all clones of the current clone class.
 				foreach (Clone clone in cloneClass.Clones)
 				{
 					XmlNode cloneNode = cloneClassNode.AppendChild(doc.CreateElement("clone", Resources.CloneReportSchemaNamespace));
+					if (clone.Id != null)
+						cloneNode.Attributes.Append(doc.CreateAttribute("id")).Value = XmlConvert.ToString(clone.Id.Value);
+					if (clone.UniqueId != null)
+						cloneNode.Attributes.Append(doc.CreateAttribute("uniqueId")).Value = clone.UniqueId;
 					cloneNode.Attributes.Append(doc.CreateAttribute("sourceFileId")).Value = XmlConvert.ToString(clone.SourceFile.Id);
 					cloneNode.Attributes.Append(doc.CreateAttribute("startLine")).Value = XmlConvert.ToString(clone.StartLine);
 					cloneNode.Attributes.Append(doc.CreateAttribute("lineCount")).Value = XmlConvert.ToString(clone.LineCount);
 					cloneNode.Attributes.Append(doc.CreateAttribute("startUnitIndexInFile")).Value = XmlConvert.ToString(clone.LineCount);
-					cloneNode.Attributes.Append(doc.CreateAttribute("lengthInUnits")).Value = XmlConvert.ToString(clone.LineCount);
+					cloneNode.Attributes.Append(doc.CreateAttribute("lengthInUnits")).Value = XmlConvert.ToString(clone.LengthInUnits);
+					cloneNode.Attributes.Append(doc.CreateAttribute("deltaInUnits")).Value = XmlConvert.ToString(clone.DeltaInUnits);
 					cloneNode.Attributes.Append(doc.CreateAttribute("gaps")).Value = clone.Gaps;
 					cloneNode.Attributes.Append(doc.CreateAttribute("fingerprint")).Value = clone.Fingerprint;
+
+					// Write all key-value pairs of the current clone.
+					if (clone.Values.Count > 0)
+					{
+						XmlNode valuesNode = cloneNode.AppendChild(doc.CreateElement("values", Resources.CloneReportSchemaNamespace));
+						WriteValues(valuesNode, clone.Values);
+					}
 				}
+			}
+		}
+
+		private static void WriteValues(XmlNode valuesNode, IEnumerable<CustomValue> values)
+		{
+			var doc = valuesNode.OwnerDocument;
+			foreach (CustomValue value in values)
+			{
+				XmlNode valueNode = valuesNode.AppendChild(doc.CreateElement("value", Resources.CloneReportSchemaNamespace));
+				valueNode.Attributes.Append(doc.CreateAttribute("key")).Value = value.Key;
+				valueNode.Attributes.Append(doc.CreateAttribute("value")).Value = value.Value;
+				valueNode.Attributes.Append(doc.CreateAttribute("type")).Value = value.Type;
 			}
 		}
 	}

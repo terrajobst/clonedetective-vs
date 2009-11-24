@@ -209,7 +209,6 @@ namespace CloneDetective.CloneReporting
 			}
 
 			// Count all marked lines.
-			// TODO: We could use the bit count algorithm here. Would increase performance from O(n) to O(log n).
 			int numberOfClonedLines = 0;
 			foreach (bool b in isClonedLine)
 			{

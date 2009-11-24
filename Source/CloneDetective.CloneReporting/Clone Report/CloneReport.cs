@@ -14,6 +14,11 @@ namespace CloneDetective.CloneReporting
 		private List<CloneClass> _cloneClasses = new List<CloneClass>();
 
 		/// <summary>
+		/// Gets or sets the system date.
+		/// </summary>
+		public string SystemDate { get; set; }
+
+		/// <summary>
 		/// Gets a list of all source files.
 		/// </summary>
 		[SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
