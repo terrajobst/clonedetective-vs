@@ -220,37 +220,93 @@
     <None Include="DefaultCloneDetection.cqb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Folder Closed 16x16.png" />
-    <None Include="Resources\CSharp File 16x16.png" />
-    <None Include="Resources\Folder Opened 16x16.png" />
-    <None Include="Resources\Error 16x16.png" />
-    <None Include="Resources\Import 16x16.png" />
     <CodeAnalysisDictionary Include="CodeAnalysisDictionary.xml" />
-    <None Include="Resources\Edit 16x16.png" />
-    <None Include="Resources\Delete 16x16.png" />
-    <None Include="Resources\Down 16x16.png" />
-    <None Include="Resources\Export 16x16.png" />
-    <None Include="Resources\Close Results 16x16.png" />
-    <None Include="Resources\Clone Intersection 16x16.png" />
-    <None Include="Resources\Open 16x16.png" />
-    <None Include="Resources\New Parameter 16x16.png" />
-    <Content Include="Resources\Package.ico" />
-    <None Include="Resources\Parameter 16x16.png" />
-    <None Include="Resources\Properties 16x16.png" />
-    <None Include="Resources\Settings 16x16.png" />
-    <None Include="Resources\Up 16x16.png" />
-    <None Include="Resources\Stopped 16x16.png" />
-    <None Include="Resources\Running 16x16.png" />
-    <None Include="Resources\Succeeded 16x16.png" />
-    <None Include="Resources\Solution 16x16.png" />
-    <None Include="Resources\Run Clone Detective 16x16.png" />
-    <None Include="Resources\Stop 16x16.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CloneDetective.CloneReporting\CloneDetective.CloneReporting.csproj">
       <Project>{892850BA-6CB1-4C57-BE9E-1C1F30EBF407}</Project>
       <Name>CloneDetective.CloneReporting</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\Etc\Bitmaps\General\CloneIntersections.png">
+      <Link>Resources\CloneIntersections.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\CloseResults.png">
+      <Link>Resources\CloseResults.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\CSharpFile.png">
+      <Link>Resources\CSharpFile.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Delete.png">
+      <Link>Resources\Delete.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Down.png">
+      <Link>Resources\Down.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Edit.png">
+      <Link>Resources\Edit.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Error.png">
+      <Link>Resources\Error.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Export.png">
+      <Link>Resources\Export.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\FolderClosed.png">
+      <Link>Resources\FolderClosed.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\FolderOpened.png">
+      <Link>Resources\FolderOpened.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Images_24bit.bmp">
+      <Link>Resources\Images_24bit.bmp</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Images_32bit.png">
+      <Link>Resources\Images_32bit.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Import.png">
+      <Link>Resources\Import.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\NewParameter.png">
+      <Link>Resources\NewParameter.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Open.png">
+      <Link>Resources\Open.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Package.ico">
+      <Link>Resources\Package.ico</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Parameter.png">
+      <Link>Resources\Parameter.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Properties.png">
+      <Link>Resources\Properties.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Run.png">
+      <Link>Resources\Run.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Running.png">
+      <Link>Resources\Running.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Settings.png">
+      <Link>Resources\Settings.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Solution.png">
+      <Link>Resources\Solution.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Stop.png">
+      <Link>Resources\Stop.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Stopped.png">
+      <Link>Resources\Stopped.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Succeeded.png">
+      <Link>Resources\Succeeded.png</Link>
+    </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Up.png">
+      <Link>Resources\Up.png</Link>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <!--

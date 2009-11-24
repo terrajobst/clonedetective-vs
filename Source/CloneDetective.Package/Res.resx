@@ -126,36 +126,8 @@
   <data name="CloneIntersectionsToolWindowTitle" xml:space="preserve">
     <value>Clone Intersections</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CSharpFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\CSharp File 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FolderClosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Folder Closed 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FolderOpened" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Folder Opened 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Run" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Run Clone Detective 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Stop 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Solution" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Solution 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="NoCloneReportOrNoFileSelected" xml:space="preserve">
     <value>No clone report loaded or no file selected.</value>
-  </data>
-  <data name="Error" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Error 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Running" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Running 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Succeeded" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Succeeded 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CloneExplorerMemoryStatistic" xml:space="preserve">
     <value>Memory: {0}</value>
@@ -238,12 +210,6 @@
   <data name="InvalidConqatBatPath" xml:space="preserve">
     <value>The path to ConQAT is either invalid or has not been configured yet. Please configure it under Tools -&gt; Options -&gt; Clone Detective -&gt; Settings.</value>
   </data>
-  <data name="Import" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Import 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Stopped" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Stopped 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="CloneExplorerStopped" xml:space="preserve">
     <value>Stopped</value>
   </data>
@@ -271,27 +237,6 @@
   <data name="InvalidJavaExePath" xml:space="preserve">
     <value>The Java Home directory is either invalid or has not been configured yet. Please configure it under Tools -&gt; Options -&gt; Clone Detective -&gt; Settings.</value>
   </data>
-  <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Delete 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Down 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Edit 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Up 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Settings 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CloseResults" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Close Results 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Export" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Export 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="CloneDetective" xml:space="preserve">
     <value>Clone Detective</value>
   </data>
@@ -306,21 +251,6 @@
   </data>
   <data name="OutputHeaderStarted" xml:space="preserve">
     <value>------ Clone detection started ------</value>
-  </data>
-  <data name="CloneIntersections" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Clone Intersection 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Properties" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Properties 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Open" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Open 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NewParameter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\New Parameter 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Parameter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Parameter 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FileDoesNotExist" xml:space="preserve">
     <value>File {0} does not exist.</value>
@@ -342,5 +272,78 @@
   </data>
   <data name="MemoryUnknown" xml:space="preserve">
     <value>unknown</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CloneIntersections" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\cloneintersections.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloseResults" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\closeresults.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CSharpFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\csharpfile.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\delete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\down.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\edit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\error.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Export" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\export.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FolderClosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\folderclosed.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FolderOpened" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\folderopened.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Import" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\import.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewParameter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\newparameter.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Open" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\open.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Package" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\package.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Parameter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\parameter.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Properties" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\properties.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Run" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\run.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Running" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\running.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\settings.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Solution" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\solution.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\stop.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stopped" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\stopped.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Succeeded" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\succeeded.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\bitmaps\general\up.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
