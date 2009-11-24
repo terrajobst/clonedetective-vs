@@ -106,7 +106,9 @@
     <None Include="%28Diagrams%29\CloneIntersection.cd" />
     <None Include="%28Diagrams%29\CloneReport.cd" />
     <None Include="%28Diagrams%29\SourceTree.cd" />
-    <None Include="Resources\CloneReport.xsd" />
+    <None Include="..\..\Etc\CloneReport.xsd">
+      <Link>Resources\CloneReport.xsd</Link>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources.resx">
