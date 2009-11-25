@@ -26,13 +26,6 @@
 		<Property Id="ARPURLINFOABOUT"  Value="$(var.ProductHomePage)" />
 		<Property Id="ARPURLUPDATEINFO" Value="$(var.ProductHomePage)" />
 
-		<!-- Launch Condition Searches -->
-
-		<Property Id="VS90_EXISTS" Secure="yes">
-			<RegistrySearch Id="S_VS90Exists" Type="raw"
-							Root="HKLM" Key="SOFTWARE\Microsoft\DevDiv\VS\Servicing\9.0" Name="SP" />
-		</Property>
-
 		<!-- Launch Conditions -->
 
 		<Condition Message="An administrator must approve or install [ProductName].">
@@ -44,7 +37,7 @@
 		</Condition>
 
 		<Condition Message="[ProductName] requires Microsoft Visual Studio 2008 Standard Edition or higher.">
-			VS90_EXISTS
+			VS90DEVENV
 		</Condition>
 
 		<!-- Media -->

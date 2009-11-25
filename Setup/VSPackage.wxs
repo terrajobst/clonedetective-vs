@@ -157,21 +157,18 @@
 
 		<!-- Custom Action Setup needed for registration -->
 
-		<Property Id="VSINSTALLDIR" Secure="yes">
-			<RegistrySearch Id="S_VS90InstallDir" Type="directory"
-							Root="HKLM" Key="SOFTWARE\Microsoft\VisualStudio\9.0" Name="InstallDir" />
-		</Property>
+		<PropertyRef Id="VS90DEVENV" />
 
 		<CustomAction Id="DevenvSetup.Install"
-			  Directory="ProgramFilesFolder"
-			  ExeCommand="&quot;[VSINSTALLDIR]\DevEnv.exe&quot; /setup /nosetupvstemplates "
-			  Return="ignore"
-			  Execute="deferred"
-			  Impersonate="no" />
+					  Property="VS90DEVENV"
+					  ExeCommand="/setup /nosetupvstemplates "
+					  Return="ignore"
+					  Execute="deferred"
+					  Impersonate="no" />
 
 		<CustomAction Id="DevenvSetup.Uninstall"
-					  Directory="ProgramFilesFolder"
-					  ExeCommand="&quot;[VSINSTALLDIR]\DevEnv.exe&quot; /setup /nosetupvstemplates "
+					  Property="VS90DEVENV"
+					  ExeCommand="/setup /nosetupvstemplates "
 					  Return="ignore"
 					  Execute="deferred"
 					  Impersonate="no" />
