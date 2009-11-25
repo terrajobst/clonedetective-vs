@@ -3,6 +3,8 @@
 
 	<?include ConQAT.wxi ?>
 
+	<!-- Component Group -->
+
 	<Fragment>
 		<ComponentGroup Id="edu.tum.cs.conqat.blocklib">
 			<ComponentRef Id="cmpB81D2863AA585151AE1215D3E8A1D1BA" />
@@ -28,6 +30,9 @@
 			<ComponentRef Id="cmpC1EDC46DD1861F6A04CC895E96E8679B" />
 		</ComponentGroup>
 	</Fragment>
+	
+	<!-- Files and Directories -->
+
 	<Fragment>
 		<DirectoryRef Id="bundles">
 			<Directory Id="dir154B5AD5BF1B9CCE9011CD149DC620ED" Name="edu.tum.cs.conqat.blocklib">

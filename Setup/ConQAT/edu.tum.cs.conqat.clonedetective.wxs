@@ -3,6 +3,8 @@
 
 	<?include ConQAT.wxi ?>
 
+	<!-- Component Group -->
+
 	<Fragment>
 		<ComponentGroup Id="edu.tum.cs.conqat.clonedetective">
 			<ComponentRef Id="cmpBA60A084A2DF5085E3FA084512ED833F" />
@@ -197,6 +199,9 @@
 			<ComponentRef Id="cmpFA4051F6C25CDA0843A13C06F119E736" />
 		</ComponentGroup>
 	</Fragment>
+
+	<!-- Files and Directories -->
+
 	<Fragment>
 		<DirectoryRef Id="bundles">
 			<Directory Id="dir7268DDA08009E593923A63575815A765" Name="edu.tum.cs.conqat.clonedetective">

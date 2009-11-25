@@ -3,6 +3,8 @@
 
 	<?include ConQAT.wxi ?>
 
+	<!-- Component Group -->
+
 	<Fragment>
 		<ComponentGroup Id="edu.tum.cs.conqat.simulink">
 			<ComponentRef Id="cmp38DDF80194922B12EDA304F0FCAFD63E" />
@@ -54,6 +56,9 @@
 			<ComponentRef Id="cmp7182236B427CDAAD3F74B87801C852BA" />
 		</ComponentGroup>
 	</Fragment>
+
+	<!-- Files and Directories -->
+
 	<Fragment>
 		<DirectoryRef Id="bundles">
 			<Directory Id="dir5527ABC1116EE7CCB59D362F1FEAF058" Name="edu.tum.cs.conqat.simulink">

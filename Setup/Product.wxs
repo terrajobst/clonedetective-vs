@@ -4,19 +4,19 @@
 	<?include Product.wxi ?>
 
 	<Product Id="*" UpgradeCode="$(var.UpgradeCode)"
-			 Name="$(var.ProductName)" Version="!(bind.fileVersion.F__Package)"
+			 Name="$(var.ProductName)" Version="$(var.ProductVersion)"
 			 Language="1033" Manufacturer="$(var.Manufacturer)">
 
 		<!-- Package Definition -->
 
-		<Package Id="*" Compressed="yes" Description="$(var.ProductShortName) !(bind.fileVersion.F__Package)" InstallerVersion="200"
+		<Package Id="*" Compressed="yes" Description="$(var.ProductShortName) $(var.ProductVersion)" InstallerVersion="200"
 				 ShortNames="no" Manufacturer="$(var.Manufacturer)" Languages="1033" SummaryCodepage="1252" />
 
 		<!-- Major Upgrade Support -->
 
 		<Upgrade Id="$(var.UpgradeCode)">
-			<UpgradeVersion Minimum="!(bind.fileVersion.F__Package)" IncludeMinimum="no" OnlyDetect="yes" Property="NEWERVERSIONDETECTED" />
-			<UpgradeVersion Minimum="0.0.0.0" IncludeMinimum="yes" Maximum="!(bind.fileVersion.F__Package)" IncludeMaximum="no" Property="OLDERVERSIONBEINGUPGRADED" />
+			<UpgradeVersion Minimum="$(var.ProductVersion)" IncludeMinimum="no" OnlyDetect="yes" Property="NEWERVERSIONDETECTED" />
+			<UpgradeVersion Minimum="0.0.0.0" IncludeMinimum="yes" Maximum="$(var.ProductVersion)" IncludeMaximum="no" Property="OLDERVERSIONBEINGUPGRADED" />
 		</Upgrade>
 
 		<!-- Properties -->
@@ -69,10 +69,10 @@
 
 		<!-- Features -->
 
-		<FeatureRef Id="F__VSPackage">
-			<FeatureRef Id="F__Help" />
+		<FeatureRef Id="VSPackage">
+			<FeatureRef Id="VSPackageHelp" />
 		</FeatureRef>
-		<FeatureRef Id="F__ConQAT" />
+		<FeatureRef Id="ConQAT" />
 
 		<!-- Install Sequences -->
 

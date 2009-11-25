@@ -1,8 +1,86 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
-
 	<?include ConQAT.wxi ?>
+
+	<!-- Features -->
+
+	<Fragment>
+		<Feature Id="ConQAT" Level="1" AllowAdvertise="no" ConfigurableDirectory="CONQATDIR"
+				 Title="ConQAT"
+				 Description="ConQAT is a continuous quality assessment toolkit. Used by Clone Detective to find the clones.">
+			<ComponentGroupRef Id="ConQAT" />
+
+			<Feature Id="edu.tum.cs.conqat.blocklib" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.blocklib" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.bugzilla" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.bugzilla" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.clonedetective" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.clonedetective" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.commons" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.commons" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.cpp" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.cpp" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.database" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.database" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.dotnet" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.dotnet" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.filesystem" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.filesystem" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.graph" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.graph" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.html_presentation" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.html_presentation" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.io" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.io" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.java" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.java" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.junit" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.junit" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.klocwork" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.klocwork" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.model_clones" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.model_clones" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.scripting" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.scripting" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.self" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.self" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.simulink" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.simulink" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.sourcecode" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.sourcecode" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.svn" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.svn" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.text" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.text" />
+			</Feature>
+			<Feature Id="edu.tum.cs.conqat.architecture" Level="1" Display="hidden">
+				<ComponentGroupRef Id="edu.tum.cs.conqat.architecture" />
+			</Feature>
+		</Feature>
+	</Fragment>
+
+	<!-- Component Group -->
 
 	<Fragment>
 		<ComponentGroup Id="ConQAT">
@@ -29,6 +107,9 @@
 			<ComponentRef Id="cmpDBECA5E24B7B43B5FC26CC48FC7A28E9" />
 		</ComponentGroup>
 	</Fragment>
+
+	<!-- Files and Directories -->
+
 	<Fragment>
 		<DirectoryRef Id="CONQATDIR">
 			<Component Id="cmpE035E65BA941AB681C13A0AF14C9F9C3" Guid="{046F324C-EE73-4C8D-8717-F359CFCF77A1}">
@@ -103,82 +184,5 @@
 				</Component>
 			</Directory>
 		</DirectoryRef>
-	</Fragment>
-
-	<!-- Feature Tree -->
-
-	<Fragment>
-		<Feature Id="F__ConQAT" Level="1" AllowAdvertise="no" ConfigurableDirectory="CONQATDIR"
-				 Title="ConQAT"
-				 Description="ConQAT is a continuous quality assessment toolkit. Used by Clone Detective to find the clones.">
-			<ComponentGroupRef Id="ConQAT" />
-
-			<Feature Id="edu.tum.cs.conqat.blocklib" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.blocklib" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.bugzilla" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.bugzilla" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.clonedetective" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.clonedetective" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.commons" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.commons" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.cpp" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.cpp" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.database" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.database" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.dotnet" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.dotnet" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.filesystem" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.filesystem" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.graph" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.graph" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.html_presentation" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.html_presentation" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.io" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.io" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.java" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.java" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.junit" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.junit" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.klocwork" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.klocwork" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.model_clones" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.model_clones" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.scripting" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.scripting" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.self" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.self" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.simulink" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.simulink" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.sourcecode" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.sourcecode" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.svn" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.svn" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.text" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.text" />
-			</Feature>
-			<Feature Id="edu.tum.cs.conqat.architecture" Level="1" Display="hidden">
-				<ComponentGroupRef Id="edu.tum.cs.conqat.architecture" />
-			</Feature>
-		</Feature>
 	</Fragment>
 </Wix>

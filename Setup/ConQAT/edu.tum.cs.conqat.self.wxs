@@ -3,6 +3,8 @@
 
 	<?include ConQAT.wxi ?>
 
+	<!-- Component Group -->
+
 	<Fragment>
 		<ComponentGroup Id="edu.tum.cs.conqat.self">
 			<ComponentRef Id="cmpF8569CDF7F9D5986A55BF8569BC742E6" />
@@ -16,6 +18,9 @@
 			<ComponentRef Id="cmp5521B98ABAC3587F6F25362D4382AADD" />
 		</ComponentGroup>
 	</Fragment>
+
+	<!-- Files and Directories -->
+
 	<Fragment>
 		<DirectoryRef Id="bundles">
 			<Directory Id="dir794862ADD1120958920826660ECE1B88" Name="edu.tum.cs.conqat.self">
