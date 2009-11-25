@@ -68,11 +68,11 @@
 		</Directory>
 
 		<!-- Features -->
-		
-		<FeatureRef Id="F__VSPackage" />
+
+		<FeatureRef Id="F__VSPackage">
+			<FeatureRef Id="F__Help" />
+		</FeatureRef>
 		<FeatureRef Id="F__ConQAT" />
-		<FeatureRef Id="F__HelpVS" />
-		<FeatureRef Id="F__HelpCHM" />
 
 		<!-- Install Sequences -->
 

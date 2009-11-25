@@ -66,8 +66,7 @@
     <Compile Include="ConQAT\edu.tum.cs.conqat.sourcecode.wxs" />
     <Compile Include="ConQAT\edu.tum.cs.conqat.svn.wxs" />
     <Compile Include="ConQAT\edu.tum.cs.conqat.text.wxs" />
-    <Compile Include="HelpCHM.wxs" />
-    <Compile Include="HelpVS.wxs" />
+    <Compile Include="PackageHelp.wxs" />
     <Compile Include="Package.wxs" />
     <Compile Include="Product.wxs" />
   </ItemGroup>

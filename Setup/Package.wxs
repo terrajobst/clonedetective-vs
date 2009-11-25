@@ -176,6 +176,7 @@
 
 	<Fragment>
 		<Feature Id="F__VSPackage" Level="1" Absent="disallow" AllowAdvertise="no" ConfigurableDirectory="INSTALLDIR"
+				 Display="expand"
 				 Title="Visual Studio Integration" 
 				 Description="Integrates Clone Detective into Visual Studio 2008.">
 			<ComponentGroupRef Id="CG__Package"/>
