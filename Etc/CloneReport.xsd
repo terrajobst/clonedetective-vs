@@ -83,15 +83,15 @@
 			<xs:selector xpath="cr:cloneClass/cr:clone" />
 			<xs:field xpath="@sourceFileId" />
 		</xs:keyref>
-	
-</xs:element>
+	</xs:element>
 
 	<!-- Source File -->
 
 	<xs:element name="sourceFile">
 		<xs:annotation>
 			<xs:documentation>
-				Describes a source file in which clone detective found at least one clone.
+				Describes a source file that was analyzed by clone detective. This also includes
+				files for which no clone was found.
 			</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
@@ -113,15 +113,14 @@
 			<xs:attribute name="length" type="xs:int" use="required">
 				<xs:annotation>
 					<xs:documentation>
-						Contains the number of lines (i.e. lines of code, LOC) of the source
-						file.
+						Contains the number of lines (i.e. lines of code, LOC) of the source file.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
 			<xs:attribute name="fingerprint" type="xs:string" use="required">
 				<xs:annotation>
 					<xs:documentation>
-						Contains a fingerprint (i.e. a hash) of the source file.
+						Contains an MD5 hash of the source file's content.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
@@ -153,14 +152,18 @@
 			<xs:attribute name="fingerprint" type="xs:string" use="required">
 				<xs:annotation>
 					<xs:documentation>
-						Contains a fingerprint (i.e. a hash) of this clone class.
+						Contains a string of arbitrary length that identifies this clone class across clone reports. It
+						is used for blacklisting. Furthermore, it is evaluated when programmatically determining equality
+						of clone classes, i.e. it needs to be present and no two clone classes in a report should have the
+						same fingerprint.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
 			<xs:attribute name="normalizedLength" type="xs:int" use="required">
 				<xs:annotation>
 					<xs:documentation>
-						For internal use only.
+						Contains the length of the clones in this clone class measured in units. Depending on the normalization
+						technique units can be words, lines, tokens or statements.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
@@ -184,7 +187,7 @@
 			<xs:attribute name="sourceFileId" type="xs:int" use="required">
 				<xs:annotation>
 					<xs:documentation>
-						Contains the id the source file the clone is contained id.
+						Contains the id the source file the clone is contained in.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
@@ -205,35 +208,43 @@
 			<xs:attribute name="startUnitIndexInFile" type="xs:int" use="required">
 				<xs:annotation>
 					<xs:documentation>
-						For internal use only.
+						Contains the index of the first unit of this clone. Depending on the normalization
+						technique units can be words, lines, tokens or statements.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
 			<xs:attribute name="lengthInUnits" type="xs:int" use="required">
 				<xs:annotation>
 					<xs:documentation>
-						For internal use only.
+						Contains the number of units this clone comprises. Depending on the normalization
+						technique units can be words, lines, tokens or statements.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
 			<xs:attribute name="deltaInUnits" type="xs:int" use="required">
 				<xs:annotation>
 					<xs:documentation>
-						For internal use only.
+						Contains the edit distance in units from this clone to the clone class representative.
+						For ungapped clone classes, this value is always zero.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
 			<xs:attribute name="gaps" type="xs:string" use="required">
 				<xs:annotation>
 					<xs:documentation>
-						For internal use only.
+						Contains a string that describes the gap positions. For ungapped clone classes, this value
+						is always the empty string.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
 			<xs:attribute name="fingerprint" type="xs:string" use="required">
 				<xs:annotation>
 					<xs:documentation>
-						Contains a fingerprint (i.e. a hash) of this clone.
+						Contains a string of arbitrary length that identifies this clone class across clone reports. It
+						is used for blacklisting. Furthermore, it is evaluated when programmatically determining equality
+						of clone classes, i.e. it needs to be present and no two clone classes in a report should have the
+						same fingerprint. For ungapped clone classes, all clones contained in the clone class share the same
+						fingerprint.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
