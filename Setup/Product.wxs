@@ -46,7 +46,7 @@
 
 		<!-- Icons -->
 
-		<Icon Id="ProductIcon" SourceFile="Resources\Product.ico" />
+		<Icon Id="ProductIcon" SourceFile="$(var.EtcFolder)Bitmaps\General\Package.ico" />
 
 		<!-- Files and Directories -->
 
@@ -83,9 +83,9 @@
 
 		<Property Id="ApplicationFolderName" Value="$(var.ProductShortName)" />
 		<Property Id="WixAppFolder" Value="WixPerMachineFolder" />
-		<WixVariable Id="WixUILicenseRtf" Value="Resources\License.rtf" />
-		<WixVariable Id="WixUIBannerBmp"  Value="Resources\Banner.bmp" />
-		<WixVariable Id="WixUIDialogBmp"  Value="Resources\Dialog.bmp" />
+		<WixVariable Id="WixUILicenseRtf" Value="$(var.EtcFolder)License.rtf" />
+		<WixVariable Id="WixUIBannerBmp"  Value="$(var.EtcFolder)\Bitmaps\Setup\Banner.jpg" />
+		<WixVariable Id="WixUIDialogBmp"  Value="$(var.EtcFolder)\Bitmaps\Setup\Dialog.jpg" />
 
 		<Property Id="ALLUSERS" Value="1" />
 		<WixVariable Id="WixUISupportPerMachine" Value="1" />

@@ -14,5 +14,6 @@
 	<?define BinFolder           = "$(var.TargetDir)..\Bin\" ?>
 	<?define HelpFolder          = "$(var.TargetDir)..\Help\" ?>
 	<?define LibFolder           = "$(sys.CURRENTDIR)..\Lib\" ?>
+	<?define EtcFolder           = "$(sys.CURRENTDIR)..\Etc\" ?>
 
 </Include>
