@@ -26,7 +26,7 @@
 
 	<!-- External Tasks -->
 
-	<UsingTask AssemblyFile="$(CustomTasksDir)CloneDetective.Build.dll" TaskName="CloneDetective.Build.GetFileVersion" />
+	<UsingTask AssemblyFile="$(CustomTasksDir)CloneDetective.Build.dll" TaskName="CloneDetective.Build.GetFileVersionInfo" />
 	<UsingTask AssemblyFile="$(CustomTasksDir)CloneDetective.Build.dll" TaskName="CloneDetective.Build.RemoveTfsBindings" />
 
 	<!-- Clean -->
@@ -74,10 +74,12 @@
 	<!-- Get Version -->
 
 	<Target Name="GetVersion" DependsOnTargets="CompileBuildTasks">
-		<GetFileVersion File="$(GeneratedBinaries)CloneDetective.Package.dll">
-			<Output TaskParameter="Version"
+		<GetFileVersionInfo File="$(GeneratedBinaries)CloneDetective.Package.dll">
+			<Output TaskParameter="FileVersion"
 					PropertyName="CloneDetectiveVersion" />
-		</GetFileVersion>
+			<Output TaskParameter="LegalCopyright"
+					PropertyName="CloneDetectiveCopyright"/>
+		</GetFileVersionInfo>
 	</Target>
 
 	<!-- Generate Help -->
@@ -87,7 +89,7 @@
 
 		<!-- Invoke SHFB -->
 		<MSBuild Projects="$(HelpDir)Help.shfbproj"
-				 Properties="OutputPath=$(GeneratedHelp);HelpFileVersion=$(CloneDetectiveVersion)" />
+				 Properties="OutputPath=$(GeneratedHelp);HelpFileVersion=$(CloneDetectiveVersion);CopyrightText=[v{%40HelpFileVersion}] $(CloneDetectiveCopyright)" />
 
 		<!-- Copy additional Help 2.0 support files to ouput folder. -->
 		<ItemGroup>
