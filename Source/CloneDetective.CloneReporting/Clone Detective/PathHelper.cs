@@ -1,6 +1,6 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace CloneDetective.CloneReporting
 {
@@ -98,9 +98,7 @@ namespace CloneDetective.CloneReporting
 		/// </returns>
 		public static string GetRelativePath(string relativeToPath, string path)
 		{
-			StringBuilder sb = new StringBuilder();
-			sb.Append(relativeToPath);
-
+			int distance = 0;
 			string commonPrefix = relativeToPath;
 			while (!path.StartsWith(commonPrefix, StringComparison.OrdinalIgnoreCase))
 			{
@@ -108,8 +106,7 @@ namespace CloneDetective.CloneReporting
 				if (commonPrefix == null)
 					return path;
 
-				sb.Append(Path.DirectorySeparatorChar);
-				sb.Append("..");
+				distance++;
 			}
 
 			// If the drive was the only part both directories have
@@ -117,20 +114,30 @@ namespace CloneDetective.CloneReporting
 			if (Path.GetDirectoryName(commonPrefix) == null)
 				return path;
 
+			Stack<string> remainingDirectories = new Stack<string>();
 			string pathDir = Path.GetDirectoryName(path);
 			while (!String.Equals(commonPrefix, pathDir, StringComparison.OrdinalIgnoreCase))
 			{
 				string newPathDir = Path.GetDirectoryName(pathDir);
 				string delta = pathDir.Substring(newPathDir.Length + 1);
-				sb.Append(Path.DirectorySeparatorChar);
-				sb.Append(delta);
+				remainingDirectories.Push(delta);
 				pathDir = newPathDir;
 			}
 
-			sb.Append(Path.DirectorySeparatorChar);
-			sb.Append(Path.GetFileName(path));
+			string relativePath = relativeToPath;
 
-			return sb.ToString();
+			for (int i = 0; i < distance; i++)
+				relativePath = Path.Combine(relativePath, "..");
+
+			while (remainingDirectories.Count > 0)
+			{
+				string remainingDirectory = remainingDirectories.Pop();
+				relativePath = Path.Combine(relativePath, remainingDirectory);
+			}
+
+			relativePath = Path.Combine(relativePath, Path.GetFileName(path));
+
+			return relativePath;
 		}
 
 		/// <summary>

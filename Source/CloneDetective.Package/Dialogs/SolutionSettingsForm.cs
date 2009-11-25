@@ -432,9 +432,12 @@ namespace CloneDetective.Package
 
 		private void browseAnalysisFileNameButton_Click(object sender, EventArgs e)
 		{
-			openFileDialog.FileName = _macroExpander.Expand(analysisFileNameTextBox.Text);
-			if (openFileDialog.ShowDialog(this) == DialogResult.OK)
-				analysisFileNameTextBox.Text = TryToMakePathRelativeToSolution(openFileDialog.FileName);
+			analysisOpenFileDialog.FileName = _macroExpander.Expand(analysisFileNameTextBox.Text);
+			if (analysisOpenFileDialog.ShowDialog(this) == DialogResult.OK)
+				analysisFileNameTextBox.Text = TryToMakePathRelativeToSolution(analysisOpenFileDialog.FileName);
+
+			UpdateDeclaredProperties();
+			ValidateProperties();
 		}
 
 		private void cloneReportFileNameTextBox_Validating(object sender, CancelEventArgs e)
@@ -444,9 +447,16 @@ namespace CloneDetective.Package
 
 		private void browseCloneReportFileNameButton_Click(object sender, EventArgs e)
 		{
-			saveFileDialog.FileName = _macroExpander.Expand(cloneReportFileNameTextBox.Text);
-			if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-				cloneReportFileNameTextBox.Text = TryToMakePathRelativeToSolution(saveFileDialog.FileName);
+			cloneReportSaveFileDialog.FileName = _macroExpander.Expand(cloneReportFileNameTextBox.Text);
+			if (cloneReportSaveFileDialog.ShowDialog(this) == DialogResult.OK)
+				cloneReportFileNameTextBox.Text = TryToMakePathRelativeToSolution(cloneReportSaveFileDialog.FileName);
+		}
+
+		private void browsePropertiesFileName_Click(object sender, EventArgs e)
+		{
+			propertiesOpenFileDialog.FileName = _macroExpander.Expand(propertiesFileNameTextBox.Text);
+			if (propertiesOpenFileDialog.ShowDialog(this) == DialogResult.OK)
+				propertiesFileNameTextBox.Text = TryToMakePathRelativeToSolution(propertiesOpenFileDialog.FileName);
 		}
 
 		private void usePropertiesFileCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -515,6 +525,12 @@ namespace CloneDetective.Package
 		private void downToolStripButton_Click(object sender, EventArgs e)
 		{
 			MoveRows(1);
+		}
+
+		private void refreshToolStripButton_Click(object sender, EventArgs e)
+		{
+			UpdateDeclaredProperties();
+			ValidateProperties();
 		}
 
 		private void propertyOverridesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

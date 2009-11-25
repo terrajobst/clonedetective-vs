@@ -283,6 +283,9 @@
     <Content Include="..\..\Etc\Bitmaps\General\Properties.png">
       <Link>Resources\Properties.png</Link>
     </Content>
+    <Content Include="..\..\Etc\Bitmaps\General\Refresh.png">
+      <Link>Resources\Refresh.png</Link>
+    </Content>
     <Content Include="..\..\Etc\Bitmaps\General\Run.png">
       <Link>Resources\Run.png</Link>
     </Content>

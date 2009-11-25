@@ -52,8 +52,8 @@
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.upToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.downToolStripButton = new System.Windows.Forms.ToolStripButton();
-			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+			this.analysisOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+			this.cloneReportSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
 			this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
 			this.propertiesFileNameTextBox = new System.Windows.Forms.TextBox();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -64,6 +64,9 @@
 			this.pathsGroupLabel = new CloneDetective.Package.GroupLabel();
 			this.propertiesFileGroupLabel = new CloneDetective.Package.GroupLabel();
 			this.propertyOverridesGroupLabel = new CloneDetective.Package.GroupLabel();
+			this.propertiesOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.refreshToolStripButton = new System.Windows.Forms.ToolStripButton();
 			((System.ComponentModel.ISupportInitialize)(this.propertyOverridesDataGridView)).BeginInit();
 			this.propertyOverridesToolStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -256,7 +259,9 @@
             this.deleteToolStripButton,
             this.toolStripSeparator1,
             this.upToolStripButton,
-            this.downToolStripButton});
+            this.downToolStripButton,
+            this.toolStripSeparator2,
+            this.refreshToolStripButton});
 			this.propertyOverridesToolStrip.Location = new System.Drawing.Point(32, 254);
 			this.propertyOverridesToolStrip.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
 			this.propertyOverridesToolStrip.Name = "propertyOverridesToolStrip";
@@ -317,13 +322,13 @@
 			this.downToolStripButton.Text = "Move down";
 			this.downToolStripButton.Click += new System.EventHandler(this.downToolStripButton_Click);
 			// 
-			// openFileDialog
+			// analysisOpenFileDialog
 			// 
-			this.openFileDialog.Filter = "ConQAT block files (*.cqb)|*.cqb|All files (*.*)|*.*";
+			this.analysisOpenFileDialog.Filter = "ConQAT block files (*.cqb)|*.cqb|All files (*.*)|*.*";
 			// 
-			// saveFileDialog
+			// cloneReportSaveFileDialog
 			// 
-			this.saveFileDialog.Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*";
+			this.cloneReportSaveFileDialog.Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*";
 			// 
 			// errorProvider
 			// 
@@ -355,6 +360,7 @@
 			this.browsePropertiesFileName.TabIndex = 12;
 			this.browsePropertiesFileName.Text = "Browse...";
 			this.browsePropertiesFileName.UseVisualStyleBackColor = true;
+			this.browsePropertiesFileName.Click += new System.EventHandler(this.browsePropertiesFileName_Click);
 			// 
 			// propertiesFileNameLabel
 			// 
@@ -417,6 +423,26 @@
 			this.propertyOverridesGroupLabel.Size = new System.Drawing.Size(603, 13);
 			this.propertyOverridesGroupLabel.TabIndex = 13;
 			this.propertyOverridesGroupLabel.Text = "Property &overrides";
+			// 
+			// propertiesOpenFileDialog
+			// 
+			this.propertiesOpenFileDialog.Filter = "ConQAT run files (*.cqr)|*.cqr|ConQAT properties files (*.properties)|*.propertie" +
+				"s|All files (*.*)|*.*";
+			// 
+			// toolStripSeparator2
+			// 
+			this.toolStripSeparator2.Name = "toolStripSeparator2";
+			this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+			// 
+			// refreshToolStripButton
+			// 
+			this.refreshToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.refreshToolStripButton.Image = global::CloneDetective.Package.Res.Refresh;
+			this.refreshToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.refreshToolStripButton.Name = "refreshToolStripButton";
+			this.refreshToolStripButton.Size = new System.Drawing.Size(23, 22);
+			this.refreshToolStripButton.Text = "Reload definitions from analysis file";
+			this.refreshToolStripButton.Click += new System.EventHandler(this.refreshToolStripButton_Click);
 			// 
 			// SolutionSettingsForm
 			// 
@@ -485,8 +511,8 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripButton upToolStripButton;
 		private System.Windows.Forms.ToolStripButton downToolStripButton;
-		private System.Windows.Forms.OpenFileDialog openFileDialog;
-		private System.Windows.Forms.SaveFileDialog saveFileDialog;
+		private System.Windows.Forms.OpenFileDialog analysisOpenFileDialog;
+		private System.Windows.Forms.SaveFileDialog cloneReportSaveFileDialog;
 		private GroupLabel propertyOverridesGroupLabel;
 		private GroupLabel pathsGroupLabel;
 		private System.Windows.Forms.ErrorProvider errorProvider;
@@ -500,5 +526,8 @@
 		private System.Windows.Forms.DataGridViewImageColumn iconColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn propertyColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn valueColumn;
+		private System.Windows.Forms.OpenFileDialog propertiesOpenFileDialog;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+		private System.Windows.Forms.ToolStripButton refreshToolStripButton;
 	}
 }
