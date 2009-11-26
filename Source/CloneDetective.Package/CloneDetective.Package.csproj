@@ -229,85 +229,85 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\Etc\Bitmaps\General\CloneIntersections.png">
+    <Content Include="..\..\Etc\Icons\CloneIntersections.png">
       <Link>Resources\CloneIntersections.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\CloseResults.png">
+    <Content Include="..\..\Etc\Icons\CloseResults.png">
       <Link>Resources\CloseResults.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\CSharpFile.png">
+    <Content Include="..\..\Etc\Icons\CSharpFile.png">
       <Link>Resources\CSharpFile.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Delete.png">
+    <Content Include="..\..\Etc\Icons\Delete.png">
       <Link>Resources\Delete.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Down.png">
+    <Content Include="..\..\Etc\Icons\Down.png">
       <Link>Resources\Down.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Edit.png">
+    <Content Include="..\..\Etc\Icons\Edit.png">
       <Link>Resources\Edit.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Error.png">
+    <Content Include="..\..\Etc\Icons\Error.png">
       <Link>Resources\Error.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Export.png">
+    <Content Include="..\..\Etc\Icons\Export.png">
       <Link>Resources\Export.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\FolderClosed.png">
+    <Content Include="..\..\Etc\Icons\FolderClosed.png">
       <Link>Resources\FolderClosed.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\FolderOpened.png">
+    <Content Include="..\..\Etc\Icons\FolderOpened.png">
       <Link>Resources\FolderOpened.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Images_24bit.bmp">
+    <Content Include="..\..\Etc\Icons\Images_24bit.bmp">
       <Link>Resources\Images_24bit.bmp</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Images_32bit.png">
+    <Content Include="..\..\Etc\Icons\Images_32bit.png">
       <Link>Resources\Images_32bit.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Import.png">
+    <Content Include="..\..\Etc\Icons\Import.png">
       <Link>Resources\Import.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\NewParameter.png">
+    <Content Include="..\..\Etc\Icons\NewParameter.png">
       <Link>Resources\NewParameter.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Open.png">
+    <Content Include="..\..\Etc\Icons\Open.png">
       <Link>Resources\Open.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Package.ico">
+    <Content Include="..\..\Etc\Icons\Package.ico">
       <Link>Resources\Package.ico</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Parameter.png">
+    <Content Include="..\..\Etc\Icons\Parameter.png">
       <Link>Resources\Parameter.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Properties.png">
+    <Content Include="..\..\Etc\Icons\Properties.png">
       <Link>Resources\Properties.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Refresh.png">
+    <Content Include="..\..\Etc\Icons\Refresh.png">
       <Link>Resources\Refresh.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Run.png">
+    <Content Include="..\..\Etc\Icons\Run.png">
       <Link>Resources\Run.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Running.png">
+    <Content Include="..\..\Etc\Icons\Running.png">
       <Link>Resources\Running.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Settings.png">
+    <Content Include="..\..\Etc\Icons\Settings.png">
       <Link>Resources\Settings.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Solution.png">
+    <Content Include="..\..\Etc\Icons\Solution.png">
       <Link>Resources\Solution.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Stop.png">
+    <Content Include="..\..\Etc\Icons\Stop.png">
       <Link>Resources\Stop.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Stopped.png">
+    <Content Include="..\..\Etc\Icons\Stopped.png">
       <Link>Resources\Stopped.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Succeeded.png">
+    <Content Include="..\..\Etc\Icons\Succeeded.png">
       <Link>Resources\Succeeded.png</Link>
     </Content>
-    <Content Include="..\..\Etc\Bitmaps\General\Up.png">
+    <Content Include="..\..\Etc\Icons\Up.png">
       <Link>Resources\Up.png</Link>
     </Content>
   </ItemGroup>
