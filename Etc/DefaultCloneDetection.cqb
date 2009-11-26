@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+
+	<block-spec name="edu.tum.cs.conqat.blocklib.clonedetective.CloneTrendOutput">
+
+		<!-- Parameters -->
+		<param name="solution">
+			<attr name="dir"/>
+		</param>
+		<param name="output">
+			<attr name="dir"/>
+			<attr name="file"/>
+		</param>
+		<param name="clone">
+			<attr name="minlength"/>
+		</param>
+
+		<!-- Load source files -->
+		<processor class="edu.tum.cs.conqat.sourcecode.scope.SourceCodeScope" name="src">
+			<include pattern="**/*.cs"/>
+			<exclude pattern="**/*.Designer.cs"/>
+			<root dir="@solution.dir"/>
+			<language name="cs"/>
+		</processor>
+
+		<!-- Perform clone detection -->
+		<block spec="edu.tum.cs.conqat.clonedetective.languages.cs.CsCloneDetection" name="clonedetection">
+			<input scope="@src"/>
+			<clone minlength="@clone.minlength"/>
+		</block>
+
+		<!-- Write XML file -->
+		<processor class="edu.tum.cs.conqat.clonedetective.result.CloneReportWriterProcessor" name="xmloutput">
+			<detection-result ref="@clonedetection.detectionresult"/>
+			<output dir="@output.dir" report-name="@output.file"/>
+		</processor>
+
+	</block-spec>
+
+</conqat>

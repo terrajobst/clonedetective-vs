@@ -217,8 +217,8 @@
     <None Include="%28Diagrams%29\CloneDetectiveManager.cd" />
     <None Include="%28Diagrams%29\ToolWindows.cd" />
     <None Include="%28Diagrams%29\VSPackage.cd" />
-    <None Include="DefaultCloneDetection.cqb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Include="..\..\Etc\DefaultCloneDetection.cqb">
+      <Link>DefaultCloneDetection.cqb</Link>
     </None>
     <CodeAnalysisDictionary Include="CodeAnalysisDictionary.xml" />
   </ItemGroup>

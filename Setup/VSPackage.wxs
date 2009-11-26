@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+	 xmlns:Util="http://schemas.microsoft.com/wix/UtilExtension">
 
 	<?include Product.wxi ?>
 
@@ -27,12 +28,16 @@
 			<ComponentRef Id="CloneDetective.CloneReporting.dll"/>
 			<ComponentRef Id="SandDock.dll"/>
 			<ComponentRef Id="DefaultCloneDetection.cqb"/>
+			<ComponentRef Id="CloneReport.xsd"/>
+			<ComponentRef Id="VSSchemaCatalog.xml"/>
 		</ComponentGroup>
 	</Fragment>
 
 	<!-- Files and Directories -->
-	
+
 	<Fragment>
+		<PropertyRef Id="VS90_SCHEMAS_DIR"/>
+
 		<DirectoryRef Id="INSTALLDIR">
 			<Component Id="CloneDetective.Package.dll" Guid="{D9FC1FB8-4C77-43b7-B376-CDCE59A06A33}">
 				<File Id="CloneDetective.Package.dll" Source="$(var.BinFolder)CloneDetective.Package.dll" />
@@ -46,23 +51,45 @@
 				<File Id="SandDock.dll" Source="$(var.BinFolder)SandDock.dll" />
 			</Component>
 			<Component Id="DefaultCloneDetection.cqb" Guid="{9F610268-E2B2-4e3d-B404-54EC665DA4CE}">
-				<File Id="DefaultCloneDetection.cqb" Source="$(var.BinFolder)DefaultCloneDetection.cqb" />
+				<File Id="DefaultCloneDetection.cqb" Source="$(var.EtcFolder)DefaultCloneDetection.cqb" />
+			</Component>
+			<Component Id="CloneReport.xsd" Guid="{24A9758E-3602-4209-8C6D-2FFD2838F526}">
+				<File Id="CloneReport.xsd" Source="$(var.EtcFolder)CloneReport.xsd" />
 			</Component>
 			<Component Id="ConQAT.Registration" Guid="{79ED39C9-59A5-4a3f-9928-2017C3DE2EF6}">
 				<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\$(var.ProductName)">
 					<RegistryValue Name="ConqatFileName" Value="[CONQATDIR]bin\ConQAT.bat" Type="string" />
 				</RegistryKey>
 			</Component>
+			<Directory Id="VS90_SCHEMAS_DIR">
+				<Component Id="VSSchemaCatalog.xml" Guid="{99FA5BE6-7F0B-40e0-BAD7-DC2ADFBDB061}">
+					<File Id="VSSchemaCatalog.xml" Name="ConQAT.xml" Source="$(var.EtcFolder)VSSchemaCatalog.xml"
+						  xmlns:cat="http://schemas.microsoft.com/xsd/catalog">
+					</File>
+					<Util:XmlConfig Id="Add.VSSchemaCatalog.xml"
+									Action="create"
+									File="[#VSSchemaCatalog.xml]"
+									ElementPath="/SchemaCatalog"
+									Node="document"
+									On="install"
+									PreserveModifiedDate="yes"
+									>
+						<![CDATA[<Schema xmlns="http://schemas.microsoft.com/xsd/catalog"
+										 href="[#CloneReport.xsd]"
+										 targetNamespace="http://conqat.cs.tum.edu/ns/clonereport" />]]>
+					</Util:XmlConfig>
+				</Component>
+			</Directory>
 		</DirectoryRef>
 	</Fragment>
-	
+
 	<!-- Registry -->
-	
+
 	<Fragment>
 		<Component Id="VSPackage.Registration" Guid="{B94A8F45-B25F-45f1-9ABA-FD61587D485D}" Directory="INSTALLDIR">
-			
+
 			<!-- Clone Detective Settings -->
-			
+
 			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\$(var.ProductName)">
 				<RegistryValue Name="InstallDir" Value="[INSTALLDIR]" Type="string" />
 			</RegistryKey>
