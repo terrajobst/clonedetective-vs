@@ -123,7 +123,7 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Media\CloseResults.png">
+    <Image Include="..\Etc\Icons\CloseResults.png">
       <ImageId>d89784ad-ee6f-4f9f-a403-714114aa3492</ImageId>
     </Image>
   </ItemGroup>
@@ -138,47 +138,47 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Media\EditSolutionSettings.png">
+    <Image Include="..\Etc\Icons\Settings.png">
       <ImageId>f618d5d0-dbfb-4126-ba5e-de574ca81e5d</ImageId>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Media\Error.png">
+    <Image Include="..\Etc\Icons\Error.png">
       <ImageId>95da969a-b70d-45b1-b9bb-5b59edb7a8c4</ImageId>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Media\Export.png">
+    <Image Include="..\Etc\Icons\Export.png">
       <ImageId>2479ef0e-457c-4293-8c1a-018b46b75922</ImageId>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Media\Import.png">
+    <Image Include="..\Etc\Icons\Import.png">
       <ImageId>115226cc-13ce-4737-8dcf-4232b12f1747</ImageId>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Media\Run.png">
+    <Image Include="..\Etc\Icons\Run.png">
       <ImageId>5028b52e-bf29-4edb-8ce2-b835374cc04d</ImageId>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Media\Running.png">
+    <Image Include="..\Etc\Icons\Running.png">
       <ImageId>25a17a00-d541-4b52-8fe6-453caafa2414</ImageId>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Media\Stop.png">
+    <Image Include="..\Etc\Icons\Stop.png">
       <ImageId>2f4114f8-1980-4b52-8392-8407a41f22b0</ImageId>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Media\Stopped.png">
+    <Image Include="..\Etc\Icons\Stopped.png">
       <ImageId>3e8aaf8b-0576-4470-a031-39f264c22992</ImageId>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Media\Succeeded.png">
+    <Image Include="..\Etc\Icons\Succeeded.png">
       <ImageId>77cd24d7-1d79-45c1-96d4-4f58d96de96f</ImageId>
     </Image>
   </ItemGroup>
