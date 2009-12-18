@@ -29,6 +29,7 @@
 			<ComponentRef Id="SandDock.dll"/>
 			<ComponentRef Id="DefaultCloneDetection.cqb"/>
 			<ComponentRef Id="CloneReport.xsd"/>
+			<ComponentRef Id="VSAddReference.Registration" />
 			<ComponentRef Id="VSSchemaCatalog.xml"/>
 		</ComponentGroup>
 	</Fragment>
@@ -55,6 +56,11 @@
 			</Component>
 			<Component Id="CloneReport.xsd" Guid="{24A9758E-3602-4209-8C6D-2FFD2838F526}">
 				<File Id="CloneReport.xsd" Source="$(var.EtcFolder)CloneReport.xsd" />
+			</Component>
+			<Component Id="VSAddReference.Registration" Guid="{261EAD4A-CEF8-4a72-8CC5-79BFD96F0CB1}">
+				<RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\.NETFramework\AssemblyFolders\CloneDetectiveVS" Action="createAndRemoveOnUninstall">
+					<RegistryValue Type="string" Value="[INSTALLDIR]"/>
+				</RegistryKey>
 			</Component>
 			<Component Id="ConQAT.Registration" Guid="{79ED39C9-59A5-4a3f-9928-2017C3DE2EF6}">
 				<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\$(var.ProductName)">
