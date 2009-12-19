@@ -25,7 +25,10 @@ Prerequisites
 7. Sandcastle Help File Builder (SHFB)
    http://www.codeplex.com/SHFB
 
-8. Windows Installer XML (WiX) toolset Version 3
+8. XML Schema Documenter
+   http://www.codeplex.com/XSDDoc
+
+9. Windows Installer XML (WiX) toolset Version 3
    http://wix.sourceforge.net/
 
 
