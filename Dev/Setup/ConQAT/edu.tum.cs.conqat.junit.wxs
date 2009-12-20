@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<?include ConQAT.wxi ?>
+
+	<!-- Component Group -->
+
+	<Fragment>
+		<ComponentGroup Id="edu.tum.cs.conqat.junit">
+			<ComponentRef Id="cmp99A723D5FC2CD24DFF7953F4279C0D8E" />
+			<ComponentRef Id="cmp912F0CC6A867A5C4BEDBDE4B6DA1E5AA" />
+			<ComponentRef Id="cmpC093B93EE483988F794CA95978EF26CA" />
+			<ComponentRef Id="cmpB638A586ECAB018D4C51AB1F9AE1D160" />
+			<ComponentRef Id="cmp260636A5F8F04674D1574CBE99A0603F" />
+			<ComponentRef Id="cmp912E1EDFF7790FA3F26C251775E93356" />
+			<ComponentRef Id="cmpE2B079322BE04050F1EB53C2664168B7" />
+			<ComponentRef Id="cmpAE737C87A29FF25EE7B8414481FC1FDA" />
+			<ComponentRef Id="cmpFB84B688C87E0BB6BF587B49CC603D0A" />
+			<ComponentRef Id="cmp83D96F91611BC2FB145C689E0BD528C9" />
+			<ComponentRef Id="cmpCE4075508F9890ECBF239B74991C91A6" />
+		</ComponentGroup>
+	</Fragment>
+
+	<!-- Files and Directories -->
+
+	<Fragment>
+		<DirectoryRef Id="bundles">
+			<Directory Id="dir0A68D9FCDABFCD13F8D0553EE712CFF9" Name="edu.tum.cs.conqat.junit">
+				<Component Id="cmp99A723D5FC2CD24DFF7953F4279C0D8E" Guid="{FF1B5E2F-94C6-446F-B94E-34C92A985C51}">
+					<File Id="fil086321C838F77469F693CE5D7FE79750" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.junit)bundle.html" />
+				</Component>
+				<Component Id="cmp912F0CC6A867A5C4BEDBDE4B6DA1E5AA" Guid="{F06603BE-579E-4814-9CC9-2C893E6B4028}">
+					<File Id="fil6A5CE095AD28A7DC7C5450DA9BE27506" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.junit)bundle.xml" />
+				</Component>
+				<Directory Id="dir9E8C5896F6E66C5D28720A2003606ABA" Name="blocks">
+					<Component Id="cmpC093B93EE483988F794CA95978EF26CA" Guid="{09EA3419-BC97-453F-A5FA-B1D08F82A0DD}">
+						<File Id="fil21C921A7CEE665F6338AE0DF5194F0AA" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.junit)blocks\TestCoverage.cqb" />
+					</Component>
+					<Component Id="cmpB638A586ECAB018D4C51AB1F9AE1D160" Guid="{9A53E5DB-B61B-45D8-9E07-EB1CFA87BDA3}">
+						<File Id="filE8FCCF3B29FBE809E84A20EE8DBFA25A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.junit)blocks\TestCoverageChain.cqb" />
+					</Component>
+				</Directory>
+				<Directory Id="dir1633C6BFE7E49AFA8385903ECFE09802" Name="classes">
+					<Directory Id="dir9937FEE63AAE8404653DD9429E71DAB6" Name="edu">
+						<Directory Id="dirE0A23FF99A6857FE53A21574B30B8101" Name="tum">
+							<Directory Id="dir4180F2359E301105881381C1DA31B939" Name="cs">
+								<Directory Id="dir5FA81A62292591D560B6A529769C9CEA" Name="conqat">
+									<Directory Id="dir003A1A9A859D54AA34444EAEE44A9820" Name="junit">
+										<Component Id="cmp260636A5F8F04674D1574CBE99A0603F" Guid="{2179A03F-6D1C-4724-9050-E935265020AB}">
+											<File Id="filAF7799B1F78A90E301328F84AB9EE614" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.junit)classes\edu\tum\cs\conqat\junit\JUnitAssessor.class" />
+										</Component>
+										<Component Id="cmp912E1EDFF7790FA3F26C251775E93356" Guid="{74ED4CD3-2A47-4290-AD03-FD72EBD76E9A}">
+											<File Id="filFF02FBCB4C168BADEA224B7B3E0798E9" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.junit)classes\edu\tum\cs\conqat\junit\JUnitResultNode.class" />
+										</Component>
+										<Component Id="cmpE2B079322BE04050F1EB53C2664168B7" Guid="{C9EA7F61-A83B-420F-BF97-6D3EC54A3621}">
+											<File Id="fil86E863ABE6420A59608BFCAEDCFAB624" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.junit)classes\edu\tum\cs\conqat\junit\JUnitResultScope.class" />
+										</Component>
+										<Component Id="cmpAE737C87A29FF25EE7B8414481FC1FDA" Guid="{A7D907F7-CA2B-4A70-9EC3-27303A366234}">
+											<File Id="filDBC22D2BC352A57D682D1220D4FC8F2D" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.junit)classes\edu\tum\cs\conqat\junit\JUnitTestListBuilder$1.class" />
+										</Component>
+										<Component Id="cmpFB84B688C87E0BB6BF587B49CC603D0A" Guid="{A6132D3D-3F3B-401D-A2D9-0390FFC195DC}">
+											<File Id="fil9C1F174CDB2DCEBBC5F86D1A29F91910" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.junit)classes\edu\tum\cs\conqat\junit\JUnitTestListBuilder$JUnitVisitor.class" />
+										</Component>
+										<Component Id="cmp83D96F91611BC2FB145C689E0BD528C9" Guid="{E5A337D5-AD09-4CCB-BACA-4638A6E3100B}">
+											<File Id="fil0955D4BB59EE4470E2B1BC2373ADC7E3" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.junit)classes\edu\tum\cs\conqat\junit\JUnitTestListBuilder.class" />
+										</Component>
+										<Component Id="cmpCE4075508F9890ECBF239B74991C91A6" Guid="{070DAE1C-B041-4AC6-A07D-2A52E22F3D4B}">
+											<File Id="fil69AA2ABEF434485B7A90CF102B4B6B1E" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.junit)classes\edu\tum\cs\conqat\junit\JUnitTestSuiteNode.class" />
+										</Component>
+									</Directory>
+								</Directory>
+							</Directory>
+						</Directory>
+					</Directory>
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

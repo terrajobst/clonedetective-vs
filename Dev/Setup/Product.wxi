@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<?define Manufacturer        = "Clone Detective for Visual Studio" ?>
+	<?define ProductName         = "Clone Detective for Visual Studio" ?>
+	<?define ProductShortName    = "CloneDetectiveVS" ?>
+	<?define ProductHomePage     = "http://clonedetectivevs.codeplex.com" ?>
+	<?define ProductVersion      = "!(bind.fileVersion.CloneDetective.Package.dll)" ?>
+	<?define UpgradeCode         = "61E93395-1F0E-4ba1-A3E1-9074C4D79DE6" ?>
+
+	<?define RegistryVsRoot      = "HKLM" ?>
+	<?define RegistryVsRootKey   = "SOFTWARE\Microsoft\VisualStudio\9.0" ?>
+
+	<?define BinFolder           = "$(var.TargetDir)..\Bin\" ?>
+	<?define HelpFolder          = "$(var.TargetDir)..\Help\" ?>
+	<?define LibFolder           = "$(sys.CURRENTDIR)..\Lib\" ?>
+	<?define EtcFolder           = "$(sys.CURRENTDIR)..\Etc\" ?>
+
+</Include>

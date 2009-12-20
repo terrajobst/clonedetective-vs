@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<?include ConQAT.wxi ?>
+
+	<!-- Component Group -->
+
+	<Fragment>
+		<ComponentGroup Id="edu.tum.cs.conqat.database">
+			<ComponentRef Id="cmp65C43B9F09C3E841A2EAF0B9CD840585" />
+			<ComponentRef Id="cmp70551AB17C691957478D33BBCF262B33" />
+			<ComponentRef Id="cmpE216FD3910662704D2DD8953EC613C24" />
+			<ComponentRef Id="cmpF29FAEF99A9C68CD4407839214FCF829" />
+			<ComponentRef Id="cmp980669D5FB41BF7F1A6AF9AFDF172DC8" />
+			<ComponentRef Id="cmpA5B233C7D7C1303773B07B0A948BFD7E" />
+			<ComponentRef Id="cmp82DC232D34B96A798EE983BE492AF6E2" />
+			<ComponentRef Id="cmpE8C385377993A130ADF1FACB7A3A3ECC" />
+			<ComponentRef Id="cmpB1F8C65EE4A8DFCBEE6B2581B4E17404" />
+			<ComponentRef Id="cmp6E0F2566B811C62EC1A9F6734CE7CB43" />
+		</ComponentGroup>
+	</Fragment>
+
+	<!-- Files and Directories -->
+
+	<Fragment>
+		<DirectoryRef Id="bundles">
+			<Directory Id="dir64455C16F3F90C6E418B01C49DCC3D61" Name="edu.tum.cs.conqat.database">
+				<Component Id="cmp65C43B9F09C3E841A2EAF0B9CD840585" Guid="{1373F29E-E8DB-49CC-9347-B436A4432A81}">
+					<File Id="fil273DA34BDCEF7006F31D645BCB37438B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.database)bundle.html" />
+				</Component>
+				<Component Id="cmp70551AB17C691957478D33BBCF262B33" Guid="{A3269C83-737E-4AD2-A01A-97007807664A}">
+					<File Id="filE9BCFB6D03DFA0BC8FEF4CF3D2C064DF" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.database)bundle.xml" />
+				</Component>
+				<Directory Id="dirA322CB67EEDD4ED454A8FE3D4C6DF913" Name="blocks">
+					<Component Id="cmpE216FD3910662704D2DD8953EC613C24" Guid="{4210F0F7-4EF5-4C44-8F6F-C20CC8305108}">
+						<File Id="fil8D20DAFDFB5E37B1E6C86B70BF1F5096" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.database)blocks\SQLServerConnection.cqb" />
+					</Component>
+				</Directory>
+				<Directory Id="dir2527EE57BCB02CCDB39186514A2C6CAA" Name="classes">
+					<Directory Id="dirB4F0F6D92DBB1A1EC3F090ED7D061209" Name="edu">
+						<Directory Id="dir10A3794873E83ABF587063BB6987BE05" Name="tum">
+							<Directory Id="dirAD2DD2C47F840866B8D937BE7CE33464" Name="cs">
+								<Directory Id="dir44278B2C5B0BDCF82149BD07D90B428E" Name="conqat">
+									<Directory Id="dirFB8F8AE8811368CA2730A1724B446F71" Name="database">
+										<Component Id="cmpF29FAEF99A9C68CD4407839214FCF829" Guid="{C8AAFDF7-E08E-4843-BF08-BBF2583325D3}">
+											<File Id="filDEBBB7BCAB66834B9BB54AFC58078E5F" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.database)classes\edu\tum\cs\conqat\database\DatabaseConnectionCloser.class" />
+										</Component>
+										<Component Id="cmp980669D5FB41BF7F1A6AF9AFDF172DC8" Guid="{F09561A7-A620-4241-8B35-0E95E4768884}">
+											<File Id="filBD237B34FFD3685E2267776569975A6B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.database)classes\edu\tum\cs\conqat\database\DatabaseProcessorBase.class" />
+										</Component>
+										<Component Id="cmpA5B233C7D7C1303773B07B0A948BFD7E" Guid="{C36C6917-7BBD-447C-A98F-CF271750626B}">
+											<File Id="fil7C7B90BB14EEAE6A8F66D711B6D1A191" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.database)classes\edu\tum\cs\conqat\database\HSQLDatabaseConnector.class" />
+										</Component>
+										<Component Id="cmp82DC232D34B96A798EE983BE492AF6E2" Guid="{B83DEC2D-37EE-47E7-875B-E48D31CC8540}">
+											<File Id="filB2CA23F328A9036A94DE3D4E90139917" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.database)classes\edu\tum\cs\conqat\database\JDBCDatabaseConnector.class" />
+										</Component>
+										<Component Id="cmpE8C385377993A130ADF1FACB7A3A3ECC" Guid="{EEF2C4CD-A5EA-4595-82A9-916841E68F04}">
+											<File Id="fil3D3B0531126B163C8AAFB5F3AACD57A7" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.database)classes\edu\tum\cs\conqat\database\ValueSeriesProcessor.class" />
+										</Component>
+									</Directory>
+								</Directory>
+							</Directory>
+						</Directory>
+					</Directory>
+				</Directory>
+				<Directory Id="dirB5BF9ACC141D8E29800C2BC07A77ED57" Name="lib">
+					<Component Id="cmpB1F8C65EE4A8DFCBEE6B2581B4E17404" Guid="{3E37C68E-367D-4481-BC28-946F116F0000}">
+						<File Id="fil2DEC8611360DDE81A9B7768168680416" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.database)lib\hsqldb.jar" />
+					</Component>
+					<Component Id="cmp6E0F2566B811C62EC1A9F6734CE7CB43" Guid="{C38770F7-E645-499A-9D2C-A39D655182DD}">
+						<File Id="filE3792CAFCCD94CAF430D6249032CC062" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.database)lib\sqljdbc.jar" />
+					</Component>
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

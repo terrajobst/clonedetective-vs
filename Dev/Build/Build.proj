@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+
+	<!-- Build Settings -->
+
+	<PropertyGroup>
+		<BuildDir>$(MSBuildProjectDirectory)\</BuildDir>
+		<CustomTasksDir>$(BuildDir)Custom Tasks\</CustomTasksDir>
+		<ProjectDir>$(BuildDir)..\</ProjectDir>
+		<SourceDir>$(ProjectDir)Source\</SourceDir>
+		<SetupDir>$(ProjectDir)Setup\</SetupDir>
+		<LibDir>$(ProjectDir)Lib\</LibDir>
+		<HelpDir>$(ProjectDir)Help\</HelpDir>
+		<OutputDir>$(ProjectDir)Output\</OutputDir>
+		<GeneratedBinaries>$(OutputDir)Bin\</GeneratedBinaries>
+		<GeneratedHelp>$(OutputDir)Help\</GeneratedHelp>
+		<GeneratedSetup>$(OutputDir)Setup\</GeneratedSetup>
+		<GeneratedSourceCode>$(OutputDir)Source\</GeneratedSourceCode>
+		<GeneratedRelease>$(OutputDir)Release\</GeneratedRelease>
+		<Configuration>Release</Configuration>
+	</PropertyGroup>
+
+	<!-- External projects -->
+
+	<Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+
+	<!-- External Tasks -->
+
+	<UsingTask AssemblyFile="$(CustomTasksDir)CloneDetective.Build.dll" TaskName="CloneDetective.Build.GetFileVersionInfo" />
+	<UsingTask AssemblyFile="$(CustomTasksDir)CloneDetective.Build.dll" TaskName="CloneDetective.Build.RemoveTfsBindings" />
+
+	<!-- Clean -->
+
+	<Target Name="Clean">
+		<ItemGroup>
+			<AllSolutionFiles Include="$(SourceDir)**\*.sln" />
+			<AllSolutionFiles Include="$(SetupDir)**\*.sln" />
+			<CompilationFiles Include="$(ProjectDir)**\bin\**\*.*" Exclude="$(LibDir)ConQAT\**\*.*" />
+			<CompilationFiles Include="$(ProjectDir)**\obj\**\*.*" Exclude="$(LibDir)ConQAT\**\*.*" />
+		</ItemGroup>
+		<MSBuild Projects="@(AllSolutionFiles)" Targets="Clean" />
+		<Delete Files="@(CompilationFiles)" />
+		<RemoveDir Directories="$(CustomTasksDir)" />
+		<RemoveDir Directories="$(OutputDir)" />
+	</Target>
+
+	<!-- Compile MSBuild tasks needed by the build process itself -->
+
+	<Target Name="CompileBuildTasks">
+		<ItemGroup>
+			<CustomBuildProjects Include="$(SourceDir)CloneDetective.Build\CloneDetective.Build.csproj" />
+		</ItemGroup>
+		<MSBuild Projects="@(CustomBuildProjects)" Targets="Build" Properties="Configuration=$(Configuration);OutDir=$(CustomTasksDir)" />
+	</Target>
+
+	<!-- Build -->
+
+	<Target Name="Build">
+		<CallTarget Targets="Clean" />
+		<CallTarget Targets="Compile" />
+		<CallTarget Targets="GenerateHelp" />
+		<CallTarget Targets="GenerateSetup" />
+		<CallTarget Targets="GenerateSourceCode" />
+		<CallTarget Targets="GenerateRelease" />
+	</Target>
+
+	<!-- Compile -->
+
+	<Target Name="Compile">
+		<MSBuild Projects="$(SourceDir)Clone Detective.sln" Targets ="CloneDetective_Package"
+		         Properties="Configuration=$(Configuration);OutDir=$(GeneratedBinaries);RegisterOutputPackage=false" />
+	</Target>
+
+	<!-- Get Version -->
+
+	<Target Name="GetVersion" DependsOnTargets="CompileBuildTasks">
+		<GetFileVersionInfo File="$(GeneratedBinaries)CloneDetective.Package.dll">
+			<Output TaskParameter="FileVersion"
+					PropertyName="CloneDetectiveVersion" />
+			<Output TaskParameter="LegalCopyright"
+					PropertyName="CloneDetectiveCopyright"/>
+		</GetFileVersionInfo>
+	</Target>
+
+	<!-- Generate Help -->
+
+	<Target Name="GenerateHelp" DependsOnTargets="GetVersion">
+		<Error Text="Documentation can only be generated for release builds." Condition="'$(Configuration)' != 'Release'" />
+
+		<!-- Invoke SHFB -->
+		<MSBuild Projects="$(HelpDir)Help.shfbproj"
+				 Properties="OutputPath=$(GeneratedHelp);HelpFileVersion=$(CloneDetectiveVersion);CopyrightText=[v{%40HelpFileVersion}] $(CloneDetectiveCopyright)" />
+
+		<!-- Copy additional Help 2.0 support files to ouput folder. -->
+		<ItemGroup>
+			<HtmlHelp20Files Include="$(HelpDir)HTML Help 2.0 Files\*.*" />
+		</ItemGroup>
+		<Copy SourceFiles="@(HtmlHelp20Files)" DestinationFolder="$(GeneratedHelp)" />
+
+		<!--
+			SHFB has a CleanIntermediates option that also deletes the "Working" folder
+			but this currently does not work as some files remain marked as read-only.
+		-->
+		<RemoveDir Directories="$(GeneratedHelp)Working" />
+	</Target>
+
+	<!-- Generate Setup -->
+
+	<Target Name="GenerateSetup" DependsOnTargets="Compile">
+		<MSBuild Projects="$(SetupDir)Setup.sln"
+		         Properties="Configuration=$(Configuration);OutDir=$(GeneratedSetup);" />
+	</Target>
+
+	<!-- Generate Source Code -->
+
+	<Target Name="GenerateSourceCode" DependsOnTargets="CompileBuildTasks">
+		<ItemGroup>
+			<SourceCodeFiles Include="$(ProjectDir)**\*.*"
+			                 Exclude="$(OutputDir)**\*.*;$(LibDir)**\*.*;$(CustomTasksDir)**\*.*;$(ProjectDir)**\bin\**\*.*;$(ProjectDir)**\obj\**\*.*;$(ProjectDir)**\*.scc;$(ProjectDir)**\*.vssscc;$(ProjectDir)**\*.vspscc;$(ProjectDir)**\*.suo;$(ProjectDir)**\*.cache;$(ProjectDir)**\*.user;$(ProjectDir)**\*.resharper" />
+		</ItemGroup>
+
+		<Copy SourceFiles="@(SourceCodeFiles)" DestinationFolder="$(GeneratedSourceCode)%(RecursiveDir)" />
+		<Exec Command="attrib -r -h /s" WorkingDirectory="$(GeneratedSourceCode)" />
+		<RemoveTfsBindings SolutionFiles="$(GeneratedSourceCode)Source\Clone Detective.sln" />
+	</Target>
+
+	<!-- Generate Release -->
+
+	<Target Name="GenerateRelease">
+		<ItemGroup>
+			<GeneratedSourceCodeFiles Include="$(GeneratedSourceCode)\**\*.*" />
+			<GeneratedSetupFiles Include="$(GeneratedSetup)\**\*.*" />
+		</ItemGroup>
+
+		<RemoveDir Directories="$(GeneratedRelease)" />
+		<MakeDir Directories="$(GeneratedRelease)" />
+		<Zip WorkingDirectory="$(GeneratedSourceCode)" Files="@(GeneratedSourceCodeFiles)" ZipFileName="$(GeneratedRelease)CloneDetectiveVS_Source.zip" />
+		<Zip WorkingDirectory="$(GeneratedSetup)" Files="@(GeneratedSetupFiles)" ZipFileName="$(GeneratedRelease)CloneDetectiveVS_Setup.zip" />
+	</Target>
+</Project>

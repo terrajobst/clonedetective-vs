@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="6841b9a8-e833-4d97-9ef6-b5d419e30f01" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>
+				Allows customizing solution-specific settings of <token>App</token> that affect
+				the way the clone detection is performed.
+			</para>
+			<para>
+				To access this dialog box, on the toolbar of
+				<ui><link xlink:href="9b748258-9091-4c16-adf7-f9776da4b1b7" /></ui>,
+				click <ui>Edit Solution Settings</ui>.
+			</para>
+		</introduction>
+		<section address="Settings">
+			<title>Settings</title>
+			<content>
+				<para>
+					The solution-specific settings are stored in a file that follows the pattern
+					<localUri>&lt;SolutionName&gt;.CloneDetective.user</localUri>. For example, if your solution
+					is named <localUri>MySolution1.sln</localUri> the settings are stored in the file
+					<localUri>MySolution.CloneDetective.user</localUri>.
+				</para>
+				<definitionTable>
+					<definedTerm>Use custom clone analysis</definedTerm>
+					<definition>
+						Specifies whether you want to use a custom clone analysis
+						file. If this check box is not checked <token>App</token> uses default settings.
+					</definition>
+					<definedTerm>Analysis file</definedTerm>
+					<definition>
+						In this text box you must specify the fully qualified path of the ConQAT
+						analysis file that is used to perform the clone detection.
+					</definition>
+					<definedTerm>Clone result file</definedTerm>
+					<definition>
+						In this text box you must specify the fully qualified path of the
+						clone results XML file that will be produced by the ConQAT analysis.
+					</definition>
+					<definedTerm>Property file</definedTerm>
+					<definition>
+						In this text box you can specify the fully qualified path of a
+						Java properties file will be used by ConQAT to initialize properties of your analysis file.
+					</definition>
+					<definedTerm>ConQAT parameter overrides</definedTerm>
+					<definition>
+						This section allows you to override properties defined in
+						the ConQAT analysis file with other values. These values are passed to ConQAT using the
+						<system>-p</system> command line switch.
+					</definition>
+				</definitionTable>
+				<alert class="note">
+					<list class="bullet">
+						<listItem>
+							All settings are only applicable if you enabled custom clone clone analysis settings by
+							checking <ui>Use custom clone analysis</ui>.
+						</listItem>
+						<listItem>
+							Even if you disable the properties file ConQAT will still try to find a properties file that
+							is named as your analysis file with .properties appended. For example, if your analysis file
+							is named <localUri>CloneDetection.cqb</localUri> ConQAT will try to find a properties file
+							named <localUri>CloneDetection.cqb.properties</localUri> in the same folder as
+							<localUri>CloneDetection.cqb</localUri>.
+						</listItem>
+						<listItem>
+							You only need to configure the properties file if it is named different or is located in
+							a different folder than your analysis file.
+						</listItem>
+					</list>
+				</alert>
+			</content>
+		</section>
+		<section address="Macros">
+			<title>Macros</title>
+			<content>
+				<para>
+					You can only use fully qualified (i.e. absolute) paths for both the ConQAT analysis file and the
+					clone results file. If you want to specify paths that are relative to the solution you must use one
+					of the macros listed in the table below.
+				</para>
+				<alert class="note">
+					<para>
+						Please note that the macros are also available in the property overrides section.
+					</para>
+				</alert>
+				<table>
+					<tableHeader>
+						<row>
+							<entry>Macro</entry>
+							<entry>Example</entry>
+							<entry>Description</entry>
+						</row>
+					</tableHeader>
+					<row>
+						<entry>$(InstallDir)</entry>
+						<entry>C:\Program Files (x86)\Clone Detective\</entry>
+						<entry>
+							Contains the installation directory of Clone Detection (including the trailing backslash).
+						</entry>
+					</row>
+					<row>
+						<entry>$(ConQATDir)</entry>
+						<entry>C:\Program Files (x86)\Clone Detective\ConQAT\</entry>
+						<entry>
+							Contains the ConQAT directory (including the trailing backslash).
+							<alert class="note">
+								<para>
+									The value is determined by the path to the ConQAT batch file, i.e. depending
+									on what you configured in <link xlink:href="fd705544-c630-4eae-bb93-f2a180fd904e" />
+									for <ui>ConQAT file name</ui>.
+								</para>
+							</alert>
+						</entry>
+					</row>
+					<row>
+						<entry>$(DevEnvDir)</entry>
+						<entry>C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\</entry>
+						<entry>
+							Contains the directory of <command>DEVENV.EXE</command> (including the trailing backslash).
+						</entry>
+					</row>
+					<row>
+						<entry>$(SolutionPath)</entry>
+						<entry>D:\MySolution\Solution1.sln</entry>
+						<entry>
+							Contains the fully qualified path of the <token>VS</token> solution.
+						</entry>
+					</row>
+					<row>
+						<entry>$(SolutionDir)</entry>
+						<entry>D:\MySolution\</entry>
+						<entry>
+							Contains the directory of the <token>VS</token> solution (including the trailing
+							backslash).
+						</entry>
+					</row>
+					<row>
+						<entry>$(SolutionFileName)</entry>
+						<entry>Solution1.sln</entry>
+						<entry>
+							Contains the file name of the <token>VS</token> solution (excluding the directory
+							path and including the file extension).
+						</entry>
+					</row>
+					<row>
+						<entry>$(SolutionName)</entry>
+						<entry>Solution1</entry>
+						<entry>
+							Contains the file name of the <token>VS</token> solution (excluding both the directory
+							path and file extension).
+						</entry>
+					</row>
+					<row>
+						<entry>$(SolutionExt)</entry>
+						<entry>.sln</entry>
+						<entry>
+							Contains only the extension of the <token>VS</token> solution
+							(including the period).
+						</entry>
+					</row>
+				</table>
+				<para>
+					To use a macro just include it in any of the settings mentioned above. For example, assuming
+					<token>App</token> has been installed to <localUri>C:\Program Files (x86)\Clone Detective\</localUri>
+					a value for <ui>Analysis file</ui> of <localUri>$(InstallDir)DefaultCloneDetection.cqb</localUri> will
+					be extended to <localUri>C:\Program Files (x86)\Clone Detective\DefaultCloneDetection.cqb</localUri>.
+				</para>
+			</content>
+		</section>
+	</developerConceptualDocument>
+</topic>

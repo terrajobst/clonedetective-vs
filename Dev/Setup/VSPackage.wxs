@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+	 xmlns:Util="http://schemas.microsoft.com/wix/UtilExtension">
+
+	<?include Product.wxi ?>
+
+	<!-- Features -->
+
+	<Fragment>
+		<Feature Id="VSPackage" Level="1" Absent="disallow" AllowAdvertise="no" ConfigurableDirectory="INSTALLDIR"
+				 Display="expand"
+				 Title="Visual Studio Integration"
+				 Description="Integrates Clone Detective into Visual Studio 2008.">
+			<ComponentGroupRef Id="VSPackage"/>
+		</Feature>
+
+		<FeatureRef Id="ConQAT">
+			<ComponentRef Id="ConQAT.Registration" />
+		</FeatureRef>
+	</Fragment>
+
+	<!-- Component Group -->
+
+	<Fragment>
+		<ComponentGroup Id="VSPackage">
+			<ComponentRef Id="VSPackage.Registration"/>
+			<ComponentRef Id="CloneDetective.Package.dll"/>
+			<ComponentRef Id="CloneDetective.CloneReporting.dll"/>
+			<ComponentRef Id="SandDock.dll"/>
+			<ComponentRef Id="DefaultCloneDetection.cqb"/>
+			<ComponentRef Id="CloneReport.xsd"/>
+			<ComponentRef Id="VSAddReference.Registration" />
+			<ComponentRef Id="VSSchemaCatalog.xml"/>
+		</ComponentGroup>
+	</Fragment>
+
+	<!-- Files and Directories -->
+
+	<Fragment>
+		<PropertyRef Id="VS90_SCHEMAS_DIR"/>
+
+		<DirectoryRef Id="INSTALLDIR">
+			<Component Id="CloneDetective.Package.dll" Guid="{D9FC1FB8-4C77-43b7-B376-CDCE59A06A33}">
+				<File Id="CloneDetective.Package.dll" Source="$(var.BinFolder)CloneDetective.Package.dll" />
+				<File Id="CloneDetective.Package.pdb" Source="$(var.BinFolder)CloneDetective.Package.pdb" />
+			</Component>
+			<Component Id="CloneDetective.CloneReporting.dll" Guid="{B98D4BDA-D39C-4f4f-B1E3-FD33028D847B}">
+				<File Id="CloneDetective.CloneReporting.dll" Source="$(var.BinFolder)CloneDetective.CloneReporting.dll" />
+				<File Id="CloneDetective.CloneReporting.pdb" Source="$(var.BinFolder)CloneDetective.CloneReporting.pdb" />
+			</Component>
+			<Component Id="SandDock.dll" Guid="{0315C47A-347E-464f-AB03-45F365504D5A}">
+				<File Id="SandDock.dll" Source="$(var.BinFolder)SandDock.dll" />
+			</Component>
+			<Component Id="DefaultCloneDetection.cqb" Guid="{9F610268-E2B2-4e3d-B404-54EC665DA4CE}">
+				<File Id="DefaultCloneDetection.cqb" Source="$(var.EtcFolder)DefaultCloneDetection.cqb" />
+			</Component>
+			<Component Id="CloneReport.xsd" Guid="{24A9758E-3602-4209-8C6D-2FFD2838F526}">
+				<File Id="CloneReport.xsd" Source="$(var.EtcFolder)CloneReport.xsd" />
+			</Component>
+			<Component Id="VSAddReference.Registration" Guid="{261EAD4A-CEF8-4a72-8CC5-79BFD96F0CB1}">
+				<RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\.NETFramework\AssemblyFolders\CloneDetectiveVS" Action="createAndRemoveOnUninstall">
+					<RegistryValue Type="string" Value="[INSTALLDIR]"/>
+				</RegistryKey>
+			</Component>
+			<Component Id="ConQAT.Registration" Guid="{79ED39C9-59A5-4a3f-9928-2017C3DE2EF6}">
+				<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\$(var.ProductName)">
+					<RegistryValue Name="ConqatFileName" Value="[CONQATDIR]bin\ConQAT.bat" Type="string" />
+				</RegistryKey>
+			</Component>
+			<Directory Id="VS90_SCHEMAS_DIR">
+				<Component Id="VSSchemaCatalog.xml" Guid="{99FA5BE6-7F0B-40e0-BAD7-DC2ADFBDB061}">
+					<File Id="VSSchemaCatalog.xml" Name="ConQAT.xml" Source="$(var.EtcFolder)VSSchemaCatalog.xml"
+						  xmlns:cat="http://schemas.microsoft.com/xsd/catalog">
+					</File>
+					<Util:XmlConfig Id="Add.VSSchemaCatalog.xml"
+									Action="create"
+									File="[#VSSchemaCatalog.xml]"
+									ElementPath="/SchemaCatalog"
+									Node="document"
+									On="install"
+									PreserveModifiedDate="yes"
+									>
+						<![CDATA[<Schema xmlns="http://schemas.microsoft.com/xsd/catalog"
+										 href="[#CloneReport.xsd]"
+										 targetNamespace="http://conqat.cs.tum.edu/ns/clonereport" />]]>
+					</Util:XmlConfig>
+				</Component>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+
+	<!-- Registry -->
+
+	<Fragment>
+		<Component Id="VSPackage.Registration" Guid="{B94A8F45-B25F-45f1-9ABA-FD61587D485D}" Directory="INSTALLDIR">
+
+			<!-- Clone Detective Settings -->
+
+			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\$(var.ProductName)">
+				<RegistryValue Name="InstallDir" Value="[INSTALLDIR]" Type="string" />
+			</RegistryKey>
+
+			<!-- Package Registration -->
+
+			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\InstalledProducts\VSPackage">
+				<RegistryValue Name="Package" Value="{2188d17a-79a4-4f07-87b0-c66c31823ae7}" Type="string" />
+				<RegistryValue Name="UseInterface" Value="1" Type="integer" />
+			</RegistryKey>
+
+			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\Packages\{2188d17a-79a4-4f07-87b0-c66c31823ae7}">
+				<RegistryValue Value="CloneDetective.Package.VSPackage, CloneDetective.Package, Version=1.0.0.0, Culture=neutral, PublicKeyToken=07672d4ad714d65d" Type="string" />
+				<RegistryValue Name="InprocServer32" Value="[SystemFolder]mscoree.dll" Type="string" />
+				<RegistryValue Name="Class" Value="CloneDetective.Package.VSPackage" Type="string" />
+				<RegistryValue Name="CodeBase" Value="[INSTALLDIR]CloneDetective.Package.dll" Type="string" />
+				<RegistryValue Name="ID" Value="666" Type="integer" />
+				<RegistryValue Name="MinEdition" Value="Standard" Type="string" />
+				<RegistryValue Name="ProductVersion" Value="1.0" Type="string" />
+				<RegistryValue Name="ProductName" Value="$(var.ProductName)" Type="string" />
+				<RegistryValue Name="CompanyName" Value="$(var.ProductName)" Type="string" />
+			</RegistryKey>
+
+			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\AutoLoadPackages\{f1536ef8-92ec-443c-9ed7-fdadf150da82}">
+				<RegistryValue Name="{2188d17a-79a4-4f07-87b0-c66c31823ae7}" Value="0" Type="integer" />
+			</RegistryKey>
+
+			<!-- Menus -->
+
+			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\Menus">
+				<RegistryValue Name="{2188d17a-79a4-4f07-87b0-c66c31823ae7}" Value=", 1000, 1" Type="string" />
+			</RegistryKey>
+
+			<!-- Tools Options Pages -->
+
+			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\ToolsOptionsPages\Clone Detective">
+				<RegistryValue Value="#0" Type="string" />
+				<RegistryValue Name="Package" Value="{2188d17a-79a4-4f07-87b0-c66c31823ae7}" Type="string" />
+			</RegistryKey>
+
+			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\ToolsOptionsPages\Clone Detective\Settings">
+				<RegistryValue Value="#0" Type="string" />
+				<RegistryValue Name="Package" Value="{2188d17a-79a4-4f07-87b0-c66c31823ae7}" Type="string" />
+				<RegistryValue Name="Page" Value="{1670d890-b3e2-465d-9ec8-80ef3eac7ba1}" Type="string" />
+			</RegistryKey>
+
+			<!-- Tools Options Properties -->
+
+			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\AutomationProperties\Clone Detective\Settings">
+				<RegistryValue Name="Name" Value="Clone Detective.Settings" Type="string" />
+				<RegistryValue Name="Package" Value="{2188d17a-79a4-4f07-87b0-c66c31823ae7}" Type="string" />
+			</RegistryKey>
+
+			<!-- Tool Windows -->
+
+			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\ToolWindows\{1fcb0a5d-f609-4180-8f0e-d7ca2cfaf8ba}">
+				<RegistryValue Value="{2188d17a-79a4-4f07-87b0-c66c31823ae7}" Type="string" />
+				<RegistryValue Name="Name" Value="CloneDetective.Package.CloneExplorerToolWindow" Type="string" />
+			</RegistryKey>
+
+			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\ToolWindows\{cd3d2cba-a726-4fea-b6d6-7b5f78a852d9}">
+				<RegistryValue Value="{2188d17a-79a4-4f07-87b0-c66c31823ae7}" Type="string" />
+				<RegistryValue Name="Name" Value="CloneDetective.Package.CloneIntersectionsToolWindow" Type="string" />
+			</RegistryKey>
+
+			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\ToolWindows\{62f54566-24de-4571-992f-7969d50227c3}">
+				<RegistryValue Value="{2188d17a-79a4-4f07-87b0-c66c31823ae7}" Type="string" />
+				<RegistryValue Name="Name" Value="CloneDetective.Package.CloneResultsToolWindow" Type="string" />
+			</RegistryKey>
+
+			<!-- Text Marker -->
+
+			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\Services\{03c6bf5f-4814-4927-92ad-41ad9faee8af}">
+				<RegistryValue Value="{2188d17a-79a4-4f07-87b0-c66c31823ae7}" Type="string" />
+				<RegistryValue Name="Name" Value="Clone Service" Type="string" />
+			</RegistryKey>
+
+			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\Text Editor\External Markers\{877B4DBE-DF33-4764-9E8E-9E19FA772E21}">
+				<RegistryValue Value="Clone (Background)" Type="string" />
+				<RegistryValue Name="DisplayName" Value="Clone (Background)" Type="string" />
+				<RegistryValue Name="Package" Value="{2188d17a-79a4-4f07-87b0-c66c31823ae7}" Type="string" />
+				<RegistryValue Name="Service" Value="{03c6bf5f-4814-4927-92ad-41ad9faee8af}" Type="string" />
+			</RegistryKey>
+
+			<RegistryKey Root="$(var.RegistryVsRoot)" Key="$(var.RegistryVsRootKey)\Text Editor\External Markers\{C6D11640-5B3A-45EC-8118-53EE3380DDAB}">
+				<RegistryValue Value="Clone (Margin)" Type="string" />
+				<RegistryValue Name="DisplayName" Value="Clone (Margin)" Type="string" />
+				<RegistryValue Name="Package" Value="{2188d17a-79a4-4f07-87b0-c66c31823ae7}" Type="string" />
+				<RegistryValue Name="Service" Value="{03c6bf5f-4814-4927-92ad-41ad9faee8af}" Type="string" />
+			</RegistryKey>
+		</Component>
+
+		<!-- Custom Action Setup needed for registration -->
+
+		<PropertyRef Id="VS90DEVENV" />
+
+		<CustomAction Id="DevenvSetup.Install"
+					  Property="VS90DEVENV"
+					  ExeCommand="/setup /nosetupvstemplates "
+					  Return="ignore"
+					  Execute="deferred"
+					  Impersonate="no" />
+
+		<CustomAction Id="DevenvSetup.Uninstall"
+					  Property="VS90DEVENV"
+					  ExeCommand="/setup /nosetupvstemplates "
+					  Return="ignore"
+					  Execute="deferred"
+					  Impersonate="no" />
+
+		<InstallExecuteSequence>
+			<Custom Action="DevenvSetup.Install" Before="InstallFinalize">&amp;VSPackage=3</Custom>
+			<Custom Action="DevenvSetup.Uninstall" Before="InstallFinalize">&amp;VSPackage=2</Custom>
+		</InstallExecuteSequence>
+
+		<UI>
+			<ProgressText Action="DevenvSetup.Install" Template="[1]">Registering the product in Visual Studio.</ProgressText>
+			<ProgressText Action="DevenvSetup.Uninstall" Template="[1]">Unregistering the product from Visual Studio.</ProgressText>
+		</UI>
+	</Fragment>
+</Wix>

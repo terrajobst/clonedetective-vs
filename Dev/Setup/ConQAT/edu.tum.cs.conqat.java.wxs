@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<?include ConQAT.wxi ?>
+
+	<!-- Component Group -->
+
+	<Fragment>
+		<ComponentGroup Id="edu.tum.cs.conqat.java">
+			<ComponentRef Id="cmp1236CCCA0380A8158A5891A98421429C" />
+			<ComponentRef Id="cmp5BF9FF2168DE294149563974F2743A23" />
+			<ComponentRef Id="cmpF5523B7839479604BBFEB0FC08AF6F7A" />
+			<ComponentRef Id="cmp98F3F991EF7A244AFF496F7B0BC51EE9" />
+			<ComponentRef Id="cmpB39EE35652F942734C9639AA23853D36" />
+			<ComponentRef Id="cmpD2764F3BC067593E5211069C32709331" />
+			<ComponentRef Id="cmp53C00975DA79BBC8BA0DE658E6E338F3" />
+			<ComponentRef Id="cmpAABF4DE3D4EBA8E54D39D4EEC8CCBF22" />
+			<ComponentRef Id="cmpEBBA34CE7F6EF1901CF44B5F1B53A55E" />
+			<ComponentRef Id="cmp061FA0CA4E255398B3600897B0935139" />
+			<ComponentRef Id="cmpC2823EEA5C6A5D06083B9793A520171D" />
+			<ComponentRef Id="cmp311BE1782FF3E68A98370751923D3DE9" />
+			<ComponentRef Id="cmp22E416D19D302F4E10DAB7A959343E41" />
+			<ComponentRef Id="cmpB37242AD03CA17981B5D3221FF08825D" />
+			<ComponentRef Id="cmpF86AE513DCEE36A5F3E80CFF1328495A" />
+			<ComponentRef Id="cmp8CC98698409D9EED3A8AAAC67E1E8128" />
+			<ComponentRef Id="cmp0B2AF08AF5BA753D2A350E95832030BD" />
+			<ComponentRef Id="cmp2F12A58EF3A3F450F11A98D333A06CFB" />
+			<ComponentRef Id="cmp4E1F798147168FFEE1ADBA7C6CDA4C89" />
+			<ComponentRef Id="cmp1F51C18E54E73ECB7714DFC5DD7FBBE8" />
+			<ComponentRef Id="cmp5815C113FA86723830AC5E273F881DF0" />
+			<ComponentRef Id="cmpBC0E47B3A894E65D25779766EC6851B6" />
+			<ComponentRef Id="cmp86C2344666FC1D558D4ECEE2D78464F4" />
+			<ComponentRef Id="cmp427AFE204E8A3A16D63B1B8514B4C1B5" />
+			<ComponentRef Id="cmpCDBF5F69DBC425004E7353A64FAB20EE" />
+			<ComponentRef Id="cmpA719C9C41C731122DE5E4285724B1E79" />
+			<ComponentRef Id="cmpB4360DF84E977EBA9BD38620F97E3D62" />
+			<ComponentRef Id="cmp83ED0E573F10413A3B91985C24E8CBAB" />
+			<ComponentRef Id="cmpFE6366EB2701B3CA2DD69DB12C0422ED" />
+			<ComponentRef Id="cmpA5C7A1E15B84D410ED94B4626DDA4D5D" />
+			<ComponentRef Id="cmpD0C542E5DFCBDC896B8F9243920ACC09" />
+			<ComponentRef Id="cmp711B3C12B22D45BBDEDF498DCD5FEF09" />
+			<ComponentRef Id="cmpC2AB85563BB23E4FCE7FA2A15842C05B" />
+			<ComponentRef Id="cmp4798CB64ADCF61604B3AFC13B444942E" />
+			<ComponentRef Id="cmp791F38D90A56658726B041E0742B0FF3" />
+			<ComponentRef Id="cmp324A79B8F907C0B50A128E569CCCA5A2" />
+			<ComponentRef Id="cmpABD0B23A7A9701B3A0A05D9AE46A1CC3" />
+			<ComponentRef Id="cmp1240C8EBDBBB2E9B9BD3EDCD04458D9F" />
+			<ComponentRef Id="cmp6251B922DB5EF9760D19F679C9298F9B" />
+			<ComponentRef Id="cmpC373F4D7481E393EF64B229FB590E683" />
+			<ComponentRef Id="cmpF5A3300A0C637A732867654ED2EC84D1" />
+			<ComponentRef Id="cmpC813BD3119A8CC75F044BC0711FE70B2" />
+			<ComponentRef Id="cmp5E09C6B4BC4EAF2F5EE133CEB8460F3D" />
+			<ComponentRef Id="cmpE93DAFEE23C5879BEF7836845601118B" />
+			<ComponentRef Id="cmp4DD5127004A878673FA3CE9CBBE0B471" />
+			<ComponentRef Id="cmp84D1CDF12255CB606DF4DED554CB43C2" />
+			<ComponentRef Id="cmp14F3252F1514B0BD86582820E1349CE8" />
+			<ComponentRef Id="cmp32A24478D4D432FF9972F6EA76078E47" />
+			<ComponentRef Id="cmp2943B0A55B7702FDCB12F96E5AF5B7C3" />
+			<ComponentRef Id="cmpCE26B72750AFB3C03C18CC0AC7AE5127" />
+			<ComponentRef Id="cmp7865E5D8E54BDE71B821E6ABE3FEEEFC" />
+			<ComponentRef Id="cmp425EA2284EE071042B0AA0EF14F2D263" />
+			<ComponentRef Id="cmpAE7983640E526AC568C5BF2527926B22" />
+			<ComponentRef Id="cmp40CBB96638643007B12E55D75ECF585C" />
+			<ComponentRef Id="cmpAB5CA4B91A869A43E74A56958CE86C63" />
+			<ComponentRef Id="cmp71BCAB1634E8C612E4DF7D287A991F36" />
+			<ComponentRef Id="cmp969F8D27742E8C60D03F233B0E4A5E78" />
+			<ComponentRef Id="cmp741B9B9E4219BB8FC1D66E694606E8E9" />
+			<ComponentRef Id="cmp33B8A7849385D1C075EECF10B483B7F0" />
+			<ComponentRef Id="cmp847916DC19B22056CC70817CB40A3981" />
+			<ComponentRef Id="cmpE6DF9B84550065C0F7D17843153C30F0" />
+			<ComponentRef Id="cmpFE37D9EBCB4B9D1C70A74C6AB4BDD369" />
+			<ComponentRef Id="cmp8310CCB72D1A6F9A86893A0519469795" />
+			<ComponentRef Id="cmp63D5313923307538B7183C6873E67839" />
+			<ComponentRef Id="cmp0272BC3B6EBD0A9468DE5349BE5B11D5" />
+			<ComponentRef Id="cmpE9C500EFF4A14B9E26A86B363BE5E29C" />
+			<ComponentRef Id="cmp7F7F8BC5C8F732CC1F77918767997C95" />
+			<ComponentRef Id="cmp9E9D9E812266D23DA2576EA8E64AD0C4" />
+			<ComponentRef Id="cmpE3FB0665F1D6040F26D37C208F4F6B9E" />
+			<ComponentRef Id="cmp2D1A63543B85B2F1942CF0DAF91FE6B4" />
+			<ComponentRef Id="cmp662C505A33015E278D4865EC0503F157" />
+			<ComponentRef Id="cmp2E16B27DDEBF6C74BCC1E41EE38AE678" />
+			<ComponentRef Id="cmp8111112EC262F9AB982FBB0588C3C64D" />
+			<ComponentRef Id="cmpF15AD6B70287D8A30AB8E2E8C80B72B4" />
+			<ComponentRef Id="cmpD37BB4AF29DB33B641BC06E56B1397B0" />
+			<ComponentRef Id="cmp87EB1CB1F24B12961B53CADF9414453C" />
+			<ComponentRef Id="cmp4E08718FA373A602A5222E273BDAB352" />
+			<ComponentRef Id="cmpA33D86169E780E84D084B9A00614C3A8" />
+			<ComponentRef Id="cmp27FAFB9453197EC0E4C2F2960EE07F8F" />
+			<ComponentRef Id="cmpF7C01F09EDCE3CBC929F52F4F565F8D4" />
+			<ComponentRef Id="cmp6BB066B035A65F624C7F28FE79C3F5A3" />
+		</ComponentGroup>
+	</Fragment>
+
+	<!-- Files and Directories -->
+
+	<Fragment>
+		<DirectoryRef Id="bundles">
+			<Directory Id="dir83171219371213C17A9D7BA134F36E4B" Name="edu.tum.cs.conqat.java">
+				<Component Id="cmp1236CCCA0380A8158A5891A98421429C" Guid="{162ACEF6-9339-48F6-B511-537C7274C265}">
+					<File Id="filA6642E8E5D4EEB8DE3F4D4EA3DE2D82D" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)bundle.html" />
+				</Component>
+				<Component Id="cmp5BF9FF2168DE294149563974F2743A23" Guid="{E7771180-B91A-4C85-9D82-3D62FFF2FF60}">
+					<File Id="fil52FD66E8159626B4EBC47BF0A1A3E9AB" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)bundle.xml" />
+				</Component>
+				<Directory Id="dirF8704D5B65CB3910FA13F23575434E83" Name="classes">
+					<Directory Id="dirDBA33DBBC8AB99B6777B8CB62A65CB84" Name="edu">
+						<Directory Id="dirB59A12DCCBBBA15438AE371783473BBD" Name="tum">
+							<Directory Id="dir41A8640D512A919328E098C1885E6FA2" Name="cs">
+								<Directory Id="dirFD7BBBE5797B10DFD7DE745929268031" Name="conqat">
+									<Directory Id="dirAA3F5636E2D013EDB05E7944B19A87D4" Name="java">
+										<Component Id="cmpF5523B7839479604BBFEB0FC08AF6F7A" Guid="{70C1FEA7-9BBD-4429-BD9F-156290495C6C}">
+											<File Id="fil5E2B386DE4C1EEF859F1F06B9A9B1D03" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\BundleContext.class" />
+										</Component>
+										<Directory Id="dir6F643C9A7827790083CC41BD04E8A050" Name="adapter">
+											<Component Id="cmp98F3F991EF7A244AFF496F7B0BC51EE9" Guid="{605997FA-1773-4ACC-9658-EDA517A20FF8}">
+												<File Id="fil93DF033A3FE4D5EE7D9394BDC6A96F0C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\adapter\CoberturaCoverageAdapter$ResultFileHandler.class" />
+											</Component>
+											<Component Id="cmpB39EE35652F942734C9639AA23853D36" Guid="{4C7928BE-806F-437C-8BD9-3564F0AFB63B}">
+												<File Id="filED9BEB09169B74AB325B39AC0BC32071" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\adapter\CoberturaCoverageAdapter.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dirBF93209885C624B3219B972C3C079927" Name="analyzer">
+											<Component Id="cmpD2764F3BC067593E5211069C32709331" Guid="{B65DB533-4B69-4E7D-8AE5-225E6949DBAB}">
+												<File Id="filE45EA969BACCCE76D431586272EC746C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\analyzer\LongestMethodLengthAnalyzer.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dir8C779E15C095B706096CE63072C957AC" Name="assessment">
+											<Component Id="cmp53C00975DA79BBC8BA0DE658E6E338F3" Guid="{CBF2D808-EFE0-4E36-A234-A26EA21AF05D}">
+												<File Id="filDDC68430289DE62A6B371C83B83D715F" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\assessment\PMDAssessor.class" />
+											</Component>
+											<Component Id="cmpAABF4DE3D4EBA8E54D39D4EEC8CCBF22" Guid="{E19EF220-FDD4-4F8C-ADF0-8D2B0DC38DF7}">
+												<File Id="filA76BA3CE087229115F3824CF9A870F70" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\assessment\ReturnTypeAssessor.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dirC98AD7246A9345A7C87797FCB45CA794" Name="base">
+											<Component Id="cmpEBBA34CE7F6EF1901CF44B5F1B53A55E" Guid="{0ABAEEF6-A2D5-4B1E-B355-961A1284CCFC}">
+												<File Id="fil6A70037543E0492A2A5FEDCB5F2F30CF" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\base\JavaAnalyzerBase.class" />
+											</Component>
+											<Component Id="cmp061FA0CA4E255398B3600897B0935139" Guid="{3F2E79A9-25AD-4022-A06E-C47F6909B9BC}">
+												<File Id="filFFFA7459E6B8B7C2DDCEE55F2905C1C4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\base\MethodAnalyzerBase.class" />
+											</Component>
+											<Component Id="cmpC2823EEA5C6A5D06083B9793A520171D" Guid="{DE2DEFC6-069D-472D-BDFC-5908808D05A1}">
+												<File Id="filB0E137C7D94ACBD04A468751D4CAE9CB" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\base\MethodAssessorBase.class" />
+											</Component>
+											<Component Id="cmp311BE1782FF3E68A98370751923D3DE9" Guid="{8885F242-3A63-4D37-B3CA-C0ECA2D7408D}">
+												<File Id="fil93EBFDF56BD2726D71CC2AFB054893B4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\base\MethodProcessorBase.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dir55C77E18406DBB509367D9E6BB67D206" Name="extract">
+											<Component Id="cmp22E416D19D302F4E10DAB7A959343E41" Guid="{D28C4C39-DE12-4AB5-905F-2168BB933B23}">
+												<File Id="filEC31F095397D205E84648787D4EDAFB1" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\extract\AuthorExtractor.class" />
+											</Component>
+											<Component Id="cmpB37242AD03CA17981B5D3221FF08825D" Guid="{0EF4D13E-97C1-4C93-A65D-842CAE731BD7}">
+												<File Id="fil720162294BAE948E3944CEA3E5B0B3C8" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\extract\JavaClassNameExtractor.class" />
+											</Component>
+											<Component Id="cmpF86AE513DCEE36A5F3E80CFF1328495A" Guid="{A7F05626-D533-4D25-9D8D-45CAC5E3CFD3}">
+												<File Id="filEA3E236EA925C493186D5D2219D319E9" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\extract\MethodSignatureExtractor.class" />
+											</Component>
+											<Component Id="cmp8CC98698409D9EED3A8AAAC67E1E8128" Guid="{83D75BA1-2B67-42E1-8865-0987BB389667}">
+												<File Id="filE6042E9FF4AB3B30EE02D8297AD31173" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\extract\TypeExtractor.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dirEF2E2A91316A0789B81FBA8E97F8033E" Name="filter">
+											<Component Id="cmp0B2AF08AF5BA753D2A350E95832030BD" Guid="{BA52765A-DDF9-497E-B9B7-C15152A75717}">
+												<File Id="filA5B008B281521A2C30A77277450C03D3" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\filter\JavaClassFilterBase.class" />
+											</Component>
+											<Component Id="cmp2F12A58EF3A3F450F11A98D333A06CFB" Guid="{B47D3D60-897B-496C-8D89-08D048D066D0}">
+												<File Id="fil225800A83E3844F0F15A54E3A0368955" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\filter\SubTypeOfFilter.class" />
+											</Component>
+											<Component Id="cmp4E1F798147168FFEE1ADBA7C6CDA4C89" Guid="{428A9817-FF26-4B08-9E36-5CF70D1038BA}">
+												<File Id="fil8984B20091F3472F235DF9056548F467" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\filter\TypeFilter.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dirF971E2B3F514619FE5D7506E73FB4796" Name="findbugs">
+											<Component Id="cmp1F51C18E54E73ECB7714DFC5DD7FBBE8" Guid="{FFB30BAA-50B2-4A2D-96BE-527004D4C234}">
+												<File Id="fil7586A135418C10EAFF2F01DC958FAAFA" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\findbugs\EBugCollectionAttributes.class" />
+											</Component>
+											<Component Id="cmp5815C113FA86723830AC5E273F881DF0" Guid="{3626EE67-EB9E-4AFD-863C-E2CB29ED3CB5}">
+												<File Id="fil95A54655BE89A4C12EE887B5B6A33C2A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\findbugs\EBugCollectionElements.class" />
+											</Component>
+											<Component Id="cmpBC0E47B3A894E65D25779766EC6851B6" Guid="{0908257E-4605-486F-A2D5-0BCFC7182345}">
+												<File Id="fil61FB9567D4867980030E6CAD42462F6F" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\findbugs\FindBugsExecutor.class" />
+											</Component>
+											<Component Id="cmp86C2344666FC1D558D4ECEE2D78464F4" Guid="{64E6C0B3-F120-44D0-88F3-CD132BF3E535}">
+												<File Id="fil608F2031904C29F4A55F4C8658CCCC6C" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\findbugs\FindbugsMessageManager.class" />
+											</Component>
+											<Component Id="cmp427AFE204E8A3A16D63B1B8514B4C1B5" Guid="{83702FE9-DC75-4FFE-8468-8B0F3C8C6803}">
+												<File Id="fil3A1E061646019917AA7D383857A27E2B" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\findbugs\FindBugsReportReader$1.class" />
+											</Component>
+											<Component Id="cmpCDBF5F69DBC425004E7353A64FAB20EE" Guid="{5FCBC118-16EB-47B5-A5AE-BCAF14B08C3D}">
+												<File Id="fil8E7C080D721ED8696C107F6189CAE254" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\findbugs\FindBugsReportReader$BugCollectionReader$BugInstanceProcessor.class" />
+											</Component>
+											<Component Id="cmpA719C9C41C731122DE5E4285724B1E79" Guid="{A5962CBD-C48A-4AA5-BB78-156D258CD886}">
+												<File Id="fil0D2089223AB2DBDFFBA33F5B684CB96A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\findbugs\FindBugsReportReader$BugCollectionReader$ClassProcessor.class" />
+											</Component>
+											<Component Id="cmpB4360DF84E977EBA9BD38620F97E3D62" Guid="{DD47AEF4-6510-47DB-9CA2-6E30CAC51FB6}">
+												<File Id="filF1E7B6C78025C91EC3878F4EF108DB1F" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\findbugs\FindBugsReportReader$BugCollectionReader$MethodAndFieldProcessor.class" />
+											</Component>
+											<Component Id="cmp83ED0E573F10413A3B91985C24E8CBAB" Guid="{A11E8888-AB1B-4EB8-B83A-2EEF747DB05A}">
+												<File Id="fil8C72B80F45110146F1EE489FC7C95E67" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\findbugs\FindBugsReportReader$BugCollectionReader$ProjectProcessor.class" />
+											</Component>
+											<Component Id="cmpFE6366EB2701B3CA2DD69DB12C0422ED" Guid="{F5E7E31E-DAF4-4E60-9F5E-BB860DDBAE05}">
+												<File Id="fil5A8DD766E59A0F7DA17A695F8809E2B3" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\findbugs\FindBugsReportReader$BugCollectionReader$SourceLineProcessor.class" />
+											</Component>
+											<Component Id="cmpA5C7A1E15B84D410ED94B4626DDA4D5D" Guid="{36543896-6A75-49EF-BAFD-70E5B1C6E830}">
+												<File Id="filC0983FB4DBE6CDE56826E398C853213F" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\findbugs\FindBugsReportReader$BugCollectionReader$SrcDirProcessor.class" />
+											</Component>
+											<Component Id="cmpD0C542E5DFCBDC896B8F9243920ACC09" Guid="{52E5C714-5B29-4310-81A1-FCBF3832DAEF}">
+												<File Id="filCC239C85EC838C7B496A38121B49AAA2" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\findbugs\FindBugsReportReader$BugCollectionReader.class" />
+											</Component>
+											<Component Id="cmp711B3C12B22D45BBDEDF498DCD5FEF09" Guid="{EBB06886-906E-402F-B7BF-950424C1E4D6}">
+												<File Id="fil9551599CD089CEE9F8462F33B4459AC3" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\findbugs\FindBugsReportReader.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dir3F6E6E226D0E05DFFF670F98A55ED4BD" Name="javadoc">
+											<Component Id="cmpC2AB85563BB23E4FCE7FA2A15842C05B" Guid="{89A4CCD8-F460-422D-BBEA-3FD925A9D19E}">
+												<File Id="fil786748176A48FE08CB792A944B565445" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\javadoc\CommentAnalyzerBase.class" />
+											</Component>
+											<Component Id="cmp4798CB64ADCF61604B3AFC13B444942E" Guid="{B26B2526-DA75-4CE9-B352-77CC99692EC7}">
+												<File Id="filC340B8EFD07C12379EFBBA2D90469444" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\javadoc\ICommentAnalyzer.class" />
+											</Component>
+											<Component Id="cmp791F38D90A56658726B041E0742B0FF3" Guid="{0B2D02A2-E9E5-498F-8384-5413BA9986CC}">
+												<File Id="fil57291D19540A2E33818326402C0A01E3" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\javadoc\IFieldDocAnalyzer.class" />
+											</Component>
+											<Component Id="cmp324A79B8F907C0B50A128E569CCCA5A2" Guid="{808BB3F6-7444-411D-8C10-16E1DA1D61FA}">
+												<File Id="fil162A750870A49B1109299C3872C4B152" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\javadoc\IMethodDocAnalyzer.class" />
+											</Component>
+											<Component Id="cmpABD0B23A7A9701B3A0A05D9AE46A1CC3" Guid="{7C5B7448-B82A-437D-9E57-12145D59AC3F}">
+												<File Id="fil4AE9B3E180BB7CF826832697B4EA573D" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\javadoc\InsufficientCommentAnalyzer.class" />
+											</Component>
+											<Component Id="cmp1240C8EBDBBB2E9B9BD3EDCD04458D9F" Guid="{A93E0091-73B0-4C8F-AF48-B6B9BB847074}">
+												<File Id="filE5ADC5CAC71E54C682039D3E5D190439" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\javadoc\InvalidInlineTagAnalyzer.class" />
+											</Component>
+											<Component Id="cmp6251B922DB5EF9760D19F679C9298F9B" Guid="{3CE6C54D-8D67-4D4B-87FF-794120FBEED6}">
+												<File Id="fil2134AA4C503C56025C0C71BE1AE87B53" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\javadoc\IProgramElementDocAnalyzer.class" />
+											</Component>
+											<Component Id="cmpC373F4D7481E393EF64B229FB590E683" Guid="{759DA1AB-DCA7-4814-8AC7-9C4CE4BD7475}">
+												<File Id="fil5BD1BFAB1E5994096EFF98E469522B0D" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\javadoc\ITypeDocAnalyzer.class" />
+											</Component>
+											<Component Id="cmpF5A3300A0C637A732867654ED2EC84D1" Guid="{931F10A9-C43F-4A2D-8410-2FA004B7D815}">
+												<File Id="fil31D4A2F5CD837EECAF20F25AA99AE143" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\javadoc\JavaDocAnalyzer$1.class" />
+											</Component>
+											<Component Id="cmpC813BD3119A8CC75F044BC0711FE70B2" Guid="{97D135EB-03F8-4F54-A846-BCE39ACB82E0}">
+												<File Id="fil55EAA08622822D43E4B60571A7BF6CBF" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\javadoc\JavaDocAnalyzer$TypeAnalyzerDescriptor.class" />
+											</Component>
+											<Component Id="cmp5E09C6B4BC4EAF2F5EE133CEB8460F3D" Guid="{7F7A7A30-C653-47FC-8F44-597420163824}">
+												<File Id="filDB261388D58309CE7BEDB4A4E10BACBF" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\javadoc\JavaDocAnalyzer.class" />
+											</Component>
+											<Component Id="cmpE93DAFEE23C5879BEF7836845601118B" Guid="{05F20F13-095E-492F-87D0-9EC43007C91A}">
+												<File Id="fil2365BE6EA1F6B36D7C29A22CE74E9727" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\javadoc\MissingDocumentationAnalyzer.class" />
+											</Component>
+											<Component Id="cmp4DD5127004A878673FA3CE9CBBE0B471" Guid="{D8ECF911-D305-490C-8A1B-B69AFE4425A8}">
+												<File Id="fil8E22FFC4742F3789F017CE1968E213F1" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\javadoc\MissingTagAnalyzer.class" />
+											</Component>
+											<Component Id="cmp84D1CDF12255CB606DF4DED554CB43C2" Guid="{4543A150-7663-4A7F-843D-2FAFA9A3C287}">
+												<File Id="fil74BBA7F6447C55B3E990C462FA8F6CE5" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\javadoc\ProgramElementDocAnalyzerBase.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dir0EA3F9ECBC3004C1ED96671F8440E9C8" Name="library">
+											<Component Id="cmp14F3252F1514B0BD86582820E1349CE8" Guid="{746D5FEC-1431-4A2B-9365-61AD3D35F333}">
+												<File Id="fil323C8D20693F599C340559F7F2170FFC" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\library\CachingRepository.class" />
+											</Component>
+											<Component Id="cmp32A24478D4D432FF9972F6EA76078E47" Guid="{450D50C7-DB40-4B89-A8D4-B41DD29B5BFE}">
+												<File Id="filF26C0DF1CD4BBCF423297FFEC9F8BD9E" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\library\JavaASTCache.class" />
+											</Component>
+											<Component Id="cmp2943B0A55B7702FDCB12F96E5AF5B7C3" Guid="{25A19E81-DDD8-41D6-99C8-D64AFADFA7A7}">
+												<File Id="fil5432E9DDEC57B48ABA54C5BAFCD8DE53" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\library\JavaDocCache$SimpleMessager.class" />
+											</Component>
+											<Component Id="cmpCE26B72750AFB3C03C18CC0AC7AE5127" Guid="{6AF3E749-B1F1-4EE1-BC51-7AA607DA1553}">
+												<File Id="fil4A43A813FD2323A4B309246A9C3B2A54" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\library\JavaDocCache.class" />
+											</Component>
+											<Component Id="cmp7865E5D8E54BDE71B821E6ABE3FEEEFC" Guid="{1AC10F53-1C13-420B-A222-CA3C8676345F}">
+												<File Id="filD8A665E174B4714410D8FE5935F76B11" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\library\JavaLibrary.class" />
+											</Component>
+											<Component Id="cmp425EA2284EE071042B0AA0EF14F2D263" Guid="{CEEC5914-7BF6-4F19-80C8-F1045F16AD98}">
+												<File Id="fil56607D13D13A73A777BC750A3BB1ED19" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\library\Modifiers$EModifier.class" />
+											</Component>
+											<Component Id="cmpAE7983640E526AC568C5BF2527926B22" Guid="{BC52ACF5-0EA1-4CBF-ADDB-56D2251B4A25}">
+												<File Id="fil9FC66B880134880A7F7B248FEDB910A6" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\library\Modifiers$EType.class" />
+											</Component>
+											<Component Id="cmp40CBB96638643007B12E55D75ECF585C" Guid="{095A84C6-3884-4267-9CC3-2F3076BDED1F}">
+												<File Id="fil4F2E0A46257ED79EBB7D8EB95440FAC6" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\library\Modifiers$EVisibility.class" />
+											</Component>
+											<Component Id="cmpAB5CA4B91A869A43E74A56958CE86C63" Guid="{5E07EC55-2E3C-4002-A734-AEA67FD15451}">
+												<File Id="fil1DCD69FCA698AD21C1A46887263C7FCA" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\library\Modifiers.class" />
+											</Component>
+											<Component Id="cmp71BCAB1634E8C612E4DF7D287A991F36" Guid="{4B08A0D4-1161-4185-A4CF-37A6980AEE99}">
+												<File Id="fil9B80B35944EAC69244EDF63EE173F1A1" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\library\NullOutputStream.class" />
+											</Component>
+											<Component Id="cmp969F8D27742E8C60D03F233B0E4A5E78" Guid="{BEFE605B-C4F7-4ACE-9C2F-8C118797AEED}">
+												<File Id="filA7A4516E0427C6A9264427B910A1E0FA" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\library\PackageDeclarationExtractor.class" />
+											</Component>
+											<Component Id="cmp741B9B9E4219BB8FC1D66E694606E8E9" Guid="{B2B0A19F-1B50-403F-A561-B7CE2727034A}">
+												<File Id="filA8342A2A827D457C7A6BECC8F36F49F4" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\library\Stream2LoggerAdapter.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dir8CBE0E2079C0B4F3A5E005981A60A1E2" Name="listbuilder">
+											<Component Id="cmp33B8A7849385D1C075EECF10B483B7F0" Guid="{F9DD8F24-8C44-4E95-A6AC-552B76102ADB}">
+												<File Id="fil0E7932F92A769078543AD53C57C1A70F" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\listbuilder\CreationListBuilder.class" />
+											</Component>
+											<Component Id="cmp847916DC19B22056CC70817CB40A3981" Guid="{5F4F86A6-832A-494C-A703-174FDBA5A37B}">
+												<File Id="fil3E87E5F46B084BB1F663896215A72923" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\listbuilder\ImportListBuilder.class" />
+											</Component>
+											<Component Id="cmpE6DF9B84550065C0F7D17843153C30F0" Guid="{DE57B3B5-02D7-46E1-8AA1-D82F4D6EF665}">
+												<File Id="filF1D586EE880093FEE8C978C41C615129" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\listbuilder\InheritanceListBuilder.class" />
+											</Component>
+											<Component Id="cmpFE37D9EBCB4B9D1C70A74C6AB4BDD369" Guid="{CF89183C-E04A-4521-AE70-A2DA6C14C96C}">
+												<File Id="filAA6432B1A9CDECA2400D6C7C4DC8CD31" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\listbuilder\ListBuilderBase.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dirD89549EDF120B997970E34E4E4C3AA5B" Name="metric">
+											<Component Id="cmp8310CCB72D1A6F9A86893A0519469795" Guid="{E81DC3B8-1EC3-43A7-8DF8-CFFFB8484861}">
+												<File Id="filAB4867AE8B988DDFD80CF548F28D62B9" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\metric\ClassFanInCounter$1.class" />
+											</Component>
+											<Component Id="cmp63D5313923307538B7183C6873E67839" Guid="{5B48F157-5B8D-49D2-86E9-AFED53D86960}">
+												<File Id="fil9B3B455CC3D7E2AA9FD0879E79D578E0" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\metric\ClassFanInCounter$DependenciesVisitor.class" />
+											</Component>
+											<Component Id="cmp0272BC3B6EBD0A9468DE5349BE5B11D5" Guid="{3A402055-162D-4848-9836-74E8FB21B70A}">
+												<File Id="fil6B1A0C1B9A8F7B005885A8F58F867B33" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\metric\ClassFanInCounter$FanInVisitor.class" />
+											</Component>
+											<Component Id="cmpE9C500EFF4A14B9E26A86B363BE5E29C" Guid="{A1A3556A-6395-49A3-A51F-FABA791B70C3}">
+												<File Id="fil4AFA746D0466214DAFE91A3503DD5B9A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\metric\ClassFanInCounter.class" />
+											</Component>
+											<Component Id="cmp7F7F8BC5C8F732CC1F77918767997C95" Guid="{71A1B263-88C5-4C26-B67F-5AE48A5E4FC6}">
+												<File Id="fil8605E6E23DE31069EF09296C02AD26EF" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\metric\InheritanceDepthCounter.class" />
+											</Component>
+											<Component Id="cmp9E9D9E812266D23DA2576EA8E64AD0C4" Guid="{FD4D47AE-EE35-4845-9059-86B9FD127901}">
+												<File Id="filB536A4FDED4ADE3A9DAD2AF814B5C92D" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\metric\NumberOfMethodsCounter.class" />
+											</Component>
+											<Component Id="cmpE3FB0665F1D6040F26D37C208F4F6B9E" Guid="{926B54C9-C11C-4172-8FC2-C2136E8EEB8F}">
+												<File Id="fil4271E639770E0C72F5906C707248D183" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\metric\NumberOfStatementsCounter.class" />
+											</Component>
+										</Directory>
+										<Directory Id="dirD50845D94E6C67095A7EFD8CF36B89C0" Name="scope">
+											<Component Id="cmp2D1A63543B85B2F1942CF0DAF91FE6B4" Guid="{25248870-B338-4AC7-BEFD-7100AD0313E0}">
+												<File Id="fil79083C7A2313FB6B81F9C1A0E36CE3D2" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\scope\IJavaClassElement.class" />
+											</Component>
+											<Component Id="cmp662C505A33015E278D4865EC0503F157" Guid="{8898F518-D32B-4600-91BC-600417DE71E8}">
+												<File Id="filC41963221280F6F423FB88B35BD1D6FD" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\scope\IJavaElement.class" />
+											</Component>
+											<Component Id="cmp2E16B27DDEBF6C74BCC1E41EE38AE678" Guid="{0BD1CEFD-AE0B-4181-B0C8-967162DF8955}">
+												<File Id="fil7E50C066253D48AA9D8A8A21BD1C44DF" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\scope\IJavaRootElement.class" />
+											</Component>
+											<Component Id="cmp8111112EC262F9AB982FBB0588C3C64D" Guid="{B6BE476D-7B77-4ADE-AB02-8890E8E44C61}">
+												<File Id="fil4D510EEE4E90C673A886712FECAEA02A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\scope\JavaClassElement.class" />
+											</Component>
+											<Component Id="cmpF15AD6B70287D8A30AB8E2E8C80B72B4" Guid="{CE0B2B10-F77A-47B9-B70B-F8A877527B4F}">
+												<File Id="fil33226876C4918996496D421BBD1EACBB" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\scope\JavaElementBase.class" />
+											</Component>
+											<Component Id="cmpD37BB4AF29DB33B641BC06E56B1397B0" Guid="{B47313C9-8A95-4BD1-B8DE-97B0DC4E1C8A}">
+												<File Id="fil12A3E79E6DED40B1827D387163D4D67A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\scope\JavaPackageElement.class" />
+											</Component>
+											<Component Id="cmp87EB1CB1F24B12961B53CADF9414453C" Guid="{2B59AF64-BE7E-45C7-959C-348ADACECF7E}">
+												<File Id="fil37B0E09A6CB67A9032F637A79B6D3847" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\scope\JavaRootElement.class" />
+											</Component>
+											<Component Id="cmp4E08718FA373A602A5222E273BDAB352" Guid="{1A5A9F75-BC0F-49F3-AFF7-8338D7685821}">
+												<File Id="fil91DF889E3C5D3CEED7504F8A3A6DA37F" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)classes\edu\tum\cs\conqat\java\scope\JavaScope.class" />
+											</Component>
+										</Directory>
+									</Directory>
+								</Directory>
+							</Directory>
+						</Directory>
+					</Directory>
+				</Directory>
+				<Directory Id="dirF3E35BFFF62E2323F4ADC2B9E7649A4B" Name="lib">
+					<Component Id="cmpA33D86169E780E84D084B9A00614C3A8" Guid="{C8B08574-0F9A-44B9-8C7A-44E93A7F53AB}">
+						<File Id="fil75C0BE44AB62F990A85B628DB1209022" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)lib\bcel.jar" />
+					</Component>
+					<Component Id="cmp27FAFB9453197EC0E4C2F2960EE07F8F" Guid="{B25A3E00-9E64-4EDF-A1B6-7B7A8AF9C5FD}">
+						<File Id="filD58946677BB40FF4146843DA37C48788" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)lib\jaxen.jar" />
+					</Component>
+					<Component Id="cmpF7C01F09EDCE3CBC929F52F4F565F8D4" Guid="{09D09973-B2F3-4EC5-8D40-3CBDA9DDB939}">
+						<File Id="fil676D6B292658356FAB5EF7C582E1A44A" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)lib\pmd.jar" />
+					</Component>
+				</Directory>
+				<Directory Id="dir6934B922A08F1C8B4136FA35C21FD396" Name="resources">
+					<Directory Id="dir003395A5AF37E9E35A77EDF9E93E0FEA" Name="findbugs">
+						<Component Id="cmp6BB066B035A65F624C7F28FE79C3F5A3" Guid="{23EEED44-5194-4EA0-A7E8-525EA3E1E20D}">
+							<File Id="fil6562642434E48B17202C0B75B8B80A22" KeyPath="yes" Source="$(var.Bundle_edu.tum.cs.conqat.java)resources\findbugs\messages.xml" />
+						</Component>
+					</Directory>
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

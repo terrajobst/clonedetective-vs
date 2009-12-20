@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="CloneDetective.CloneReporting.SourceNode">
+    <Position X="2" Y="3.25" Width="2.75" />
+    <Members>
+      <Field Name="_children" Hidden="true" />
+      <Field Name="_cloneClasses" Hidden="true" />
+      <Field Name="_fullPath" Hidden="true" />
+      <Field Name="_linesOfCode" Hidden="true" />
+      <Field Name="_name" Hidden="true" />
+      <Field Name="_numberOfClonedLines" Hidden="true" />
+      <Field Name="_numberOfClones" Hidden="true" />
+      <Field Name="_parent" Hidden="true" />
+      <Field Name="_sourceFile" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Children" Type="CloneDetective.CloneReporting.SourceNode">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.578" Y="0.352" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Parent" Type="CloneDetective.CloneReporting.SourceNode">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.329" Y="0.206" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>GAAQIEAAAAAAAKBAQAAEQkQQAAACBAAgAAIAAAAgAAA=</HashCode>
+      <FileName>SourceNode.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Parent" />
+      <Property Name="SourceFile" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Children" />
+      <Property Name="CloneClasses" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CloneDetective.CloneReporting.SourceTree">
+    <Position X="0.75" Y="0.5" Width="5" />
+    <Members>
+      <Field Name="_pathDictionary" Hidden="true" />
+      <Field Name="_root" Hidden="true" />
+      <Field Name="_solutionPath" Hidden="true" />
+      <Method Name="CompareSourceElements" Hidden="true" />
+      <Method Name="FillSourceElements" Hidden="true" />
+      <Method Name="GetCloneClasses" Hidden="true" />
+      <Method Name="GetLinesOfCode" Hidden="true" />
+      <Method Name="GetNumberOfClonedLines" Hidden="true" />
+      <Method Name="GetNumberOfClones" Hidden="true" />
+      <Method Name="GetSourceElementParent" Hidden="true" />
+      <Method Name="PropagateDetails" Hidden="true" />
+      <Method Name="RecalculateNode" Hidden="true" />
+      <Method Name="SortSourceElements" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AABAAEAQACAQACIABAACAAACAAEAAAAgQAhAAQoCAAA=</HashCode>
+      <FileName>SourceTree.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Root" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CloneDetective.CloneReporting.CloneClass" Collapsed="true">
+    <Position X="7.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEACAAAAAAAAgAAAAIBACAAAAAAAAAEAAAAAAAAAApA=</HashCode>
+      <FileName>CloneClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloneDetective.CloneReporting.SourceFile" Collapsed="true">
+    <Position X="7.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEACAAAAAAACAAIAAIBACABAAAAAAAAABAAAAAAAABA=</HashCode>
+      <FileName>SourceFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

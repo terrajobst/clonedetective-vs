@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CannotCreateWindow" xml:space="preserve">
+    <value>Can not create tool window.</value>
+  </data>
+  <data name="CloneExplorerToolWindowTitle" xml:space="preserve">
+    <value>Clone Explorer</value>
+  </data>
+  <data name="CloneIntersectionsToolWindowTitle" xml:space="preserve">
+    <value>Clone Intersections</value>
+  </data>
+  <data name="NoCloneReportOrNoFileSelected" xml:space="preserve">
+    <value>No clone report loaded or no file selected.</value>
+  </data>
+  <data name="CloneExplorerMemoryStatistic" xml:space="preserve">
+    <value>Memory: {0}</value>
+  </data>
+  <data name="CloneExplorerTimeStatistic" xml:space="preserve">
+    <value>Time: {0}</value>
+  </data>
+  <data name="CloneExplorerFailed" xml:space="preserve">
+    <value>Failed</value>
+  </data>
+  <data name="CloneExplorerSucceeded" xml:space="preserve">
+    <value>Succeeded</value>
+  </data>
+  <data name="MemoryBytes" xml:space="preserve">
+    <value>{0:N2} b</value>
+  </data>
+  <data name="MemoryGigaBytes" xml:space="preserve">
+    <value>{0:N2} gb</value>
+  </data>
+  <data name="MemoryKiloBytes" xml:space="preserve">
+    <value>{0:N2} kb</value>
+  </data>
+  <data name="MemoryMegaBytes" xml:space="preserve">
+    <value>{0:N2} mb</value>
+  </data>
+  <data name="TimeDays" xml:space="preserve">
+    <value>{0:N2} d</value>
+  </data>
+  <data name="TimeHours" xml:space="preserve">
+    <value>{0:N2} h</value>
+  </data>
+  <data name="TimeMilliseconds" xml:space="preserve">
+    <value>{0:N2} ms</value>
+  </data>
+  <data name="TimeMinutes" xml:space="preserve">
+    <value>{0:N2} m</value>
+  </data>
+  <data name="TimeSeconds" xml:space="preserve">
+    <value>{0:N2} s</value>
+  </data>
+  <data name="CloneFileSummary" xml:space="preserve">
+    <value>Clone File Summary</value>
+  </data>
+  <data name="CategoryCloneInformation" xml:space="preserve">
+    <value>Clone Information</value>
+  </data>
+  <data name="DisplayNameClonePercentage" xml:space="preserve">
+    <value>Clone Percentage</value>
+  </data>
+  <data name="DisplayNameFullPath" xml:space="preserve">
+    <value>Full Path</value>
+  </data>
+  <data name="DisplayNameName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="DisplayNameNumberOfClonedLines" xml:space="preserve">
+    <value>Number of Cloned Lines</value>
+  </data>
+  <data name="DisplayNameNumberOfClones" xml:space="preserve">
+    <value>Number of Clones</value>
+  </data>
+  <data name="DisplayNumberOfCloneClasses" xml:space="preserve">
+    <value>Number of Clone Classes</value>
+  </data>
+  <data name="CloneIntersectionSummary" xml:space="preserve">
+    <value>Clone Intersection Summary</value>
+  </data>
+  <data name="DisplayNameCloneIntersections" xml:space="preserve">
+    <value>Clone Intersections</value>
+  </data>
+  <data name="CloneResultsToolWindowTitle" xml:space="preserve">
+    <value>Clone Results</value>
+  </data>
+  <data name="CommandFindClones" xml:space="preserve">
+    <value>Find Clones</value>
+  </data>
+  <data name="CommandShowCloneIntersections" xml:space="preserve">
+    <value>Show Clone Intersections</value>
+  </data>
+  <data name="InvalidConqatBatPath" xml:space="preserve">
+    <value>The path to ConQAT is either invalid or has not been configured yet. Please configure it under Tools -&gt; Options -&gt; Clone Detective -&gt; Settings.</value>
+  </data>
+  <data name="CloneExplorerStopped" xml:space="preserve">
+    <value>Stopped</value>
+  </data>
+  <data name="MenuClone" xml:space="preserve">
+    <value>Clone Class {0}; Lines {1} - {2}</value>
+  </data>
+  <data name="MenuFindAllOccurrences" xml:space="preserve">
+    <value>Find all Occurrences</value>
+  </data>
+  <data name="MenuOpenInEditor" xml:space="preserve">
+    <value>Open in Code Editor</value>
+  </data>
+  <data name="ImportCloneReportIncorrectMapping" xml:space="preserve">
+    <value>The mapping would map the file "{0}" to "{1}" which does not exist. Please correct the mapping.</value>
+  </data>
+  <data name="ImportCloneReportSelectFolder" xml:space="preserve">
+    <value>Select local folder for "{0}":</value>
+  </data>
+  <data name="CloneClassName" xml:space="preserve">
+    <value>Clone Class {0}</value>
+  </data>
+  <data name="UnhandledCaseLabel" xml:space="preserve">
+    <value>Unhandled case label "{0}".</value>
+  </data>
+  <data name="InvalidJavaExePath" xml:space="preserve">
+    <value>The Java Home directory is either invalid or has not been configured yet. Please configure it under Tools -&gt; Options -&gt; Clone Detective -&gt; Settings.</value>
+  </data>
+  <data name="CloneDetective" xml:space="preserve">
+    <value>Clone Detective</value>
+  </data>
+  <data name="OutputFooterFailed" xml:space="preserve">
+    <value>====== Clone detection failed ======</value>
+  </data>
+  <data name="OutputFooterStopped" xml:space="preserve">
+    <value>====== Clone detection stopped ======</value>
+  </data>
+  <data name="OutputFooterSucceeded" xml:space="preserve">
+    <value>====== Clone detection succeeded ======</value>
+  </data>
+  <data name="OutputHeaderStarted" xml:space="preserve">
+    <value>------ Clone detection started ------</value>
+  </data>
+  <data name="FileDoesNotExist" xml:space="preserve">
+    <value>File {0} does not exist.</value>
+  </data>
+  <data name="PropertyAlreadyOverridden" xml:space="preserve">
+    <value>Property {0} already overridden above. Remove one entry in this list.</value>
+  </data>
+  <data name="PropertyCannotBeOverridden" xml:space="preserve">
+    <value>Property {0} cannot be overridden because the analysis file does not contain such a property.</value>
+  </data>
+  <data name="InvalidMacro" xml:space="preserve">
+    <value>The string {0} is not a valid macro. For a list of valid macros please look at the online help.</value>
+  </data>
+  <data name="YouMustFixAllErrors" xml:space="preserve">
+    <value>Before you can save the changes you have to fix all errors first.</value>
+  </data>
+  <data name="FileNameCannotBeBlank" xml:space="preserve">
+    <value>Please specify a valid file name.</value>
+  </data>
+  <data name="MemoryUnknown" xml:space="preserve">
+    <value>unknown</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CloneIntersections" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\cloneintersections.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloseResults" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\closeresults.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CSharpFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\csharpfile.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\delete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\down.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\edit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\error.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Export" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\export.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FolderClosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\folderclosed.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FolderOpened" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\folderopened.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Import" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\import.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewParameter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\newparameter.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Open" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\open.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Package" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\package.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Parameter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\parameter.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Properties" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\properties.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Run" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\run.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Running" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\running.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\settings.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Solution" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\solution.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\stop.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stopped" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\stopped.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Succeeded" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\succeeded.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\up.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\etc\icons\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

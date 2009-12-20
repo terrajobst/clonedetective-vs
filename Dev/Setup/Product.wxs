@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<?include Product.wxi ?>
+
+	<Product Id="*" UpgradeCode="$(var.UpgradeCode)"
+			 Name="$(var.ProductName)" Version="$(var.ProductVersion)"
+			 Language="1033" Manufacturer="$(var.Manufacturer)">
+
+		<!-- Package Definition -->
+
+		<Package Id="*" Compressed="yes" Description="$(var.ProductShortName) $(var.ProductVersion)" InstallerVersion="200"
+				 ShortNames="no" Manufacturer="$(var.Manufacturer)" Languages="1033" SummaryCodepage="1252" />
+
+		<!-- Major Upgrade Support -->
+
+		<Upgrade Id="$(var.UpgradeCode)">
+			<UpgradeVersion Minimum="$(var.ProductVersion)" IncludeMinimum="no" OnlyDetect="yes" Property="NEWERVERSIONDETECTED" />
+			<UpgradeVersion Minimum="0.0.0.0" IncludeMinimum="yes" Maximum="$(var.ProductVersion)" IncludeMaximum="no" Property="OLDERVERSIONBEINGUPGRADED" />
+		</Upgrade>
+
+		<!-- Properties -->
+
+		<Property Id="ARPPRODUCTICON"   Value="ProductIcon" />
+		<Property Id="ARPHELPLINK"      Value="$(var.ProductHomePage)" />
+		<Property Id="ARPURLINFOABOUT"  Value="$(var.ProductHomePage)" />
+		<Property Id="ARPURLUPDATEINFO" Value="$(var.ProductHomePage)" />
+
+		<!-- Launch Conditions -->
+
+		<Condition Message="An administrator must approve or install [ProductName].">
+			Privileged
+		</Condition>
+
+		<Condition Message="[ProductName] is already installed in a newer version on your computer.">
+			NOT NEWERVERSIONDETECTED
+		</Condition>
+
+		<Condition Message="[ProductName] requires Microsoft Visual Studio 2008 Standard Edition or higher.">
+			VS90DEVENV
+		</Condition>
+
+		<!-- Media -->
+
+		<Media Id="1" Cabinet="$(var.ProductShortName).cab" CompressionLevel="high" EmbedCab="yes" />
+
+		<!-- Icons -->
+
+		<Icon Id="ProductIcon" SourceFile="$(var.EtcFolder)Icons\Package.ico" />
+
+		<!-- Files and Directories -->
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="CommonFilesFolder" />
+			<Directory Id="ProgramFilesFolder" Name="PFiles">
+				<Directory Id="INSTALLDIR" Name="$(var.ProductName)">
+					<Directory Id="Help" Name="Help" />
+					<Directory Id="CONQATDIR" Name="ConQAT" />
+				</Directory>
+			</Directory>
+		</Directory>
+
+		<!-- Features -->
+
+		<FeatureRef Id="VSPackage">
+			<FeatureRef Id="VSPackageHelp" />
+		</FeatureRef>
+		<FeatureRef Id="ConQAT" />
+
+		<!-- Install Sequences -->
+
+		<InstallExecuteSequence>
+			<FindRelatedProducts Before="LaunchConditions" />
+			<RemoveExistingProducts After="InstallValidate" />
+			<InstallFinalize Sequence="7800" />
+		</InstallExecuteSequence>
+
+		<InstallUISequence>
+			<FindRelatedProducts Before="LaunchConditions" />
+		</InstallUISequence>
+
+		<!-- WixUI_Advanced scaffolding (to be replaced by extension authoring) -->
+
+		<Property Id="ApplicationFolderName" Value="$(var.ProductShortName)" />
+		<Property Id="WixAppFolder" Value="WixPerMachineFolder" />
+		<WixVariable Id="WixUILicenseRtf" Value="$(var.EtcFolder)Setup\License.rtf" />
+		<WixVariable Id="WixUIBannerBmp"  Value="$(var.EtcFolder)Setup\Banner.jpg" />
+		<WixVariable Id="WixUIDialogBmp"  Value="$(var.EtcFolder)Setup\Dialog.jpg" />
+
+		<Property Id="ALLUSERS" Value="1" />
+		<WixVariable Id="WixUISupportPerMachine" Value="1" />
+		<WixVariable Id="WixUISupportPerUser"    Value="0" />
+
+		<UI>
+			<UIRef Id="WixUI_FeatureTree" />
+		</UI>
+	</Product>
+</Wix>

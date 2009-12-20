@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="e83d1050-208a-41bd-b901-1380596fe086" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>
+				This topic explains how <token>App</token> integrates into the <token>VS</token> code editor.
+			</para>
+		</introduction>
+		<section address="Clone Marker">
+			<title>Clone Marker</title>
+			<content>
+				<para>
+					If a clone report is loaded, <token>App</token> marks code that is duplicated somewhere
+					else by a purple bar in the margin.
+				</para>
+				<alert class="tip">
+					<para>
+						To customize the color, on the <ui>Tools</ui> menu, click <ui>Options</ui>, expand
+						<ui>Environment</ui>, and click <ui>Fonts and Colors</ui>. <token>App</token> adds
+						two display items, <ui>Clone (Margin)</ui> and <ui>Clone (Background)</ui> that you
+						can customize.
+					</para>
+				</alert>
+				<mediaLink>
+					<image xlink:href="fc908369-5076-4424-a0af-f4a7555df9ea" />
+				</mediaLink>
+			</content>
+		</section>
+		<section address="Navigation">
+			<title>Navigation</title>
+			<content>
+				<para>
+					<token>App</token> also adds two commands to the code editor's context menu to easily
+					navigate to related source code.
+				</para>
+				<definitionTable>
+					<definedTerm>Find Clones</definedTerm>
+					<definition>
+						Searches for all clones that contain the current line
+						and displays the results in a <link xlink:href="bafcd2c8-e185-49ca-b1a2-33b7216acd44" />.
+					</definition>
+					<definedTerm>Show Clone Intersections</definedTerm>
+					<definition>
+						<link xlink:href="7c677216-9aa1-4e27-8c6a-8e3055a5e231" />
+						of all files that share code with the file in the code editor.
+					</definition>
+				</definitionTable>
+				<mediaLink>
+					<image xlink:href="c169e374-8dea-4b36-a6e2-46f8d95d3bec" />
+				</mediaLink>
+			</content>
+		</section>
+	</developerConceptualDocument>
+</topic>

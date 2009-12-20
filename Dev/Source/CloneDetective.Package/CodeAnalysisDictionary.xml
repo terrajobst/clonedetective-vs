@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Dictionary>
+	<Words>
+		<Recognized>
+			<Word>CmdId</Word>
+			<Word>Conqat</Word>
+			<Word>Pkg</Word>
+			<Word>Renderer</Word>
+		</Recognized>
+
+		<Acronyms>
+			<CasingExceptions>
+				<Acronym>CmdId</Acronym>
+			</CasingExceptions>
+		</Acronyms>
+	</Words>
+</Dictionary>
