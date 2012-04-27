@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
 
 	<!-- Build Settings -->
 
 	<PropertyGroup>
 		<BuildDir>$(MSBuildProjectDirectory)\</BuildDir>
-		<CustomTasksDir>$(BuildDir)Custom Tasks\</CustomTasksDir>
-		<ProjectDir>$(BuildDir)..\</ProjectDir>
+		<CustomTasksDir>$(BuildDir)CustomTasks\</CustomTasksDir>
+    <ProjectDir>$([System.IO.Path]::GetFullPath("$(BuildDir).."))\</ProjectDir>
 		<SourceDir>$(ProjectDir)Source\</SourceDir>
 		<SetupDir>$(ProjectDir)Setup\</SetupDir>
 		<LibDir>$(ProjectDir)Lib\</LibDir>
@@ -20,14 +20,10 @@
 		<Configuration>Release</Configuration>
 	</PropertyGroup>
 
-	<!-- External projects -->
-
-	<Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
-
 	<!-- External Tasks -->
 
 	<UsingTask AssemblyFile="$(CustomTasksDir)CloneDetective.Build.dll" TaskName="CloneDetective.Build.GetFileVersionInfo" />
-	<UsingTask AssemblyFile="$(CustomTasksDir)CloneDetective.Build.dll" TaskName="CloneDetective.Build.RemoveTfsBindings" />
+  <UsingTask AssemblyFile="$(LibDir)MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.Zip" />
 
 	<!-- Clean -->
 
@@ -113,15 +109,13 @@
 
 	<!-- Generate Source Code -->
 
-	<Target Name="GenerateSourceCode" DependsOnTargets="CompileBuildTasks">
+	<Target Name="GenerateSourceCode">
 		<ItemGroup>
 			<SourceCodeFiles Include="$(ProjectDir)**\*.*"
-			                 Exclude="$(OutputDir)**\*.*;$(LibDir)**\*.*;$(CustomTasksDir)**\*.*;$(ProjectDir)**\bin\**\*.*;$(ProjectDir)**\obj\**\*.*;$(ProjectDir)**\*.scc;$(ProjectDir)**\*.vssscc;$(ProjectDir)**\*.vspscc;$(ProjectDir)**\*.suo;$(ProjectDir)**\*.cache;$(ProjectDir)**\*.user;$(ProjectDir)**\*.resharper" />
+			                 Exclude="$(ProjectDir).hg\**\*.*;$(ProjectDir).hg*;$(OutputDir)**\*.*;$(LibDir)**\*.*;$(CustomTasksDir)**\*.*;$(ProjectDir)**\bin\**\*.*;$(ProjectDir)**\obj\**\*.*;$(ProjectDir)**\*.suo;$(ProjectDir)**\*.cache;$(ProjectDir)**\*.user;$(ProjectDir)**\*.resharper" />
 		</ItemGroup>
 
 		<Copy SourceFiles="@(SourceCodeFiles)" DestinationFolder="$(GeneratedSourceCode)%(RecursiveDir)" />
-		<Exec Command="attrib -r -h /s" WorkingDirectory="$(GeneratedSourceCode)" />
-		<RemoveTfsBindings SolutionFiles="$(GeneratedSourceCode)Source\Clone Detective.sln" />
 	</Target>
 
 	<!-- Generate Release -->
