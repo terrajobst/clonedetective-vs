@@ -13,21 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs03.codeplex.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = CloneDetective.Build\\CloneDetective.Build.csproj
-		SccProjectName1 = CloneDetective.Build
-		SccLocalPath1 = CloneDetective.Build
-		SccProjectUniqueName2 = CloneDetective.CloneReporting\\CloneDetective.CloneReporting.csproj
-		SccProjectName2 = CloneDetective.CloneReporting
-		SccLocalPath2 = CloneDetective.CloneReporting
-		SccProjectUniqueName3 = CloneDetective.Package\\CloneDetective.Package.csproj
-		SccProjectName3 = CloneDetective.Package
-		SccLocalPath3 = CloneDetective.Package
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Code Analysis|Any CPU = Code Analysis|Any CPU
 		Debug|Any CPU = Debug|Any CPU
