@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+
+	<!-- Parameters -->
+	<property name="solution.dir" value=""/>
+	<property name="solution.file" value=""/>
+	<property name="output.dir" value=""/>
+	<property name="output.file" value=""/>
+	<property name="clone.minlength" value=""/>
+
+	<!-- Exclude all designer files -->
+	<processor class="edu.tum.cs.conqat.commons.pattern.PatternListDef" name="designer" >
+		<pattern regex=".*\.Designer.cs" />
+	</processor>
+
+	<!-- Load source files using the solution file -->
+	<processor class="edu.tum.cs.conqat.dotnet.scope.SolutionScope" name="src">
+		<solution file="${solution.dir}${solution.file}" />
+		<exclude-source ref="@designer" />
+		<language name="cs" />
+	</processor>
+
+	<!-- Perform clone detection -->
+	<block name="clonedetection" spec="edu.tum.cs.conqat.blocklib.CsCloneChain">
+		<input scope="@src"/>
+		<clone minlength="${clone.minlength}"/>
+		<output dir="${output.dir}" reportname="${output.file}"/>
+		<info groupId="Clone Detection"/>
+	</block>
+
+</conqat>
